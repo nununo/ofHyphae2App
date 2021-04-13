@@ -2,17 +2,18 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+  field.reset(new Field(ofGetWidth(), ofGetHeight()));
+  fieldPainter.reset(new FieldPainter(*field));
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+  fieldPainter->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+  fieldPainter->draw();
 }
 
 //--------------------------------------------------------------

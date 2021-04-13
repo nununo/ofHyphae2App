@@ -12,6 +12,8 @@
 		49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */; };
 		657DC38C2BC38CB06CAF2829 /* ofxJsonSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07D61923506394DC6966278 /* ofxJsonSettings.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
+		7DB90A63262607A60094B81C /* FieldPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DB90A60262607A60094B81C /* FieldPainter.cpp */; };
+		7DB90A64262607A60094B81C /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DB90A62262607A60094B81C /* Field.cpp */; };
 		8E898905BA4E34CC181781AD /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C095BEDA07EC729E720B665D /* jsoncpp.cpp */; };
 		B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04085A84A7637CFDE1C8F7C /* ofxSlider.cpp */; };
 		BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF946F9F9479FD412E746596 /* ofxBaseGui.cpp */; };
@@ -53,6 +55,10 @@
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		6FE62B637A94338E102E0657 /* json.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = json.h; path = ../../of_v0.11.2_osx_release/addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
+		7DB90A5F262607A60094B81C /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		7DB90A60262607A60094B81C /* FieldPainter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPainter.cpp; sourceTree = "<group>"; };
+		7DB90A61262607A60094B81C /* FieldPainter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldPainter.h; sourceTree = "<group>"; };
+		7DB90A62262607A60094B81C /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		7F2F75982DB927F02586C720 /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxJSONElement.h; path = ../../of_v0.11.2_osx_release/addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
@@ -302,6 +308,17 @@
 			children = (
 			);
 			name = local_addons;
+			sourceTree = "<group>";
+		};
+		7DB90A5E262607A60094B81C /* field */ = {
+			isa = PBXGroup;
+			children = (
+				7DB90A5F262607A60094B81C /* Field.h */,
+				7DB90A60262607A60094B81C /* FieldPainter.cpp */,
+				7DB90A61262607A60094B81C /* FieldPainter.h */,
+				7DB90A62262607A60094B81C /* Field.cpp */,
+			);
+			path = field;
 			sourceTree = "<group>";
 		};
 		977A836DD2C489CCC5E330FF /* jsoncpp */ = {
@@ -675,6 +692,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				7DB90A5E262607A60094B81C /* field */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -727,7 +745,7 @@
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "rhizopusApp" */;
 			compatibilityVersion = "Xcode 12.0";
@@ -802,6 +820,8 @@
 				49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */,
 				E8629D81049B15FE982DF3D4 /* ofxInputField.cpp in Sources */,
 				C1AA5763266D18C4EA408F26 /* ofxLabel.cpp in Sources */,
+				7DB90A64262607A60094B81C /* Field.cpp in Sources */,
+				7DB90A63262607A60094B81C /* FieldPainter.cpp in Sources */,
 				71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */,
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
