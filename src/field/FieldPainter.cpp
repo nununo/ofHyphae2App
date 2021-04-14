@@ -7,8 +7,8 @@
 
 #include "FieldPainter.h"
 
-FieldPainter::FieldPainter(const Field &_field) {
-  field = &_field;
+FieldPainter::FieldPainter(const Field *_field) {
+  field = _field;
   image.allocate(field->getWidth(), field->getHeight(), OF_IMAGE_GRAYSCALE);
 }
 

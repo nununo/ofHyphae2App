@@ -1,12 +1,17 @@
 #pragma once
 
 #include "ofMain.h"
-#include "field/FieldPainter.h"
+#include "FieldPainter.h"
+#include "Hypha.h"
+#include "Settings.h"
 
 class ofApp : public ofBaseApp{
 private:
+  unique_ptr<Settings> settings;
   unique_ptr<Field> field;
   unique_ptr<FieldPainter> fieldPainter;
+  unique_ptr<Hypha> hypha;
+
 public:		
     void setup();
 		void update();

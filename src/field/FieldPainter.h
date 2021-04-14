@@ -16,7 +16,7 @@ private:
   ofImage image;
 
 public:
-  FieldPainter(const Field &field);
+  FieldPainter(const Field *field);
   void update();
   void draw();
 };
