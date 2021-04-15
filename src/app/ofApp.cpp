@@ -3,11 +3,15 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-  SettingsFactory settingsFactory;
-  settings.reset(settingsFactory.getInstance("settings/settings.xml"));
+  settings.reset(SettingsFactory().getInstance("settings/settings.xml"));
+
   field.reset(new Field(ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
-  hypha.reset(new Hypha(field.get(), {100, 100}, {1,0}, 0.5f));
+
+  HyphaParams hyphaParams(settings.get()->hypha());
+  hypha.reset(new Hypha(hyphaParams, field.get(), {300, 300}, {1,0}, 0.5f));
+
+  ofSetFrameRate(settings->canvas().framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
 }
@@ -20,7 +24,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  fieldPainter->draw();
+  //fieldPainter->draw();
   hypha->draw();
 }
 

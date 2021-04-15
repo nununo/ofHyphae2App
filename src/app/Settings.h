@@ -12,7 +12,9 @@
 
 struct HyphaSettings {
   ofColor color;
-  double speed;
+  glm::vec2 speed;
+  glm::vec2 energySpentToMove;
+  glm::vec2 maxBendAngleDeg;
 };
 
 struct CanvasSettings {
@@ -30,7 +32,7 @@ private:
 
 public:
   Settings(HyphaSettings _hyphaSettings, CanvasSettings _canvasSettings);
-  HyphaSettings hyphaSettings() {return _hyphaSettings;}
-  CanvasSettings canvasSettings() {return _canvasSettings;}
+  HyphaSettings hypha() const {return _hyphaSettings;}
+  CanvasSettings canvas() const {return _canvasSettings;}
 };
 #endif /* Settings_h */

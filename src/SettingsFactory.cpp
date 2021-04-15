@@ -14,8 +14,10 @@ Settings* SettingsFactory::getInstance(const string& xmlFilename) {
 
 HyphaSettings SettingsFactory::buildHyphaSettings(const SettingsFile& sf) {
   return {
-    .color = sf.getColor("rhizopus:hyphae:hypha:color"),
-    .speed = sf.getValue("rhizopus:hyphae:hypha:speed", 1.0f) // / canvas.framerate; // pixels/second
+    .color = sf.getColor("rhizopus:hypha:color"),
+    .speed = sf.getRange("rhizopus:hypha:speed", 4.0f),
+    .energySpentToMove = sf.getRange("rhizopus:hypha:energySpentToMove", 1.0f),
+    .maxBendAngleDeg = sf.getRange("rhizopus:hypha:maxBendAngleDeg", 1.0f)
   };
 }
 

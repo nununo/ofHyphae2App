@@ -19,12 +19,12 @@ private:
 
 public:
   SettingsFile(const string& xmlFilename) {f.loadFile(xmlFilename);}
-  ofVec2f getRange(const string& xmlPath, const float defaultValue=0.0f) const;
-  ofColor getColor(const string& xmlPath) const;
+  glm::vec2 getRange(const string& xmlPath, const float defaultValue=0.0f) const;
+  ofColor getColor(const string& xmlPath, const ofColor defaultValue=ofColor::red) const;
   vector<float> getSet(const string& xmlPath);
-  int getValue(const string& tag, int defaultValue, int which = 0) const {f.getValue(tag, defaultValue, which);}
-  double getValue(const string& tag, double defaultValue, int which = 0) const {f.getValue(tag, defaultValue, which);}
-  string getValue(const string& tag, const string& defaultValue, int which = 0) const {f.getValue(tag, defaultValue, which);}
+  int getValue(const string& tag, int defaultValue, int which = 0) const {return f.getValue(tag, defaultValue, which);}
+  double getValue(const string& tag, double defaultValue, int which = 0) const {return f.getValue(tag, defaultValue, which);}
+  string getValue(const string& tag, const string& defaultValue, int which = 0) const {return f.getValue(tag, defaultValue, which);}
 };
 
 #endif /* SettingsFile_h */

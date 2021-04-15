@@ -7,20 +7,25 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const Field *_field, const glm::vec2 _pos, const glm::vec2 _dir, const float _energy) {
-  pos = _pos;
-  dir = _dir;
-  energy = ofClamp(_energy, 0, 1);
-  field = _field;
+Hypha::Hypha(const HyphaParams _params, const Field *_field, const glm::vec2 _pos, const glm::vec2 _dir, const float initialEnergy)
+: field(_field)
+, params(_params)
+, pos(_pos)
+, dir(_dir * params.speed)
+, energy(initialEnergy)
+{
   painter.reset(new Painter(1, ofColor::red));
 }
 
 void Hypha::update() {
-  pos += dir;
+  dir = nextDirection(dir);
+  pos = nextPosition(pos, dir);
   painter->clear();
   painter->add(pos);
 }
 
-void Hypha::draw() {
-  painter->draw();
+glm::vec2 Hypha::nextDirection(glm::vec2 dir) const {
+  auto bendAngle = ofRandom(-params.maxBendAngle, params.maxBendAngle);
+  ofLog() << bendAngle;
+  return glm::rotate(dir, bendAngle);
 }

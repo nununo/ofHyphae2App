@@ -18,6 +18,7 @@
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D49D826262715930014E1DF /* SettingsFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D824262715930014E1DF /* SettingsFactory.cpp */; };
+		7D49D830262876920014E1DF /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D82F262876920014E1DF /* Tools.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* Painter.cpp */; };
@@ -70,6 +71,9 @@
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
 		7D49D824262715930014E1DF /* SettingsFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsFactory.cpp; sourceTree = "<group>"; };
 		7D49D825262715930014E1DF /* SettingsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsFactory.h; sourceTree = "<group>"; };
+		7D49D829262874810014E1DF /* HyphaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaParams.h; sourceTree = "<group>"; };
+		7D49D82E262876920014E1DF /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		7D49D82F262876920014E1DF /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		823FBC6F9791944E4D93726D /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/app/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -334,6 +338,7 @@
 				AA612BF5360A46A35E9A3111 /* SettingsFile.cpp */,
 				7D49D824262715930014E1DF /* SettingsFactory.cpp */,
 				7D49D825262715930014E1DF /* SettingsFactory.h */,
+				7D49D829262874810014E1DF /* HyphaParams.h */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -379,6 +384,8 @@
 		BE9DD360F550B0DF4D357E7B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				7D49D82F262876920014E1DF /* Tools.cpp */,
+				7D49D82E262876920014E1DF /* Tools.h */,
 				B9943C2F9E43AFB641374E6B /* Painter.cpp */,
 				DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */,
 				3D5BB06415667499A79C967C /* ofApp.h */,
@@ -829,6 +836,7 @@
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
+				7D49D830262876920014E1DF /* Tools.cpp in Sources */,
 				5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */,
 				87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */,
 				68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */,
@@ -870,7 +878,7 @@
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs,
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_CPLUSPLUSFLAGS = "-D__MACOSX_CORE__";
 				SDKROOT = macosx;
@@ -942,7 +950,7 @@
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs,
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_CPLUSPLUSFLAGS = "-D__MACOSX_CORE__";
@@ -980,7 +988,7 @@
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs,
 					../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_CPLUSPLUSFLAGS = "-D__MACOSX_CORE__";
 				SDKROOT = macosx;
