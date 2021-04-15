@@ -12,18 +12,18 @@
 
 class Field {
 private:
-  vector< vector<float> > map;
+  vector< vector<double> > map;
 
   glm::vec2 normalize(const glm::vec2 pos) const;
   void populate();
-  float calcFoodAtPosition(const int x, const int y) const;
-  void setValue( glm::vec2 pos, float newValue) {map[(int)pos.y][(int)pos.x] = newValue;}
+  double calcFoodAtPosition(const int x, const int y) const;
+  void setValue( glm::vec2 pos, double newValue) {map[(int)pos.y][(int)pos.x] = (newValue>0? newValue : 0);}
 
 public:
   Field(const int width, const int height);
   int getWidth() const {return map[0].size();}
   int getHeight() const {return map.size();}
-  float getValue(const glm::vec2 pos) const {return map[(int)pos.y][(int)pos.x];}
-  float consume(const glm::vec2 pos, const float diff);
+  double getValue(const glm::vec2 pos) const {return map[(int)pos.y][(int)pos.x];}
+  double consume(const glm::vec2 pos, const double amount);
 };
 #endif /* Field_h */

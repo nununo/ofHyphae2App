@@ -16,6 +16,8 @@ struct HyphaSettings {
   glm::vec2 energySpentToMove;
   glm::vec2 maxBendAngle;
   glm::vec2 maxForkAngle;
+  glm::vec2 foodAmount;
+  glm::vec2 foodToEnergyRatio;
 };
 
 struct CanvasSettings {
@@ -27,13 +29,13 @@ struct CanvasSettings {
 };
 
 class Settings {
-private:
-  HyphaSettings _hyphaSettings;
-  CanvasSettings _canvasSettings;
-
 public:
-  Settings(HyphaSettings _hyphaSettings, CanvasSettings _canvasSettings);
-  HyphaSettings hypha() const {return _hyphaSettings;}
-  CanvasSettings canvas() const {return _canvasSettings;}
+  const HyphaSettings hypha;
+  const CanvasSettings canvas;
+
+  Settings(HyphaSettings _hyphaSettings, CanvasSettings _canvasSettings)
+  : hypha(_hyphaSettings)
+  , canvas(_canvasSettings)
+  {}
 };
 #endif /* Settings_h */

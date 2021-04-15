@@ -29,14 +29,14 @@ void SettingsFile::popTags(int levels) {
   }
 }
 
-glm::vec2 SettingsFile::getRange(const string& xmlPath, const float defaultValue) const {
+glm::vec2 SettingsFile::getRange(const string& xmlPath, const double defaultValue) const {
   return glm::vec2(f.getValue(xmlPath + ":min", defaultValue),
                    f.getValue(xmlPath + ":max", defaultValue));
 }
 
-vector<float> SettingsFile::getSet(const string& xmlPath) {
-  vector<float> list;
-  float value;
+vector<double> SettingsFile::getSet(const string& xmlPath) {
+  vector<double> list;
+  double value;
 
   int levels = pushTags(xmlPath);
   int numElements = f.getNumTags("v");

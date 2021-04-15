@@ -14,10 +14,12 @@
 
 struct HyphaParams {
   const ofColor color;
-  const float speed;
-  const float energySpentToMove;
-  const float maxBendAngle;
-  const float maxForkAngle;
+  const double speed;
+  const double energySpentToMove;
+  const double maxBendAngle;
+  const double maxForkAngle;
+  const double foodAmount;
+  const double foodToEnergyRatio;
   
   HyphaParams(const HyphaSettings& hyphaSettings)
   : color(hyphaSettings.color)
@@ -25,7 +27,9 @@ struct HyphaParams {
   , energySpentToMove(Tools::randomInRange(hyphaSettings.energySpentToMove))
   , maxBendAngle(Tools::randomInRange(hyphaSettings.maxBendAngle))
   , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))
-  {ofLog() << "speed: " << speed;}
+  , foodAmount(Tools::randomInRange(hyphaSettings.foodAmount))
+  , foodToEnergyRatio(Tools::randomInRange(hyphaSettings.foodToEnergyRatio))
+  {}
 };
 
 #endif /* Params_h */

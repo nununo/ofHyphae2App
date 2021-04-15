@@ -7,7 +7,7 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const HyphaParams _params, const Field& _field, const glm::vec2 _pos, const glm::vec2 _dir, const float initialEnergy)
+Hypha::Hypha(const HyphaParams _params, const Field& _field, const glm::vec2 _pos, const glm::vec2 _dir, const double initialEnergy)
 : field(_field)
 , params(_params)
 , pos(_pos)
@@ -21,8 +21,8 @@ void Hypha::update() {
   if (energy > 0) {
   dir = nextDirection(dir);
   pos = nextPosition(pos, dir);
-  energy = nextEnergy(energy);
-  ofLog() << energy;
+  updateEnergy();
+  ofLog() << "energy: " << energy;
   }
   painter->clear();
   painter->add(pos);
@@ -32,4 +32,3 @@ void Hypha::throwForkEvent() {
   HyphaForkEventArgs e(pos, nextForkAngle(dir));
   ofNotifyEvent(this->forkEvent, e);
 }
-

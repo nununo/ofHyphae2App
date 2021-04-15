@@ -8,13 +8,13 @@
 #include "Field.h"
 
 Field::Field(const int width, const int height) {
-  map.assign(height, vector<float>(width, 0));
+  map.assign(height, vector<double>(width, 0));
   populate();
 }
 
 glm::vec2 Field::normalize(const glm::vec2 pos) const {
-  float normx = ofNormalize(pos.x, 0, getWidth());
-  float normy = ofNormalize(pos.y, 0, getHeight());
+  auto normx = ofNormalize(pos.x, 0, getWidth());
+  auto normy = ofNormalize(pos.y, 0, getHeight());
   return {normx, normy};
 }
 
@@ -26,15 +26,14 @@ void Field::populate() {
   }
 }
 
-float Field::calcFoodAtPosition(const int x, const int y) const {
+double Field::calcFoodAtPosition(const int x, const int y) const {
   glm::vec2 normalizedPos = normalize({x,y});
   return ofNormalize(ofNoise(normalizedPos) + ofNoise(normalizedPos*5),0,2);
 }
 
-
-float Field::consume(const glm::vec2 pos, const float diff) {
-  float value = getValue(pos);
-  value = (value-diff>0? value-diff : 0);
-  setValue(pos, value);
-  return value;
+double Field::consume(const glm::vec2 pos, const double amount) {
+  auto value = getValue(pos);
+  auto consumed = (value-amount>0? amount : value);
+  setValue(pos, value-consumed);
+  return consumed;
 }

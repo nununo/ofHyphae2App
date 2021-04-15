@@ -8,10 +8,10 @@ void ofApp::setup(){
   field.reset(new Field(ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
-  HyphaParams hyphaParams(settings.get()->hypha());
+  HyphaParams hyphaParams(settings.get()->hypha);
   hypha.reset(new Hypha(hyphaParams, *field.get(), {300, 300}, {1,0}, 0.5f));
 
-  ofSetFrameRate(settings->canvas().framerate);
+  ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
 }

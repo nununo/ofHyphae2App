@@ -6,8 +6,3 @@
 //
 
 #include "Settings.h"
-
-Settings::Settings(HyphaSettings _hyphaSettings, CanvasSettings _canvasSettings) {
-  this->_hyphaSettings = _hyphaSettings;
-  this->_canvasSettings = _canvasSettings;
-}
