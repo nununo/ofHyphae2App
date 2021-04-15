@@ -18,14 +18,18 @@ Hypha::Hypha(const HyphaParams _params, const Field& _field, const glm::vec2 _po
 }
 
 void Hypha::update() {
+  if (energy > 0) {
   dir = nextDirection(dir);
   pos = nextPosition(pos, dir);
+  energy = nextEnergy(energy);
+  ofLog() << energy;
+  }
   painter->clear();
   painter->add(pos);
 }
 
-glm::vec2 Hypha::nextDirection(glm::vec2 dir) const {
-  auto bendAngle = ofRandom(-params.maxBendAngle, params.maxBendAngle);
-  ofLog() << bendAngle;
-  return glm::rotate(dir, bendAngle);
+void Hypha::throwForkEvent() {
+  HyphaForkEventArgs e(pos, nextForkAngle(dir));
+  ofNotifyEvent(this->forkEvent, e);
 }
+

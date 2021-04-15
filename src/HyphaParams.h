@@ -17,12 +17,14 @@ struct HyphaParams {
   const float speed;
   const float energySpentToMove;
   const float maxBendAngle;
+  const float maxForkAngle;
   
   HyphaParams(const HyphaSettings& hyphaSettings)
   : color(hyphaSettings.color)
   , speed(Tools::randomInRange(hyphaSettings.speed))
   , energySpentToMove(Tools::randomInRange(hyphaSettings.energySpentToMove))
-  , maxBendAngle(glm::radians(Tools::randomInRange(hyphaSettings.maxBendAngleDeg)))
+  , maxBendAngle(Tools::randomInRange(hyphaSettings.maxBendAngle))
+  , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))
   {ofLog() << "speed: " << speed;}
 };
 

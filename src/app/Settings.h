@@ -14,7 +14,8 @@ struct HyphaSettings {
   ofColor color;
   glm::vec2 speed;
   glm::vec2 energySpentToMove;
-  glm::vec2 maxBendAngleDeg;
+  glm::vec2 maxBendAngle;
+  glm::vec2 maxForkAngle;
 };
 
 struct CanvasSettings {
