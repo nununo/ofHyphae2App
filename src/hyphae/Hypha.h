@@ -19,13 +19,13 @@ private:
   glm::vec2 pos;
   glm::vec2 dir;
   float energy;
-  const Field *field;
+  const Field field;
   unique_ptr<Painter> painter;
 
   glm::vec2 nextDirection(const glm::vec2 dir) const;
   glm::vec2 nextPosition(const glm::vec2 pos, glm::vec2 dir) const {return pos + dir;}
 public:
-  Hypha(const HyphaParams params, const Field *_field, const glm::vec2 _pos, const glm::vec2 _dir, const float initialEnergy);
+  Hypha(const HyphaParams params, const Field& _field, const glm::vec2 _pos, const glm::vec2 _dir, const float initialEnergy);
   void update();
   void draw() const {painter->draw();}
 };
