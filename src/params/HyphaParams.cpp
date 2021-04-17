@@ -16,4 +16,5 @@ HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
 , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))
 , foodAmount(Tools::randomInRange(hyphaSettings.foodAmount))
 , foodToEnergyRatio(Tools::randomInRange(hyphaSettings.foodToEnergyRatio))
+, pixelOverlap(hyphaSettings.pixelOverlap)
 {}

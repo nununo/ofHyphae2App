@@ -12,22 +12,18 @@
 #include "Painter.h"
 #include "HyphaParams.h"
 #include "HyphaForkEventArgs.h"
+#include "HyphaKynetics.h"
 
 class Hypha {
   
 private:
   HyphaParams params;
   Field field;
+  unique_ptr<HyphaKynetics> kynetics;
   unique_ptr<Painter> painter;
-  glm::vec2 pos;
-  glm::vec2 dir;
   double energy;
 
-  glm::vec2 nextDirection(const glm::vec2 _dir) const {return glm::rotate(_dir, ofRandom(-params.maxBendAngle, params.maxBendAngle));}
-  glm::vec2 nextPosition(const glm::vec2 _pos, glm::vec2 _dir) const {return _pos + _dir;}
-  double nextForkAngle(glm::vec2 _dir) const {return glm::angle({1,0}, _dir) + ofRandom(-params.maxForkAngle, params.maxForkAngle);}
-
-  double takeEnergyFromField() {return field.consume(pos, params.foodAmount) * params.foodToEnergyRatio;}
+  double takeEnergyFromField() {return field.consume(kynetics->getPos(), params.foodAmount) * params.foodToEnergyRatio;}
   void updateEnergy() {auto energyFromField = takeEnergyFromField(); energy = energy - params.energySpentToMove + energyFromField;}
   void throwForkEvent();
 

@@ -53,5 +53,6 @@
       <min>1</min>
       <max>30</max>
     </maxBendAngleDeg>
+    <pixelOverlap>0.75</pixelOverlap>
   </hypha>
 </rhizopus>

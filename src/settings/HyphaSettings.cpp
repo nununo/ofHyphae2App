@@ -15,4 +15,5 @@ HyphaSettings::HyphaSettings(const SettingsFile& sf)
 , maxForkAngle(glm::radians(sf.getRange("rhizopus:hypha:maxForkAngleDeg", 1.0f)))
 , foodAmount(sf.getRange("rhizopus:hypha:foodAmount", 1.0f))
 , foodToEnergyRatio(sf.getRange("rhizopus:hypha:foodToEnergyRatio", 1.0f))
+, pixelOverlap(sf.getValue("rhizopus:hypha:pixelOverlap", 1.0f))
 {}
