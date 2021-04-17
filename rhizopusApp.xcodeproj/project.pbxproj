@@ -101,8 +101,8 @@
 		ABD1B394E726A91F366C3252 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		AF946F9F9479FD412E746596 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseGui.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		B82FDFC205571425CCFF4C4B /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxColorPicker.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.h; sourceTree = SOURCE_ROOT; };
-		B9943C2F9E43AFB641374E6B /* Painter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Painter.cpp; path = src/app/Painter.cpp; sourceTree = SOURCE_ROOT; };
-		CA6778A301673A7F07642741 /* Painter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Painter.h; path = src/app/Painter.h; sourceTree = SOURCE_ROOT; };
+		B9943C2F9E43AFB641374E6B /* Painter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Painter.cpp; path = src/painter/Painter.cpp; sourceTree = SOURCE_ROOT; };
+		CA6778A301673A7F07642741 /* Painter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Painter.h; path = src/painter/Painter.h; sourceTree = SOURCE_ROOT; };
 		DEE7566DB26BFC8C4DFB2435 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/app/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
@@ -372,6 +372,15 @@
 			name = params;
 			sourceTree = "<group>";
 		};
+		7DF9BA20262B5915005C763D /* painter */ = {
+			isa = PBXGroup;
+			children = (
+				B9943C2F9E43AFB641374E6B /* Painter.cpp */,
+				CA6778A301673A7F07642741 /* Painter.h */,
+			);
+			path = painter;
+			sourceTree = "<group>";
+		};
 		A763ED608B35AE3310251DEE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,10 +424,8 @@
 			children = (
 				7D49D8432628C1910014E1DF /* Tools.cpp */,
 				7D49D8442628C1910014E1DF /* Tools.h */,
-				B9943C2F9E43AFB641374E6B /* Painter.cpp */,
 				DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */,
 				3D5BB06415667499A79C967C /* ofApp.h */,
-				CA6778A301673A7F07642741 /* Painter.h */,
 				823FBC6F9791944E4D93726D /* main.cpp */,
 			);
 			name = app;
@@ -734,6 +741,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				7DF9BA20262B5915005C763D /* painter */,
 				BE9DD360F550B0DF4D357E7B /* app */,
 				EDDEA9EF697851E64397EA51 /* field */,
 				C12DB37E5ECC749F3F814AC0 /* hyphae */,

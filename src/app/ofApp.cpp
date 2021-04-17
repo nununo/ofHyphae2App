@@ -8,8 +8,11 @@ void ofApp::setup(){
   field.reset(new Field(settings->field, ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
+  painter.reset(new Painter(1, ofColor::red));
+
   Params params(*settings.get());
-  hypha.reset(new Hypha(params.hypha, *field.get(), {300, 300}, {1,0}, 0.5f));
+  HyphaKynetics kynetics(params.hypha, {400, 500}, {1,0});
+  hypha.reset(new Hypha(params.hypha, *field.get(), kynetics, 0.5f));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -24,8 +27,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  fieldPainter->draw();
-  hypha->draw();
+  if (ofGetFrameNum()<5) {
+    fieldPainter->draw();
+  }
+  painter->clear();
+  hypha->paint(painter.get());
+  painter->draw();
 }
 
 //--------------------------------------------------------------

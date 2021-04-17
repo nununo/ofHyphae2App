@@ -4,6 +4,7 @@
 #include "FieldPainter.h"
 #include "Hypha.h"
 #include "Settings.h"
+#include "Painter.h"
 
 class ofApp : public ofBaseApp{
 private:
@@ -11,6 +12,7 @@ private:
   unique_ptr<Field> field;
   unique_ptr<FieldPainter> fieldPainter;
   unique_ptr<Hypha> hypha;
+  unique_ptr<Painter> painter;
 
 public:		
     void setup();
