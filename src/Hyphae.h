@@ -22,6 +22,8 @@ private:
   void onHyphaFork(HyphaForkEventArgs &e);
 
 public:
-  Hyphae(const HyphaParams& hyphaParams, const Field& field);
+  Hyphae(const HyphaParams& hyphaParams, const Field& field, const HyphaKynetics& kynetics);
+  void update();
+  void draw(Painter& painter);
 };
 #endif /* Hyphae_h */

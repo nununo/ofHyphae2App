@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "FieldPainter.h"
-#include "Hypha.h"
+#include "Hyphae.h"
 #include "Settings.h"
 #include "Painter.h"
 
@@ -11,7 +11,7 @@ private:
   unique_ptr<Settings> settings;
   unique_ptr<Field> field;
   unique_ptr<FieldPainter> fieldPainter;
-  unique_ptr<Hypha> hypha;
+  unique_ptr<Hyphae> hyphae;
   unique_ptr<Painter> painter;
 
 public:		

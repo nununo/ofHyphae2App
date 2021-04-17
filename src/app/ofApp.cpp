@@ -12,7 +12,7 @@ void ofApp::setup(){
 
   Params params(*settings.get());
   HyphaKynetics kynetics(params.hypha, {400, 500}, {1,0});
-  hypha.reset(new Hypha(params.hypha, *field.get(), kynetics, 0.5f));
+  hyphae.reset(new Hyphae(params.hypha, *field.get(), kynetics));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -22,7 +22,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
   fieldPainter->update();
-  hypha->update();
+  hyphae->update();
 }
 
 //--------------------------------------------------------------
@@ -31,7 +31,7 @@ void ofApp::draw(){
     fieldPainter->draw();
   }
   painter->clear();
-  hypha->paint(painter.get());
+  hyphae->draw(*painter.get());
   painter->draw();
 }
 

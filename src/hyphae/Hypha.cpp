@@ -30,8 +30,8 @@ void Hypha::throwForkEvent() {
   ofNotifyEvent(this->forkEvent, e);
 }
 
-void Hypha::paint(Painter *painter) {
-  painter->add(kynetics.getPos());
+void Hypha::draw(Painter& painter) {
+  painter.add(kynetics.getPos());
 }
 
 double Hypha::eat() {

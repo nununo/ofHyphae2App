@@ -30,7 +30,7 @@ public:
   Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetics& kynetics, const double initialEnergy);
   void update();
   bool isAlive() const {return energy>0;}
-  void paint(Painter *painter);
+  void draw(Painter& painter);
 
   ofEvent<HyphaForkEventArgs> forkEvent;
 };
