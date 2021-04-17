@@ -9,9 +9,11 @@
 #define Field_h
 
 #include "ofMain.h"
+#include "FieldParams.h"
 
 class Field {
 private:
+  const FieldParams params;
   vector< vector<double> > map;
 
   glm::vec2 normalize(const glm::vec2 pos) const;
@@ -20,7 +22,7 @@ private:
   void setValue( glm::vec2 pos, double newValue) {map[(int)pos.y][(int)pos.x] = (newValue>0? newValue : 0);}
 
 public:
-  Field(const int width, const int height);
+  Field(const FieldParams& params, const int width, const int height);
   int getWidth() const {return map[0].size();}
   int getHeight() const {return map.size();}
   double getValue(const glm::vec2 pos) const {return map[(int)pos.y][(int)pos.x];}

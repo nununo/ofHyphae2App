@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010BA710B9B53C01D4A838ED /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB2737DD640E8A47556CB07F /* Hypha.cpp */; };
 		2E42688699B3D08D42B632DB /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */; };
 		3276EF18A7A1CA9B9AFE494A /* FieldPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F7B97DCA717177409A4266D /* FieldPainter.cpp */; };
 		3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A7F60E48767A70F598CF1DB /* ofxButton.cpp */; };
 		49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */; };
 		52C1FFA5A1F5C0EEE10EDE09 /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4627997BF2329CE9460E803C /* Field.cpp */; };
 		5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */; };
-		5EDEC2B28B21A39AC87A5944 /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3A37A6C1E07EF555CC8F53B /* Settings.cpp */; };
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
-		7D49D826262715930014E1DF /* SettingsFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D824262715930014E1DF /* SettingsFactory.cpp */; };
-		7D49D830262876920014E1DF /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D82F262876920014E1DF /* Tools.cpp */; };
+		7D49D83F2628C1580014E1DF /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D83E2628C1580014E1DF /* Hypha.cpp */; };
+		7D49D8452628C1910014E1DF /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D8432628C1910014E1DF /* Tools.cpp */; };
+		7D49D84C2628C1CB0014E1DF /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D8492628C1CB0014E1DF /* Settings.cpp */; };
+		7D49D84D2628C1CB0014E1DF /* SettingsFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */; };
+		7D49D850262904CF0014E1DF /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */; };
+		7D49D852262905200014E1DF /* FieldSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D851262905200014E1DF /* FieldSettings.cpp */; };
+		7D49D854262905520014E1DF /* CanvasSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D853262905520014E1DF /* CanvasSettings.cpp */; };
+		7D49D857262905850014E1DF /* HyphaParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D855262905850014E1DF /* HyphaParams.cpp */; };
+		7D49D85A262906150014E1DF /* FieldParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D858262906150014E1DF /* FieldParams.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* Painter.cpp */; };
@@ -28,7 +33,6 @@
 		C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2994571F24A174768C46DB3 /* ofxToggle.cpp */; };
 		CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */; };
 		D265D6207B2184FB12FD93AC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 823FBC6F9791944E4D93726D /* main.cpp */; };
-		E37744887ACCDE87430A32C0 /* SettingsFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA612BF5360A46A35E9A3111 /* SettingsFile.cpp */; };
 		E8629D81049B15FE982DF3D4 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20D28634ACA41D977831079E /* ofxInputField.cpp */; };
 		FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30532311EDD0701377B18F1C /* ofxSliderGroup.cpp */; };
 /* End PBXBuildFile section */
@@ -49,7 +53,6 @@
 		01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlparser.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
 		01CB4EB66F90B9244486B460 /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGui.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		052B8C96CF1C3C75823FD436 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSlider.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
-		0E34EAA1E5EAC631E7BE5F5B /* SettingsFile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SettingsFile.h; path = src/app/SettingsFile.h; sourceTree = SOURCE_ROOT; };
 		1A7F60E48767A70F598CF1DB /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxButton.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		20D28634ACA41D977831079E /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxInputField.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxInputField.cpp; sourceTree = SOURCE_ROOT; };
 		28FB9416E00AC6098842C730 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxLabel.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
@@ -66,29 +69,37 @@
 		5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		5F7B97DCA717177409A4266D /* FieldPainter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FieldPainter.cpp; path = src/field/FieldPainter.cpp; sourceTree = SOURCE_ROOT; };
 		67F8885533040FE19EB2C5F4 /* FieldPainter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FieldPainter.h; path = src/field/FieldPainter.h; sourceTree = SOURCE_ROOT; };
-		693F3E8C8FBA4D5EE53BF9F1 /* Settings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Settings.h; path = src/app/Settings.h; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
-		7D49D824262715930014E1DF /* SettingsFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsFactory.cpp; sourceTree = "<group>"; };
-		7D49D825262715930014E1DF /* SettingsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsFactory.h; sourceTree = "<group>"; };
-		7D49D829262874810014E1DF /* HyphaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaParams.h; sourceTree = "<group>"; };
-		7D49D82E262876920014E1DF /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
-		7D49D82F262876920014E1DF /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
-		7D49D831262898A90014E1DF /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaForkEventArgs.h; sourceTree = "<group>"; };
+		7D49D83D2628C1580014E1DF /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypha.h; path = hyphae/Hypha.h; sourceTree = "<group>"; };
+		7D49D83E2628C1580014E1DF /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hypha.cpp; path = hyphae/Hypha.cpp; sourceTree = "<group>"; };
+		7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaForkEventArgs.h; path = hyphae/HyphaForkEventArgs.h; sourceTree = "<group>"; };
+		7D49D8422628C17E0014E1DF /* Params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Params.h; path = params/Params.h; sourceTree = "<group>"; };
+		7D49D8432628C1910014E1DF /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = app/Tools.cpp; sourceTree = "<group>"; };
+		7D49D8442628C1910014E1DF /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = app/Tools.h; sourceTree = "<group>"; };
+		7D49D8462628C1CB0014E1DF /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasSettings.h; path = settings/CanvasSettings.h; sourceTree = "<group>"; };
+		7D49D8472628C1CB0014E1DF /* HyphaSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HyphaSettings.h; path = settings/HyphaSettings.h; sourceTree = "<group>"; };
+		7D49D8482628C1CB0014E1DF /* FieldSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldSettings.h; path = settings/FieldSettings.h; sourceTree = "<group>"; };
+		7D49D8492628C1CB0014E1DF /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Settings.cpp; path = settings/Settings.cpp; sourceTree = "<group>"; };
+		7D49D84A2628C1CB0014E1DF /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = settings/Settings.h; sourceTree = "<group>"; };
+		7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SettingsFile.cpp; path = settings/SettingsFile.cpp; sourceTree = "<group>"; };
+		7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaSettings.cpp; path = settings/HyphaSettings.cpp; sourceTree = "<group>"; };
+		7D49D851262905200014E1DF /* FieldSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldSettings.cpp; sourceTree = "<group>"; };
+		7D49D853262905520014E1DF /* CanvasSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasSettings.cpp; sourceTree = "<group>"; };
+		7D49D855262905850014E1DF /* HyphaParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaParams.cpp; path = params/HyphaParams.cpp; sourceTree = "<group>"; };
+		7D49D856262905850014E1DF /* HyphaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaParams.h; path = params/HyphaParams.h; sourceTree = "<group>"; };
+		7D49D858262906150014E1DF /* FieldParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FieldParams.cpp; path = params/FieldParams.cpp; sourceTree = "<group>"; };
+		7D49D859262906150014E1DF /* FieldParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FieldParams.h; path = params/FieldParams.h; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		823FBC6F9791944E4D93726D /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/app/main.cpp; sourceTree = SOURCE_ROOT; };
 		8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		9AC1B9F584F51E175F7382AD /* ofxXmlSettings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxXmlSettings.h; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
-		A3380985A2400CE88E651214 /* Hypha.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Hypha.h; path = src/hyphae/Hypha.h; sourceTree = SOURCE_ROOT; };
-		AA612BF5360A46A35E9A3111 /* SettingsFile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SettingsFile.cpp; path = src/app/SettingsFile.cpp; sourceTree = SOURCE_ROOT; };
 		ABD1B394E726A91F366C3252 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		AF946F9F9479FD412E746596 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseGui.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
-		B3A37A6C1E07EF555CC8F53B /* Settings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Settings.cpp; path = src/app/Settings.cpp; sourceTree = SOURCE_ROOT; };
 		B82FDFC205571425CCFF4C4B /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxColorPicker.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.h; sourceTree = SOURCE_ROOT; };
 		B9943C2F9E43AFB641374E6B /* Painter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Painter.cpp; path = src/app/Painter.cpp; sourceTree = SOURCE_ROOT; };
 		CA6778A301673A7F07642741 /* Painter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Painter.h; path = src/app/Painter.h; sourceTree = SOURCE_ROOT; };
-		CB2737DD640E8A47556CB07F /* Hypha.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Hypha.cpp; path = src/hyphae/Hypha.cpp; sourceTree = SOURCE_ROOT; };
 		DEE7566DB26BFC8C4DFB2435 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/app/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
@@ -333,15 +344,29 @@
 		7D49D827262719D10014E1DF /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				693F3E8C8FBA4D5EE53BF9F1 /* Settings.h */,
-				B3A37A6C1E07EF555CC8F53B /* Settings.cpp */,
-				0E34EAA1E5EAC631E7BE5F5B /* SettingsFile.h */,
-				AA612BF5360A46A35E9A3111 /* SettingsFile.cpp */,
-				7D49D824262715930014E1DF /* SettingsFactory.cpp */,
-				7D49D825262715930014E1DF /* SettingsFactory.h */,
-				7D49D829262874810014E1DF /* HyphaParams.h */,
+				7D49D8462628C1CB0014E1DF /* CanvasSettings.h */,
+				7D49D8482628C1CB0014E1DF /* FieldSettings.h */,
+				7D49D851262905200014E1DF /* FieldSettings.cpp */,
+				7D49D8472628C1CB0014E1DF /* HyphaSettings.h */,
+				7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */,
+				7D49D8492628C1CB0014E1DF /* Settings.cpp */,
+				7D49D84A2628C1CB0014E1DF /* Settings.h */,
+				7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */,
+				7D49D853262905520014E1DF /* CanvasSettings.cpp */,
 			);
 			name = settings;
+			sourceTree = "<group>";
+		};
+		7D49D8352628BABE0014E1DF /* params */ = {
+			isa = PBXGroup;
+			children = (
+				7D49D8422628C17E0014E1DF /* Params.h */,
+				7D49D855262905850014E1DF /* HyphaParams.cpp */,
+				7D49D856262905850014E1DF /* HyphaParams.h */,
+				7D49D859262906150014E1DF /* FieldParams.h */,
+				7D49D858262906150014E1DF /* FieldParams.cpp */,
+			);
+			name = params;
 			sourceTree = "<group>";
 		};
 		A763ED608B35AE3310251DEE /* src */ = {
@@ -385,8 +410,8 @@
 		BE9DD360F550B0DF4D357E7B /* app */ = {
 			isa = PBXGroup;
 			children = (
-				7D49D82F262876920014E1DF /* Tools.cpp */,
-				7D49D82E262876920014E1DF /* Tools.h */,
+				7D49D8432628C1910014E1DF /* Tools.cpp */,
+				7D49D8442628C1910014E1DF /* Tools.h */,
 				B9943C2F9E43AFB641374E6B /* Painter.cpp */,
 				DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */,
 				3D5BB06415667499A79C967C /* ofApp.h */,
@@ -399,9 +424,9 @@
 		C12DB37E5ECC749F3F814AC0 /* hyphae */ = {
 			isa = PBXGroup;
 			children = (
-				CB2737DD640E8A47556CB07F /* Hypha.cpp */,
-				A3380985A2400CE88E651214 /* Hypha.h */,
-				7D49D831262898A90014E1DF /* HyphaForkEventArgs.h */,
+				7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */,
+				7D49D83E2628C1580014E1DF /* Hypha.cpp */,
+				7D49D83D2628C1580014E1DF /* Hypha.h */,
 			);
 			name = hyphae;
 			sourceTree = "<group>";
@@ -707,6 +732,7 @@
 				BE9DD360F550B0DF4D357E7B /* app */,
 				EDDEA9EF697851E64397EA51 /* field */,
 				C12DB37E5ECC749F3F814AC0 /* hyphae */,
+				7D49D8352628BABE0014E1DF /* params */,
 				7D49D827262719D10014E1DF /* settings */,
 			);
 			path = src;
@@ -819,28 +845,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E37744887ACCDE87430A32C0 /* SettingsFile.cpp in Sources */,
+				7D49D854262905520014E1DF /* CanvasSettings.cpp in Sources */,
 				91790062D662BA96C5F736F1 /* Painter.cpp in Sources */,
 				2E42688699B3D08D42B632DB /* ofApp.cpp in Sources */,
 				D265D6207B2184FB12FD93AC /* main.cpp in Sources */,
-				5EDEC2B28B21A39AC87A5944 /* Settings.cpp in Sources */,
 				3276EF18A7A1CA9B9AFE494A /* FieldPainter.cpp in Sources */,
-				7D49D826262715930014E1DF /* SettingsFactory.cpp in Sources */,
 				52C1FFA5A1F5C0EEE10EDE09 /* Field.cpp in Sources */,
-				010BA710B9B53C01D4A838ED /* Hypha.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
+				7D49D84C2628C1CB0014E1DF /* Settings.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
+				7D49D84D2628C1CB0014E1DF /* SettingsFile.cpp in Sources */,
 				CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */,
 				49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */,
 				E8629D81049B15FE982DF3D4 /* ofxInputField.cpp in Sources */,
+				7D49D852262905200014E1DF /* FieldSettings.cpp in Sources */,
 				C1AA5763266D18C4EA408F26 /* ofxLabel.cpp in Sources */,
 				71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */,
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
-				7D49D830262876920014E1DF /* Tools.cpp in Sources */,
+				7D49D857262905850014E1DF /* HyphaParams.cpp in Sources */,
+				7D49D85A262906150014E1DF /* FieldParams.cpp in Sources */,
+				7D49D8452628C1910014E1DF /* Tools.cpp in Sources */,
 				5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */,
+				7D49D83F2628C1580014E1DF /* Hypha.cpp in Sources */,
 				87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */,
+				7D49D850262904CF0014E1DF /* HyphaSettings.cpp in Sources */,
 				68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */,
 				7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const HyphaParams _params, const Field& _field, const glm::vec2 _pos, const glm::vec2 _dir, const double initialEnergy)
+Hypha::Hypha(const HyphaParams& _params, const Field& _field, const glm::vec2 _pos, const glm::vec2 _dir, const double initialEnergy)
 : field(_field)
 , params(_params)
 , pos(_pos)

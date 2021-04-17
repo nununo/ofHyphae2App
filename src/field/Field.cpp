@@ -7,7 +7,7 @@
 
 #include "Field.h"
 
-Field::Field(const int width, const int height) {
+Field::Field(const FieldParams& _params, const int width, const int height): params(_params) {
   map.assign(height, vector<double>(width, 0));
   populate();
 }
@@ -27,8 +27,11 @@ void Field::populate() {
 }
 
 double Field::calcFoodAtPosition(const int x, const int y) const {
-  glm::vec2 normalizedPos = normalize({x,y});
-  return ofNormalize(ofNoise(normalizedPos) + ofNoise(normalizedPos*5),0,2);
+  auto normalizedPos = normalize({x,y});
+  auto beforeThreshold = ofNormalize(ofNoise(normalizedPos) + ofNoise(normalizedPos*5),0,2);
+  auto afterThreshold = (beforeThreshold>params.zeroThreshold? beforeThreshold : 0);
+  return ofMap(afterThreshold, params.zeroThreshold, 1.0f, 0.0f, 1.0f);
+  return ;
 }
 
 double Field::consume(const glm::vec2 pos, const double amount) {

@@ -1,15 +1,15 @@
 #include "ofApp.h"
-#include "SettingsFactory.h"
+#include "Params.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-  settings.reset(SettingsFactory().getInstance("settings/settings.xml"));
+  settings.reset(new Settings(SettingsFile("settings/settings.xml")));
 
-  field.reset(new Field(ofGetWidth(), ofGetHeight()));
+  field.reset(new Field(settings->field, ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
-  HyphaParams hyphaParams(settings.get()->hypha);
-  hypha.reset(new Hypha(hyphaParams, *field.get(), {300, 300}, {1,0}, 0.5f));
+  Params params(*settings.get());
+  hypha.reset(new Hypha(params.hypha, *field.get(), {300, 300}, {1,0}, 0.5f));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -24,7 +24,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  //fieldPainter->draw();
+  fieldPainter->draw();
   hypha->draw();
 }
 

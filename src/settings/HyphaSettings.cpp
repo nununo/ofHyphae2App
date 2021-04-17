@@ -1,0 +1,18 @@
+//
+//  HyphaSettings.cpp
+//  rhizopusApp
+//
+//  Created by Nuno on 16/04/2021.
+//
+
+#include "HyphaSettings.h"
+
+HyphaSettings::HyphaSettings(const SettingsFile& sf)
+: color(sf.getColor("rhizopus:hypha:color"))
+, speed(sf.getRange("rhizopus:hypha:speed", 4.0f))
+, energySpentToMove(sf.getRange("rhizopus:hypha:energySpentToMove", 1.0f))
+, maxBendAngle(glm::radians(sf.getRange("rhizopus:hypha:maxBendAngleDeg", 1.0f)))
+, maxForkAngle(glm::radians(sf.getRange("rhizopus:hypha:maxForkAngleDeg", 1.0f)))
+, foodAmount(sf.getRange("rhizopus:hypha:foodAmount", 1.0f))
+, foodToEnergyRatio(sf.getRange("rhizopus:hypha:foodToEnergyRatio", 1.0f))
+{}
