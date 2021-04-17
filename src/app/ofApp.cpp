@@ -8,7 +8,7 @@ void ofApp::setup(){
   field.reset(new Field(settings->field, ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
-  painter.reset(new Painter(1, ofColor::red));
+  painter.reset(new Painter(ofColor::red));
 
   Params params(*settings.get());
   HyphaKynetics kynetics(params.hypha, {400, 500}, {1,0});
@@ -30,9 +30,7 @@ void ofApp::draw(){
   if (ofGetFrameNum()<5) {
     fieldPainter->draw();
   }
-  painter->clear();
-  hyphae->draw(*painter.get());
-  painter->draw();
+  painter->draw(hyphae->getPositions());
 }
 
 //--------------------------------------------------------------

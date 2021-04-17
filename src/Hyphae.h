@@ -14,7 +14,7 @@ class Hyphae {
 private:
   std::list<Hypha> elements;
   Field field;
-  HyphaParams hyphaParams;
+  const HyphaParams hyphaParams;
   double initialEnergy = 0.5f;
 
   void add(const HyphaKynetics& kynetics);
@@ -24,6 +24,7 @@ private:
 public:
   Hyphae(const HyphaParams& hyphaParams, const Field& field, const HyphaKynetics& kynetics);
   void update();
-  void draw(Painter& painter);
+  std::vector<glm::vec2> getPositions() const;
 };
+
 #endif /* Hyphae_h */

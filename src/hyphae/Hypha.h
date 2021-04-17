@@ -11,8 +11,6 @@
 #include "Field.h"
 #include "HyphaParams.h"
 #include "HyphaForkEventArgs.h"
-#include "HyphaKynetics.h"
-#include "Painter.h"
 
 class Hypha {
   
@@ -33,7 +31,7 @@ public:
   Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetics& kynetics, const double initialEnergy);
   void update();
   bool isAlive() const;
-  void draw(Painter& painter);
+  HyphaKynetics getKynetics() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
 };

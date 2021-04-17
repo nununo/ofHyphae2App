@@ -12,14 +12,11 @@
 
 class Painter {
 private:
-  ofVboMesh mesh;
   ofColor color;
   
 public:
-  Painter(int maxSize, const ofColor color);
-  void clear() {mesh.clear();}
-  void add(glm::vec2 pos);
-  void draw();
+  Painter(const ofColor color);
+  void draw(std::vector<glm::vec2>);
 };
 
 #endif /* Painter_h */

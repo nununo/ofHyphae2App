@@ -9,17 +9,15 @@
 
 #include "Painter.h"
 
-Painter::Painter(const int maxSize, const ofColor _color) {
-  color = _color;
+Painter::Painter(const ofColor _color): color(_color) {}
+
+void Painter::draw(std::vector<glm::vec2> positions) {
+  ofVboMesh mesh;
   mesh.setMode(OF_PRIMITIVE_POINTS);
-}
+  for(auto& pos : positions) {
+    mesh.addVertex(glm::vec3(pos, 0.f));
+  }
 
-void Painter::add(glm::vec2 pos) {
-  glm::vec3 pos3 = glm::vec3(pos, 0.f);
-  mesh.addVertex(pos3);
-}
-
-void Painter::draw() {
   ofPushStyle();
   ofSetColor(color);
   ofFill();

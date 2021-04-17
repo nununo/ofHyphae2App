@@ -15,6 +15,10 @@ Hypha::Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetic
 , nextForkDistance(getNextForkDistance())
 {}
 
+HyphaKynetics Hypha::getKynetics() const {
+  return kynetics;
+}
+
 bool Hypha::isAlive() const {
   return energy>0;
 }
@@ -34,10 +38,6 @@ void Hypha::updateEnergy() {
 void Hypha::throwForkEvent() {
   HyphaForkEventArgs e(kynetics.getForkKynetics());
   ofNotifyEvent(this->forkEvent, e);
-}
-
-void Hypha::draw(Painter& painter) {
-  painter.add(kynetics.getPos());
 }
 
 double Hypha::eat() {
