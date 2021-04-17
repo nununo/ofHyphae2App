@@ -8,7 +8,7 @@
 #include "SettingsFile.h"
 
 int SettingsFile::pushTags(const string& xmlPath) {
-  int pos;
+  unsigned long pos;
   int levels = 0;
   string tag = xmlPath;
   do {

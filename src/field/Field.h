@@ -23,8 +23,8 @@ private:
 
 public:
   Field(const FieldParams& params, const int width, const int height);
-  int getWidth() const {return map[0].size();}
-  int getHeight() const {return map.size();}
+  int getWidth() const {return (int)map[0].size();}
+  int getHeight() const {return (int)map.size();}
   double getValue(const glm::vec2 pos) const {return map[(int)pos.y][(int)pos.x];}
   double consume(const glm::vec2 pos, const double amount);
 };
