@@ -26,8 +26,8 @@ void Hypha::updateEnergy() {
 }
 
 void Hypha::throwForkEvent() {
-  //HyphaForkEventArgs e(pos, nextForkAngle(dir));
-  //ofNotifyEvent(this->forkEvent, e);
+  HyphaForkEventArgs e(kynetics.getForkKynetics());
+  ofNotifyEvent(this->forkEvent, e);
 }
 
 void Hypha::paint(Painter *painter) {

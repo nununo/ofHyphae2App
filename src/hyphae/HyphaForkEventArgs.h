@@ -9,17 +9,14 @@
 #define HyphaForkEventArgs_h
 
 #include "ofMain.h"
+#include "HyphaKynetics.h"
 
 class HyphaForkEventArgs : public ofEventArgs {
   
 public:
-  const glm::vec2 pos;
-  const float angle;
+  const HyphaKynetics kynetics;
   
-  HyphaForkEventArgs(const glm::vec2 _pos, const float _angle)
-  : pos(_pos)
-  , angle(_angle)
-  {}
+  HyphaForkEventArgs(const HyphaKynetics& _kynetics): kynetics(_kynetics) {}
 };
 
 #endif /* HyphaForkEventArgs_h */
