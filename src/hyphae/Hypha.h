@@ -17,13 +17,13 @@
 class Hypha {
   
 private:
-  HyphaParams params;
+  const HyphaParams params;
   Field field;
   HyphaKynetics kynetics;
   double energy;
 
-  double takeEnergyFromField() {return field.consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;}
-  void updateEnergy() {auto energyFromField = takeEnergyFromField(); energy = energy - params.energySpentToMove + energyFromField;}
+  double eat();
+  void updateEnergy();
   void throwForkEvent();
 
 public:

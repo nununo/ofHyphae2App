@@ -21,6 +21,10 @@ void Hypha::update() {
   }
 }
 
+void Hypha::updateEnergy() {
+  energy = energy - params.energySpentToMove + eat();
+}
+
 void Hypha::throwForkEvent() {
   //HyphaForkEventArgs e(pos, nextForkAngle(dir));
   //ofNotifyEvent(this->forkEvent, e);
@@ -28,4 +32,8 @@ void Hypha::throwForkEvent() {
 
 void Hypha::paint(Painter *painter) {
   painter->add(kynetics.getPos());
+}
+
+double Hypha::eat() {
+  return field.consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;
 }
