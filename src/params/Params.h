@@ -17,9 +17,6 @@ public:
   const HyphaParams hypha;
   const FieldParams field;
   
-  Params(const Settings& settings)
-  : hypha(settings.hypha)
-  , field(settings.field)
-  {}
+  Params(const Settings& settings);
 };
 #endif /* Params_h */
