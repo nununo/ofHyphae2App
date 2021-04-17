@@ -19,13 +19,13 @@ private:
   glm::vec2 normalize(const glm::vec2 pos) const;
   void populate();
   double calcFoodAtPosition(const int x, const int y) const;
-  void setValue( glm::vec2 pos, double newValue) {map[(int)pos.y][(int)pos.x] = (newValue>0? newValue : 0);}
+  void setValue( glm::vec2 pos, double newValue);
 
 public:
   Field(const FieldParams& params, const int width, const int height);
-  int getWidth() const {return (int)map[0].size();}
-  int getHeight() const {return (int)map.size();}
-  double getValue(const glm::vec2 pos) const {return map[(int)pos.y][(int)pos.x];}
+  int getWidth() const;
+  int getHeight() const;
+  double getValue(const glm::vec2 pos) const;
   double consume(const glm::vec2 pos, const double amount);
 };
 #endif /* Field_h */

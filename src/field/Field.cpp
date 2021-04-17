@@ -12,6 +12,22 @@ Field::Field(const FieldParams& _params, const int width, const int height): par
   populate();
 }
 
+void Field::setValue( glm::vec2 pos, double newValue) {
+  map[(int)pos.y][(int)pos.x] = (newValue>0? newValue : 0);
+}
+
+double Field::getValue(const glm::vec2 pos) const {
+  return map[(int)pos.y][(int)pos.x];
+}
+
+int Field::getWidth() const {
+  return (int)map[0].size();
+}
+
+int Field::getHeight() const {
+  return (int)map.size();
+}
+
 glm::vec2 Field::normalize(const glm::vec2 pos) const {
   auto normx = ofNormalize(pos.x, 0, getWidth());
   auto normy = ofNormalize(pos.y, 0, getHeight());
