@@ -746,10 +746,10 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				7DF9BA20262B5915005C763D /* painter */,
 				BE9DD360F550B0DF4D357E7B /* app */,
 				EDDEA9EF697851E64397EA51 /* field */,
 				C12DB37E5ECC749F3F814AC0 /* hyphae */,
+				7DF9BA20262B5915005C763D /* painter */,
 				7D49D8352628BABE0014E1DF /* params */,
 				7D49D827262719D10014E1DF /* settings */,
 			);

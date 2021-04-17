@@ -12,12 +12,18 @@ Hypha::Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetic
 , kynetics(_kynetics)
 , params(_params)
 , energy(initialEnergy)
+, nextForkDistance(getNextForkDistance())
 {}
+
+bool Hypha::isAlive() const {
+  return energy>0;
+}
 
 void Hypha::update() {
   if (energy > 0) {
     kynetics.update();
     updateEnergy();
+    fork();
   }
 }
 
@@ -36,4 +42,15 @@ void Hypha::draw(Painter& painter) {
 
 double Hypha::eat() {
   return field.consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;
+}
+
+void Hypha::fork() {
+  if (--nextForkDistance == 0) {
+    throwForkEvent();
+    nextForkDistance = getNextForkDistance();
+  }
+}
+
+int Hypha::getNextForkDistance() const {
+  return 20;
 }

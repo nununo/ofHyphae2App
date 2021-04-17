@@ -21,15 +21,18 @@ private:
   Field field;
   HyphaKynetics kynetics;
   double energy;
+  int nextForkDistance;
 
   double eat();
   void updateEnergy();
   void throwForkEvent();
+  void fork();
+  int getNextForkDistance() const;
 
 public:
   Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetics& kynetics, const double initialEnergy);
   void update();
-  bool isAlive() const {return energy>0;}
+  bool isAlive() const;
   void draw(Painter& painter);
 
   ofEvent<HyphaForkEventArgs> forkEvent;
