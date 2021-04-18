@@ -8,7 +8,7 @@ void ofApp::setup(){
   field.reset(new Field(settings->field, ofGetWidth(), ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
-  painter.reset(new Painter(ofColor::red));
+  painter.reset(new Painter(settings->hypha.color));
 
   Params params(*settings.get());
   HyphaKynetics kynetics(params.hypha, {400, 500}, {1,0});
@@ -17,7 +17,7 @@ void ofApp::setup(){
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
-  ofDisableAntiAliasing();
+  //ofDisableAntiAliasing();
 }
 
 //--------------------------------------------------------------
@@ -36,7 +36,6 @@ void ofApp::draw(){
     painter->draw(hyphae->getNewPositions());
     hyphae->clearNewPositions();
   }
-  ofLog() << ofGetFrameNum();
 }
 
 //--------------------------------------------------------------

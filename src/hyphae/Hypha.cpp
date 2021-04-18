@@ -28,7 +28,7 @@ void Hypha::update() {
     auto hasMoved = kynetics.update();
     updateEnergy();
     //fork();
-    if (isAlive()) {
+    if (isAlive() && hasMoved) {
       throwMovedEvent();
     }
   }

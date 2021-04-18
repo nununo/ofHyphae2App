@@ -25,9 +25,9 @@
   <hypha>
     <color>
       <r>255</r>
-      <g>255</g>
-      <b>255</b>
-      <a>10</a>
+      <g>0</g>
+      <b>0</b>
+      <a>78</a>
     </color>
     <speed>
       <min>0.9</min>
