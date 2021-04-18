@@ -16,15 +16,18 @@ private:
   Field field;
   const HyphaParams hyphaParams;
   double initialEnergy = 0.5f;
+  std::vector<glm::vec2> newPositions;
 
   void add(const HyphaKynetics& kynetics);
   
   void onHyphaFork(HyphaForkEventArgs &e);
+  void onHyphaMoved(HyphaForkEventArgs &e);
 
 public:
   Hyphae(const HyphaParams& hyphaParams, const Field& field, const HyphaKynetics& kynetics);
   void update();
-  std::vector<glm::vec2> getPositions() const;
+  std::vector<glm::vec2> getNewPositions() const;
+  void clearNewPositions();
 };
 
 #endif /* Hyphae_h */

@@ -13,7 +13,7 @@ HyphaKynetics::HyphaKynetics(const HyphaParams& _params, const glm::vec2 _pos, c
   dir(_dir * _params.speed)
 {}
 
-glm::vec2 HyphaKynetics::getPos() {
+glm::vec2 HyphaKynetics::getPos() const {
   return {glm::floor(pos.x), glm::floor(pos.y)};
 }
 
@@ -22,17 +22,15 @@ glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 _dir) const {
   
 }
 
-void HyphaKynetics::update() {
-  delta += dir;
-  auto absDeltaX = abs(delta.x);
-  auto absDeltaY = abs(delta.y);
-  if (absDeltaX>params.pixelOverlap || absDeltaY>params.pixelOverlap) {
-    pos += delta;
+bool HyphaKynetics::update() {
+  pos += dir;
+  auto pixelPos = getPos();
+  if (pixelPos != lastPixelPos) {
     dir = nextDirection(dir);
-    posIsNewPixel = true;
-
-    if (absDeltaX>0) {delta.x=0;}
-    if (absDeltaY>0) {delta.y=0;}
+    lastPixelPos = pixelPos;
+    return true;
+  } else {
+    return false;
   }
 }
 

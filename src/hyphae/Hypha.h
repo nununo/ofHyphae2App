@@ -24,6 +24,7 @@ private:
   double eat();
   void updateEnergy();
   void throwForkEvent();
+  void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
 
@@ -34,6 +35,7 @@ public:
   HyphaKynetics getKynetics() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
+  ofEvent<HyphaForkEventArgs> movedEvent;
 };
 
 #endif /* Hypha_h */

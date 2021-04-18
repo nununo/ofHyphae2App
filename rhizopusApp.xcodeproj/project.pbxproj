@@ -763,9 +763,9 @@
 			isa = PBXGroup;
 			children = (
 				38E793CAAC1BBFED3FDF3AC3 /* Field.h */,
+				4627997BF2329CE9460E803C /* Field.cpp */,
 				5F7B97DCA717177409A4266D /* FieldPainter.cpp */,
 				67F8885533040FE19EB2C5F4 /* FieldPainter.h */,
-				4627997BF2329CE9460E803C /* Field.cpp */,
 			);
 			name = field;
 			sourceTree = "<group>";

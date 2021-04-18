@@ -17,20 +17,26 @@ void ofApp::setup(){
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
+  ofDisableAntiAliasing();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
   fieldPainter->update();
-  hyphae->update();
+  if (ofGetFrameNum()>=4) {
+    hyphae->update();
+  }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  if (ofGetFrameNum()<5) {
+  if (ofGetFrameNum()<4) {
     fieldPainter->draw();
+  } else {
+    painter->draw(hyphae->getNewPositions());
+    hyphae->clearNewPositions();
   }
-  painter->draw(hyphae->getPositions());
+  ofLog() << ofGetFrameNum();
 }
 
 //--------------------------------------------------------------
