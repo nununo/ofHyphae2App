@@ -7,17 +7,29 @@
 
 #include "Tools.h"
 
-int Tools::angleToInt(float angle) {
+int Tools::angleToInt(double angle) {
   return ((int)((angle+36000) + 0.5))%360;
 }
 
-float Tools::angleTo360(float angle) {
+double Tools::angleTo360(double angle) {
   while(angle>360) {angle-=360;}
   while(angle<0) {angle+=360;}
   return angle;
 }
 
-float Tools::randomInSet(vector<float> set) {
-  int r = (int)ofRandom(set.size()-0.1f);
+double Tools::randomInSet(vector<double> set) {
+  auto r = (int)ofRandom(set.size()-0.1f);
   return set[r];
+}
+
+double Tools::posToAngle(glm::vec2 v) {
+  return glm::angle(glm::vec2(1,0), v);
+}
+
+double Tools::randomInRange(glm::vec2 v) {
+  return ofRandom(v.x, v.y);
+}
+
+glm::vec2 Tools::getRandomVec2() {
+  return glm::vec2(ofRandom(99999), ofRandom(99999));
 }
