@@ -27,12 +27,14 @@ void Hypha::update() {
   if (energy > 0) {
     kynetics.update();
     updateEnergy();
-    fork();
+    //fork();
   }
 }
 
 void Hypha::updateEnergy() {
-  energy = energy - params.energySpentToMove + eat();
+  auto eaten = eat();
+  energy = energy - params.energySpentToMove + eaten;
+  ofLog() << "pos: " << kynetics.getPos() << " energy: " << energy << " spent: " << params.energySpentToMove << " eaten: " << eaten;
 }
 
 void Hypha::throwForkEvent() {

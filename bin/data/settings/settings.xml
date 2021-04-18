@@ -35,7 +35,7 @@
     </speed> <!--pixels/s-->
     <energySpentToMove>
       <min>0.01</min>
-      <max>0.02</max>
+      <max>0.01</max>
     </energySpentToMove>
     <maxBendAngleDeg>
       <min>1</min>
@@ -45,10 +45,10 @@
       <min>0.1</min>
       <max>0.1</max>
     </foodAmount>
-    <foodToEnergyRatio>
-      <min>0.1</min>
-      <max>0.1</max>
-    </foodToEnergyRatio>
+    <eatSpendRatio>
+      <min>2</min>
+      <max>2</max>
+    </eatSpendRatio>
     <maxForkAngleDeg>
       <min>1</min>
       <max>30</max>

@@ -15,6 +15,6 @@ HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
 , maxBendAngle(Tools::randomInRange(hyphaSettings.maxBendAngle))
 , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))
 , foodAmount(Tools::randomInRange(hyphaSettings.foodAmount))
-, foodToEnergyRatio(Tools::randomInRange(hyphaSettings.foodToEnergyRatio))
+, foodToEnergyRatio(Tools::randomInRange(hyphaSettings.eatSpendRatio)*energySpentToMove/foodAmount)
 , pixelOverlap(hyphaSettings.pixelOverlap)
 {}
