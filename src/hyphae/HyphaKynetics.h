@@ -22,7 +22,7 @@ private:
 
 public:
   HyphaKynetics(const HyphaParams& _params, const glm::vec2 _pos, const glm::vec2 _dir);
-  glm::vec2 getPos() {return pos;}
+  glm::vec2 getPos();
   void update();
   HyphaKynetics getForkKynetics();
 };

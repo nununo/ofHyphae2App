@@ -13,6 +13,10 @@ HyphaKynetics::HyphaKynetics(const HyphaParams& _params, const glm::vec2 _pos, c
   dir(_dir * _params.speed)
 {}
 
+glm::vec2 HyphaKynetics::getPos() {
+  return {glm::floor(pos.x), glm::floor(pos.y)};
+}
+
 glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 _dir) const {
   return glm::rotate(_dir, ofRandom(-params.maxBendAngle, params.maxBendAngle));
   
