@@ -26,6 +26,7 @@ private:
 public:
   Hyphae(const HyphaParams& hyphaParams, const Field& field, const HyphaKynetics& kynetics);
   void update();
+  int count() const;
   std::vector<glm::vec2> getNewPositions() const;
   void clearNewPositions();
 };

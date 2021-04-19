@@ -18,6 +18,10 @@ std::vector<glm::vec2> Hyphae::getNewPositions() const {
   return newPositions;
 }
 
+int Hyphae::count() const {
+  return elements.size();
+}
+
 void Hyphae::clearNewPositions() {
   newPositions.clear();
 }
@@ -37,8 +41,13 @@ void Hyphae::onHyphaMoved(HyphaForkEventArgs &e) {
 }
 
 void Hyphae::update() {
-  for(auto& element : elements) {
-    element.update();
+  for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
+    if (itr->isAlive()) {
+      itr->update();
+    } else {
+      ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
+      ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);
+      itr = elements.erase(itr);
+    }
   }
 }
-

@@ -5,37 +5,39 @@
 void ofApp::setup(){
   settings.reset(new Settings(SettingsFile("settings/settings.xml")));
 
-  field.reset(new Field(settings->field, ofGetWidth(), ofGetHeight()));
+  field.reset(new Field(settings->field, ofGetWidth()/2, ofGetHeight()));
   fieldPainter.reset(new FieldPainter(field.get()));
 
   painter.reset(new Painter(settings->hypha.color));
 
   Params params(*settings.get());
-  HyphaKynetics kynetics(params.hypha, {400, 500}, {1,0});
+  HyphaKynetics kynetics(params.hypha, {100, 100}, {1,0});
   hyphae.reset(new Hyphae(params.hypha, *field.get(), kynetics));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
-  //ofDisableAntiAliasing();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
   fieldPainter->update();
-  if (ofGetFrameNum()>=4) {
-    hyphae->update();
-  }
+  hyphae->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  if (ofGetFrameNum()<4) {
-    fieldPainter->draw();
-  } else {
-    painter->draw(hyphae->getNewPositions());
-    hyphae->clearNewPositions();
-  }
+  painter->draw(hyphae->getNewPositions());
+
+  ofPushView();
+  ofTranslate(ofGetWidth()/2, 0);
+  fieldPainter->draw();
+  painter->draw(hyphae->getNewPositions());
+  ofPopView();
+  
+  ofLog() << " total: " << hyphae->count() << " moved: " << hyphae->getNewPositions().size();
+
+  hyphae->clearNewPositions();
 }
 
 //--------------------------------------------------------------

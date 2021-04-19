@@ -24,10 +24,10 @@ bool Hypha::isAlive() const {
 }
 
 void Hypha::update() {
-  if (energy > 0) {
+  if (isAlive()) {
     auto hasMoved = kynetics.update();
     updateEnergy();
-    //fork();
+    fork();
     if (isAlive() && hasMoved) {
       throwMovedEvent();
     }
@@ -37,7 +37,6 @@ void Hypha::update() {
 void Hypha::updateEnergy() {
   auto eaten = eat();
   energy = energy - params.energySpentToMove + eaten;
-  //ofLog() << ofGetFrameNum() << " pos: " << kynetics.getPos() << " energy: " << energy << " spent: " << params.energySpentToMove << " eaten: " << eaten;
 }
 
 void Hypha::throwForkEvent() {
