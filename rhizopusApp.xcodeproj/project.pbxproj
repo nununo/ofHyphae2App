@@ -74,6 +74,7 @@
 		67F8885533040FE19EB2C5F4 /* FieldPainter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FieldPainter.h; path = src/field/FieldPainter.h; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
+		7D3A775F2632389000537BB1 /* HyphaMovedEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaMovedEventArgs.h; sourceTree = "<group>"; };
 		7D49D83D2628C1580014E1DF /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypha.h; path = hyphae/Hypha.h; sourceTree = "<group>"; };
 		7D49D83E2628C1580014E1DF /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hypha.cpp; path = hyphae/Hypha.cpp; sourceTree = "<group>"; };
 		7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaForkEventArgs.h; path = hyphae/HyphaForkEventArgs.h; sourceTree = "<group>"; };
@@ -441,6 +442,7 @@
 		C12DB37E5ECC749F3F814AC0 /* hyphae */ = {
 			isa = PBXGroup;
 			children = (
+				7D3A775F2632389000537BB1 /* HyphaMovedEventArgs.h */,
 				7D57C6932632049E00B704A7 /* HyphaCoordinates.h */,
 				7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */,
 				7D49D83D2628C1580014E1DF /* Hypha.h */,

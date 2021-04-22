@@ -12,6 +12,7 @@
 #include "HyphaParams.h"
 #include "HyphaKynetics.h"
 #include "HyphaForkEventArgs.h"
+#include "HyphaMovedEventArgs.h"
 
 class Hypha {
   
@@ -37,7 +38,7 @@ public:
   bool isAlive() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
-  ofEvent<HyphaForkEventArgs> movedEvent;
+  ofEvent<HyphaMovedEventArgs> movedEvent;
 };
 
 #endif /* Hypha_h */

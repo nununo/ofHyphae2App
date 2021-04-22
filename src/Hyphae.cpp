@@ -36,8 +36,8 @@ void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
   add(e.coordinates);
 }
 
-void Hyphae::onHyphaMoved(HyphaForkEventArgs &e) {
-  newPositions.push_back(e.coordinates.pos);
+void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
+  newPositions.push_back(e.pos);
 }
 
 void Hyphae::update() {

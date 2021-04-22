@@ -22,7 +22,7 @@ private:
   void add(const HyphaCoordinates coordinates);
   
   void onHyphaFork(HyphaForkEventArgs &e);
-  void onHyphaMoved(HyphaForkEventArgs &e);
+  void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
   Hyphae(const HyphaParams& hyphaParams, Field *field, const HyphaCoordinates coordinates);

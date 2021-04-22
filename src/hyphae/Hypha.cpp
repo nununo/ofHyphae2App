@@ -38,7 +38,7 @@ void Hypha::update() {
   }
   updateEnergy();
   if (--nextForkDistance == 0) {
-    fork();
+    //fork();
   }
   throwMovedEvent();
 }
@@ -54,12 +54,12 @@ void Hypha::throwForkEvent() {
 }
 
 void Hypha::throwMovedEvent() {
-  HyphaForkEventArgs e(kynetics.getForkCoordinates());
+  HyphaMovedEventArgs e(kynetics.getPixelPos());
   ofNotifyEvent(this->movedEvent, e);
 }
 
 double Hypha::eat() {
-  return field->consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;
+  return field->consume(kynetics.getPixelPos(), params.foodAmount) * params.foodToEnergyRatio;
 }
 
 void Hypha::fork() {
