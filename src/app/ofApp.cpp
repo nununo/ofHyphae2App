@@ -16,13 +16,14 @@ void ofApp::setup(){
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
+  ofDisableAntiAliasing();
   ofBackground(ofColor::white);
-  fieldPainter->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
   hyphae->update();
+  fieldPainter->update();
 }
 
 //--------------------------------------------------------------
