@@ -1,7 +1,7 @@
 <rhizopus>
   <canvas>
     <framerate>10</framerate>
-    <antialiasing>1</antialiasing>
+    <antialiasing>0</antialiasing>
     <osdActive>0</osdActive>
     <osdColor>
       <r>255</r>
@@ -49,6 +49,14 @@
       <min>2</min>
       <max>2</max>
     </eatSpendRatio>
+    <forkDistanceMin>
+      <min>15</min>
+      <max>15</max>
+    </forkDistanceMin>
+    <forkDistanceMax>
+      <min>50</min>
+      <max>50</max>
+    </forkDistanceMax>
     <maxForkAngleDeg>
       <min>1</min>
       <max>30</max>

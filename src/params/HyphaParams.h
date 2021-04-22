@@ -20,6 +20,7 @@ public:
   const double maxForkAngle;
   const double foodAmount;
   const double foodToEnergyRatio;
+  const glm::vec2 forkDistanceInterval;
   const double pixelOverlap;
 
   HyphaParams(const HyphaSettings& hyphaSettings);

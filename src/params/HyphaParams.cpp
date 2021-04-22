@@ -16,5 +16,6 @@ HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
 , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))
 , foodAmount(Tools::randomInRange(hyphaSettings.foodAmount))
 , foodToEnergyRatio(Tools::randomInRange(hyphaSettings.eatSpendRatio)*energySpentToMove/foodAmount)
+, forkDistanceInterval({ Tools::randomInRange(hyphaSettings.forkDistanceMin), Tools::randomInRange(hyphaSettings.forkDistanceMax) })
 , pixelOverlap(hyphaSettings.pixelOverlap)
 {}

@@ -12,16 +12,16 @@ void ofApp::setup(){
 
   Params params(*settings.get());
   HyphaKynetics kynetics(params.hypha, {100, 100}, {1,0});
-  hyphae.reset(new Hyphae(params.hypha, *field.get(), kynetics));
+  hyphae.reset(new Hyphae(params.hypha, field.get(), kynetics));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofBackground(ofColor::white);
+  fieldPainter->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-  fieldPainter->update();
   hyphae->update();
 }
 

@@ -7,7 +7,7 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetics& _kynetics, const double initialEnergy)
+Hypha::Hypha(const HyphaParams& _params, Field *_field, const HyphaKynetics& _kynetics, const double initialEnergy)
 : field(_field)
 , kynetics(_kynetics)
 , params(_params)
@@ -36,7 +36,7 @@ void Hypha::update() {
 
 void Hypha::updateEnergy() {
   auto eaten = eat();
-  energy = energy - params.energySpentToMove + eaten;
+  energy = ofClamp(energy - params.energySpentToMove + eaten, 0.0f, 1.0f);
 }
 
 void Hypha::throwForkEvent() {
@@ -50,7 +50,7 @@ void Hypha::throwMovedEvent() {
 }
 
 double Hypha::eat() {
-  return field.consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;
+  return field->consume(kynetics.getPos(), params.foodAmount) * params.foodToEnergyRatio;
 }
 
 void Hypha::fork() {
@@ -60,6 +60,17 @@ void Hypha::fork() {
   }
 }
 
+/**
+ * Determine distance to next fork
+ *
+ * Criteria
+ * - Stronger Hypha is more fertile
+ * - Use HyphaParams.fertilityRatio
+ * - Add a random factor
+ */
 int Hypha::getNextForkDistance() const {
-  return 20;
+  auto fertilityRatio = 1 - energy;
+  auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params.forkDistanceInterval.x, params.forkDistanceInterval.y);
+  ofLog() << "energy: " << energy << " fr: " << fertilityRatio << " dist: " << nextForkDistance;
+  return nextForkDistance;
 }

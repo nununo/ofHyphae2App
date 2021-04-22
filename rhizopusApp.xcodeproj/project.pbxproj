@@ -441,8 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */,
-				7D49D83E2628C1580014E1DF /* Hypha.cpp */,
 				7D49D83D2628C1580014E1DF /* Hypha.h */,
+				7D49D83E2628C1580014E1DF /* Hypha.cpp */,
 				7DF9BA1D262AF7CE005C763D /* HyphaKynetics.cpp */,
 				7DF9BA1E262AF7CE005C763D /* HyphaKynetics.h */,
 				7DF9BA22262B5E90005C763D /* Hyphae.h */,

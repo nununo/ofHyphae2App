@@ -16,7 +16,7 @@ class Hypha {
   
 private:
   const HyphaParams params;
-  Field field;
+  Field* const field;
   HyphaKynetics kynetics;
   double energy;
   int nextForkDistance;
@@ -29,7 +29,7 @@ private:
   int getNextForkDistance() const;
 
 public:
-  Hypha(const HyphaParams& _params, const Field& _field, const HyphaKynetics& kynetics, const double initialEnergy);
+  Hypha(const HyphaParams& _params, Field *_field, const HyphaKynetics& kynetics, const double initialEnergy);
   void update();
   bool isAlive() const;
   HyphaKynetics getKynetics() const;
