@@ -11,8 +11,8 @@ void ofApp::setup(){
   painter.reset(new Painter(settings->hypha.color));
 
   Params params(*settings.get());
-  HyphaKynetics kynetics(params.hypha, {100, 100}, {1,0});
-  hyphae.reset(new Hyphae(params.hypha, field.get(), kynetics));
+  HyphaCoordinates hyphaCoordinates = {{100, 100}, {1,0}};
+  hyphae.reset(new Hyphae(params.hypha, field.get(), hyphaCoordinates));
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);

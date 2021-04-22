@@ -9,14 +9,14 @@
 #define HyphaForkEventArgs_h
 
 #include "ofMain.h"
-#include "HyphaKynetics.h"
+#include "Hypha.h"
 
 class HyphaForkEventArgs : public ofEventArgs {
   
 public:
-  const HyphaKynetics kynetics;
+  const HyphaCoordinates coordinates;
   
-  HyphaForkEventArgs(const HyphaKynetics& _kynetics): kynetics(_kynetics) {}
+  HyphaForkEventArgs(const HyphaCoordinates _coordinates): coordinates(_coordinates) {}
 };
 
 #endif /* HyphaForkEventArgs_h */

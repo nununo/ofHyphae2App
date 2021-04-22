@@ -10,6 +10,7 @@
 
 #include "Field.h"
 #include "HyphaParams.h"
+#include "HyphaKynetics.h"
 #include "HyphaForkEventArgs.h"
 
 class Hypha {
@@ -20,6 +21,7 @@ private:
   HyphaKynetics kynetics;
   double energy;
   int nextForkDistance;
+  bool dead = false;
 
   double eat();
   void updateEnergy();
@@ -27,12 +29,12 @@ private:
   void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
+  void updateDeadStatus();
 
 public:
-  Hypha(const HyphaParams& _params, Field *_field, const HyphaKynetics& kynetics, const double initialEnergy);
+  Hypha(const HyphaParams& _params, Field *_field, const HyphaCoordinates coordinates, const double initialEnergy);
   void update();
   bool isAlive() const;
-  HyphaKynetics getKynetics() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
   ofEvent<HyphaForkEventArgs> movedEvent;

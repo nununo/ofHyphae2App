@@ -7,11 +7,11 @@
 
 #include "Hyphae.h"
 
-Hyphae::Hyphae(const HyphaParams& _hyphaParams, Field *_field, const HyphaKynetics& kynetics)
+Hyphae::Hyphae(const HyphaParams& _hyphaParams, Field *_field, const HyphaCoordinates coordinates)
 : hyphaParams(_hyphaParams)
 , field(_field)
 {
-  add(kynetics);
+  add(coordinates);
 }
 
 std::vector<glm::vec2> Hyphae::getNewPositions() const {
@@ -26,18 +26,18 @@ void Hyphae::clearNewPositions() {
   newPositions.clear();
 }
 
-void Hyphae::add(const HyphaKynetics& kynetics) {
-  elements.push_back(Hypha(hyphaParams, field, kynetics, initialEnergy));
+void Hyphae::add(const HyphaCoordinates coordinates) {
+  elements.push_back(Hypha(hyphaParams, field, coordinates, initialEnergy));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
   ofAddListener(elements.back().movedEvent, this, &Hyphae::onHyphaMoved);
 }
 
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
-  add(e.kynetics);
+  add(e.coordinates);
 }
 
 void Hyphae::onHyphaMoved(HyphaForkEventArgs &e) {
-  newPositions.push_back(e.kynetics.getPos());
+  newPositions.push_back(e.coordinates.pos);
 }
 
 void Hyphae::update() {

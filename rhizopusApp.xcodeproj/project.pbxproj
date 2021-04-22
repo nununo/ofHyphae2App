@@ -93,6 +93,7 @@
 		7D49D856262905850014E1DF /* HyphaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaParams.h; path = params/HyphaParams.h; sourceTree = "<group>"; };
 		7D49D858262906150014E1DF /* FieldParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FieldParams.cpp; path = params/FieldParams.cpp; sourceTree = "<group>"; };
 		7D49D859262906150014E1DF /* FieldParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FieldParams.h; path = params/FieldParams.h; sourceTree = "<group>"; };
+		7D57C6932632049E00B704A7 /* HyphaCoordinates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinates.h; sourceTree = "<group>"; };
 		7DF9BA1D262AF7CE005C763D /* HyphaKynetics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaKynetics.cpp; path = hyphae/HyphaKynetics.cpp; sourceTree = "<group>"; };
 		7DF9BA1E262AF7CE005C763D /* HyphaKynetics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaKynetics.h; path = hyphae/HyphaKynetics.h; sourceTree = "<group>"; };
 		7DF9BA21262B5E90005C763D /* Hyphae.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hyphae.cpp; sourceTree = "<group>"; };
@@ -440,6 +441,7 @@
 		C12DB37E5ECC749F3F814AC0 /* hyphae */ = {
 			isa = PBXGroup;
 			children = (
+				7D57C6932632049E00B704A7 /* HyphaCoordinates.h */,
 				7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */,
 				7D49D83D2628C1580014E1DF /* Hypha.h */,
 				7D49D83E2628C1580014E1DF /* Hypha.cpp */,

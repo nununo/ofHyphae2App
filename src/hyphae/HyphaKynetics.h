@@ -9,21 +9,23 @@
 #define HyphaKynetics_h
 
 #include "HyphaParams.h"
+#include "HyphaCoordinates.h"
 
 class HyphaKynetics {
 private:
-  HyphaParams params;
-  glm::vec2 pos;
+  const HyphaParams params;
+  const glm::vec2 fieldSize;
+  HyphaCoordinates coordinates;
   glm::vec2 lastPixelPos;
-  glm::vec2 dir;
 
   glm::vec2 nextDirection(const glm::vec2 _dir) const;
 
 public:
-  HyphaKynetics(const HyphaParams& _params, const glm::vec2 _pos, const glm::vec2 _dir);
+  HyphaKynetics(const HyphaParams& _params, const HyphaCoordinates _coordinates, const glm::vec2 _fieldSize);
   glm::vec2 getPos() const;
   bool update();
-  HyphaKynetics getForkKynetics();
+  HyphaCoordinates getForkCoordinates();
+  bool isInsideField();
 };
 
 #endif /* HyphaKinetics_h */
