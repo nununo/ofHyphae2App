@@ -38,7 +38,7 @@ void Hypha::update() {
   }
   updateEnergy();
   if (--nextForkDistance == 0) {
-    //fork();
+    fork();
   }
   throwMovedEvent();
 }
