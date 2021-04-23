@@ -11,7 +11,7 @@ Hypha::Hypha(const HyphaParams& _params, IField *_field, const HyphaCoordinates 
 : field(_field)
 , kynetics(HyphaKynetics(_params, _coordinates, _field->getSize()))
 , params(_params)
-, energy(initialEnergy)
+, energy(HyphaEnergy(initialEnergy, _params.energySpentToMove))
 , nextForkDistance(getNextForkDistance())
 {}
 
@@ -20,7 +20,7 @@ bool Hypha::isAlive() const {
 }
 
 void Hypha::updateDeadStatus() {
-  if (energy<=0 || !kynetics.isInsideField()) {
+  if (energy.isEmpty() || !kynetics.isInsideField()) {
     dead = true;
   }
 }
@@ -36,16 +36,12 @@ void Hypha::update() {
   if (!isAlive()) {
     return;
   }
-  updateEnergy();
+  energy.move();
+  energy.eat(takeFoodFromField());
   if (--nextForkDistance == 0) {
-    fork();
+    //fork();
   }
   throwMovedEvent();
-}
-
-void Hypha::updateEnergy() {
-  auto eaten = eat();
-  energy = ofClamp(energy - params.energySpentToMove + eaten, 0.0f, 1.0f);
 }
 
 void Hypha::throwForkEvent() {
@@ -58,7 +54,7 @@ void Hypha::throwMovedEvent() {
   ofNotifyEvent(this->movedEvent, e);
 }
 
-double Hypha::eat() {
+double Hypha::takeFoodFromField() {
   return field->consume(kynetics.getPixelPos(), params.foodAmount) * params.foodToEnergyRatio;
 }
 
@@ -76,7 +72,7 @@ void Hypha::fork() {
  * - Add a random factor
  */
 int Hypha::getNextForkDistance() const {
-  auto fertilityRatio = 1 - energy;
+  auto fertilityRatio = 1 - energy.get();
   auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params.forkDistanceInterval.x, params.forkDistanceInterval.y);
   //ofLog() << "energy: " << energy << " fr: " << fertilityRatio << " dist: " << nextForkDistance;
   return nextForkDistance;

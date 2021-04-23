@@ -11,6 +11,7 @@
 #include "IField.h"
 #include "HyphaParams.h"
 #include "HyphaKynetics.h"
+#include "HyphaEnergy.h"
 #include "HyphaForkEventArgs.h"
 #include "HyphaMovedEventArgs.h"
 
@@ -20,12 +21,11 @@ private:
   const HyphaParams params;
   IField* const field;
   HyphaKynetics kynetics;
-  double energy;
+  HyphaEnergy energy;
   int nextForkDistance;
   bool dead = false;
 
-  double eat();
-  void updateEnergy();
+  double takeFoodFromField();
   void throwForkEvent();
   void throwMovedEvent();
   void fork();
