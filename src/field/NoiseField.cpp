@@ -44,7 +44,7 @@ double NoiseField::calcFoodAtPosition(const int x, const int y) const {
   auto normalizedPos = normalize({x,y});
   auto beforeThreshold = ofNormalize(ofNoise(normalizedPos) + ofNoise(normalizedPos*5),0,2);
   auto afterThreshold = (beforeThreshold>params.zeroThreshold? beforeThreshold : 0);
-  return ofMap(afterThreshold, params.zeroThreshold, 1.0f, 0.0f, 1.0f);
+  return afterThreshold>0? ofMap(afterThreshold, params.zeroThreshold, 1.0f, 0.0f, 1.0f) : 0.0f;
 }
 
 double NoiseField::consume(const glm::vec2 pos, const double amount) {
