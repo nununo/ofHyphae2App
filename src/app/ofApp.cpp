@@ -1,11 +1,12 @@
 #include "ofApp.h"
 #include "Params.h"
+#include "NoiseField.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
   settings.reset(new Settings(SettingsFile("settings/settings.xml")));
 
-  field.reset(new Field(settings->field, ofGetWidth()/2, ofGetHeight()));
+  field.reset(new NoiseField(settings->field, {ofGetWidth()/2, ofGetHeight()}));
   fieldPainter.reset(new FieldPainter(field.get()));
 
   painter.reset(new Painter(settings->hypha.color));

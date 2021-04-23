@@ -9,7 +9,7 @@
 class ofApp : public ofBaseApp{
 private:
   unique_ptr<Settings> settings;
-  unique_ptr<Field> field;
+  unique_ptr<IField> field;
   unique_ptr<FieldPainter> fieldPainter;
   unique_ptr<Hyphae> hyphae;
   unique_ptr<Painter> painter;

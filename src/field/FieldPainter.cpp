@@ -7,14 +7,14 @@
 
 #include "FieldPainter.h"
 
-FieldPainter::FieldPainter(const Field *_field) {
+FieldPainter::FieldPainter(const IField *_field) {
   field = _field;
-  image.allocate(field->getWidth(), field->getHeight(), OF_IMAGE_GRAYSCALE);
+  image.allocate(field->getSize().x, field->getSize().y, OF_IMAGE_GRAYSCALE);
 }
 
 void FieldPainter::update() {
-  for(auto y=0; y<field->getHeight(); y++) {
-    for(auto x=0; x<field->getWidth(); x++) {
+  for(auto y=0; y<field->getSize().y; y++) {
+    for(auto x=0; x<field->getSize().x; x++) {
       float colorValue = 255 * field->getValue({ x, y });
       image.setColor(x, y, ofColor(colorValue));
     }

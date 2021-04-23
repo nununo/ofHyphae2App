@@ -7,7 +7,7 @@
 
 #include "Hyphae.h"
 
-Hyphae::Hyphae(const HyphaParams& _hyphaParams, Field *_field, const HyphaCoordinates coordinates)
+Hyphae::Hyphae(const HyphaParams& _hyphaParams, IField *_field, const HyphaCoordinates coordinates)
 : hyphaParams(_hyphaParams)
 , field(_field)
 {

@@ -8,15 +8,16 @@
 #ifndef FieldPainter_h
 #define FieldPainter_h
 
-#include "Field.h"
+#include "IField.h"
+#include "ofMain.h"
 
 class FieldPainter {
 private:
-  const Field *field;
+  const IField *field;
   ofImage image;
 
 public:
-  FieldPainter(const Field *field);
+  FieldPainter(const IField *field);
   void update();
   void draw();
 };

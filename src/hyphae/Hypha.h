@@ -8,7 +8,7 @@
 #ifndef Hypha_h
 #define Hypha_h
 
-#include "Field.h"
+#include "IField.h"
 #include "HyphaParams.h"
 #include "HyphaKynetics.h"
 #include "HyphaForkEventArgs.h"
@@ -18,7 +18,7 @@ class Hypha {
   
 private:
   const HyphaParams params;
-  Field* const field;
+  IField* const field;
   HyphaKynetics kynetics;
   double energy;
   int nextForkDistance;
@@ -33,7 +33,7 @@ private:
   void updateDeadStatus();
 
 public:
-  Hypha(const HyphaParams& _params, Field *_field, const HyphaCoordinates coordinates, const double initialEnergy);
+  Hypha(const HyphaParams& _params, IField *_field, const HyphaCoordinates coordinates, const double initialEnergy);
   void update();
   bool isAlive() const;
 

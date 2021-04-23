@@ -14,7 +14,7 @@
 class Hyphae {
 private:
   std::list<Hypha> elements;
-  Field * const field;
+  IField * const field;
   const HyphaParams hyphaParams;
   double initialEnergy = 1.0f;
   std::vector<glm::vec2> newPositions;
@@ -25,7 +25,7 @@ private:
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
-  Hyphae(const HyphaParams& hyphaParams, Field *field, const HyphaCoordinates coordinates);
+  Hyphae(const HyphaParams& hyphaParams, IField *field, const HyphaCoordinates coordinates);
   void update();
   int count() const;
   std::vector<glm::vec2> getNewPositions() const;
