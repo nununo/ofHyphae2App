@@ -15,8 +15,11 @@ class HyphaForkEventArgs : public ofEventArgs {
   
 public:
   const HyphaCoordinates coordinates;
+  double energy;
   
-  HyphaForkEventArgs(const HyphaCoordinates _coordinates): coordinates(_coordinates) {}
+  HyphaForkEventArgs(const HyphaCoordinates _coordinates, double _energy)
+  : coordinates(_coordinates)
+  , energy(_energy) {}
 };
 
 #endif /* HyphaForkEventArgs_h */

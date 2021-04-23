@@ -20,6 +20,10 @@ void HyphaEnergy::eat(double meal) {
   amount = 1-amount>meal? amount+meal : 1;
 }
 
+void HyphaEnergy::fork() {
+  amount /= 2.0f;
+}
+
 bool HyphaEnergy::isEmpty() const {
   return amount == 0;
 }

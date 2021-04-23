@@ -17,6 +17,7 @@ public:
   HyphaEnergy(double initial, double spendMoving);
   void move();
   void eat(double meal);
+  void fork();
   bool isEmpty() const;
   double get() const;
 };

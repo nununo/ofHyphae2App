@@ -39,13 +39,13 @@ void Hypha::update() {
   energy.move();
   energy.eat(takeFoodFromField());
   if (--nextForkDistance == 0) {
-    //fork();
+    fork();
   }
   throwMovedEvent();
 }
 
 void Hypha::throwForkEvent() {
-  HyphaForkEventArgs e(kynetics.getForkCoordinates());
+  HyphaForkEventArgs e(kynetics.getForkCoordinates(), energy.get());
   ofNotifyEvent(this->forkEvent, e);
 }
 
@@ -59,6 +59,7 @@ double Hypha::takeFoodFromField() {
 }
 
 void Hypha::fork() {
+  energy.fork();
   throwForkEvent();
   nextForkDistance = getNextForkDistance();
 }

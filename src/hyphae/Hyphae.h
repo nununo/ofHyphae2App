@@ -16,10 +16,9 @@ private:
   std::list<Hypha> elements;
   IField * const field;
   const HyphaParams hyphaParams;
-  double initialEnergy = 1.0f;
   std::vector<glm::vec2> newPositions;
 
-  void add(const HyphaCoordinates coordinates);
+  void add(const HyphaCoordinates coordinates, const double energy);
   
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);
