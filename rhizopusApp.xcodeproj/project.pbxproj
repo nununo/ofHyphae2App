@@ -7,27 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E42688699B3D08D42B632DB /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */; };
-		3276EF18A7A1CA9B9AFE494A /* FieldPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F7B97DCA717177409A4266D /* FieldPainter.cpp */; };
 		3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A7F60E48767A70F598CF1DB /* ofxButton.cpp */; };
 		49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */; };
-		52C1FFA5A1F5C0EEE10EDE09 /* NoiseField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4627997BF2329CE9460E803C /* NoiseField.cpp */; };
 		5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */; };
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
-		7D49D83F2628C1580014E1DF /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D83E2628C1580014E1DF /* Hypha.cpp */; };
-		7D49D8452628C1910014E1DF /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D8432628C1910014E1DF /* Tools.cpp */; };
-		7D49D84C2628C1CB0014E1DF /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D8492628C1CB0014E1DF /* Settings.cpp */; };
-		7D49D84D2628C1CB0014E1DF /* SettingsFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */; };
-		7D49D850262904CF0014E1DF /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */; };
-		7D49D857262905850014E1DF /* HyphaParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D855262905850014E1DF /* HyphaParams.cpp */; };
-		7D49D85A262906150014E1DF /* FieldParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D49D858262906150014E1DF /* FieldParams.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
-		7DE3A0B026333BEB000DED6A /* Hyphae.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0AE26333BEB000DED6A /* Hyphae.cpp */; };
-		7DE3A0B326333C1B000DED6A /* FieldSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0B126333C1B000DED6A /* FieldSettings.cpp */; };
-		7DE3A0B426333C1B000DED6A /* CanvasSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0B226333C1B000DED6A /* CanvasSettings.cpp */; };
-		7DE3A0B826333E1B000DED6A /* Params.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0B726333E1B000DED6A /* Params.cpp */; };
-		7DF9BA1F262AF7CE005C763D /* HyphaKynetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF9BA1D262AF7CE005C763D /* HyphaKynetics.cpp */; };
+		7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */; };
+		7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */; };
+		7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */; };
+		7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0C0263340DE000DED6A /* SettingsFile.cpp */; };
+		7DE3A0C7263340DE000DED6A /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0C2263340DE000DED6A /* Settings.cpp */; };
+		7DE3A0CF26334100000DED6A /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0CA26334100000DED6A /* ofApp.cpp */; };
+		7DE3A0D026334100000DED6A /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0CD26334100000DED6A /* Tools.cpp */; };
+		7DE3A0D126334100000DED6A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0CE26334100000DED6A /* main.cpp */; };
+		7DE3A0D826334112000DED6A /* FieldPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0D326334112000DED6A /* FieldPainter.cpp */; };
+		7DE3A0D926334112000DED6A /* NoiseField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0D726334112000DED6A /* NoiseField.cpp */; };
+		7DE3A0E426334125000DED6A /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0DC26334125000DED6A /* Hypha.cpp */; };
+		7DE3A0E526334125000DED6A /* HyphaKynetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */; };
+		7DE3A0E626334125000DED6A /* Hyphae.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0E026334125000DED6A /* Hyphae.cpp */; };
+		7DE3A0EE26334136000DED6A /* FieldParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0EB26334136000DED6A /* FieldParams.cpp */; };
+		7DE3A0EF26334136000DED6A /* HyphaParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0EC26334136000DED6A /* HyphaParams.cpp */; };
+		7DE3A0F026334136000DED6A /* Params.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0ED26334136000DED6A /* Params.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* Painter.cpp */; };
 		B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04085A84A7637CFDE1C8F7C /* ofxSlider.cpp */; };
@@ -35,7 +36,6 @@
 		C1AA5763266D18C4EA408F26 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28FB9416E00AC6098842C730 /* ofxLabel.cpp */; };
 		C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2994571F24A174768C46DB3 /* ofxToggle.cpp */; };
 		CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */; };
-		D265D6207B2184FB12FD93AC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 823FBC6F9791944E4D93726D /* main.cpp */; };
 		E8629D81049B15FE982DF3D4 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20D28634ACA41D977831079E /* ofxInputField.cpp */; };
 		FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30532311EDD0701377B18F1C /* ofxSliderGroup.cpp */; };
 /* End PBXBuildFile section */
@@ -61,49 +61,51 @@
 		28FB9416E00AC6098842C730 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxLabel.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
 		30532311EDD0701377B18F1C /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSliderGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		3614556A7367C61B765AC67C /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSliderGroup.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
-		38E793CAAC1BBFED3FDF3AC3 /* NoiseField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = NoiseField.h; path = src/field/NoiseField.h; sourceTree = SOURCE_ROOT; };
 		3C7B5F3A6DF92BFC408731B7 /* ofxInputField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxInputField.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxInputField.h; sourceTree = SOURCE_ROOT; };
-		3D5BB06415667499A79C967C /* ofApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofApp.h; path = src/app/ofApp.h; sourceTree = SOURCE_ROOT; };
-		4627997BF2329CE9460E803C /* NoiseField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NoiseField.cpp; path = src/field/NoiseField.cpp; sourceTree = SOURCE_ROOT; };
 		4BDCC2C261490825E8160484 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxButton.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		4DB305469F8E0E993208906A /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = tinyxml.h; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		5470AEFB121789CD83134FCE /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxBaseGui.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxPanel.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
 		5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
-		5F7B97DCA717177409A4266D /* FieldPainter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FieldPainter.cpp; path = src/field/FieldPainter.cpp; sourceTree = SOURCE_ROOT; };
-		67F8885533040FE19EB2C5F4 /* FieldPainter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FieldPainter.h; path = src/field/FieldPainter.h; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
-		7D49D83D2628C1580014E1DF /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypha.h; path = hyphae/Hypha.h; sourceTree = "<group>"; };
-		7D49D83E2628C1580014E1DF /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hypha.cpp; path = hyphae/Hypha.cpp; sourceTree = "<group>"; };
-		7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaForkEventArgs.h; path = hyphae/HyphaForkEventArgs.h; sourceTree = "<group>"; };
-		7D49D8422628C17E0014E1DF /* Params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Params.h; path = params/Params.h; sourceTree = "<group>"; };
-		7D49D8432628C1910014E1DF /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = app/Tools.cpp; sourceTree = "<group>"; };
-		7D49D8442628C1910014E1DF /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = app/Tools.h; sourceTree = "<group>"; };
-		7D49D8462628C1CB0014E1DF /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanvasSettings.h; path = settings/CanvasSettings.h; sourceTree = "<group>"; };
-		7D49D8472628C1CB0014E1DF /* HyphaSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HyphaSettings.h; path = settings/HyphaSettings.h; sourceTree = "<group>"; };
-		7D49D8482628C1CB0014E1DF /* FieldSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldSettings.h; path = settings/FieldSettings.h; sourceTree = "<group>"; };
-		7D49D8492628C1CB0014E1DF /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Settings.cpp; path = settings/Settings.cpp; sourceTree = "<group>"; };
-		7D49D84A2628C1CB0014E1DF /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = settings/Settings.h; sourceTree = "<group>"; };
-		7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SettingsFile.cpp; path = settings/SettingsFile.cpp; sourceTree = "<group>"; };
-		7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaSettings.cpp; path = settings/HyphaSettings.cpp; sourceTree = "<group>"; };
-		7D49D855262905850014E1DF /* HyphaParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaParams.cpp; path = params/HyphaParams.cpp; sourceTree = "<group>"; };
-		7D49D856262905850014E1DF /* HyphaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaParams.h; path = params/HyphaParams.h; sourceTree = "<group>"; };
-		7D49D858262906150014E1DF /* FieldParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FieldParams.cpp; path = params/FieldParams.cpp; sourceTree = "<group>"; };
-		7D49D859262906150014E1DF /* FieldParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FieldParams.h; path = params/FieldParams.h; sourceTree = "<group>"; };
-		7DE3A0AD26333BC1000DED6A /* IField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IField.h; path = field/IField.h; sourceTree = "<group>"; };
-		7DE3A0AE26333BEB000DED6A /* Hyphae.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hyphae.cpp; path = hyphae/Hyphae.cpp; sourceTree = "<group>"; };
-		7DE3A0AF26333BEB000DED6A /* Hyphae.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hyphae.h; path = hyphae/Hyphae.h; sourceTree = "<group>"; };
-		7DE3A0B126333C1B000DED6A /* FieldSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FieldSettings.cpp; path = settings/FieldSettings.cpp; sourceTree = "<group>"; };
-		7DE3A0B226333C1B000DED6A /* CanvasSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CanvasSettings.cpp; path = settings/CanvasSettings.cpp; sourceTree = "<group>"; };
-		7DE3A0B526333DF3000DED6A /* HyphaCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HyphaCoordinates.h; path = hyphae/HyphaCoordinates.h; sourceTree = "<group>"; };
-		7DE3A0B626333DF3000DED6A /* HyphaMovedEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HyphaMovedEventArgs.h; path = hyphae/HyphaMovedEventArgs.h; sourceTree = "<group>"; };
-		7DE3A0B726333E1B000DED6A /* Params.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Params.cpp; path = params/Params.cpp; sourceTree = "<group>"; };
-		7DF9BA1D262AF7CE005C763D /* HyphaKynetics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HyphaKynetics.cpp; path = hyphae/HyphaKynetics.cpp; sourceTree = "<group>"; };
-		7DF9BA1E262AF7CE005C763D /* HyphaKynetics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HyphaKynetics.h; path = hyphae/HyphaKynetics.h; sourceTree = "<group>"; };
+		7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaSettings.cpp; sourceTree = "<group>"; };
+		7DE3A0BB263340DE000DED6A /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasSettings.h; sourceTree = "<group>"; };
+		7DE3A0BC263340DE000DED6A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CanvasSettings.cpp; sourceTree = "<group>"; };
+		7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldSettings.cpp; sourceTree = "<group>"; };
+		7DE3A0BF263340DE000DED6A /* HyphaSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaSettings.h; sourceTree = "<group>"; };
+		7DE3A0C0263340DE000DED6A /* SettingsFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsFile.cpp; sourceTree = "<group>"; };
+		7DE3A0C1263340DE000DED6A /* FieldSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldSettings.h; sourceTree = "<group>"; };
+		7DE3A0C2263340DE000DED6A /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
+		7DE3A0C926334100000DED6A /* SettingsFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsFile.h; sourceTree = "<group>"; };
+		7DE3A0CA26334100000DED6A /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
+		7DE3A0CB26334100000DED6A /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
+		7DE3A0CC26334100000DED6A /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		7DE3A0CD26334100000DED6A /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
+		7DE3A0CE26334100000DED6A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7DE3A0D326334112000DED6A /* FieldPainter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPainter.cpp; sourceTree = "<group>"; };
+		7DE3A0D426334112000DED6A /* FieldPainter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldPainter.h; sourceTree = "<group>"; };
+		7DE3A0D526334112000DED6A /* NoiseField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoiseField.h; sourceTree = "<group>"; };
+		7DE3A0D626334112000DED6A /* IField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IField.h; sourceTree = "<group>"; };
+		7DE3A0D726334112000DED6A /* NoiseField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoiseField.cpp; sourceTree = "<group>"; };
+		7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaForkEventArgs.h; sourceTree = "<group>"; };
+		7DE3A0DC26334125000DED6A /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hypha.cpp; sourceTree = "<group>"; };
+		7DE3A0DD26334125000DED6A /* HyphaMovedEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaMovedEventArgs.h; sourceTree = "<group>"; };
+		7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaKynetics.cpp; sourceTree = "<group>"; };
+		7DE3A0DF26334125000DED6A /* HyphaKynetics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaKynetics.h; sourceTree = "<group>"; };
+		7DE3A0E026334125000DED6A /* Hyphae.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hyphae.cpp; sourceTree = "<group>"; };
+		7DE3A0E126334125000DED6A /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hypha.h; sourceTree = "<group>"; };
+		7DE3A0E226334125000DED6A /* Hyphae.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hyphae.h; sourceTree = "<group>"; };
+		7DE3A0E326334125000DED6A /* HyphaCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinates.h; sourceTree = "<group>"; };
+		7DE3A0E826334136000DED6A /* Params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Params.h; sourceTree = "<group>"; };
+		7DE3A0E926334136000DED6A /* HyphaParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaParams.h; sourceTree = "<group>"; };
+		7DE3A0EA26334136000DED6A /* FieldParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldParams.h; sourceTree = "<group>"; };
+		7DE3A0EB26334136000DED6A /* FieldParams.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldParams.cpp; sourceTree = "<group>"; };
+		7DE3A0EC26334136000DED6A /* HyphaParams.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaParams.cpp; sourceTree = "<group>"; };
+		7DE3A0ED26334136000DED6A /* Params.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Params.cpp; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
-		823FBC6F9791944E4D93726D /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/app/main.cpp; sourceTree = SOURCE_ROOT; };
 		8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		9AC1B9F584F51E175F7382AD /* ofxXmlSettings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxXmlSettings.h; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
 		ABD1B394E726A91F366C3252 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
@@ -112,7 +114,6 @@
 		B9943C2F9E43AFB641374E6B /* Painter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Painter.cpp; path = src/painter/Painter.cpp; sourceTree = SOURCE_ROOT; };
 		CA6778A301673A7F07642741 /* Painter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Painter.h; path = src/painter/Painter.h; sourceTree = SOURCE_ROOT; };
 		DEE7566DB26BFC8C4DFB2435 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
-		DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/app/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		E3E888B7A7A407DCD7F39F16 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxPanel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../of_v0.11.2_osx_release/libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
@@ -352,33 +353,74 @@
 			name = src;
 			sourceTree = "<group>";
 		};
-		7D49D827262719D10014E1DF /* settings */ = {
+		7DE3A0B9263340DE000DED6A /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				7DE3A0B226333C1B000DED6A /* CanvasSettings.cpp */,
-				7DE3A0B126333C1B000DED6A /* FieldSettings.cpp */,
-				7D49D8462628C1CB0014E1DF /* CanvasSettings.h */,
-				7D49D8482628C1CB0014E1DF /* FieldSettings.h */,
-				7D49D8472628C1CB0014E1DF /* HyphaSettings.h */,
-				7D49D84F262904CF0014E1DF /* HyphaSettings.cpp */,
-				7D49D8492628C1CB0014E1DF /* Settings.cpp */,
-				7D49D84A2628C1CB0014E1DF /* Settings.h */,
-				7D49D84B2628C1CB0014E1DF /* SettingsFile.cpp */,
+				7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */,
+				7DE3A0BB263340DE000DED6A /* CanvasSettings.h */,
+				7DE3A0BC263340DE000DED6A /* Settings.h */,
+				7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */,
+				7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */,
+				7DE3A0BF263340DE000DED6A /* HyphaSettings.h */,
+				7DE3A0C0263340DE000DED6A /* SettingsFile.cpp */,
+				7DE3A0C1263340DE000DED6A /* FieldSettings.h */,
+				7DE3A0C2263340DE000DED6A /* Settings.cpp */,
 			);
-			name = settings;
+			path = settings;
 			sourceTree = "<group>";
 		};
-		7D49D8352628BABE0014E1DF /* params */ = {
+		7DE3A0C826334100000DED6A /* app */ = {
 			isa = PBXGroup;
 			children = (
-				7D49D8422628C17E0014E1DF /* Params.h */,
-				7DE3A0B726333E1B000DED6A /* Params.cpp */,
-				7D49D855262905850014E1DF /* HyphaParams.cpp */,
-				7D49D856262905850014E1DF /* HyphaParams.h */,
-				7D49D859262906150014E1DF /* FieldParams.h */,
-				7D49D858262906150014E1DF /* FieldParams.cpp */,
+				7DE3A0C926334100000DED6A /* SettingsFile.h */,
+				7DE3A0CA26334100000DED6A /* ofApp.cpp */,
+				7DE3A0CB26334100000DED6A /* ofApp.h */,
+				7DE3A0CC26334100000DED6A /* Tools.h */,
+				7DE3A0CD26334100000DED6A /* Tools.cpp */,
+				7DE3A0CE26334100000DED6A /* main.cpp */,
 			);
-			name = params;
+			path = app;
+			sourceTree = "<group>";
+		};
+		7DE3A0D226334112000DED6A /* field */ = {
+			isa = PBXGroup;
+			children = (
+				7DE3A0D326334112000DED6A /* FieldPainter.cpp */,
+				7DE3A0D426334112000DED6A /* FieldPainter.h */,
+				7DE3A0D526334112000DED6A /* NoiseField.h */,
+				7DE3A0D626334112000DED6A /* IField.h */,
+				7DE3A0D726334112000DED6A /* NoiseField.cpp */,
+			);
+			path = field;
+			sourceTree = "<group>";
+		};
+		7DE3A0DA26334124000DED6A /* hyphae */ = {
+			isa = PBXGroup;
+			children = (
+				7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */,
+				7DE3A0DC26334125000DED6A /* Hypha.cpp */,
+				7DE3A0DD26334125000DED6A /* HyphaMovedEventArgs.h */,
+				7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */,
+				7DE3A0DF26334125000DED6A /* HyphaKynetics.h */,
+				7DE3A0E026334125000DED6A /* Hyphae.cpp */,
+				7DE3A0E126334125000DED6A /* Hypha.h */,
+				7DE3A0E226334125000DED6A /* Hyphae.h */,
+				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
+			);
+			path = hyphae;
+			sourceTree = "<group>";
+		};
+		7DE3A0E726334136000DED6A /* params */ = {
+			isa = PBXGroup;
+			children = (
+				7DE3A0E826334136000DED6A /* Params.h */,
+				7DE3A0E926334136000DED6A /* HyphaParams.h */,
+				7DE3A0EA26334136000DED6A /* FieldParams.h */,
+				7DE3A0EB26334136000DED6A /* FieldParams.cpp */,
+				7DE3A0EC26334136000DED6A /* HyphaParams.cpp */,
+				7DE3A0ED26334136000DED6A /* Params.cpp */,
+			);
+			path = params;
 			sourceTree = "<group>";
 		};
 		7DF9BA20262B5915005C763D /* painter */ = {
@@ -426,34 +468,6 @@
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
 			);
 			name = addons;
-			sourceTree = "<group>";
-		};
-		BE9DD360F550B0DF4D357E7B /* app */ = {
-			isa = PBXGroup;
-			children = (
-				7D49D8432628C1910014E1DF /* Tools.cpp */,
-				7D49D8442628C1910014E1DF /* Tools.h */,
-				DEFE40005B3A6CBDB97E7D8A /* ofApp.cpp */,
-				3D5BB06415667499A79C967C /* ofApp.h */,
-				823FBC6F9791944E4D93726D /* main.cpp */,
-			);
-			name = app;
-			sourceTree = "<group>";
-		};
-		C12DB37E5ECC749F3F814AC0 /* hyphae */ = {
-			isa = PBXGroup;
-			children = (
-				7DE3A0B526333DF3000DED6A /* HyphaCoordinates.h */,
-				7DE3A0B626333DF3000DED6A /* HyphaMovedEventArgs.h */,
-				7D49D8402628C16A0014E1DF /* HyphaForkEventArgs.h */,
-				7D49D83D2628C1580014E1DF /* Hypha.h */,
-				7D49D83E2628C1580014E1DF /* Hypha.cpp */,
-				7DE3A0AE26333BEB000DED6A /* Hyphae.cpp */,
-				7DE3A0AF26333BEB000DED6A /* Hyphae.h */,
-				7DF9BA1D262AF7CE005C763D /* HyphaKynetics.cpp */,
-				7DF9BA1E262AF7CE005C763D /* HyphaKynetics.h */,
-			);
-			name = hyphae;
 			sourceTree = "<group>";
 		};
 		E42962AA2163EDD300A6A9E2 /* openFrameworks */ = {
@@ -754,27 +768,15 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BE9DD360F550B0DF4D357E7B /* app */,
-				EDDEA9EF697851E64397EA51 /* field */,
-				C12DB37E5ECC749F3F814AC0 /* hyphae */,
+				7DE3A0C826334100000DED6A /* app */,
+				7DE3A0D226334112000DED6A /* field */,
+				7DE3A0DA26334124000DED6A /* hyphae */,
 				7DF9BA20262B5915005C763D /* painter */,
-				7D49D8352628BABE0014E1DF /* params */,
-				7D49D827262719D10014E1DF /* settings */,
+				7DE3A0E726334136000DED6A /* params */,
+				7DE3A0B9263340DE000DED6A /* settings */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
-		};
-		EDDEA9EF697851E64397EA51 /* field */ = {
-			isa = PBXGroup;
-			children = (
-				7DE3A0AD26333BC1000DED6A /* IField.h */,
-				38E793CAAC1BBFED3FDF3AC3 /* NoiseField.h */,
-				4627997BF2329CE9460E803C /* NoiseField.cpp */,
-				5F7B97DCA717177409A4266D /* FieldPainter.cpp */,
-				67F8885533040FE19EB2C5F4 /* FieldPainter.h */,
-			);
-			name = field;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -872,36 +874,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF9BA1F262AF7CE005C763D /* HyphaKynetics.cpp in Sources */,
 				91790062D662BA96C5F736F1 /* Painter.cpp in Sources */,
-				2E42688699B3D08D42B632DB /* ofApp.cpp in Sources */,
-				7DE3A0B826333E1B000DED6A /* Params.cpp in Sources */,
-				D265D6207B2184FB12FD93AC /* main.cpp in Sources */,
-				3276EF18A7A1CA9B9AFE494A /* FieldPainter.cpp in Sources */,
-				52C1FFA5A1F5C0EEE10EDE09 /* NoiseField.cpp in Sources */,
-				7DE3A0B326333C1B000DED6A /* FieldSettings.cpp in Sources */,
-				7DE3A0B026333BEB000DED6A /* Hyphae.cpp in Sources */,
+				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
+				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
+				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
-				7D49D84C2628C1CB0014E1DF /* Settings.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
-				7DE3A0B426333C1B000DED6A /* CanvasSettings.cpp in Sources */,
-				7D49D84D2628C1CB0014E1DF /* SettingsFile.cpp in Sources */,
+				7DE3A0D126334100000DED6A /* main.cpp in Sources */,
 				CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */,
+				7DE3A0E626334125000DED6A /* Hyphae.cpp in Sources */,
 				49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */,
 				E8629D81049B15FE982DF3D4 /* ofxInputField.cpp in Sources */,
+				7DE3A0D826334112000DED6A /* FieldPainter.cpp in Sources */,
 				C1AA5763266D18C4EA408F26 /* ofxLabel.cpp in Sources */,
 				71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */,
+				7DE3A0CF26334100000DED6A /* ofApp.cpp in Sources */,
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
+				7DE3A0D926334112000DED6A /* NoiseField.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
-				7D49D857262905850014E1DF /* HyphaParams.cpp in Sources */,
-				7D49D85A262906150014E1DF /* FieldParams.cpp in Sources */,
-				7D49D8452628C1910014E1DF /* Tools.cpp in Sources */,
+				7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */,
+				7DE3A0E426334125000DED6A /* Hypha.cpp in Sources */,
+				7DE3A0D026334100000DED6A /* Tools.cpp in Sources */,
 				5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */,
-				7D49D83F2628C1580014E1DF /* Hypha.cpp in Sources */,
+				7DE3A0C7263340DE000DED6A /* Settings.cpp in Sources */,
+				7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */,
+				7DE3A0E526334125000DED6A /* HyphaKynetics.cpp in Sources */,
+				7DE3A0EE26334136000DED6A /* FieldParams.cpp in Sources */,
 				87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */,
-				7D49D850262904CF0014E1DF /* HyphaSettings.cpp in Sources */,
 				68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */,
+				7DE3A0EF26334136000DED6A /* HyphaParams.cpp in Sources */,
 				7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
