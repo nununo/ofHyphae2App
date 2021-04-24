@@ -5,6 +5,8 @@
 #include "Hyphae.h"
 #include "Settings.h"
 #include "Painter.h"
+#include "IField.h"
+#include "FieldParams.h"
 
 class ofApp : public ofBaseApp{
 private:
@@ -14,7 +16,9 @@ private:
   unique_ptr<Hyphae> hyphae;
   unique_ptr<Painter> painter;
 
-public:		
+  std::unique_ptr<IField> createField(FieldParams params, glm::vec2 size);
+
+public:
     void setup();
 		void update();
 		void draw();

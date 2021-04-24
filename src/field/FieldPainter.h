@@ -9,7 +9,6 @@
 #define FieldPainter_h
 
 #include "IField.h"
-#include "ofMain.h"
 
 class FieldPainter {
 private:
