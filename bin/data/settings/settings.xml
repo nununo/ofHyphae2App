@@ -34,8 +34,8 @@
       <max>0.9</max>
     </speed> <!--pixels/s-->
     <energySpentToMove>
-      <min>0.01</min>
-      <max>0.01</max>
+      <min>0.001</min>
+      <max>0.001</max>
     </energySpentToMove>
     <maxBendAngleDeg>
       <min>1</min>
@@ -50,16 +50,16 @@
       <max>2</max>
     </eatSpendRatio>
     <forkDistanceMin>
-      <min>15</min>
-      <max>15</max>
+      <min>5</min>
+      <max>10</max>
     </forkDistanceMin>
     <forkDistanceMax>
-      <min>50</min>
-      <max>50</max>
+      <min>20</min>
+      <max>30</max>
     </forkDistanceMax>
     <maxForkAngleDeg>
-      <min>1</min>
-      <max>30</max>
+      <min>0.2</min>
+      <max>1</max>
     </maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
   </hypha>
