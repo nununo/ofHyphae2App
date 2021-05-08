@@ -11,7 +11,7 @@
 #include "IFieldGenerator.h"
 
 class NoiseFieldGenerator: public IFieldGenerator {
-public:
-  virtual double getValue(const glm::vec2 normalizedPos) const;
+private:
+  double getValue(const glm::vec2 normalizedPos) const override;
 };
 #endif /* NoiseFieldGenerator_h */

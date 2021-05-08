@@ -13,6 +13,7 @@
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
+		7D992702264325250070B17A /* AverageFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* AverageFieldGenerator.cpp */; };
 		7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */; };
 		7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */; };
 		7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */; };
@@ -32,6 +33,7 @@
 		7DE3A0F6263426FC000DED6A /* ThresholdFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0F4263426FC000DED6A /* ThresholdFieldGenerator.cpp */; };
 		7DE3A0FD2634292B000DED6A /* NoiseFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */; };
 		7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FE26342A64000DED6A /* WritableField.cpp */; };
+		7DF0F0E326372C4A007DCE3B /* LineFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0F0E126372C4A007DCE3B /* LineFieldGenerator.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* Painter.cpp */; };
 		B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04085A84A7637CFDE1C8F7C /* ofxSlider.cpp */; };
@@ -72,6 +74,8 @@
 		5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
+		7D992700264325250070B17A /* AverageFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AverageFieldGenerator.cpp; sourceTree = "<group>"; };
+		7D992701264325250070B17A /* AverageFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AverageFieldGenerator.h; sourceTree = "<group>"; };
 		7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaSettings.cpp; sourceTree = "<group>"; };
 		7DE3A0BB263340DE000DED6A /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasSettings.h; sourceTree = "<group>"; };
 		7DE3A0BC263340DE000DED6A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		7DE3A0FC2634292B000DED6A /* NoiseFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoiseFieldGenerator.h; sourceTree = "<group>"; };
 		7DE3A0FE26342A64000DED6A /* WritableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WritableField.cpp; sourceTree = "<group>"; };
 		7DE3A0FF26342A64000DED6A /* WritableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritableField.h; sourceTree = "<group>"; };
+		7DF0F0E126372C4A007DCE3B /* LineFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LineFieldGenerator.cpp; sourceTree = "<group>"; };
+		7DF0F0E226372C4A007DCE3B /* LineFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineFieldGenerator.h; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
@@ -401,10 +407,14 @@
 				7DE3A0D426334112000DED6A /* FieldPainter.h */,
 				7DE3A0F5263426FC000DED6A /* ThresholdFieldGenerator.h */,
 				7DE3A0F4263426FC000DED6A /* ThresholdFieldGenerator.cpp */,
-				7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */,
 				7DE3A0FC2634292B000DED6A /* NoiseFieldGenerator.h */,
+				7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */,
 				7DE3A0FE26342A64000DED6A /* WritableField.cpp */,
 				7DE3A0FF26342A64000DED6A /* WritableField.h */,
+				7DF0F0E226372C4A007DCE3B /* LineFieldGenerator.h */,
+				7DF0F0E126372C4A007DCE3B /* LineFieldGenerator.cpp */,
+				7D992701264325250070B17A /* AverageFieldGenerator.h */,
+				7D992700264325250070B17A /* AverageFieldGenerator.cpp */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -895,6 +905,7 @@
 				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
 				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
+				7D992702264325250070B17A /* AverageFieldGenerator.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
@@ -923,6 +934,7 @@
 				87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */,
 				68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */,
 				7DE3A0FD2634292B000DED6A /* NoiseFieldGenerator.cpp in Sources */,
+				7DF0F0E326372C4A007DCE3B /* LineFieldGenerator.cpp in Sources */,
 				7DE3A0EF26334136000DED6A /* HyphaParams.cpp in Sources */,
 				7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */,
 			);
@@ -936,6 +948,7 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1039,6 +1052,7 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1103,6 +1117,7 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;

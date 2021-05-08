@@ -1,7 +1,9 @@
 #include "ofApp.h"
 #include "Params.h"
 #include "NoiseFieldGenerator.h"
+#include "AverageFieldGenerator.h"
 #include "ThresholdFieldGenerator.h"
+#include "LineFieldGenerator.h"
 #include "WritableField.h"
 
 void ofApp::setup(){
@@ -47,10 +49,15 @@ void ofApp::keyPressed(int key){
 }
 
 std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
-  auto noiseFieldGenerator = NoiseFieldGenerator();
-  const auto thresholdFieldGenerator = ThresholdFieldGenerator(&noiseFieldGenerator,params.zeroThreshold);
+  //auto noiseFieldGenerator = NoiseFieldGenerator();
+  //const auto thresholdFieldGenerator = ThresholdFieldGenerator(&noiseFieldGenerator,params.zeroThreshold);
+
+  AverageFieldGenerator averageFieldGenerator;
+  averageFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
+  averageFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
+
   auto field = std::make_unique<WritableField>(size);
-  field->write(&thresholdFieldGenerator);
+  field->write(&averageFieldGenerator);
   return field;
 }
 

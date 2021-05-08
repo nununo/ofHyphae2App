@@ -14,10 +14,10 @@ class ThresholdFieldGenerator: public IFieldGenerator {
 private:
   const double threshold;
   const IFieldGenerator *generator;
+  double getValue(const glm::vec2 normalizedPos) const override;
 
 public:
   ThresholdFieldGenerator(const IFieldGenerator *generator, const double threshold);
-  virtual double getValue(const glm::vec2 normalizedPos) const;
 };
 
 #endif /* ThresholdFieldGenerator_h */

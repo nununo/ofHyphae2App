@@ -12,7 +12,8 @@
 
 class IFieldGenerator {
 public:
-  virtual double getValue(glm::vec2 pos) const = 0;
+  virtual ~IFieldGenerator() {};
+  virtual double getValue(const glm::vec2 normalizedPos) const = 0;
 };
 
 #endif /* IFieldGenerator_h */
