@@ -54,8 +54,9 @@ std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   //const auto thresholdFieldGenerator = ThresholdFieldGenerator(&noiseFieldGenerator,params.zeroThreshold);
 
   MultiFieldGenerator multiFieldGenerator(std::make_shared<MaxFunc>());
-  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
-  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
+  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
+  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
+  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
 
   auto field = std::make_unique<WritableField>(size);
   field->write(&multiFieldGenerator);

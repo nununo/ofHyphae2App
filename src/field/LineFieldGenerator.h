@@ -16,23 +16,18 @@
 
 class LineFieldGenerator: public IFieldGenerator {
 private:
-  struct StartEnd {
-    glm::vec2 start;
-    glm::vec2 end;
-    double halfThickness;
-  };
-  
-  vector<StartEnd> lines;
-  double maxHalfThickness;
   double shaper;
+  glm::vec2 lineStart;
+  glm::vec2 lineEnd;
+  double halfThickness;
 
-  double distancePointToLine(glm::vec2 point, StartEnd line) const;
+  double distanceToLine(glm::vec2 point) const;
   glm::vec2 getRandomPerimeterPoint();
-  StartEnd getRandomLine();
+  void calcRandomLine();
   double shape(const double value) const;
 
 public:
-  LineFieldGenerator(const int numLines, const double maxThickness, const double shaper);
+  LineFieldGenerator(const double maxThickness, const double shaper);
   double getValue(const glm::vec2 normalizedPos) const override;
 };
 

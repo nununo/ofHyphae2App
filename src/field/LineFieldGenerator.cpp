@@ -10,18 +10,16 @@
 #include "LineFieldGenerator.h"
 #include <glm/gtx/closest_point.hpp>
 
-LineFieldGenerator::LineFieldGenerator(const int numPoints, const double _maxThickness, const double _shaper)
-: maxHalfThickness(_maxThickness/2.0f)
+LineFieldGenerator::LineFieldGenerator(const double _maxThickness, const double _shaper)
+: halfThickness(ofRandom(_maxThickness/4.0f, _maxThickness/2.0f))
 , shaper(_shaper)
 {
-  for(auto i=0; i<numPoints;i++) {
-    lines.push_back(getRandomLine());
-  }
+  calcRandomLine();
 }
 
 double LineFieldGenerator::getValue(const glm::vec2 normalizedPos) const {
-  auto d = distancePointToLine(normalizedPos, lines[0]);
-  auto value = ofMap(d, 0, lines[0].halfThickness, 1.0f, 0.0f, true);
+  auto d = distanceToLine(normalizedPos);
+  auto value = ofMap(d, 0, halfThickness, 1.0f, 0.0f, true);
   return shape(value);
 }
 
@@ -29,8 +27,8 @@ double LineFieldGenerator::shape(const double value) const {
   return powf(value, this->shaper);
 }
 
-double LineFieldGenerator::distancePointToLine(glm::vec2 point, StartEnd line) const {
-  auto closestPointOnLine = glm::closestPointOnLine(point, line.start, line.end);
+double LineFieldGenerator::distanceToLine(glm::vec2 point) const {
+  auto closestPointOnLine = glm::closestPointOnLine(point, lineStart, lineEnd);
   return ofClamp(abs(glm::distance(point, closestPointOnLine)), 0.0f, 1.0f);
 }
 
@@ -56,15 +54,12 @@ glm::vec2 LineFieldGenerator::getRandomPerimeterPoint() {
   }
 }
 
-LineFieldGenerator::StartEnd LineFieldGenerator::getRandomLine() {
-  StartEnd line;
+void LineFieldGenerator::calcRandomLine() {
   // Pick a start point
-  line.start = getRandomPerimeterPoint();
+  lineStart = getRandomPerimeterPoint();
   // Pick an end point (which is not in the same side as the start point)
   do {
-    line.end = getRandomPerimeterPoint();
-  } while (line.start.x == line.end.x || line.start.y == line.end.y);
-  line.halfThickness = ofRandom(0.005f, maxHalfThickness);
-  return line;
+    lineEnd = getRandomPerimeterPoint();
+  } while (lineStart.x == lineEnd.x || lineStart.y == lineEnd.y);
 }
   
