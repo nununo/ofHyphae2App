@@ -47,7 +47,6 @@ void ofApp::draw(){
 }
 
 std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
-  
   auto noise = std::make_unique<NoiseFieldGenerator>();
   auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), params.zeroThreshold);
 
@@ -61,7 +60,7 @@ std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   interception->add(std::move(thresholdNoise));
 
   auto field = std::make_unique<WritableField>(size);
-  field->write(interception);
+  field->generate(interception);
   return field;
 }
 
