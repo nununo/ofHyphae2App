@@ -12,6 +12,7 @@
 		5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */; };
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
+		7D05E70826484966008F274A /* MinFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70626484966008F274A /* MinFunc.cpp */; };
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
@@ -76,6 +77,8 @@
 		5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
+		7D05E70626484966008F274A /* MinFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MinFunc.cpp; sourceTree = "<group>"; };
+		7D05E70726484966008F274A /* MinFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinFunc.h; sourceTree = "<group>"; };
 		7D21171026481ED900AC1450 /* MaxFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxFunc.h; sourceTree = "<group>"; };
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
@@ -417,13 +420,15 @@
 				7DE3A0F4263426FC000DED6A /* ThresholdFieldGenerator.cpp */,
 				7DE3A0FC2634292B000DED6A /* NoiseFieldGenerator.h */,
 				7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */,
-				7DE3A0FE26342A64000DED6A /* WritableField.cpp */,
 				7DE3A0FF26342A64000DED6A /* WritableField.h */,
+				7DE3A0FE26342A64000DED6A /* WritableField.cpp */,
 				7DF0F0E226372C4A007DCE3B /* LineFieldGenerator.h */,
 				7DF0F0E126372C4A007DCE3B /* LineFieldGenerator.cpp */,
 				7D992701264325250070B17A /* MultiFieldGenerator.h */,
 				7D992700264325250070B17A /* MultiFieldGenerator.cpp */,
 				7D21171026481ED900AC1450 /* MaxFunc.h */,
+				7D05E70726484966008F274A /* MinFunc.h */,
+				7D05E70626484966008F274A /* MinFunc.cpp */,
 				7D21171126481EDA00AC1450 /* MaxFunc.cpp */,
 				7DD554C826473A0100CE41B3 /* AverageFunc.cpp */,
 				7DD554C926473A0100CE41B3 /* AverageFunc.h */,
@@ -922,6 +927,7 @@
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
 				7DE3A0D126334100000DED6A /* main.cpp in Sources */,
+				7D05E70826484966008F274A /* MinFunc.cpp in Sources */,
 				CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */,
 				7DE3A0E626334125000DED6A /* Hyphae.cpp in Sources */,
 				49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */,

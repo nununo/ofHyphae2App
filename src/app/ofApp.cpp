@@ -3,12 +3,13 @@
 #include "NoiseFieldGenerator.h"
 #include "MultiFieldGenerator.h"
 #include "MaxFunc.h"
+#include "MinFunc.h"
 #include "ThresholdFieldGenerator.h"
 #include "LineFieldGenerator.h"
 #include "WritableField.h"
 
 void ofApp::setup(){
-  settings.reset(new Settings(SettingsFile("settings/settings.xml")));
+  settings = std::make_unique<Settings>((SettingsFile("settings/settings.xml")));
   Params params(*settings.get());
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
@@ -46,15 +47,21 @@ void ofApp::draw(){
 }
 
 std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
-  const auto thresholdFieldGenerator = ThresholdFieldGenerator(std::make_unique<NoiseFieldGenerator>(), params.zeroThreshold);
+  
+  auto noise = std::make_unique<NoiseFieldGenerator>();
+  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), params.zeroThreshold);
 
-  MultiFieldGenerator multiFieldGenerator(std::make_shared<MaxFunc>());
-  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
-  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
-  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
+  auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
+  for(auto i=0; i<3; i++) {
+    lines->add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
+  }
+
+  auto interception = std::make_shared<MultiFieldGenerator>(std::make_shared<MinFunc>());
+  interception->add(std::move(lines));
+  interception->add(std::move(thresholdNoise));
 
   auto field = std::make_unique<WritableField>(size);
-  field->write(&multiFieldGenerator);
+  field->write(interception);
   return field;
 }
 

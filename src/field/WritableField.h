@@ -25,7 +25,6 @@ private:
 
 public:
   WritableField(const glm::vec2 size);
-  void write(const IFieldGenerator *generator);
-
+  void write(const std::shared_ptr<IFieldGenerator> generator);
 };
 #endif /* WritableField_h */
