@@ -1,7 +1,8 @@
 #include "ofApp.h"
 #include "Params.h"
 #include "NoiseFieldGenerator.h"
-#include "AverageFieldGenerator.h"
+#include "MultiFieldGenerator.h"
+#include "MaxFunc.h"
 #include "ThresholdFieldGenerator.h"
 #include "LineFieldGenerator.h"
 #include "WritableField.h"
@@ -52,12 +53,12 @@ std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   //auto noiseFieldGenerator = NoiseFieldGenerator();
   //const auto thresholdFieldGenerator = ThresholdFieldGenerator(&noiseFieldGenerator,params.zeroThreshold);
 
-  AverageFieldGenerator averageFieldGenerator;
-  averageFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
-  averageFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
+  MultiFieldGenerator multiFieldGenerator(std::make_shared<MaxFunc>());
+  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
+  multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(1, 200/size.x, 1));
 
   auto field = std::make_unique<WritableField>(size);
-  field->write(&averageFieldGenerator);
+  field->write(&multiFieldGenerator);
   return field;
 }
 

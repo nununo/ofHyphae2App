@@ -5,20 +5,22 @@
 //  Created by Nuno on 05/05/2021.
 //
 
-#ifndef AverageFieldGenerator_h
-#define AverageFieldGenerator_h
+#ifndef MultiFieldGenerator_h
+#define MultiFieldGenerator_h
 
-#include <vector>
 #include "IFieldGenerator.h"
+#include "IMultiFunc.h"
 
-class AverageFieldGenerator: public IFieldGenerator {
+class MultiFieldGenerator: public IFieldGenerator {
 private:
   vector<std::unique_ptr<IFieldGenerator>> generators;
+  const std::shared_ptr<IMultiFunc> func;
 
   double getValue(const glm::vec2 normalizedPos) const override;
 
 public:
+  MultiFieldGenerator(std::shared_ptr<IMultiFunc> _func);
   void add(std::unique_ptr<IFieldGenerator> generator);
 };
 
-#endif /* AverageFieldGenerator_h */
+#endif /* MultiFieldGenerator_h */
