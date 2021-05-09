@@ -14,7 +14,7 @@
 class Hyphae {
 private:
   std::list<Hypha> elements;
-  IField * const field;
+  std::shared_ptr<IField> field;
   const HyphaParams hyphaParams;
   std::vector<glm::vec2> newPositions;
 
@@ -24,7 +24,7 @@ private:
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
-  Hyphae(const HyphaParams& hyphaParams, IField *field, const HyphaCoordinates coordinates);
+  Hyphae(const HyphaParams& hyphaParams, std::shared_ptr<IField> field, const HyphaCoordinates coordinates);
   void update();
   int count() const;
   std::vector<glm::vec2> getNewPositions() const;

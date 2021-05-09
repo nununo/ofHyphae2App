@@ -9,19 +9,19 @@
 #include "WritableField.h"
 
 void ofApp::setup(){
-  settings = std::make_unique<Settings>((SettingsFile("settings/settings.xml")));
-  Params params(*settings.get());
+  Settings settings(SettingsFile("settings/settings.xml"));
+  Params params(settings);
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
   field = createField(params.field, size);
 
-  fieldPainter.reset(new FieldPainter(field.get()));
-  painter.reset(new Painter(settings->hypha.color));
+  fieldPainter = std::make_unique<FieldPainter>(field.get());
+  painter = std::make_unique<Painter>(settings.hypha.color);
 
   HyphaCoordinates hyphaCoordinates = {{100, 100}, {1,0}};
-  hyphae.reset(new Hyphae(params.hypha, field.get(), hyphaCoordinates));
+  hyphae = std::make_unique<Hyphae>(params.hypha, field, hyphaCoordinates);
 
-  ofSetFrameRate(settings->canvas.framerate);
+  ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
   ofBackground(ofColor::white);
@@ -46,7 +46,7 @@ void ofApp::draw(){
   hyphae->clearNewPositions();
 }
 
-std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
+std::shared_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   auto noise = std::make_unique<NoiseFieldGenerator>();
   auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), params.zeroThreshold);
 
@@ -59,7 +59,7 @@ std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   interception->add(std::move(lines));
   interception->add(std::move(thresholdNoise));
 
-  auto field = std::make_unique<WritableField>(size);
+  auto field = std::make_shared<WritableField>(size);
   field->generate(interception);
   return field;
 }

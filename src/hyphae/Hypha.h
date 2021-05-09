@@ -19,7 +19,7 @@ class Hypha {
   
 private:
   const HyphaParams params;
-  IField* const field;
+  std::shared_ptr<IField>  field;
   HyphaKynetics kynetics;
   HyphaEnergy energy;
   int nextForkDistance;
@@ -33,7 +33,7 @@ private:
   void updateDeadStatus();
 
 public:
-  Hypha(const HyphaParams& _params, IField *_field, const HyphaCoordinates coordinates, const double initialEnergy);
+  Hypha(const HyphaParams& _params, std::shared_ptr<IField> _field, const HyphaCoordinates coordinates, const double initialEnergy);
   void update();
   bool isAlive() const;
 

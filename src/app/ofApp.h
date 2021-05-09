@@ -10,13 +10,12 @@
 
 class ofApp : public ofBaseApp{
 private:
-  unique_ptr<Settings> settings;
-  unique_ptr<IField> field;
+  shared_ptr<IField> field;
   unique_ptr<FieldPainter> fieldPainter;
   unique_ptr<Hyphae> hyphae;
   unique_ptr<Painter> painter;
 
-  std::unique_ptr<IField> createField(FieldParams params, glm::vec2 size);
+  std::shared_ptr<IField> createField(FieldParams params, glm::vec2 size);
 
 public:
     void setup();

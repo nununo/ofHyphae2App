@@ -7,7 +7,7 @@
 
 #include "Params.h"
 
-Params::Params(const Settings& settings)
+Params::Params(const Settings &settings)
 : hypha(settings.hypha)
 , field(settings.field)
 {}

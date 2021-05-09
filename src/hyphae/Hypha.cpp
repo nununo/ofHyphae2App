@@ -7,7 +7,7 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const HyphaParams& _params, IField *_field, const HyphaCoordinates _coordinates, const double initialEnergy)
+Hypha::Hypha(const HyphaParams& _params, std::shared_ptr<IField> _field, const HyphaCoordinates _coordinates, const double initialEnergy)
 : field(_field)
 , kynetics(HyphaKynetics(_params, _coordinates, _field->getSize()))
 , params(_params)
