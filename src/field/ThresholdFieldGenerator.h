@@ -13,11 +13,11 @@
 class ThresholdFieldGenerator: public IFieldGenerator {
 private:
   const double threshold;
-  const IFieldGenerator *generator;
+  std::unique_ptr<IFieldGenerator> generator;
   double getValue(const glm::vec2 normalizedPos) const override;
 
 public:
-  ThresholdFieldGenerator(const IFieldGenerator *generator, const double threshold);
+  ThresholdFieldGenerator(std::unique_ptr<IFieldGenerator> generator, const double threshold);
 };
 
 #endif /* ThresholdFieldGenerator_h */

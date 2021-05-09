@@ -45,13 +45,8 @@ void ofApp::draw(){
   hyphae->clearNewPositions();
 }
 
-
-void ofApp::keyPressed(int key){
-}
-
 std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
-  //auto noiseFieldGenerator = NoiseFieldGenerator();
-  //const auto thresholdFieldGenerator = ThresholdFieldGenerator(&noiseFieldGenerator,params.zeroThreshold);
+  const auto thresholdFieldGenerator = ThresholdFieldGenerator(std::make_unique<NoiseFieldGenerator>(), params.zeroThreshold);
 
   MultiFieldGenerator multiFieldGenerator(std::make_shared<MaxFunc>());
   multiFieldGenerator.add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
@@ -63,6 +58,7 @@ std::unique_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   return field;
 }
 
+void ofApp::keyPressed(int key){}
 void ofApp::keyReleased(int key){}
 void ofApp::mouseMoved(int x, int y ){}
 void ofApp::mouseDragged(int x, int y, int button){}

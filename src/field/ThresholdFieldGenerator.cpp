@@ -7,8 +7,8 @@
 
 #include "ThresholdFieldGenerator.h"
 
-ThresholdFieldGenerator::ThresholdFieldGenerator(const IFieldGenerator *_generator, const double _threshold)
-: generator(_generator)
+ThresholdFieldGenerator::ThresholdFieldGenerator(std::unique_ptr<IFieldGenerator> _generator, const double _threshold)
+: generator(std::move(_generator))
 , threshold(_threshold)
 {}
 
