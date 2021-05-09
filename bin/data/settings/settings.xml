@@ -18,8 +18,8 @@
   </canvas>
   <field>
     <zeroThreshold>
-      <min>0.5</min>
-      <max>0.5</max>
+      <min>0.45</min>
+      <max>0.45</max>
     </zeroThreshold>
   </field>
   <hypha>
@@ -34,8 +34,8 @@
       <max>0.9</max>
     </speed> <!--pixels/s-->
     <energySpentToMove>
-      <min>0.001</min>
-      <max>0.001</max>
+      <min>0.01</min>
+      <max>0.01</max>
     </energySpentToMove>
     <maxBendAngleDeg>
       <min>1</min>
@@ -46,8 +46,8 @@
       <max>0.1</max>
     </foodAmount>
     <eatSpendRatio>
-      <min>2</min>
-      <max>2</max>
+      <min>0.8</min>
+      <max>0.8</max>
     </eatSpendRatio>
     <forkDistanceMin>
       <min>5</min>
@@ -58,8 +58,8 @@
       <max>30</max>
     </forkDistanceMax>
     <maxForkAngleDeg>
-      <min>0.2</min>
-      <max>1</max>
+      <min>0.1</min>
+      <max>0.3</max>
     </maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
   </hypha>
