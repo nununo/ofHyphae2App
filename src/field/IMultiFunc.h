@@ -12,6 +12,7 @@
 
 class IMultiFunc {
 public:
+  virtual ~IMultiFunc() {};
   virtual const double getValue(const std::vector<double> & values) const = 0;
 };
 
