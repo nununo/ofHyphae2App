@@ -1,17 +1,18 @@
 //
-//  PerimeterFoodStartPosition.cpp
+//  PerimeterStartPos.cpp
 //  rhizopusApp
 //
 //  Created by Nuno on 09/05/2021.
 //
 
-#include "FieldPerimeter.h"
+#include "PerimeterStartPos.h"
 
-FieldPerimeter::FieldPerimeter(std::shared_ptr<IField> _field)
+PerimeterStartPos::PerimeterStartPos(std::shared_ptr<IField> _field, int _areaSize)
 : field(_field)
+, areaSize(_areaSize)
 {}
 
-glm::vec2 FieldPerimeter::linearTo2D(int linearPos) const {
+glm::vec2 PerimeterStartPos::linearTo2D(int linearPos) const {
   auto size = field->getSize();
   if (linearPos < size.x) {
     return {linearPos,0};
@@ -24,7 +25,7 @@ glm::vec2 FieldPerimeter::linearTo2D(int linearPos) const {
   }
 }
 
-glm::vec2 FieldPerimeter::getMostAbundantPos(int areaSize) const {
+glm::vec2 PerimeterStartPos::get() const {
   double highestValue = 0;
   int highestAreaFirstLinearPos = 0;
   int perimeter = 2*field->getSize().x + 2*field->getSize().y;

@@ -13,7 +13,7 @@
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D05E70826484966008F274A /* MinFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70626484966008F274A /* MinFunc.cpp */; };
-		7D05E70C2648692E008F274A /* FieldPerimeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70A2648692E008F274A /* FieldPerimeter.cpp */; };
+		7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */; };
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
@@ -80,8 +80,9 @@
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
 		7D05E70626484966008F274A /* MinFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MinFunc.cpp; sourceTree = "<group>"; };
 		7D05E70726484966008F274A /* MinFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinFunc.h; sourceTree = "<group>"; };
-		7D05E70A2648692E008F274A /* FieldPerimeter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPerimeter.cpp; sourceTree = "<group>"; };
-		7D05E70B2648692E008F274A /* FieldPerimeter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldPerimeter.h; sourceTree = "<group>"; };
+		7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PerimeterStartPos.cpp; sourceTree = "<group>"; };
+		7D05E70B2648692E008F274A /* PerimeterStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerimeterStartPos.h; sourceTree = "<group>"; };
+		7D1499132650297E00E3D5A5 /* IStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IStartPos.h; sourceTree = "<group>"; };
 		7D21171026481ED900AC1450 /* MaxFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxFunc.h; sourceTree = "<group>"; };
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
@@ -417,6 +418,7 @@
 				7DE3A0D626334112000DED6A /* IField.h */,
 				7DE3A0F726342888000DED6A /* IFieldGenerator.h */,
 				7DD554C7264739AC00CE41B3 /* IMultiFunc.h */,
+				7D1499132650297E00E3D5A5 /* IStartPos.h */,
 				7DE3A0D326334112000DED6A /* FieldPainter.cpp */,
 				7DE3A0D426334112000DED6A /* FieldPainter.h */,
 				7DE3A0F5263426FC000DED6A /* ThresholdFieldGenerator.h */,
@@ -435,8 +437,8 @@
 				7D21171126481EDA00AC1450 /* MaxFunc.cpp */,
 				7DD554C826473A0100CE41B3 /* AverageFunc.cpp */,
 				7DD554C926473A0100CE41B3 /* AverageFunc.h */,
-				7D05E70B2648692E008F274A /* FieldPerimeter.h */,
-				7D05E70A2648692E008F274A /* FieldPerimeter.cpp */,
+				7D05E70B2648692E008F274A /* PerimeterStartPos.h */,
+				7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -930,7 +932,7 @@
 				7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
-				7D05E70C2648692E008F274A /* FieldPerimeter.cpp in Sources */,
+				7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
 				7DE3A0D126334100000DED6A /* main.cpp in Sources */,
 				7D05E70826484966008F274A /* MinFunc.cpp in Sources */,
