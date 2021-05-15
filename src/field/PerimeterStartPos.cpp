@@ -14,21 +14,27 @@ PerimeterStartPos::PerimeterStartPos(std::shared_ptr<IField> _field, int _areaSi
 
 glm::vec2 PerimeterStartPos::linearTo2D(int linearPos) const {
   auto size = field->getSize();
-  if (linearPos < size.x) {
-    return {linearPos,0};
-  } else if (linearPos < size.x + size.y) {
-    return {size.x, linearPos - size.x};
-  } else if (linearPos < 2*size.x + size.y) {
-    return {2*size.x + size.y  -linearPos, size.y};
+  glm::vec2 pos;
+  if (linearPos < size.x-1) {
+    // Top side
+    pos = {linearPos,0};
+  } else if (linearPos < size.x+size.y-2) {
+    // Right side
+    pos = {size.x-1, linearPos-size.x+1};
+  } else if (linearPos < 2*size.x+size.y-3) {
+    // Bottom side
+    pos = {2*size.x+size.y-linearPos-3, size.y-1};
   } else {
-    return {0, 2*size.x + 2*size.y - linearPos};
+    // Left side
+    pos = {0, 2*size.x+2*size.y-linearPos-4};
   }
+  return pos;
 }
 
 glm::vec2 PerimeterStartPos::get() const {
   double highestValue = 0;
   int highestAreaFirstLinearPos = 0;
-  int perimeter = 2*field->getSize().x + 2*field->getSize().y;
+  int perimeter = 2*field->getSize().x + 2*field->getSize().y - 3;
   
   double areaValue = 0;
   for (auto linearPos=0; linearPos<perimeter; linearPos++) {

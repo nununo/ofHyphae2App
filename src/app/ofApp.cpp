@@ -7,6 +7,8 @@
 #include "ThresholdFieldGenerator.h"
 #include "LineFieldGenerator.h"
 #include "WritableField.h"
+#include "PerimeterStartPos.h"
+#include "HyphaCoordinatesRadialGenerator.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -18,8 +20,9 @@ void ofApp::setup(){
   fieldPainter = std::make_unique<FieldPainter>(field.get());
   painter = std::make_unique<Painter>(settings.hypha.color);
 
-  HyphaCoordinates hyphaCoordinates = {{100, 100}, {1,0}};
-  hyphae = std::make_unique<Hyphae>(params.hypha, field, hyphaCoordinates);
+  PerimeterStartPos startPos(field, 10);
+  std::unique_ptr<IHyphaCoordinatesGenerator> hyphaCoordinatesGenerator = std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10);
+  hyphae = std::make_unique<Hyphae>(params.hypha, field, std::move(hyphaCoordinatesGenerator));
 
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);

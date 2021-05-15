@@ -7,12 +7,11 @@
 
 #include "Hyphae.h"
 
-Hyphae::Hyphae(const HyphaParams& _hyphaParams, std::shared_ptr<IField> _field, const HyphaCoordinates coordinates)
+Hyphae::Hyphae(const HyphaParams& _hyphaParams, std::shared_ptr<IField> _field, std::unique_ptr<IHyphaCoordinatesGenerator> _generator)
 : hyphaParams(_hyphaParams)
 , field(_field)
-{
-  add(coordinates, 1.0f);
-}
+, generator(std::move(_generator))
+{}
 
 std::vector<glm::vec2> Hyphae::getNewPositions() const {
   return newPositions;
@@ -41,6 +40,10 @@ void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
 }
 
 void Hyphae::update() {
+  auto v = generator->get();
+  for(auto p: v) {
+    add(p);
+  }
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
       itr->update();

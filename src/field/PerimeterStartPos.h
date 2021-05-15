@@ -11,7 +11,7 @@
 #include "IField.h"
 #include "IStartPos.h"
 
-class PerimeterStartPos: IStartPos {
+class PerimeterStartPos: public IStartPos {
 private:
   std::shared_ptr<IField> field;
   int areaSize;

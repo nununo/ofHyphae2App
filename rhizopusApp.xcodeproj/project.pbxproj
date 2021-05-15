@@ -14,6 +14,7 @@
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D05E70826484966008F274A /* MinFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70626484966008F274A /* MinFunc.cpp */; };
 		7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */; };
+		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
@@ -83,6 +84,9 @@
 		7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PerimeterStartPos.cpp; sourceTree = "<group>"; };
 		7D05E70B2648692E008F274A /* PerimeterStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerimeterStartPos.h; sourceTree = "<group>"; };
 		7D1499132650297E00E3D5A5 /* IStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IStartPos.h; sourceTree = "<group>"; };
+		7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaCoordinatesGenerator.h; sourceTree = "<group>"; };
+		7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesRadialGenerator.cpp; sourceTree = "<group>"; };
+		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
 		7D21171026481ED900AC1450 /* MaxFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxFunc.h; sourceTree = "<group>"; };
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
@@ -457,6 +461,9 @@
 				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
 				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7DE3A0F226334192000DED6A /* HyphaEnergy.h */,
+				7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */,
+				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,
+				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";
@@ -963,6 +970,7 @@
 				7DE3A0FD2634292B000DED6A /* NoiseFieldGenerator.cpp in Sources */,
 				7DF0F0E326372C4A007DCE3B /* LineFieldGenerator.cpp in Sources */,
 				7DE3A0EF26334136000DED6A /* HyphaParams.cpp in Sources */,
+				7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */,
 				7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */,
 				7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */,
 			);
