@@ -8,17 +8,15 @@
 #ifndef FieldPainter_h
 #define FieldPainter_h
 
-#include "IField.h"
+#include "IFieldPainter.h"
 
-class FieldPainter {
+class FieldPainter: public IFieldPainter {
 private:
-  const IField *field;
   ofImage image;
 
 public:
-  FieldPainter(const IField *field);
-  void update();
-  void draw();
+  FieldPainter(const glm::vec2 size);
+  void draw(const IField &field) override;
 };
 
 #endif /* FieldPainter_h */

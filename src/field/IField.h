@@ -9,8 +9,9 @@
 #define IField_h
 
 #include "ofMain.h"
+#include "IDrawable.h"
 
-class IField {
+class IField: public IDrawable {
 public:
   virtual ~IField() {};
   virtual glm::vec2 getSize() const = 0;

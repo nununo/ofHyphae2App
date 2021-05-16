@@ -40,7 +40,7 @@
 		7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FE26342A64000DED6A /* WritableField.cpp */; };
 		7DF0F0E326372C4A007DCE3B /* LineFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0F0E126372C4A007DCE3B /* LineFieldGenerator.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
-		91790062D662BA96C5F736F1 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* Painter.cpp */; };
+		91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */; };
 		B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04085A84A7637CFDE1C8F7C /* ofxSlider.cpp */; };
 		BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF946F9F9479FD412E746596 /* ofxBaseGui.cpp */; };
 		C1AA5763266D18C4EA408F26 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28FB9416E00AC6098842C730 /* ofxLabel.cpp */; };
@@ -94,6 +94,9 @@
 		7DD554C7264739AC00CE41B3 /* IMultiFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMultiFunc.h; sourceTree = "<group>"; };
 		7DD554C826473A0100CE41B3 /* AverageFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AverageFunc.cpp; sourceTree = "<group>"; };
 		7DD554C926473A0100CE41B3 /* AverageFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AverageFunc.h; sourceTree = "<group>"; };
+		7DDC214126516E14005D3C66 /* IHyphaePainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaePainter.h; sourceTree = "<group>"; };
+		7DDC214226517388005D3C66 /* IFieldPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFieldPainter.h; sourceTree = "<group>"; };
+		7DDC214326517502005D3C66 /* IDrawable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDrawable.h; sourceTree = "<group>"; };
 		7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaSettings.cpp; sourceTree = "<group>"; };
 		7DE3A0BB263340DE000DED6A /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasSettings.h; sourceTree = "<group>"; };
 		7DE3A0BC263340DE000DED6A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -145,8 +148,8 @@
 		ABD1B394E726A91F366C3252 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiGroup.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		AF946F9F9479FD412E746596 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBaseGui.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		B82FDFC205571425CCFF4C4B /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxColorPicker.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.h; sourceTree = SOURCE_ROOT; };
-		B9943C2F9E43AFB641374E6B /* Painter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Painter.cpp; path = src/painter/Painter.cpp; sourceTree = SOURCE_ROOT; };
-		CA6778A301673A7F07642741 /* Painter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Painter.h; path = src/painter/Painter.h; sourceTree = SOURCE_ROOT; };
+		B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = HyphaePainter.cpp; path = src/hyphae/HyphaePainter.cpp; sourceTree = SOURCE_ROOT; };
+		CA6778A301673A7F07642741 /* HyphaePainter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = HyphaePainter.h; path = src/hyphae/HyphaePainter.h; sourceTree = SOURCE_ROOT; };
 		DEE7566DB26BFC8C4DFB2435 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxLabel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		E2E9092A4D394A8B779AAF3B /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		E3E888B7A7A407DCD7F39F16 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxPanel.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
@@ -412,6 +415,7 @@
 				7DE3A0CC26334100000DED6A /* Tools.h */,
 				7DE3A0CD26334100000DED6A /* Tools.cpp */,
 				7DE3A0CE26334100000DED6A /* main.cpp */,
+				7DDC214326517502005D3C66 /* IDrawable.h */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -423,8 +427,9 @@
 				7DE3A0F726342888000DED6A /* IFieldGenerator.h */,
 				7DD554C7264739AC00CE41B3 /* IMultiFunc.h */,
 				7D1499132650297E00E3D5A5 /* IStartPos.h */,
-				7DE3A0D326334112000DED6A /* FieldPainter.cpp */,
+				7DDC214226517388005D3C66 /* IFieldPainter.h */,
 				7DE3A0D426334112000DED6A /* FieldPainter.h */,
+				7DE3A0D326334112000DED6A /* FieldPainter.cpp */,
 				7DE3A0F5263426FC000DED6A /* ThresholdFieldGenerator.h */,
 				7DE3A0F4263426FC000DED6A /* ThresholdFieldGenerator.cpp */,
 				7DE3A0FC2634292B000DED6A /* NoiseFieldGenerator.h */,
@@ -450,6 +455,8 @@
 		7DE3A0DA26334124000DED6A /* hyphae */ = {
 			isa = PBXGroup;
 			children = (
+				7DDC214126516E14005D3C66 /* IHyphaePainter.h */,
+				7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */,
 				7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */,
 				7DE3A0E126334125000DED6A /* Hypha.h */,
 				7DE3A0DC26334125000DED6A /* Hypha.cpp */,
@@ -461,9 +468,10 @@
 				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
 				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7DE3A0F226334192000DED6A /* HyphaEnergy.h */,
-				7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */,
 				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,
 				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
+				B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */,
+				CA6778A301673A7F07642741 /* HyphaePainter.h */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";
@@ -479,15 +487,6 @@
 				7DE3A0ED26334136000DED6A /* Params.cpp */,
 			);
 			path = params;
-			sourceTree = "<group>";
-		};
-		7DF9BA20262B5915005C763D /* painter */ = {
-			isa = PBXGroup;
-			children = (
-				B9943C2F9E43AFB641374E6B /* Painter.cpp */,
-				CA6778A301673A7F07642741 /* Painter.h */,
-			);
-			path = painter;
 			sourceTree = "<group>";
 		};
 		A763ED608B35AE3310251DEE /* src */ = {
@@ -829,7 +828,6 @@
 				7DE3A0C826334100000DED6A /* app */,
 				7DE3A0D226334112000DED6A /* field */,
 				7DE3A0DA26334124000DED6A /* hyphae */,
-				7DF9BA20262B5915005C763D /* painter */,
 				7DE3A0E726334136000DED6A /* params */,
 				7DE3A0B9263340DE000DED6A /* settings */,
 			);
@@ -932,7 +930,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91790062D662BA96C5F736F1 /* Painter.cpp in Sources */,
+				91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */,
 				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
 				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,

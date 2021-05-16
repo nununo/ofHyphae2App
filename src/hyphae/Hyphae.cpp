@@ -7,22 +7,18 @@
 
 #include "Hyphae.h"
 
-Hyphae::Hyphae(const HyphaParams& _hyphaParams, std::shared_ptr<IField> _field, std::unique_ptr<IHyphaCoordinatesGenerator> _generator)
+Hyphae::Hyphae(const HyphaParams& _hyphaParams,
+               std::shared_ptr<IField> _field,
+               std::unique_ptr<IHyphaCoordinatesGenerator> _generator,
+               std::unique_ptr<IHyphaePainter> _painter)
 : hyphaParams(_hyphaParams)
 , field(_field)
 , generator(std::move(_generator))
+, painter(std::move(_painter))
 {}
-
-std::vector<glm::vec2> Hyphae::getNewPositions() const {
-  return newPositions;
-}
 
 int Hyphae::count() const {
   return elements.size();
-}
-
-void Hyphae::clearNewPositions() {
-  newPositions.clear();
 }
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
@@ -53,4 +49,9 @@ void Hyphae::update() {
       itr = elements.erase(itr);
     }
   }
+}
+
+void Hyphae::draw() {
+  painter->draw(newPositions);
+  newPositions.clear();
 }

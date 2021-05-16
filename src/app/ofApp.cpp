@@ -9,16 +9,14 @@
 #include "WritableField.h"
 #include "PerimeterStartPos.h"
 #include "HyphaCoordinatesRadialGenerator.h"
+#include "HyphaePainter.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
   Params params(settings);
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
-  shared_ptr<IField> field = createField(params.field, size);
-
-  fieldPainter = std::make_unique<FieldPainter>(field.get());
-  painter = std::make_unique<Painter>(settings.hypha.color);
+  field = createField(params.field, size);
 
   hyphae = createHyphae(params.hypha, field);
 
@@ -30,21 +28,17 @@ void ofApp::setup(){
 
 void ofApp::update(){
   hyphae->update();
-  fieldPainter->update();
 }
 
 void ofApp::draw(){
-  painter->draw(hyphae->getNewPositions());
+  hyphae->draw();
 
   ofPushView();
   ofTranslate(ofGetWidth()/2, 0);
-  fieldPainter->draw();
-  painter->draw(hyphae->getNewPositions());
+  field->draw();
   ofPopView();
   
-  ofLog() << " total: " << hyphae->count() << " moved: " << hyphae->getNewPositions().size();
-
-  hyphae->clearNewPositions();
+  ofLog() << " total: " << hyphae->count();
 }
 
 std::shared_ptr<IField> ofApp::createField(const FieldParams params, const glm::vec2 size) {
@@ -60,7 +54,10 @@ std::shared_ptr<IField> ofApp::createField(const FieldParams params, const glm::
   interception->add(std::move(lines));
   interception->add(std::move(thresholdNoise));
 
-  auto field = std::make_shared<WritableField>(size);
+  auto field = std::make_shared<WritableField>(
+     size,
+     std::make_unique<FieldPainter>(size)
+  );
   field->generate(interception);
   return field;
 }
@@ -70,7 +67,8 @@ std::unique_ptr<Hyphae> ofApp::createHyphae(const HyphaParams hyphaParams, std::
   return std::make_unique<Hyphae>(
     hyphaParams,
     field,
-    std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10));
+    std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10),
+    std::make_unique<HyphaePainter>(hyphaParams.color));
 }
 
 void ofApp::keyPressed(int key){}

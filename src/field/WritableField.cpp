@@ -7,8 +7,10 @@
 
 #include "WritableField.h"
 
-WritableField::WritableField(const glm::vec2 _size)
-: size(_size) {
+WritableField::WritableField(const glm::vec2 _size, std::unique_ptr<IFieldPainter> _painter)
+: size(_size)
+, painter(std::move(_painter))
+{
   map.assign(size.x, vector<double>(size.y, 0));
 }
 
@@ -43,4 +45,8 @@ double WritableField::consume(const glm::vec2 pos, const double amount) {
   auto consumed = (value-amount>0? amount : value);
   setValue(pos, value-consumed);
   return consumed;
+}
+
+void WritableField::draw() {
+  painter->draw(*this);
 }

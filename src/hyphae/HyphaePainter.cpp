@@ -1,5 +1,5 @@
 //
-//  Painter.cpp
+//  HyphaePainter.cpp
 //  hyphaeApp
 //
 //  Created by Nuno on 05/03/2019.
@@ -7,11 +7,13 @@
 
 // Mostly copied from the gl/textureBufferInstanceExample
 
-#include "Painter.h"
+#include "HyphaePainter.h"
 
-Painter::Painter(const ofColor _color): color(_color) {}
+HyphaePainter::HyphaePainter(const ofColor _color)
+: color(_color)
+{}
 
-void Painter::draw(std::vector<glm::vec2> positions) {
+void HyphaePainter::draw(std::vector<glm::vec2> positions) {
   ofPushStyle();
   ofSetColor(color);
   ofFill();
