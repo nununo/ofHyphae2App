@@ -96,7 +96,6 @@
 		7DD554C926473A0100CE41B3 /* AverageFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AverageFunc.h; sourceTree = "<group>"; };
 		7DDC214126516E14005D3C66 /* IHyphaePainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaePainter.h; sourceTree = "<group>"; };
 		7DDC214226517388005D3C66 /* IFieldPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFieldPainter.h; sourceTree = "<group>"; };
-		7DDC214326517502005D3C66 /* IDrawable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDrawable.h; sourceTree = "<group>"; };
 		7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaSettings.cpp; sourceTree = "<group>"; };
 		7DE3A0BB263340DE000DED6A /* CanvasSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasSettings.h; sourceTree = "<group>"; };
 		7DE3A0BC263340DE000DED6A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -415,7 +414,6 @@
 				7DE3A0CC26334100000DED6A /* Tools.h */,
 				7DE3A0CD26334100000DED6A /* Tools.cpp */,
 				7DE3A0CE26334100000DED6A /* main.cpp */,
-				7DDC214326517502005D3C66 /* IDrawable.h */,
 			);
 			path = app;
 			sourceTree = "<group>";

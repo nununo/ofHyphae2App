@@ -10,30 +10,24 @@
 
 #include "Hypha.h"
 #include "IHyphaCoordinatesGenerator.h"
-#include "IHyphaePainter.h"
-#include "IDrawable.h"
 
-class Hyphae: public IDrawable {
+class Hyphae {
 private:
-  std::shared_ptr<HyphaParams> hyphaParams;
-  std::list<Hypha> elements;
-  std::unique_ptr<IHyphaCoordinatesGenerator> generator;
-  std::unique_ptr<IHyphaePainter> painter;
-  std::vector<glm::vec2> newPositions;
+  shared_ptr<HyphaParams> hyphaParams;
+  list<Hypha> elements;
+  unique_ptr<IHyphaCoordinatesGenerator> generator;
+  vector<glm::vec2> newPositions;
 
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
-  Hyphae(std::shared_ptr<HyphaParams> hyphaParams,
-         std::unique_ptr<IHyphaCoordinatesGenerator> generator,
-         std::unique_ptr<IHyphaePainter> painter);
+  Hyphae(shared_ptr<HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
   void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
   int count() const;
-
-  // IDrawable
-  void draw() override;
+  
+  vector<glm::vec2> getNewPositions() const;
 };
 
 #endif /* Hyphae_h */

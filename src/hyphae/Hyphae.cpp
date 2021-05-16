@@ -8,11 +8,9 @@
 #include "Hyphae.h"
 
 Hyphae::Hyphae(std::shared_ptr<HyphaParams> _hyphaParams,
-               std::unique_ptr<IHyphaCoordinatesGenerator> _generator,
-               std::unique_ptr<IHyphaePainter> _painter)
+               std::unique_ptr<IHyphaCoordinatesGenerator> _generator)
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
-, painter(std::move(_painter))
 {}
 
 int Hyphae::count() const {
@@ -34,6 +32,7 @@ void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
 }
 
 void Hyphae::update(IField &field) {
+  newPositions.clear();
   auto v = generator->get();
   for(auto p: v) {
     add(p);
@@ -49,7 +48,6 @@ void Hyphae::update(IField &field) {
   }
 }
 
-void Hyphae::draw() {
-  painter->draw(newPositions);
-  newPositions.clear();
+vector<glm::vec2> Hyphae::getNewPositions() const {
+  return newPositions;
 }

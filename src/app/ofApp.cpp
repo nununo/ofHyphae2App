@@ -10,6 +10,7 @@
 #include "PerimeterStartPos.h"
 #include "HyphaCoordinatesRadialGenerator.h"
 #include "HyphaePainter.h"
+#include "FieldPainter.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -20,7 +21,8 @@ void ofApp::setup(){
   field = createField(params->field, size);
   fieldPainter = createFieldPainter(size);
   hyphae = createHyphae(params->hypha, field);
-
+  hyphaePainter = createHyphaePainter(params->hypha->color);
+  
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
@@ -32,7 +34,7 @@ void ofApp::update(){
 }
 
 void ofApp::draw(){
-  hyphae->draw();
+  hyphaePainter->draw(hyphae->getNewPositions());
 
   ofPushView();
   ofTranslate(ofGetWidth()/2, 0);
@@ -51,25 +53,28 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
     lines->add(std::make_unique<LineFieldGenerator>(100/size.x, 1));
   }
 
-  auto interception = std::make_shared<MultiFieldGenerator>(std::make_shared<MinFunc>());
-  interception->add(std::move(lines));
-  interception->add(std::move(thresholdNoise));
+  auto interception = make_shared<MultiFieldGenerator>(make_shared<MinFunc>());
+  interception->add(move(lines));
+  interception->add(move(thresholdNoise));
 
-  auto field = std::make_shared<WritableField>(size);
+  auto field = make_shared<WritableField>(size);
   field->generate(interception);
   return field;
 }
 
-unique_ptr<Hyphae> ofApp::createHyphae(std::shared_ptr<HyphaParams> hyphaParams, std::shared_ptr<IField> field) const {
+unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
   PerimeterStartPos startPos(field, 50);
   return std::make_unique<Hyphae>(
     hyphaParams,
-    std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10),
-    std::make_unique<HyphaePainter>(hyphaParams->color));
+    make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10));
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
   return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
+}
+
+unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color) const {
+  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color));
 }
 
 void ofApp::keyPressed(int key){}
