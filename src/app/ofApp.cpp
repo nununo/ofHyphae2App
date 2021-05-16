@@ -16,7 +16,9 @@ void ofApp::setup(){
   auto params = std::make_shared<Params>(settings);
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
+
   field = createField(params->field, size);
+  fieldPainter = createFieldPainter(size);
   hyphae = createHyphae(params->hypha, field);
 
   ofSetFrameRate(settings.canvas.framerate);
@@ -34,13 +36,13 @@ void ofApp::draw(){
 
   ofPushView();
   ofTranslate(ofGetWidth()/2, 0);
-  field->draw();
+  fieldPainter->draw(*field.get());
   ofPopView();
   
   ofLog() << " total: " << hyphae->count();
 }
 
-std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) {
+std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
   auto noise = std::make_unique<NoiseFieldGenerator>();
   auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), fieldParams->zeroThreshold);
 
@@ -53,20 +55,21 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
   interception->add(std::move(lines));
   interception->add(std::move(thresholdNoise));
 
-  auto field = std::make_shared<WritableField>(
-     size,
-     std::make_unique<FieldPainter>(size)
-  );
+  auto field = std::make_shared<WritableField>(size);
   field->generate(interception);
   return field;
 }
 
-std::unique_ptr<Hyphae> ofApp::createHyphae(std::shared_ptr<HyphaParams> hyphaParams, std::shared_ptr<IField> field) {
+unique_ptr<Hyphae> ofApp::createHyphae(std::shared_ptr<HyphaParams> hyphaParams, std::shared_ptr<IField> field) const {
   PerimeterStartPos startPos(field, 50);
   return std::make_unique<Hyphae>(
     hyphaParams,
     std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10),
     std::make_unique<HyphaePainter>(hyphaParams->color));
+}
+
+unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
+  return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
 }
 
 void ofApp::keyPressed(int key){}

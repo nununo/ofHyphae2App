@@ -15,7 +15,6 @@
 class WritableField: public IField {
 private:
   const glm::vec2 size;
-  std::unique_ptr<IFieldPainter> painter;
   vector< vector<double> > map;
 
   // IField
@@ -26,11 +25,8 @@ private:
   glm::vec2 normalize(const glm::vec2 pos) const;
   void setValue( glm::vec2 pos, double newValue);
 
-  // IDrawable
-  void draw() override;
-
 public:
-  WritableField(const glm::vec2 size, std::unique_ptr<IFieldPainter> painter);
+  WritableField(const glm::vec2 size);
   void generate(const std::shared_ptr<IFieldGenerator> generator);
 };
 #endif /* WritableField_h */
