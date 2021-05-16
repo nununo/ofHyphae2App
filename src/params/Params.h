@@ -14,8 +14,8 @@
 
 class Params {
 public:
-  const HyphaParams hypha;
-  const FieldParams field;
+  const std::shared_ptr<HyphaParams> hypha;
+  const std::shared_ptr<FieldParams> field;
   
   Params(const Settings &settings);
 };

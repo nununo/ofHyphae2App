@@ -7,9 +7,8 @@
 
 #include "HyphaKynetics.h"
 
-HyphaKynetics::HyphaKynetics(const HyphaParams& _params, const HyphaCoordinates _coordinates, const glm::vec2 _fieldSize)
+HyphaKynetics::HyphaKynetics(std::shared_ptr<HyphaParams> _params, const HyphaCoordinates _coordinates)
 : params(_params)
-, fieldSize(_fieldSize)
 , coordinates(_coordinates)
 {}
 
@@ -18,11 +17,11 @@ glm::vec2 HyphaKynetics::getPixelPos() const {
 }
 
 glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 _dir) const {
-  return glm::rotate(_dir, ofRandom(-params.maxBendAngle, params.maxBendAngle));  
+  return glm::rotate(_dir, ofRandom(-params->maxBendAngle, params->maxBendAngle));
 }
 
 bool HyphaKynetics::update() {
-  coordinates.pos += coordinates.dir * params.speed;
+  coordinates.pos += coordinates.dir * params->speed;
   auto pixelPos = getPixelPos();
   if (pixelPos != lastPixelPos) {
     coordinates.dir = nextDirection(coordinates.dir);
@@ -33,13 +32,13 @@ bool HyphaKynetics::update() {
   }
 }
 
-bool HyphaKynetics::isInsideField() {
+bool HyphaKynetics::isInsideField(const glm::vec2 fieldSize) {
   return coordinates.pos == glm::abs(coordinates.pos)
       && coordinates.pos.x < fieldSize.x
       && coordinates.pos.y < fieldSize.y;
 }
 
 HyphaCoordinates HyphaKynetics::getForkCoordinates() {
-  auto newDirection = glm::rotate(coordinates.dir, ofRandom(-params.maxForkAngle, params.maxForkAngle));
+  auto newDirection = glm::rotate(coordinates.dir, ofRandom(-params->maxForkAngle, params->maxForkAngle));
   return {coordinates.pos, newDirection};
 }

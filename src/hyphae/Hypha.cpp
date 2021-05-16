@@ -7,11 +7,10 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(const HyphaParams& _params, std::shared_ptr<IField> _field, const HyphaCoordinates _coordinates, const double initialEnergy)
-: field(_field)
-, kynetics(HyphaKynetics(_params, _coordinates, _field->getSize()))
+Hypha::Hypha(std::shared_ptr<HyphaParams> _params, const HyphaCoordinates _coordinates, const double initialEnergy)
+: kynetics(HyphaKynetics(_params, _coordinates))
 , params(_params)
-, energy(HyphaEnergy(initialEnergy, _params.energySpentToMove))
+, energy(HyphaEnergy(initialEnergy, _params->energySpentToMove))
 , nextForkDistance(getNextForkDistance())
 {}
 
@@ -19,25 +18,25 @@ bool Hypha::isAlive() const {
   return !dead;
 }
 
-void Hypha::updateDeadStatus() {
-  if (energy.isEmpty() || !kynetics.isInsideField()) {
+void Hypha::updateDeadStatus(IField &field) {
+  if (energy.isEmpty() || !kynetics.isInsideField(field.getSize())) {
     dead = true;
   }
 }
 
-void Hypha::update() {
+void Hypha::update(IField &field) {
   if (!isAlive()) {
   return;
   }
   if (!kynetics.update()) {
     return; // update() returns true if moved to new pixel
   }
-  updateDeadStatus();
+  updateDeadStatus(field);
   if (!isAlive()) {
     return;
   }
   energy.move();
-  energy.eat(takeFoodFromField());
+  energy.eat(takeFoodFromField(field));
   if (--nextForkDistance == 0) {
     fork();
   }
@@ -54,8 +53,8 @@ void Hypha::throwMovedEvent() {
   ofNotifyEvent(this->movedEvent, e);
 }
 
-double Hypha::takeFoodFromField() {
-  return field->consume(kynetics.getPixelPos(), params.foodAmount) * params.foodToEnergyRatio;
+double Hypha::takeFoodFromField(IField &field) {
+  return field.consume(kynetics.getPixelPos(), params->foodAmount) * params->foodToEnergyRatio;
 }
 
 void Hypha::fork() {
@@ -74,7 +73,6 @@ void Hypha::fork() {
  */
 int Hypha::getNextForkDistance() const {
   auto fertilityRatio = 1 - energy.get();
-  auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params.forkDistanceInterval.x, params.forkDistanceInterval.y);
-  //ofLog() << "energy: " << energy << " fr: " << fertilityRatio << " dist: " << nextForkDistance;
+  auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
   return nextForkDistance;
 }

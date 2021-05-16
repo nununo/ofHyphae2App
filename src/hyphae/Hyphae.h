@@ -15,9 +15,8 @@
 
 class Hyphae: public IDrawable {
 private:
-  const HyphaParams hyphaParams;
+  std::shared_ptr<HyphaParams> hyphaParams;
   std::list<Hypha> elements;
-  std::shared_ptr<IField> field;
   std::unique_ptr<IHyphaCoordinatesGenerator> generator;
   std::unique_ptr<IHyphaePainter> painter;
   std::vector<glm::vec2> newPositions;
@@ -26,15 +25,14 @@ private:
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
-  Hyphae(const HyphaParams& hyphaParams,
-         std::shared_ptr<IField> field,
+  Hyphae(std::shared_ptr<HyphaParams> hyphaParams,
          std::unique_ptr<IHyphaCoordinatesGenerator> generator,
          std::unique_ptr<IHyphaePainter> painter);
+  void update(IField &field);
   void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
   int count() const;
 
   // IDrawable
-  void update() override;
   void draw() override;
 };
 

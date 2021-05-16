@@ -7,12 +7,10 @@
 
 #include "Hyphae.h"
 
-Hyphae::Hyphae(const HyphaParams& _hyphaParams,
-               std::shared_ptr<IField> _field,
+Hyphae::Hyphae(std::shared_ptr<HyphaParams> _hyphaParams,
                std::unique_ptr<IHyphaCoordinatesGenerator> _generator,
                std::unique_ptr<IHyphaePainter> _painter)
 : hyphaParams(_hyphaParams)
-, field(_field)
 , generator(std::move(_generator))
 , painter(std::move(_painter))
 {}
@@ -22,7 +20,7 @@ int Hyphae::count() const {
 }
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
-  elements.push_back(Hypha(hyphaParams, field, coordinates, energy));
+  elements.push_back(Hypha(hyphaParams, coordinates, energy));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
   ofAddListener(elements.back().movedEvent, this, &Hyphae::onHyphaMoved);
 }
@@ -35,14 +33,14 @@ void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
   newPositions.push_back(e.pos);
 }
 
-void Hyphae::update() {
+void Hyphae::update(IField &field) {
   auto v = generator->get();
   for(auto p: v) {
     add(p);
   }
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      itr->update();
+      itr->update(field);
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);

@@ -11,7 +11,6 @@
 class IDrawable {
 public:
   virtual ~IDrawable() {}
-  virtual void update() {}
   virtual void draw() = 0;
 };
 

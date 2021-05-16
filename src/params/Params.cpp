@@ -8,6 +8,6 @@
 #include "Params.h"
 
 Params::Params(const Settings &settings)
-: hypha(settings.hypha)
-, field(settings.field)
+: hypha(std::make_shared<HyphaParams>(settings.hypha))
+, field(std::make_shared<FieldParams>(settings.field))
 {}

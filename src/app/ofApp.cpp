@@ -13,12 +13,11 @@
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
-  Params params(settings);
+  auto params = std::make_shared<Params>(settings);
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
-  field = createField(params.field, size);
-
-  hyphae = createHyphae(params.hypha, field);
+  field = createField(params->field, size);
+  hyphae = createHyphae(params->hypha, field);
 
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -27,7 +26,7 @@ void ofApp::setup(){
 }
 
 void ofApp::update(){
-  hyphae->update();
+  hyphae->update(*field.get());
 }
 
 void ofApp::draw(){
@@ -41,9 +40,9 @@ void ofApp::draw(){
   ofLog() << " total: " << hyphae->count();
 }
 
-std::shared_ptr<IField> ofApp::createField(const FieldParams params, const glm::vec2 size) {
+std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) {
   auto noise = std::make_unique<NoiseFieldGenerator>();
-  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), 0 /*params.zeroThreshold*/);
+  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), fieldParams->zeroThreshold);
 
   auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
   for(auto i=0; i<5; i++) {
@@ -62,13 +61,12 @@ std::shared_ptr<IField> ofApp::createField(const FieldParams params, const glm::
   return field;
 }
 
-std::unique_ptr<Hyphae> ofApp::createHyphae(const HyphaParams hyphaParams, std::shared_ptr<IField> field) {
+std::unique_ptr<Hyphae> ofApp::createHyphae(std::shared_ptr<HyphaParams> hyphaParams, std::shared_ptr<IField> field) {
   PerimeterStartPos startPos(field, 50);
   return std::make_unique<Hyphae>(
     hyphaParams,
-    field,
     std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10),
-    std::make_unique<HyphaePainter>(hyphaParams.color));
+    std::make_unique<HyphaePainter>(hyphaParams->color));
 }
 
 void ofApp::keyPressed(int key){}

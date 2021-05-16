@@ -18,23 +18,22 @@
 class Hypha {
   
 private:
-  const HyphaParams params;
-  std::shared_ptr<IField>  field;
+  std::shared_ptr<HyphaParams> params;
   HyphaKynetics kynetics;
   HyphaEnergy energy;
   int nextForkDistance;
   bool dead = false;
 
-  double takeFoodFromField();
+  double takeFoodFromField(IField &field);
   void throwForkEvent();
   void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
-  void updateDeadStatus();
+  void updateDeadStatus(IField &field);
 
 public:
-  Hypha(const HyphaParams& _params, std::shared_ptr<IField> _field, const HyphaCoordinates coordinates, const double initialEnergy);
-  void update();
+  Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
+  void update(IField &field);
   bool isAlive() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
