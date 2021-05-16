@@ -10,12 +10,12 @@
 
 class ofApp : public ofBaseApp{
 private:
-  shared_ptr<IField> field;
   unique_ptr<FieldPainter> fieldPainter;
   unique_ptr<Hyphae> hyphae;
   unique_ptr<Painter> painter;
 
-  std::shared_ptr<IField> createField(FieldParams params, glm::vec2 size);
+  std::shared_ptr<IField> createField(const FieldParams params, const glm::vec2 size);
+  std::unique_ptr<Hyphae> createHyphae(const HyphaParams params, std::shared_ptr<IField> field);
 
 public:
     void setup();

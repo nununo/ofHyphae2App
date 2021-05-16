@@ -15,14 +15,12 @@ void ofApp::setup(){
   Params params(settings);
 
   glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
-  field = createField(params.field, size);
+  shared_ptr<IField> field = createField(params.field, size);
 
   fieldPainter = std::make_unique<FieldPainter>(field.get());
   painter = std::make_unique<Painter>(settings.hypha.color);
 
-  PerimeterStartPos startPos(field, 10);
-  std::unique_ptr<IHyphaCoordinatesGenerator> hyphaCoordinatesGenerator = std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10);
-  hyphae = std::make_unique<Hyphae>(params.hypha, field, std::move(hyphaCoordinatesGenerator));
+  hyphae = createHyphae(params.hypha, field);
 
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -49,13 +47,13 @@ void ofApp::draw(){
   hyphae->clearNewPositions();
 }
 
-std::shared_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
+std::shared_ptr<IField> ofApp::createField(const FieldParams params, const glm::vec2 size) {
   auto noise = std::make_unique<NoiseFieldGenerator>();
-  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), params.zeroThreshold);
+  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), 0 /*params.zeroThreshold*/);
 
   auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
-  for(auto i=0; i<3; i++) {
-    lines->add(std::make_unique<LineFieldGenerator>(200/size.x, 1));
+  for(auto i=0; i<5; i++) {
+    lines->add(std::make_unique<LineFieldGenerator>(100/size.x, 1));
   }
 
   auto interception = std::make_shared<MultiFieldGenerator>(std::make_shared<MinFunc>());
@@ -65,6 +63,14 @@ std::shared_ptr<IField> ofApp::createField(FieldParams params, glm::vec2 size) {
   auto field = std::make_shared<WritableField>(size);
   field->generate(interception);
   return field;
+}
+
+std::unique_ptr<Hyphae> ofApp::createHyphae(const HyphaParams hyphaParams, std::shared_ptr<IField> field) {
+  PerimeterStartPos startPos(field, 50);
+  return std::make_unique<Hyphae>(
+    hyphaParams,
+    field,
+    std::make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10));
 }
 
 void ofApp::keyPressed(int key){}
