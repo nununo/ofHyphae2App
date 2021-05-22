@@ -14,12 +14,10 @@ HyphaCoordinatesRadialGenerator::HyphaCoordinatesRadialGenerator(glm::vec2 _pos,
 
 vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
   vector<HyphaCoordinates> v;
-  if (!done) {
-    for(auto i=0; i<numRays; i++) {
-      HyphaCoordinates hc = {pos, glm::rotate(glm::vec2(1,0), ofRandom(360))};
-      v.push_back(hc);
-    }
-    done = true;
+  if (numRays > 0) {
+    HyphaCoordinates hc = {pos, glm::rotate(glm::vec2(1,0), ofRandom(360))};
+    v.push_back(hc);
+    numRays--;
   }
   return v;
 }

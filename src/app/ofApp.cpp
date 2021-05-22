@@ -50,7 +50,7 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
 
   auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
   for(auto i=0; i<5; i++) {
-    lines->add(std::make_unique<LineFieldGenerator>(100/size.x, 1));
+    lines->add(std::make_unique<LineFieldGenerator>(500/size.x, 1));
   }
 
   auto interception = make_shared<MultiFieldGenerator>(make_shared<MinFunc>());

@@ -18,8 +18,8 @@
   </canvas>
   <field>
     <zeroThreshold>
-      <min>0.45</min>
-      <max>0.45</max>
+      <min>0.05</min>
+      <max>0.05</max>
     </zeroThreshold>
   </field>
   <hypha>

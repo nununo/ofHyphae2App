@@ -9,12 +9,10 @@
 #define HyphaCoordinatesRadialGenerator_h
 
 #include "IHyphaCoordinatesGenerator.h"
-#include "ofMain.h"
 
 class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
   glm::vec2 pos;
   int numRays;
-  bool done = false;
   
   vector<HyphaCoordinates> get() override;
 
