@@ -478,9 +478,9 @@
 			isa = PBXGroup;
 			children = (
 				7DE3A0E826334136000DED6A /* Params.h */,
-				7DE3A0E926334136000DED6A /* HyphaParams.h */,
 				7DE3A0EA26334136000DED6A /* FieldParams.h */,
 				7DE3A0EB26334136000DED6A /* FieldParams.cpp */,
+				7DE3A0E926334136000DED6A /* HyphaParams.h */,
 				7DE3A0EC26334136000DED6A /* HyphaParams.cpp */,
 				7DE3A0ED26334136000DED6A /* Params.cpp */,
 			);

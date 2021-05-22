@@ -67,12 +67,12 @@ void Hypha::fork() {
  * Determine distance to next fork
  *
  * Criteria
- * - Stronger Hypha is more fertile
+ * - Stronger Hypha is potentially more fertile
  * - Use HyphaParams.fertilityRatio
  * - Add a random factor
  */
 int Hypha::getNextForkDistance() const {
-  auto fertilityRatio = 1 - energy.get();
+  auto fertilityRatio = ofRandom(1 - energy.get());
   auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
   return nextForkDistance;
 }
