@@ -392,6 +392,7 @@
 		7DE3A0B9263340DE000DED6A /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				7DE3A0C926334100000DED6A /* SettingsFile.h */,
 				7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */,
 				7DE3A0BB263340DE000DED6A /* CanvasSettings.h */,
 				7DE3A0BC263340DE000DED6A /* Settings.h */,
@@ -408,7 +409,6 @@
 		7DE3A0C826334100000DED6A /* app */ = {
 			isa = PBXGroup;
 			children = (
-				7DE3A0C926334100000DED6A /* SettingsFile.h */,
 				7DE3A0CA26334100000DED6A /* ofApp.cpp */,
 				7DE3A0CB26334100000DED6A /* ofApp.h */,
 				7DE3A0CC26334100000DED6A /* Tools.h */,
