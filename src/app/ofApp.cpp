@@ -66,7 +66,7 @@ unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shar
   PerimeterStartPos startPos(field, 50);
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(startPos.get(), 10));
+    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), 10));
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {

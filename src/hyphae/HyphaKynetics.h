@@ -21,10 +21,9 @@ private:
 
 public:
   HyphaKynetics(shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates);
-  bool update();
+  bool update(double speed);
   glm::vec2 getPixelPos() const;
   HyphaCoordinates getForkCoordinates();
-  bool isInsideField(const glm::vec2 fieldSize);
 };
 
 #endif /* HyphaKinetics_h */

@@ -9,15 +9,19 @@
 #define HyphaCoordinatesRadialGenerator_h
 
 #include "IHyphaCoordinatesGenerator.h"
+#include "IField.h"
 
 class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
+  shared_ptr<IField> field;
   glm::vec2 pos;
   int numRays;
   
   vector<HyphaCoordinates> get() override;
+  
+  glm::vec2 getNewDirection();
 
 public:
-  HyphaCoordinatesRadialGenerator(glm::vec2 pos, int numRays);
+  HyphaCoordinatesRadialGenerator(shared_ptr<IField> field, glm::vec2 pos, int numRays);
 };
 
 #endif /* HyphaCoordinatesRadialGenerator_h */

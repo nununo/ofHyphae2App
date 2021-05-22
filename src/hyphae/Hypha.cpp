@@ -19,16 +19,20 @@ bool Hypha::isAlive() const {
 }
 
 void Hypha::updateDeadStatus(IField &field) {
-  if (energy.isEmpty() || !kynetics.isInsideField(field.getSize())) {
+  if (energy.isEmpty() || !field.isInside(kynetics.getPixelPos())) {
     dead = true;
   }
 }
 
+double Hypha::getSpeed() const {
+  return params->speed * ofMap(energy.get(), 0, 1, 0.5f, 1.0f); // TODO
+}
+
 void Hypha::update(IField &field) {
   if (!isAlive()) {
-  return;
+    return;
   }
-  if (!kynetics.update()) {
+  if (!kynetics.update(getSpeed())) {
     return; // update() returns true if moved to new pixel
   }
   updateDeadStatus(field);

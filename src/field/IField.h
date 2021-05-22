@@ -16,6 +16,7 @@ public:
   virtual glm::vec2 getSize() const = 0;
   virtual double getValue(const glm::vec2 pos) const = 0;
   virtual double consume(const glm::vec2 pos, const double amount) = 0;
+  virtual bool isInside(const glm::vec2 pos) const = 0;
 };
 
 #endif /* IField_h */

@@ -30,6 +30,7 @@ private:
   void fork();
   int getNextForkDistance() const;
   void updateDeadStatus(IField &field);
+  double getSpeed() const;
 
 public:
   Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);

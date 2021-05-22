@@ -20,8 +20,8 @@ glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 _dir) const {
   return glm::rotate(_dir, ofRandom(-params->maxBendAngle, params->maxBendAngle));
 }
 
-bool HyphaKynetics::update() {
-  coordinates.pos += coordinates.dir * params->speed;
+bool HyphaKynetics::update(double speed) {
+  coordinates.pos += coordinates.dir * speed;
   auto pixelPos = getPixelPos();
   if (pixelPos != lastPixelPos) {
     coordinates.dir = nextDirection(coordinates.dir);
@@ -30,12 +30,6 @@ bool HyphaKynetics::update() {
   } else {
     return false;
   }
-}
-
-bool HyphaKynetics::isInsideField(const glm::vec2 fieldSize) {
-  return coordinates.pos == glm::abs(coordinates.pos)
-      && coordinates.pos.x < fieldSize.x
-      && coordinates.pos.y < fieldSize.y;
 }
 
 HyphaCoordinates HyphaKynetics::getForkCoordinates() {

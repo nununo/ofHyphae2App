@@ -45,3 +45,7 @@ double WritableField::consume(const glm::vec2 pos, const double amount) {
   setValue(pos, value-consumed);
   return consumed;
 }
+
+bool WritableField::isInside(const glm::vec2 pos) const {
+  return pos == glm::abs(pos) && pos.x <= size.x-1 && pos.y <= size.y-1;
+}

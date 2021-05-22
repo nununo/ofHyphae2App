@@ -21,6 +21,7 @@ private:
   glm::vec2 getSize() const override;
   double getValue(const glm::vec2 pos) const override;
   double consume(const glm::vec2 pos, const double amount) override;
+  bool isInside(const glm::vec2 pos) const override;
 
   glm::vec2 normalize(const glm::vec2 pos) const;
   void setValue( glm::vec2 pos, double newValue);
