@@ -7,18 +7,29 @@
 
 #include "HyphaCoordinatesRadialGenerator.h"
 
-HyphaCoordinatesRadialGenerator::HyphaCoordinatesRadialGenerator(shared_ptr<IField> _field, glm::vec2 _pos, int _numRays)
+HyphaCoordinatesRadialGenerator::HyphaCoordinatesRadialGenerator(shared_ptr<IField> _field, glm::vec2 _pos, int _numRays, int _total)
 : field(_field)
 , pos(_pos)
-, numRays(_numRays)
+, rays(generateRays(_numRays))
+, total(_total)
 {}
 
-vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
+vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::generateRays(int numRays) {
   vector<HyphaCoordinates> v;
-  if (numRays > 0) {
+  while (numRays > 0) {
     HyphaCoordinates hc = {pos, getNewDirection()};
     v.push_back(hc);
     numRays--;
+  }
+  return v;
+}
+
+vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
+  vector<HyphaCoordinates> v;
+  if (total > 0) {
+    auto ray = rays[ofRandom(rays.size())];
+    v.push_back(ray);
+    total--;
   }
   return v;
 }

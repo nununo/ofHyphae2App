@@ -49,8 +49,8 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
   auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), fieldParams->zeroThreshold);
 
   auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
-  for(auto i=0; i<5; i++) {
-    lines->add(std::make_unique<LineFieldGenerator>(500/size.x, 1));
+  for(auto i=0; i<5; i++) { // TODO
+    lines->add(std::make_unique<LineFieldGenerator>(500/size.x, 1)); // TODO
   }
 
   auto interception = make_shared<MultiFieldGenerator>(make_shared<MinFunc>());
@@ -63,10 +63,10 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
-  PerimeterStartPos startPos(field, 50);
+  PerimeterStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), 10));
+    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), 1000, 1000)); // TODO
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
