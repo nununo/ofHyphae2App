@@ -31,12 +31,16 @@ void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
   newPositions.push_back(e.pos);
 }
 
-void Hyphae::update(IField &field) {
-  newPositions.clear();
+void Hyphae::addGenerated() {
   auto v = generator->get();
   for(auto p: v) {
     add(p);
   }
+}
+
+void Hyphae::update(IField &field) {
+  newPositions.clear();
+  addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
       itr->update(field);

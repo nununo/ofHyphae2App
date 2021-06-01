@@ -18,6 +18,8 @@ private:
   unique_ptr<IHyphaCoordinatesGenerator> generator;
   vector<glm::vec2> newPositions;
 
+  void addGenerated();
+
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
