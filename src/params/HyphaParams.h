@@ -21,6 +21,7 @@ public:
   const double foodAmount;
   const double foodToEnergyRatio;
   const glm::vec2 forkDistanceInterval;
+  const double birthAreaRadius;
   const double pixelOverlap;
 
   HyphaParams(const HyphaSettings& hyphaSettings);

@@ -22,6 +22,7 @@ public:
   const glm::vec2 eatSpendRatio;
   const glm::vec2 forkDistanceMin;
   const glm::vec2 forkDistanceMax;
+  const glm::vec2 birthAreaRadius;
   const double pixelOverlap;
 
   HyphaSettings(const SettingsFile& sf);

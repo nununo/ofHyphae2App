@@ -29,9 +29,9 @@ void SettingsFile::popTags(int levels) {
   }
 }
 
-glm::vec2 SettingsFile::getRange(const string& xmlPath, const double defaultValue) const {
-  return glm::vec2(f.getValue(xmlPath + ":min", defaultValue),
-                   f.getValue(xmlPath + ":max", defaultValue));
+glm::vec2 SettingsFile::getRange(const string& xmlPath) const {
+  return glm::vec2(f.getValue(xmlPath + ":min", 0.0f),
+                   f.getValue(xmlPath + ":max", 0.0f));
 }
 
 vector<double> SettingsFile::getSet(const string& xmlPath) {
@@ -49,9 +49,9 @@ vector<double> SettingsFile::getSet(const string& xmlPath) {
   return list;
 }
 
-ofColor SettingsFile::getColor(const string& xmlPath, const ofColor defaultValue) const {
-  return ofColor(f.getValue(xmlPath + ":r", defaultValue.r),
-                 f.getValue(xmlPath + ":g", defaultValue.g),
-                 f.getValue(xmlPath + ":b", defaultValue.b),
-                 f.getValue(xmlPath + ":a", defaultValue.a));
+ofColor SettingsFile::getColor(const string& xmlPath) const {
+  return ofColor(f.getValue(xmlPath + ":r", ofColor::black.r),
+                 f.getValue(xmlPath + ":g", ofColor::black.g),
+                 f.getValue(xmlPath + ":b", ofColor::black.b),
+                 f.getValue(xmlPath + ":a", ofColor::black.a));
 }

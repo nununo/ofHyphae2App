@@ -8,5 +8,5 @@
 #include "FieldSettings.h"
 
 FieldSettings::FieldSettings(const SettingsFile& sf)
-: zeroThreshold(sf.getRange("rhizopus:field:zeroThreshold", 0.5f))
+: zeroThreshold(sf.getRange("rhizopus:field:zeroThreshold"))
 {}

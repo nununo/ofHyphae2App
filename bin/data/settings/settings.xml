@@ -33,6 +33,10 @@
       <min>0.9</min>
       <max>0.9</max>
     </speed> <!--pixels/s-->
+    <birthAreaRadius>
+      <min>3</min>
+      <max>3</max>
+    </birthAreaRadius>
     <energySpentToMove>
       <min>0.01</min>
       <max>0.01</max>
@@ -42,8 +46,8 @@
       <max>5</max>
     </maxBendAngleDeg>
     <foodAmount>
-      <min>0.1</min>
-      <max>0.1</max>
+      <min>0.01</min>
+      <max>0.01</max>
     </foodAmount>
     <eatSpendRatio>
       <min>0.8</min>

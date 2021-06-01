@@ -13,17 +13,20 @@
 
 class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
   shared_ptr<IField> field;
-  glm::vec2 pos;
+  double birthAreaRadius;
+  glm::vec2 center;
   vector<HyphaCoordinates> rays;
   int total;
   
   vector<HyphaCoordinates> get() override;
   
   vector<HyphaCoordinates> generateRays(int numRays);
-  glm::vec2 getNewDirection();
+  HyphaCoordinates generateRay();
+  glm::vec2 getNewOffset();
+  glm::vec2 getNewInwardDirection();
 
 public:
-  HyphaCoordinatesRadialGenerator(shared_ptr<IField> field, glm::vec2 pos, int numRays, int total);
+  HyphaCoordinatesRadialGenerator(shared_ptr<IField> field, glm::vec2 center, double birthAreaRadius, int numRays, int total);
 };
 
 #endif /* HyphaCoordinatesRadialGenerator_h */
