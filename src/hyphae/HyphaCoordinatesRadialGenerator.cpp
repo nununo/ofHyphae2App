@@ -26,8 +26,8 @@ vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::generateRays(int numRa
 }
 
 HyphaCoordinates HyphaCoordinatesRadialGenerator::generateRay() {
-  auto dir = getNewInwardDirection();
-  auto pos = center + getNewOffset();
+  auto pos = getNewPosition();
+  auto dir = getNewInwardDirection(pos);
   return {pos, dir};
 }
 
@@ -41,14 +41,22 @@ vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
   return v;
 }
 
+glm::vec2 HyphaCoordinatesRadialGenerator::getNewPosition() {
+  glm::vec2 pos;
+  do {
+    pos = center + getNewOffset();
+  } while (!field->isInside(pos));
+  return pos;
+}
+
 glm::vec2 HyphaCoordinatesRadialGenerator::getNewOffset() {
   return glm::rotate(glm::vec2(birthAreaRadius*ofRandom(0,1)),ofRandom(0,360));
 }
 
-glm::vec2 HyphaCoordinatesRadialGenerator::getNewInwardDirection() {
-  glm::vec2 dir = {0,0};
+glm::vec2 HyphaCoordinatesRadialGenerator::getNewInwardDirection(glm::vec2 pos) {
+  glm::vec2 dir;
   do {
     dir = glm::rotate(glm::vec2(1,0), ofRandom(360));
-  } while (!field->isInside(center+dir));
+  } while (!field->isInside(pos+dir));
   return dir;
 }

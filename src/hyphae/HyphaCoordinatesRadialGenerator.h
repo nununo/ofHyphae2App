@@ -23,7 +23,8 @@ class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
   vector<HyphaCoordinates> generateRays(int numRays);
   HyphaCoordinates generateRay();
   glm::vec2 getNewOffset();
-  glm::vec2 getNewInwardDirection();
+  glm::vec2 getNewPosition();
+  glm::vec2 getNewInwardDirection(glm::vec2 pos);
 
 public:
   HyphaCoordinatesRadialGenerator(shared_ptr<IField> field, glm::vec2 center, double birthAreaRadius, int numRays, int total);

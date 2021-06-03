@@ -18,7 +18,6 @@ public:
   const double energySpentToMove;
   const double maxBendAngle;
   const double maxForkAngle;
-  const double foodAmount;
   const double foodToEnergyRatio;
   const glm::vec2 forkDistanceInterval;
   const double birthAreaRadius;

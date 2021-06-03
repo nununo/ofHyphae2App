@@ -18,8 +18,7 @@ public:
   const glm::vec2 energySpentToMove;
   const glm::vec2 maxBendAngle;
   const glm::vec2 maxForkAngle;
-  const glm::vec2 foodAmount;
-  const glm::vec2 eatSpendRatio;
+  const glm::vec2 foodToEnergyRatio;
   const glm::vec2 forkDistanceMin;
   const glm::vec2 forkDistanceMax;
   const glm::vec2 birthAreaRadius;

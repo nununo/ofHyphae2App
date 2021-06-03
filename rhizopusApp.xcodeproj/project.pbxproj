@@ -393,12 +393,12 @@
 			isa = PBXGroup;
 			children = (
 				7DE3A0C926334100000DED6A /* SettingsFile.h */,
-				7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */,
 				7DE3A0BB263340DE000DED6A /* CanvasSettings.h */,
 				7DE3A0BC263340DE000DED6A /* Settings.h */,
 				7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */,
 				7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */,
 				7DE3A0BF263340DE000DED6A /* HyphaSettings.h */,
+				7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */,
 				7DE3A0C0263340DE000DED6A /* SettingsFile.cpp */,
 				7DE3A0C1263340DE000DED6A /* FieldSettings.h */,
 				7DE3A0C2263340DE000DED6A /* Settings.cpp */,
@@ -862,6 +862,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					E4B69B5A0A3A1756003C02F2 = {
+						DevelopmentTeam = 8FMM355UGD;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "rhizopusApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1216,9 +1222,11 @@
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8FMM355UGD;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1245,6 +1253,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cc.openFrameworks.${EXECUTABLE_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

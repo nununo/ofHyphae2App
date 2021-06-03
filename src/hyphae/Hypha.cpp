@@ -28,23 +28,26 @@ double Hypha::getSpeed() const {
   return params->speed * ofMap(energy.get(), 0, 1, 0.5f, 1.0f); // TODO
 }
 
+bool Hypha::move(IField &field) {
+  bool moved =false;
+  if (isAlive()) {
+    if (kynetics.update(getSpeed())) {
+      energy.move();
+      updateDeadStatus(field);
+      moved = isAlive();
+      if (moved) {
+        throwMovedEvent();
+      }
+    }
+  }
+  return moved;
+}
+
 void Hypha::update(IField &field) {
-  if (!isAlive()) {
-    return;
-  }
-  if (!kynetics.update(getSpeed())) {
-    return; // update() returns true if moved to new pixel
-  }
-  updateDeadStatus(field);
-  if (!isAlive()) {
-    return;
-  }
-  energy.move();
-  energy.eat(takeFoodFromField(field));
-  if (--nextForkDistance == 0) {
-    fork();
-  }
-  throwMovedEvent();
+  if (!move(field)) {return;}
+  auto food = takeFoodFromField(field);
+  energy.eat(food);
+  fork();
 }
 
 void Hypha::throwForkEvent() {
@@ -58,13 +61,15 @@ void Hypha::throwMovedEvent() {
 }
 
 double Hypha::takeFoodFromField(IField &field) {
-  return field.consume(kynetics.getPixelPos(), params->foodAmount) * params->foodToEnergyRatio;
+  return field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio;
 }
 
 void Hypha::fork() {
-  energy.fork();
-  throwForkEvent();
-  nextForkDistance = getNextForkDistance();
+  if (--nextForkDistance == 0) {
+    energy.fork();
+    throwForkEvent();
+    nextForkDistance = getNextForkDistance();
+  }
 }
 
 /**

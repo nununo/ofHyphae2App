@@ -17,7 +17,9 @@ void HyphaEnergy::move() {
 }
 
 void HyphaEnergy::eat(double meal) {
-  amount = 1-amount>meal? amount+meal : 1;
+  if (!isEmpty()) {
+    amount = 1-amount>meal? amount+meal : 1;
+  }
 }
 
 void HyphaEnergy::fork() {
