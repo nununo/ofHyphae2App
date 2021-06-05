@@ -40,7 +40,9 @@ void ofApp::draw(){
   ofPushView();
 
   ofTranslate(ofGetWidth()/2, 0);
-  fieldPainter->draw(*field.get());
+  if (ofGetFrameNum() % 10 == 0) {
+    fieldPainter->draw(*field.get());
+  }
   hyphaePainter->draw(hyphae->getNewPositions());
 
   osd->draw(hyphae->getStats());
@@ -71,7 +73,7 @@ unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shar
   PerimeterStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, 1, 1)); // TODO
+    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, 1, 10)); // TODO
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
