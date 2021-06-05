@@ -4,13 +4,13 @@
 #include "IFieldPainter.h"
 #include "IHyphaePainter.h"
 #include "Hyphae.h"
-#include "Settings.h"
 #include "IField.h"
-#include "FieldParams.h"
 #include "OSD.h"
+#include "Params.h"
 
 class ofApp : public ofBaseApp{
 private:
+  shared_ptr<Params> params;
   shared_ptr<IField> field;
   unique_ptr<Hyphae> hyphae;
   unique_ptr<IFieldPainter> fieldPainter;
@@ -22,6 +22,9 @@ private:
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams) const;
+
+  glm::vec2 getSize() const;
+  void newHyphae();
 
 public:
     void setup();

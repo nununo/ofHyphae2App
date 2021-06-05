@@ -1,5 +1,4 @@
 #include "ofApp.h"
-#include "Params.h"
 #include "NoiseFieldGenerator.h"
 #include "MultiFieldGenerator.h"
 #include "MaxFunc.h"
@@ -14,41 +13,46 @@
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
-  auto params = std::make_shared<Params>(settings);
+  params = std::make_shared<Params>(settings);
 
-  glm::vec2 size = {ofGetWidth()/2, ofGetHeight()};
-
-  field = createField(params->field, size);
-  fieldPainter = createFieldPainter(size);
-  hyphae = createHyphae(params->hypha, field);
-  hyphaePainter = createHyphaePainter(params->hypha->color);
+  fieldPainter = createFieldPainter(getSize());
   osd = createOSD(settings.canvas, params->hypha);
+  hyphaePainter = createHyphaePainter(params->hypha->color);
   
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
   ofBackground(ofColor::white);
+
+  newHyphae();
 }
 
 void ofApp::update(){
   hyphae->update(*field.get());
+  if (!hyphae->isAlive()) {
+    newHyphae();
+  }
 }
 
 void ofApp::draw(){
   hyphaePainter->draw(hyphae->getNewPositions());
-
   ofPushView();
-
   ofTranslate(ofGetWidth()/2, 0);
   if (ofGetFrameNum() % 10 == 0) {
     fieldPainter->draw(*field.get());
   }
   hyphaePainter->draw(hyphae->getNewPositions());
-
   osd->draw(hyphae->getStats());
-
   ofPopView();
-  
+}
+
+void ofApp::newHyphae() {
+  field = createField(params->field, getSize());
+  hyphae = createHyphae(params->hypha, field);
+}
+
+glm::vec2 ofApp::getSize() const {
+  return {ofGetWidth()/2, ofGetHeight()};
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
@@ -90,14 +94,15 @@ unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_pt
 
 void ofApp::keyPressed(int key) {
   switch (key) {
+  case ' ':
+    newHyphae();
+    break;
   case 'f':
     ofToggleFullscreen();
     break;
-    
   case 'o':
     osd->toggleActive();
     break;
-    
   default:
     break;
   }

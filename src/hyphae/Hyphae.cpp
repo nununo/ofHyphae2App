@@ -13,10 +13,6 @@ Hyphae::Hyphae(std::shared_ptr<HyphaParams> _hyphaParams,
 , generator(std::move(_generator))
 {}
 
-int Hyphae::count() const {
-  return elements.size();
-}
-
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
   elements.push_back(Hypha(hyphaParams, coordinates, energy));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
@@ -69,4 +65,8 @@ HyphaeStats Hyphae::getStats() const {
 int Hyphae::getMaxBirths() const {
   auto maxBirths = totalLifes.getDiff() * hyphaParams->maxGrowthPercentage / 100.0f;
   return maxBirths>10? maxBirths : 10;
+}
+
+bool Hyphae::isAlive() const {
+  return elements.size() > 0;
 }

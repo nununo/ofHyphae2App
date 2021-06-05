@@ -32,7 +32,7 @@ public:
   Hyphae(shared_ptr<HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
   void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
-  int count() const;
+  bool isAlive() const;
   
   vector<glm::vec2> getNewPositions() const;
   HyphaeStats getStats() const;
