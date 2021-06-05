@@ -21,6 +21,7 @@ void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
   elements.push_back(Hypha(hyphaParams, coordinates, energy));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
   ofAddListener(elements.back().movedEvent, this, &Hyphae::onHyphaMoved);
+  bornTotal++;
 }
 
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
@@ -39,6 +40,7 @@ void Hyphae::addGenerated() {
 }
 
 void Hyphae::update(IField &field) {
+  deadLastUpdate=0;
   newPositions.clear();
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
@@ -48,10 +50,16 @@ void Hyphae::update(IField &field) {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);
       itr = elements.erase(itr);
+      deadTotal++;
+      deadLastUpdate++;
     }
   }
 }
 
 vector<glm::vec2> Hyphae::getNewPositions() const {
   return newPositions;
+}
+
+HyphaeStats Hyphae::getStats() const {
+  return HyphaeStats(bornTotal, deadTotal, count(), newPositions.size(), deadLastUpdate);
 }

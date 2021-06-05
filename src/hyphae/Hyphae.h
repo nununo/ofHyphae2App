@@ -10,6 +10,7 @@
 
 #include "Hypha.h"
 #include "IHyphaCoordinatesGenerator.h"
+#include "HyphaeStats.h"
 
 class Hyphae {
 private:
@@ -17,6 +18,9 @@ private:
   list<Hypha> elements;
   unique_ptr<IHyphaCoordinatesGenerator> generator;
   vector<glm::vec2> newPositions;
+  int bornTotal=0;
+  int deadTotal=0;
+  int deadLastUpdate=0;
 
   void addGenerated();
 
@@ -30,6 +34,7 @@ public:
   int count() const;
   
   vector<glm::vec2> getNewPositions() const;
+  HyphaeStats getStats() const;
 };
 
 #endif /* Hyphae_h */

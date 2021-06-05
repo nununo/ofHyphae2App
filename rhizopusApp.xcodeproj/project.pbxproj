@@ -18,6 +18,8 @@
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
+		7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A857266930A5009E8DCE /* OSD.cpp */; };
+		7DA7A85E26693281009E8DCE /* HyphaeStats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A85C26693281009E8DCE /* HyphaeStats.cpp */; };
 		7DD554CA26473A0100CE41B3 /* AverageFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD554C826473A0100CE41B3 /* AverageFunc.cpp */; };
 		7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */; };
 		7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */; };
@@ -91,6 +93,10 @@
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
 		7D992701264325250070B17A /* MultiFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiFieldGenerator.h; sourceTree = "<group>"; };
+		7DA7A856266930A5009E8DCE /* OSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSD.h; sourceTree = "<group>"; };
+		7DA7A857266930A5009E8DCE /* OSD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OSD.cpp; sourceTree = "<group>"; };
+		7DA7A85C26693281009E8DCE /* HyphaeStats.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeStats.cpp; sourceTree = "<group>"; };
+		7DA7A85D26693281009E8DCE /* HyphaeStats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeStats.h; sourceTree = "<group>"; };
 		7DD554C7264739AC00CE41B3 /* IMultiFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMultiFunc.h; sourceTree = "<group>"; };
 		7DD554C826473A0100CE41B3 /* AverageFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AverageFunc.cpp; sourceTree = "<group>"; };
 		7DD554C926473A0100CE41B3 /* AverageFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AverageFunc.h; sourceTree = "<group>"; };
@@ -392,15 +398,15 @@
 		7DE3A0B9263340DE000DED6A /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				7DE3A0BC263340DE000DED6A /* Settings.h */,
 				7DE3A0C926334100000DED6A /* SettingsFile.h */,
 				7DE3A0BB263340DE000DED6A /* CanvasSettings.h */,
-				7DE3A0BC263340DE000DED6A /* Settings.h */,
 				7DE3A0BD263340DE000DED6A /* CanvasSettings.cpp */,
+				7DE3A0C1263340DE000DED6A /* FieldSettings.h */,
 				7DE3A0BE263340DE000DED6A /* FieldSettings.cpp */,
 				7DE3A0BF263340DE000DED6A /* HyphaSettings.h */,
 				7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */,
 				7DE3A0C0263340DE000DED6A /* SettingsFile.cpp */,
-				7DE3A0C1263340DE000DED6A /* FieldSettings.h */,
 				7DE3A0C2263340DE000DED6A /* Settings.cpp */,
 			);
 			path = settings;
@@ -409,11 +415,13 @@
 		7DE3A0C826334100000DED6A /* app */ = {
 			isa = PBXGroup;
 			children = (
-				7DE3A0CA26334100000DED6A /* ofApp.cpp */,
 				7DE3A0CB26334100000DED6A /* ofApp.h */,
+				7DE3A0CA26334100000DED6A /* ofApp.cpp */,
 				7DE3A0CC26334100000DED6A /* Tools.h */,
 				7DE3A0CD26334100000DED6A /* Tools.cpp */,
 				7DE3A0CE26334100000DED6A /* main.cpp */,
+				7DA7A857266930A5009E8DCE /* OSD.cpp */,
+				7DA7A856266930A5009E8DCE /* OSD.h */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -470,6 +478,8 @@
 				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
 				B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */,
 				CA6778A301673A7F07642741 /* HyphaePainter.h */,
+				7DA7A85D26693281009E8DCE /* HyphaeStats.h */,
+				7DA7A85C26693281009E8DCE /* HyphaeStats.cpp */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";
@@ -478,11 +488,11 @@
 			isa = PBXGroup;
 			children = (
 				7DE3A0E826334136000DED6A /* Params.h */,
+				7DE3A0ED26334136000DED6A /* Params.cpp */,
 				7DE3A0EA26334136000DED6A /* FieldParams.h */,
 				7DE3A0EB26334136000DED6A /* FieldParams.cpp */,
 				7DE3A0E926334136000DED6A /* HyphaParams.h */,
 				7DE3A0EC26334136000DED6A /* HyphaParams.cpp */,
-				7DE3A0ED26334136000DED6A /* Params.cpp */,
 			);
 			path = params;
 			sourceTree = "<group>";
@@ -940,6 +950,7 @@
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
 				7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
+				7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
 				7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
@@ -956,6 +967,7 @@
 				7DE3A0CF26334100000DED6A /* ofApp.cpp in Sources */,
 				7DE3A0F6263426FC000DED6A /* ThresholdFieldGenerator.cpp in Sources */,
 				7DD554CA26473A0100CE41B3 /* AverageFunc.cpp in Sources */,
+				7DA7A85E26693281009E8DCE /* HyphaeStats.cpp in Sources */,
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,

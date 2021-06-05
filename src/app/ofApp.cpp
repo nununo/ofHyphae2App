@@ -22,6 +22,7 @@ void ofApp::setup(){
   fieldPainter = createFieldPainter(size);
   hyphae = createHyphae(params->hypha, field);
   hyphaePainter = createHyphaePainter(params->hypha->color);
+  osd = createOSD(settings.canvas, params->hypha);
   
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -37,11 +38,15 @@ void ofApp::draw(){
   hyphaePainter->draw(hyphae->getNewPositions());
 
   ofPushView();
+
   ofTranslate(ofGetWidth()/2, 0);
   fieldPainter->draw(*field.get());
+  hyphaePainter->draw(hyphae->getNewPositions());
+
+  osd->draw(hyphae->getStats());
+
   ofPopView();
   
-  ofLog() << " total: " << hyphae->count();
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
@@ -77,7 +82,24 @@ unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color) const
   return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color));
 }
 
-void ofApp::keyPressed(int key){}
+unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_ptr<HyphaParams> hyphaParams) const {
+  return unique_ptr<OSD>(make_unique<OSD>(canvasSettings, hyphaParams));
+}
+
+void ofApp::keyPressed(int key) {
+  switch (key) {
+  case 'f':
+    ofToggleFullscreen();
+    break;
+    
+  case 'o':
+    osd->toggleActive();
+    break;
+    
+  default:
+    break;
+  }
+}
 void ofApp::keyReleased(int key){}
 void ofApp::mouseMoved(int x, int y ){}
 void ofApp::mouseDragged(int x, int y, int button){}
