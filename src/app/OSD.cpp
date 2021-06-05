@@ -56,11 +56,13 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats) {
   drawLine("stats");
   drawLine(" framerate: " + ofToString(ofGetFrameRate(),2));
   drawLine(" hyphae lifetime: " + ofToString(ofGetFrameNum() / canvasSettings.framerate ,2));
-  drawLine(" alive: " + ofToString(hyphaeStats.alive));
+  drawLine(" alive: " + ofToString(hyphaeStats.bornTotal-hyphaeStats.deadTotal));
   drawLine(" total born: " + ofToString(hyphaeStats.bornTotal));
   drawLine(" total dead: " + ofToString(hyphaeStats.deadTotal));
   drawLine(" moved: " + ofToString(hyphaeStats.moved));
-  drawLine(" died: " + ofToString(hyphaeStats.died));
+  drawLine(" born: " + ofToString(hyphaeStats.born));
+  drawLine(" dead: " + ofToString(hyphaeStats.died));
+  drawLine(" growth %: " + ofToString(hyphaeStats.growthPercentage));
 
   drawLine("");
   

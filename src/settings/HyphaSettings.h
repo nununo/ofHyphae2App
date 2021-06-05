@@ -14,7 +14,6 @@
 class HyphaSettings {
 public:
   const ofColor color;
-  const glm::vec2 suddenDeathProbability;
   const glm::vec2 speed;
   const glm::vec2 energySpentToMove;
   const glm::vec2 maxBendAngle;
@@ -23,6 +22,7 @@ public:
   const glm::vec2 forkDistanceMin;
   const glm::vec2 forkDistanceMax;
   const glm::vec2 birthAreaRadius;
+  const glm::vec2 maxGrowthPercentage;
   const double pixelOverlap;
 
   HyphaSettings(const SettingsFile& sf);

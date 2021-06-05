@@ -22,7 +22,7 @@ public:
   const glm::vec2 forkDistanceInterval;
   const double birthAreaRadius;
   const double pixelOverlap;
-  const double suddenDeathProbability;
+  const double maxGrowthPercentage;
 
   HyphaParams(const HyphaSettings& hyphaSettings);
 };

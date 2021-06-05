@@ -23,6 +23,7 @@ private:
   LifeDeathCounter lastUpdateLifes;
 
   void addGenerated();
+  int getMaxBirths() const;
 
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);

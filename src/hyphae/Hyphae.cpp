@@ -41,12 +41,13 @@ void Hyphae::addGenerated() {
 }
 
 void Hyphae::update(IField &field) {
+  auto maxBirths = getMaxBirths();
   lastUpdateLifes.reset();
   newPositions.clear();
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      itr->update(field);
+      itr->update(field, lastUpdateLifes.getDiff()<maxBirths);
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);
@@ -62,5 +63,10 @@ vector<glm::vec2> Hyphae::getNewPositions() const {
 }
 
 HyphaeStats Hyphae::getStats() const {
-  return HyphaeStats(totalLifes.getBirths(), totalLifes.getDeaths(), totalLifes.getDiff(), newPositions.size(), lastUpdateLifes.getDeaths());
+  return HyphaeStats(totalLifes.getBirths(), totalLifes.getDeaths(), totalLifes.getDiff(), lastUpdateLifes.getBirths(), lastUpdateLifes.getDeaths());
+}
+
+int Hyphae::getMaxBirths() const {
+  auto maxBirths = totalLifes.getDiff() * hyphaParams->maxGrowthPercentage / 100.0f;
+  return maxBirths>10? maxBirths : 10;
 }
