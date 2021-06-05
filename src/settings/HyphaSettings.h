@@ -14,6 +14,7 @@
 class HyphaSettings {
 public:
   const ofColor color;
+  const glm::vec2 suddenDeathProbability;
   const glm::vec2 speed;
   const glm::vec2 energySpentToMove;
   const glm::vec2 maxBendAngle;

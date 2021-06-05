@@ -11,6 +11,7 @@
 #include "Hypha.h"
 #include "IHyphaCoordinatesGenerator.h"
 #include "HyphaeStats.h"
+#include "LifeDeathCounter.h"
 
 class Hyphae {
 private:
@@ -18,9 +19,8 @@ private:
   list<Hypha> elements;
   unique_ptr<IHyphaCoordinatesGenerator> generator;
   vector<glm::vec2> newPositions;
-  int bornTotal=0;
-  int deadTotal=0;
-  int deadLastUpdate=0;
+  LifeDeathCounter totalLifes;
+  LifeDeathCounter lastUpdateLifes;
 
   void addGenerated();
 

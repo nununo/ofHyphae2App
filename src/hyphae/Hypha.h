@@ -32,6 +32,7 @@ private:
   void updateDeadStatus(IField &field);
   double getSpeed() const;
   bool move(IField &fieldx);
+  bool isSuddenlyDead();
 
 public:
   Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);

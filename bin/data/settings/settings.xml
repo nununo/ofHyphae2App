@@ -33,6 +33,10 @@
       <min>0.9</min>
       <max>0.9</max>
     </speed> <!--pixels/s-->
+    <suddenDeathProbability>
+      <min>1</min>
+      <max>1</max>
+    </suddenDeathProbability>
     <birthAreaRadius>
       <min>3</min>
       <max>3</max>

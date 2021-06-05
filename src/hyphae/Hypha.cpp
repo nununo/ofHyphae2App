@@ -19,9 +19,16 @@ bool Hypha::isAlive() const {
 }
 
 void Hypha::updateDeadStatus(IField &field) {
-  if (energy.isEmpty() || !field.isInside(kynetics.getPixelPos())) {
+  if (energy.isEmpty() || isSuddenlyDead() || !field.isInside(kynetics.getPixelPos())) {
     dead = true;
   }
+}
+
+bool Hypha::isSuddenlyDead() {
+   auto r = ofRandom(100.0f);
+  auto sd = r<params->suddenDeathProbability;
+  if (sd) {ofLog() << "sudden death: " << r;}
+  return sd;
 }
 
 double Hypha::getSpeed() const {
@@ -65,7 +72,7 @@ double Hypha::takeFoodFromField(IField &field) {
 }
 
 void Hypha::fork() {
-  if (--nextForkDistance == 0) {
+  if (--nextForkDistance <= 0) {
     energy.fork();
     throwForkEvent();
     nextForkDistance = getNextForkDistance();
