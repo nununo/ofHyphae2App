@@ -38,12 +38,12 @@
       <max>3</max>
     </birthAreaRadius>
     <energySpentToMove>
-      <min>0.05</min>
-      <max>0.05</max>
+      <min>0.005</min>
+      <max>0.005</max>
     </energySpentToMove>
     <foodToEnergyRatio>
-      <min>0.1</min>
-      <max>0.1</max>
+      <min>0.01</min>
+      <max>0.01</max>
     </foodToEnergyRatio>
     <maxBendAngleDeg>
       <min>1</min>
