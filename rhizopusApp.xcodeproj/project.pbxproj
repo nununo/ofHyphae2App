@@ -155,6 +155,7 @@
 		7DF62762266C0496009D87C3 /* HyphaComparator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaComparator.h; sourceTree = "<group>"; };
 		7DF62764266C1177009D87C3 /* HyphaList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaList.cpp; sourceTree = "<group>"; };
 		7DF62765266C1177009D87C3 /* HyphaList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaList.h; sourceTree = "<group>"; };
+		7DF62767266D26F5009D87C3 /* MinMaxVec2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinMaxVec2.h; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxXmlSettings.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
@@ -431,6 +432,7 @@
 				7DE3A0CE26334100000DED6A /* main.cpp */,
 				7DA7A857266930A5009E8DCE /* OSD.cpp */,
 				7DA7A856266930A5009E8DCE /* OSD.h */,
+				7DF62767266D26F5009D87C3 /* MinMaxVec2.h */,
 			);
 			path = app;
 			sourceTree = "<group>";

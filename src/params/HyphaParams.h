@@ -15,7 +15,7 @@ class HyphaParams {
 public:
   const ofColor color;
   const double speed;
-  const double energySpentToMove;
+  const glm::vec2 energySpentToMove;
   const double maxBendAngle;
   const double maxForkAngle;
   const double foodToEnergyRatio;

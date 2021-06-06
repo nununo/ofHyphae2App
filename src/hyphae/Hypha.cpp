@@ -10,9 +10,14 @@
 Hypha::Hypha(std::shared_ptr<HyphaParams> _params, const HyphaCoordinates _coordinates, const double initialEnergy)
 : kynetics(HyphaKynetics(_params, _coordinates))
 , params(_params)
-, energy(HyphaEnergy(initialEnergy, _params->energySpentToMove))
+, energy(HyphaEnergy(initialEnergy, calcEnergySpentToMove(_params->energySpentToMove)))
 , nextForkDistance(getNextForkDistance())
 {}
+
+double Hypha::calcEnergySpentToMove(glm::vec2 energySpentToMoveInterval) {
+  auto r = pow(ofRandom(1.0f), 3);
+  return ofMap(r, 0, 1, energySpentToMoveInterval.y, energySpentToMoveInterval.x);
+}
 
 bool Hypha::isAlive() const {
   return !dead;

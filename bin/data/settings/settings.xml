@@ -42,8 +42,14 @@
       <max>3</max>
     </birthAreaRadius>
     <energySpentToMove>
-      <min>0.005</min>
-      <max>0.005</max>
+      <min>
+        <min>0.002</min>
+        <max>0.002</max>
+      </min>
+      <max>
+        <min>0.01</min>
+        <max>0.01</max>
+      </max>
     </energySpentToMove>
     <foodToEnergyRatio>
       <min>0.015</min>
@@ -53,14 +59,16 @@
       <min>1</min>
       <max>5</max>
     </maxBendAngleDeg>
-    <forkDistanceMin>
-      <min>10</min>
-      <max>15</max>
-    </forkDistanceMin>
-    <forkDistanceMax>
-      <min>20</min>
-      <max>30</max>
-    </forkDistanceMax>
+    <forkDistance>
+      <min>
+        <min>10</min>
+        <max>15</max>
+      </min>
+      <max>
+        <min>20</min>
+        <max>30</max>
+      </max>
+    </forkDistance>
     <maxForkAngleDeg>
       <min>0.1</min>
       <max>0.3</max>
