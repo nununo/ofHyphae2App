@@ -18,9 +18,19 @@ bool Hypha::isAlive() const {
   return !dead;
 }
 
-void Hypha::updateDeadStatus(IField &field) {
-  if (energy.isEmpty() || !field.isInside(kynetics.getPixelPos())) {
+bool Hypha::isInside() const {
+  return inside;
+}
+
+void Hypha::updateDeadStatus() {
+  if (energy.isEmpty()) {
     dead = true;
+  }
+}
+
+void Hypha::updateInsideStatus(IField &field) {
+  if (!field.isInside(kynetics.getPixelPos())) {
+    inside = false;
   }
 }
 
@@ -33,8 +43,9 @@ bool Hypha::move(IField &field) {
   if (isAlive()) {
     if (kynetics.update(getSpeed())) {
       energy.move();
-      updateDeadStatus(field);
-      moved = isAlive();
+      updateDeadStatus();
+      updateInsideStatus(field);
+      moved = isAlive() && isInside();
       if (moved) {
         throwMovedEvent();
       }
@@ -67,7 +78,7 @@ double Hypha::takeFoodFromField(IField &field) {
 }
 
 void Hypha::fork() {
-  if (--nextForkDistance == 0) {
+  if (isInside() && --nextForkDistance == 0) {
     energy.fork();
     throwForkEvent();
     nextForkDistance = getNextForkDistance();
@@ -86,4 +97,8 @@ int Hypha::getNextForkDistance() const {
   auto fertilityRatio = ofRandom(1 - energy.get());
   auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
   return nextForkDistance;
+}
+
+glm::vec2 Hypha::getPosition() const {
+  return kynetics.getPixelPos();
 }

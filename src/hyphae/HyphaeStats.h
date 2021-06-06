@@ -15,8 +15,9 @@ struct HyphaeStats {
   int born;
   int died;
   double growthPercentage;
+  double density;
 
-  HyphaeStats(const int bornTotal, const int deadTotal, const int moved, const int born, const int died);
+  HyphaeStats(const int bornTotal, const int deadTotal, const int moved, const int born, const int died, const double density);
 };
 
 #endif /* HyphaeStats_h */

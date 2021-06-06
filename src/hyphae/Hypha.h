@@ -23,21 +23,24 @@ private:
   HyphaEnergy energy;
   int nextForkDistance;
   bool dead = false;
+  bool inside = true;
 
   double takeFoodFromField(IField &field);
   void throwForkEvent();
   void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
-  void updateDeadStatus(IField &field);
+  void updateDeadStatus();
+  void updateInsideStatus(IField &field);
   double getSpeed() const;
   bool move(IField &fieldx);
-  bool isSuddenlyDead();
+  bool isInside() const;
 
 public:
   Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
   void update(IField &field, const bool allowForks);
   bool isAlive() const;
+  glm::vec2 getPosition() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
   ofEvent<HyphaMovedEventArgs> movedEvent;

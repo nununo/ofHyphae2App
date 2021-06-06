@@ -18,7 +18,8 @@ void ofApp::setup(){
   fieldPainter = createFieldPainter(getSize());
   osd = createOSD(settings.canvas, params->hypha);
   hyphaePainter = createHyphaePainter(params->hypha->color);
-  
+  hyphaePainterBlack = createHyphaePainter(ofColor::red);
+
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
@@ -36,12 +37,22 @@ void ofApp::update(){
 
 void ofApp::draw(){
   hyphaePainter->draw(hyphae->getNewPositions());
+
   ofPushView();
+
   ofTranslate(ofGetWidth()/2, 0);
-  if (ofGetFrameNum() % 10 == 0) {
-    fieldPainter->draw(*field.get());
-  }
-  hyphaePainter->draw(hyphae->getNewPositions());
+
+  fieldPainter->draw(*field.get());
+  hyphaePainterBlack->draw(hyphae->getNewPositions());
+  
+  ofPushStyle();
+  ofSetColor(ofColor::green);
+  ofNoFill();
+  auto density = hyphae->getDensity();
+  auto center = hyphae->getCenterOfMass();
+  ofDrawEllipse(center, density, density);
+  ofPopStyle();
+  
   osd->draw(hyphae->getStats());
   ofPopView();
 }
@@ -60,8 +71,8 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
   auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), fieldParams->zeroThreshold);
 
   auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
-  for(auto i=0; i<5; i++) { // TODO
-    lines->add(std::make_unique<LineFieldGenerator>(500/size.x, 1)); // TODO
+  for(auto i=0; i<3; i++) { // TODO
+    lines->add(std::make_unique<LineFieldGenerator>(200/size.x, 1)); // TODO
   }
 
   auto interception = make_shared<MultiFieldGenerator>(make_shared<MinFunc>());

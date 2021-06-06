@@ -46,8 +46,8 @@
       <max>0.005</max>
     </energySpentToMove>
     <foodToEnergyRatio>
-      <min>0.05</min>
-      <max>0.05</max>
+      <min>0.015</min>
+      <max>0.015</max>
     </foodToEnergyRatio>
     <maxBendAngleDeg>
       <min>1</min>

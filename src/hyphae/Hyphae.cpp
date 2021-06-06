@@ -6,6 +6,7 @@
 //
 
 #include "Hyphae.h"
+#include "HyphaComparator.h"
 
 Hyphae::Hyphae(std::shared_ptr<HyphaParams> _hyphaParams,
                std::unique_ptr<IHyphaCoordinatesGenerator> _generator)
@@ -37,13 +38,15 @@ void Hyphae::addGenerated() {
 }
 
 void Hyphae::update(IField &field) {
+  updateCachedData();
   auto maxBirths = getMaxBirths();
   lastUpdateLifes.reset();
   newPositions.clear();
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      itr->update(field, lastUpdateLifes.getDiff()<maxBirths);
+      auto birthControl = lastUpdateLifes.getDiff()<maxBirths && getDensity() < 80.0f; // TODO
+      itr->update(field, birthControl);
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);
@@ -58,15 +61,41 @@ vector<glm::vec2> Hyphae::getNewPositions() const {
   return newPositions;
 }
 
-HyphaeStats Hyphae::getStats() const {
-  return HyphaeStats(totalLifes.getBirths(), totalLifes.getDeaths(), totalLifes.getDiff(), lastUpdateLifes.getBirths(), lastUpdateLifes.getDeaths());
+HyphaeStats Hyphae::getStats() {
+  return HyphaeStats(
+                     totalLifes.getBirths(),
+                     totalLifes.getDeaths(),
+                     totalLifes.getDiff(),
+                     lastUpdateLifes.getBirths(),
+                     lastUpdateLifes.getDeaths(),
+                     getDensity());
 }
 
 int Hyphae::getMaxBirths() const {
   auto maxBirths = totalLifes.getDiff() * hyphaParams->maxGrowthPercentage / 100.0f;
-  return maxBirths>10? maxBirths : 10;
+  return maxBirths>10? maxBirths : 10; // TODO
 }
 
 bool Hyphae::isAlive() const {
   return elements.size() > 0;
+}
+
+void Hyphae::updateCachedData() {
+  if (--cacheValidity<=0) {
+    cachedCenterOfMass = elements.getCenterOfMass();
+    cachedDensity = elements.size()<100? 0 : elements.getDensity(80); // TODO
+    cacheValidity = 10; // TODO
+  }
+}
+
+glm::vec2 Hyphae::getCenterOfMass() const {
+  return cachedCenterOfMass;
+}
+
+/*
+ Sort elements based on their center of mass so that we can then find their density by
+ picking the distance to center of mass of 80% of its elements.
+ */
+double Hyphae::getDensity() {
+  return cachedDensity;
 }

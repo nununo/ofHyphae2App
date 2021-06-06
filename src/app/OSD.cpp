@@ -26,7 +26,7 @@ void OSD::draw(const HyphaeStats& hyphaeStats) {
 void OSD::drawBackground() {
   ofPushStyle();
   ofSetColor(canvasSettings.backgroundColor);
-  ofDrawRectangle(0, 0, 350, 320);
+  ofDrawRectangle(0, 0, 400, 320);
   ofPopStyle();
 }
 
@@ -63,6 +63,7 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats) {
   drawLine(" born: " + ofToString(hyphaeStats.born));
   drawLine(" dead: " + ofToString(hyphaeStats.died));
   drawLine(" growth %: " + ofToString(hyphaeStats.growthPercentage));
+  drawLine(" density: " + ofToString(hyphaeStats.density));
 
   drawLine("");
   

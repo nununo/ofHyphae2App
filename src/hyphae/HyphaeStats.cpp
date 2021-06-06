@@ -7,12 +7,13 @@
 
 #include "HyphaeStats.h"
 
-HyphaeStats::HyphaeStats(const int _bornTotal, const int _deadTotal, const int _moved, const int _born, const int _died)
+HyphaeStats::HyphaeStats(const int _bornTotal, const int _deadTotal, const int _moved, const int _born, const int _died, const double _density)
 : bornTotal(_bornTotal)
 , deadTotal(_deadTotal)
 , moved(_moved)
 , born(_born)
 , died(_died)
+, density(_density)
 {
   growthPercentage = (born-died) / (double)(bornTotal-deadTotal-born+died) * 100;
 }

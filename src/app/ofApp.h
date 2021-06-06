@@ -15,6 +15,7 @@ private:
   unique_ptr<Hyphae> hyphae;
   unique_ptr<IFieldPainter> fieldPainter;
   unique_ptr<IHyphaePainter> hyphaePainter;
+  unique_ptr<IHyphaePainter> hyphaePainterBlack;
   unique_ptr<OSD> osd;
   
   shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
