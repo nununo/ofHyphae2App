@@ -22,10 +22,6 @@ void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
   lastUpdateLifes.birth();
 }
 
-void Hyphae::remove(Hypha& hypha) {
-  
-}
-
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
   add(e.coordinates, e.energy);
 }
@@ -41,16 +37,19 @@ void Hyphae::addGenerated() {
   }
 }
 
+bool Hyphae::birthControl() {
+  auto maxBirths = getMaxBirths();
+  return lastUpdateLifes.getDiff()<maxBirths && getDensity() < 80.0f; // TODO
+}
+
 void Hyphae::update(IField &field) {
   updateCachedData();
-  auto maxBirths = getMaxBirths();
   lastUpdateLifes.reset();
   newPositions.clear();
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      auto birthControl = lastUpdateLifes.getDiff()<maxBirths && getDensity() < 80.0f; // TODO
-      itr->update(field, birthControl);
+      itr->update(field, birthControl());
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);

@@ -30,9 +30,9 @@ private:
   int getMaxBirths() const;
   void updateCachedData();
   void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
-  void remove(Hypha& hypha);
   glm::vec2 getCenterOfMass() const;
   double getDensity();
+  bool birthControl();
 
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);
