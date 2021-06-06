@@ -48,12 +48,11 @@ void ofApp::draw(){
   ofPushStyle();
   ofSetColor(ofColor::green);
   ofNoFill();
-  auto density = hyphae->getDensity();
-  auto center = hyphae->getCenterOfMass();
-  ofDrawEllipse(center, density, density);
+  auto hyphaeStats = hyphae->getStats();
+  ofDrawEllipse(hyphaeStats.centerOfMass, hyphaeStats.density, hyphaeStats.density);
   ofPopStyle();
   
-  osd->draw(hyphae->getStats());
+  osd->draw(hyphaeStats);
   ofPopView();
 }
 

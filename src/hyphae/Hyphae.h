@@ -29,17 +29,18 @@ private:
   void addGenerated();
   int getMaxBirths() const;
   void updateCachedData();
-  
+  void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
+  void remove(Hypha& hypha);
+  glm::vec2 getCenterOfMass() const;
+  double getDensity();
+
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
   Hyphae(shared_ptr<HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
-  void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
   bool isAlive() const;
-  glm::vec2 getCenterOfMass() const;
-  double getDensity();
 
   vector<glm::vec2> getNewPositions() const;
   HyphaeStats getStats();

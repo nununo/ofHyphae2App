@@ -22,6 +22,10 @@ void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
   lastUpdateLifes.birth();
 }
 
+void Hyphae::remove(Hypha& hypha) {
+  
+}
+
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
   add(e.coordinates, e.energy);
 }
@@ -68,6 +72,7 @@ HyphaeStats Hyphae::getStats() {
                      totalLifes.getDiff(),
                      lastUpdateLifes.getBirths(),
                      lastUpdateLifes.getDeaths(),
+                     getCenterOfMass(),
                      getDensity());
 }
 
