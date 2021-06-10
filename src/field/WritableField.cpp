@@ -31,10 +31,10 @@ glm::vec2 WritableField::normalize(const glm::vec2 pos) const {
   return {normx, normy};
 }
 
-void WritableField::generate(const std::shared_ptr<IFieldGenerator> generator) {
+void WritableField::generate(const IFieldGenerator& generator) {
   for(auto y=0; y<size.y; y++) {
     for(auto x=0; x<size.x; x++) {
-      setValue({x,y}, generator->getValue(normalize({x,y})));
+      setValue({x,y}, generator.getValue(normalize({x,y})));
     }
   }
 }

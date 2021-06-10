@@ -1,15 +1,9 @@
 #include "ofApp.h"
-#include "NoiseFieldGenerator.h"
-#include "MultiFieldGenerator.h"
-#include "MaxFunc.h"
-#include "MinFunc.h"
-#include "ThresholdFieldGenerator.h"
-#include "LineFieldGenerator.h"
-#include "WritableField.h"
 #include "PerimeterStartPos.h"
 #include "HyphaCoordinatesRadialGenerator.h"
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
+#include "FieldBuilderAbundance.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -57,7 +51,7 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = createField(params->field, getSize());
+  field = FieldBuilderAbundance().create(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
 }
 
@@ -65,29 +59,11 @@ glm::vec2 ofApp::getSize() const {
   return {ofGetWidth()/2, ofGetHeight()};
 }
 
-std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
-  auto noise = std::make_unique<NoiseFieldGenerator>();
-  auto thresholdNoise = std::make_unique<ThresholdFieldGenerator>(std::move(noise), fieldParams->zeroThreshold);
-
-  auto lines = std::make_unique<MultiFieldGenerator>(std::make_shared<MaxFunc>());
-  for(auto i=0; i<3; i++) { // TODO
-    lines->add(std::make_unique<LineFieldGenerator>(200/size.x, 1)); // TODO
-  }
-
-  auto interception = make_shared<MultiFieldGenerator>(make_shared<MinFunc>());
-  interception->add(move(lines));
-  interception->add(move(thresholdNoise));
-
-  auto field = make_shared<WritableField>(size);
-  field->generate(interception);
-  return field;
-}
-
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
   PerimeterStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, 1, 10)); // TODO
+    make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, 1, 1)); // TODO
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
@@ -104,7 +80,7 @@ unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_pt
 
 void ofApp::keyPressed(int key) {
   switch (key) {
-  case ' ':
+  case 'n':
     newHyphae();
     break;
   case 'f':
@@ -113,10 +89,14 @@ void ofApp::keyPressed(int key) {
   case 'o':
     osd->toggleActive();
     break;
+  case 'c':
+    ofClear(ofColor::white);
+    break;
   default:
     break;
   }
 }
+
 void ofApp::keyReleased(int key){}
 void ofApp::mouseMoved(int x, int y ){}
 void ofApp::mouseDragged(int x, int y, int button){}
