@@ -20,6 +20,8 @@ public:
   const glm::vec2 maxForkAngle;
   const glm::vec2 foodToEnergyRatio;
   const MinMaxVec2 forkDistance;
+  const glm::vec2 birthRayDirections;
+  const glm::vec2 birthRays;
   const glm::vec2 birthAreaRadius;
   const glm::vec2 maxGrowthPercentage;
   const double pixelOverlap;

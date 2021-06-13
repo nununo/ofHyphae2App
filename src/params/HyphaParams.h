@@ -20,6 +20,8 @@ public:
   const double maxForkAngle;
   const double foodToEnergyRatio;
   const glm::vec2 forkDistanceInterval;
+  const int birthRays;
+  const int birthRayDirections;
   const double birthAreaRadius;
   const double pixelOverlap;
   const double maxGrowthPercentage;

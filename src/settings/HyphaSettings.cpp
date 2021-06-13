@@ -17,5 +17,7 @@ HyphaSettings::HyphaSettings(const SettingsFile& sf)
 , pixelOverlap(sf.getValue("rhizopus:hypha:pixelOverlap", 1.0f))
 , forkDistance({sf.getRange("rhizopus:hypha:forkDistance:min"), sf.getRange("rhizopus:hypha:forkDistance:max")})
 , maxGrowthPercentage(sf.getRange("rhizopus:hypha:maxGrowthPercentage"))
+, birthRays(sf.getRange("rhizopus:hypha:birthRays"))
+, birthRayDirections(sf.getRange("rhizopus:hypha:birthRayDirections"))
 , birthAreaRadius(sf.getRange("rhizopus:hypha:birthAreaRadius"))
 {}

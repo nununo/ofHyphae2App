@@ -41,6 +41,14 @@
       <min>3</min>
       <max>3</max>
     </birthAreaRadius>
+    <birthRays>
+      <min>1</min>
+      <max>1</max>
+    </birthRays>
+    <birthRayDirections>
+      <min>1</min>
+      <max>1</max>
+    </birthRayDirections>
     <energySpentToMove>
       <min>
         <min>0.002</min>
