@@ -11,21 +11,20 @@
 #include "ofMain.h"
 
 struct HyphaeStats {
-  int bornTotal;
-  int deadTotal;
+  int alive;
   int moved;
   int born;
   int died;
-  double growthPercentage;
+  double fertilityRatio;
   double density;
   glm::vec2 centerOfMass;
 
   HyphaeStats(
-    const int bornTotal,
-    const int deadTotal,
+    const int alive,
     const int moved,
     const int born,
     const int died,
+    const double fertilityRatio,
     const glm::vec2 centerOfMass,
     const double density);
 };

@@ -104,7 +104,7 @@ void Hypha::fork() {
  */
 int Hypha::getNextForkDistance() const {
   auto fertilityRatio = ofRandom(1 - energy.get());
-  auto nextForkDistance = ofMap(fertilityRatio, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
+  auto nextForkDistance = ofMap(0.0f, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
   return nextForkDistance;
 }
 

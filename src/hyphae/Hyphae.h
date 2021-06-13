@@ -11,7 +11,7 @@
 #include "HyphaList.h"
 #include "IHyphaCoordinatesGenerator.h"
 #include "HyphaeStats.h"
-#include "LifeDeathCounter.h"
+#include "HyphaeBirthControl.h"
 
 class Hyphae {
 private:
@@ -20,19 +20,16 @@ private:
 
   HyphaList elements;
   vector<glm::vec2> newPositions;
-  LifeDeathCounter totalLifes;
-  LifeDeathCounter lastUpdateLifes;
+  unique_ptr<HyphaeBirthControl> birthControl;
   double cachedDensity = 0;
   glm::vec2 cachedCenterOfMass = {0,0};
   int cacheValidity = 0;
 
   void addGenerated();
-  int getMaxBirths() const;
   void updateCachedData();
   void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
-  glm::vec2 getCenterOfMass() const;
-  double getDensity();
-  bool birthControl();
+  glm::vec2 getCenterOfMass() const {return cachedCenterOfMass;};
+  double getDensity() const {return cachedDensity;}
 
   void onHyphaFork(HyphaForkEventArgs &e);
   void onHyphaMoved(HyphaMovedEventArgs &e);

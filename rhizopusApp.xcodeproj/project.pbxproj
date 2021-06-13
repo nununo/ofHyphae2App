@@ -16,6 +16,7 @@
 		7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */; };
 		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
+		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
 		7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A857266930A5009E8DCE /* OSD.cpp */; };
@@ -99,6 +100,8 @@
 		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
 		7D21171026481ED900AC1450 /* MaxFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxFunc.h; sourceTree = "<group>"; };
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
+		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
+		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
 		7D992701264325250070B17A /* MultiFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiFieldGenerator.h; sourceTree = "<group>"; };
 		7DA7A856266930A5009E8DCE /* OSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSD.h; sourceTree = "<group>"; };
@@ -531,6 +534,8 @@
 				7DF62762266C0496009D87C3 /* HyphaComparator.h */,
 				7DF62765266C1177009D87C3 /* HyphaList.h */,
 				7DF62764266C1177009D87C3 /* HyphaList.cpp */,
+				7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */,
+				7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";
@@ -1004,6 +1009,7 @@
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
 				7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
+				7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */,
 				7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */,
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
 				7D05E70C2648692E008F274A /* PerimeterStartPos.cpp in Sources */,

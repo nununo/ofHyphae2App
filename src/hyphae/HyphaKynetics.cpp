@@ -33,6 +33,5 @@ bool HyphaKynetics::update(double speed) {
 }
 
 HyphaCoordinates HyphaKynetics::getForkCoordinates() {
-  auto newDirection = glm::rotate(coordinates.dir, ofRandom(-params->maxForkAngle, params->maxForkAngle));
-  return {coordinates.pos, newDirection};
+  return {coordinates.pos, nextDirection(coordinates.dir)};
 }

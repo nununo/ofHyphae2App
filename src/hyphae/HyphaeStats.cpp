@@ -8,20 +8,18 @@
 #include "HyphaeStats.h"
 
 HyphaeStats::HyphaeStats(
-  const int _bornTotal,
-  const int _deadTotal,
+  const int _alive,
   const int _moved,
   const int _born,
   const int _died,
+  const double _fertilityRatio,
   const glm::vec2 _centerOfMass,
   const double _density)
-: bornTotal(_bornTotal)
-, deadTotal(_deadTotal)
+: alive(_alive)
 , moved(_moved)
 , born(_born)
 , died(_died)
+, fertilityRatio(_fertilityRatio)
 , centerOfMass(_centerOfMass)
 , density(_density)
-{
-  growthPercentage = (born-died) / (double)(bornTotal-deadTotal-born+died) * 100;
-}
+{}

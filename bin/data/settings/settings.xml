@@ -64,22 +64,22 @@
       <max>0.015</max>
     </foodToEnergyRatio>
     <maxBendAngleDeg>
-      <min>1</min>
+      <min>5</min>
       <max>5</max>
     </maxBendAngleDeg>
     <forkDistance>
       <min>
         <min>10</min>
-        <max>15</max>
+        <max>10</max>
       </min>
       <max>
-        <min>20</min>
-        <max>30</max>
+        <min>15</min>
+        <max>15</max>
       </max>
     </forkDistance>
     <maxForkAngleDeg>
-      <min>0.1</min>
-      <max>0.3</max>
+      <min>0.5</min>
+      <max>0.5</max>
     </maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
   </hypha>
