@@ -12,6 +12,7 @@
 
 struct HyphaCoordinates {
   glm::vec2 pos;
+  glm::vec2 originalDir;
   glm::vec2 dir;
 };
 

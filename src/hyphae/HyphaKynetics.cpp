@@ -33,5 +33,11 @@ bool HyphaKynetics::update(double speed) {
 }
 
 HyphaCoordinates HyphaKynetics::getForkCoordinates() {
-  return {coordinates.pos, nextDirection(coordinates.dir)};
+  auto forkCoordinates = coordinates;
+  forkCoordinates.dir = nextDirection(coordinates.dir);
+  return forkCoordinates;
+}
+
+double HyphaKynetics::angleWithOriginalDirection() const {
+  return glm::degrees(glm::abs(glm::orientedAngle(coordinates.dir, coordinates.originalDir)));
 }

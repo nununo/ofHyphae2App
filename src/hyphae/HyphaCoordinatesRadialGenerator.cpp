@@ -28,7 +28,12 @@ vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::generateRays(int numRa
 HyphaCoordinates HyphaCoordinatesRadialGenerator::generateRay() {
   auto pos = getNewPosition();
   auto dir = getNewInwardDirection(pos);
-  return {pos, dir};
+  
+  return {
+    .pos = pos,
+    .originalDir = dir,
+    .dir = dir
+  };
 }
 
 vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {

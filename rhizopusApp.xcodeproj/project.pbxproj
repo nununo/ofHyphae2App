@@ -514,6 +514,7 @@
 		7DE3A0DA26334124000DED6A /* hyphae */ = {
 			isa = PBXGroup;
 			children = (
+				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
 				7DDC214126516E14005D3C66 /* IHyphaePainter.h */,
 				7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */,
 				7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */,
@@ -524,7 +525,6 @@
 				7DE3A0DF26334125000DED6A /* HyphaKynetics.h */,
 				7DE3A0E226334125000DED6A /* Hyphae.h */,
 				7DE3A0E026334125000DED6A /* Hyphae.cpp */,
-				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
 				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7DE3A0F226334192000DED6A /* HyphaEnergy.h */,
 				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,

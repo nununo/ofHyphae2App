@@ -4,6 +4,7 @@
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
 #include "FieldBuilderPolyline.h"
+#include "FieldBuilderAbundance.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -51,7 +52,7 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = FieldBuilderPolyline().create(params->field, getSize());
+  field = FieldBuilderAbundance().create(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
 }
 

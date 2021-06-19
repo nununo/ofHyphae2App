@@ -16,6 +16,7 @@ private:
   shared_ptr<HyphaParams> params;
   HyphaCoordinates coordinates;
   glm::vec2 lastPixelPos;
+  bool dead = false;
 
   glm::vec2 nextDirection(const glm::vec2 _dir) const;
 
@@ -24,6 +25,7 @@ public:
   bool update(double speed);
   glm::vec2 getPixelPos() const;
   HyphaCoordinates getForkCoordinates();
+  double angleWithOriginalDirection() const;
 };
 
 #endif /* HyphaKinetics_h */

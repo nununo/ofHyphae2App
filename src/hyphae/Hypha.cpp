@@ -31,9 +31,13 @@ bool Hypha::isInside() const {
   return inside;
 }
 
+void Hypha::die() {
+  dead = true;
+}
+
 void Hypha::updateDeadStatus() {
   if (energy.isEmpty()) {
-    dead = true;
+    die();
   }
 }
 
@@ -87,7 +91,10 @@ double Hypha::takeFoodFromField(IField &field) {
 }
 
 void Hypha::fork() {
-  if (isInside() && --nextForkDistance == 0) {
+  auto angle = kynetics.angleWithOriginalDirection();
+  if (angle >= 100) { // TODO
+    die();
+  } else if (isInside() && --nextForkDistance == 0) {
     energy.fork();
     throwForkEvent();
     nextForkDistance = getNextForkDistance();

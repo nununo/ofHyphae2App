@@ -36,6 +36,7 @@ private:
   bool move(IField &fieldx);
   bool isInside() const;
   double calcEnergySpentToMove(glm::vec2 energySpentToMoveInterval);
+  void die();
 
 public:
   Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
