@@ -1,9 +1,9 @@
 #include "ofApp.h"
-#include "PerimeterStartPos.h"
+#include "SectorStartPos.h"
 #include "HyphaCoordinatesRadialGenerator.h"
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
-#include "FieldBuilderAbundance.h"
+#include "FieldBuilderPolyline.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -51,7 +51,7 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = FieldBuilderAbundance().create(params->field, getSize());
+  field = FieldBuilderPolyline().create(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
 }
 
@@ -60,7 +60,7 @@ glm::vec2 ofApp::getSize() const {
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
-  PerimeterStartPos startPos(field, 50); // TODO
+  SectorStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
     make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, hyphaParams->birthRayDirections, hyphaParams->birthRays));

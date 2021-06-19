@@ -27,8 +27,8 @@ void PolylineFieldGenerator::drawPixels(ofPolyline &p, int width) {
   
   fbo.allocate(map.getWidth(), map.getHeight(), GL_RGB);
   fbo.begin();
-  ofClear(ofColor::white);
-  ofSetColor(ofColor::black);
+  ofClear(ofColor::black);
+  ofSetColor(ofColor::white);
   ofSetLineWidth(width);
   p.draw();
   fbo.end();

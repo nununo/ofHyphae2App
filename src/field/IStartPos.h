@@ -8,6 +8,8 @@
 #ifndef IStartPos_h
 #define IStartPos_h
 
+#include "ofMain.h"
+
 class IStartPos {
 public:
   virtual ~IStartPos() {}
