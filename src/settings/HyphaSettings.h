@@ -9,21 +9,21 @@
 #define HyphaSettings_h
 
 #include "SettingsFile.h"
-#include "MinMaxVec2.h"
+#include "RangeRange.h"
 
 class HyphaSettings {
 public:
   const ofColor color;
-  const glm::vec2 speed;
-  const MinMaxVec2 energySpentToMove;
-  const glm::vec2 maxBendAngle;
-  const glm::vec2 maxForkAngle;
-  const glm::vec2 foodToEnergyRatio;
-  const MinMaxVec2 forkDistance;
-  const glm::vec2 birthRayDirections;
-  const glm::vec2 birthRays;
-  const glm::vec2 birthAreaRadius;
-  const glm::vec2 maxGrowthPercentage;
+  const Range speed;
+  const RangeRange energySpentToMove;
+  const Range maxBendAngle;
+  const Range maxForkAngle;
+  const Range foodToEnergyRatio;
+  const RangeRange forkDistance;
+  const Range birthRayDirections;
+  const Range birthRays;
+  const Range birthAreaRadius;
+  const Range maxGrowthPercentage;
   const double pixelOverlap;
 
   HyphaSettings(const SettingsFile& sf);

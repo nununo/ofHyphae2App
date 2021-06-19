@@ -35,7 +35,7 @@ private:
   double getSpeed() const;
   bool move(IField &fieldx);
   bool isInside() const;
-  double calcEnergySpentToMove(glm::vec2 energySpentToMoveInterval);
+  double calcEnergySpentToMove(Range energySpentToMoveInterval);
   void die();
 
 public:

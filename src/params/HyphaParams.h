@@ -15,11 +15,11 @@ class HyphaParams {
 public:
   const ofColor color;
   const double speed;
-  const glm::vec2 energySpentToMove;
+  const Range energySpentToMove;
   const double maxBendAngle;
   const double maxForkAngle;
   const double foodToEnergyRatio;
-  const glm::vec2 forkDistanceInterval;
+  const Range forkDistanceInterval;
   const int birthRays;
   const int birthRayDirections;
   const double birthAreaRadius;

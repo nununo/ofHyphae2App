@@ -26,10 +26,17 @@ double Tools::posToAngle(glm::vec2 v) {
   return glm::angle(glm::vec2(1,0), v);
 }
 
-double Tools::randomInRange(glm::vec2 v) {
-  return ofRandom(v.x, v.y);
+double Tools::randomInRange(Range r) {
+  return ofRandom(r.min, r.max);
 }
 
 glm::vec2 Tools::getRandomVec2() {
   return glm::vec2(ofRandom(99999), ofRandom(99999));
+}
+
+Range Tools::toRadians(Range degrees) {
+  return {
+    .min = glm::radians(degrees.min),
+    .max = glm::radians(degrees.max)
+  };
 }

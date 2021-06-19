@@ -6,13 +6,14 @@
 //
 
 #include "HyphaSettings.h"
+#include "Tools.h"
 
 HyphaSettings::HyphaSettings(const SettingsFile& sf)
 : color(sf.getColor("rhizopus:hypha:color"))
 , speed(sf.getRange("rhizopus:hypha:speed"))
 , energySpentToMove({sf.getRange("rhizopus:hypha:energySpentToMove:min"), sf.getRange("rhizopus:hypha:energySpentToMove:max")})
-, maxBendAngle(glm::radians(sf.getRange("rhizopus:hypha:maxBendAngleDeg")))
-, maxForkAngle(glm::radians(sf.getRange("rhizopus:hypha:maxForkAngleDeg")))
+, maxBendAngle(Tools::toRadians(sf.getRange("rhizopus:hypha:maxBendAngleDeg")))
+, maxForkAngle(Tools::toRadians(sf.getRange("rhizopus:hypha:maxForkAngleDeg")))
 , foodToEnergyRatio(sf.getRange("rhizopus:hypha:foodToEnergyRatio"))
 , pixelOverlap(sf.getValue("rhizopus:hypha:pixelOverlap", 1.0f))
 , forkDistance({sf.getRange("rhizopus:hypha:forkDistance:min"), sf.getRange("rhizopus:hypha:forkDistance:max")})

@@ -29,9 +29,11 @@ void SettingsFile::popTags(int levels) {
   }
 }
 
-glm::vec2 SettingsFile::getRange(const string& xmlPath) const {
-  return glm::vec2(f.getValue(xmlPath + ":min", 0.0f),
-                   f.getValue(xmlPath + ":max", 0.0f));
+Range SettingsFile::getRange(const string& xmlPath) const {
+  return {
+    .min = f.getValue(xmlPath + ":min", 0.0f),
+    .max = f.getValue(xmlPath + ":max", 0.0f)
+  };
 }
 
 vector<double> SettingsFile::getSet(const string& xmlPath) {

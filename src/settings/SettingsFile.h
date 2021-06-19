@@ -9,6 +9,7 @@
 #define SettingsFile_h
 
 #include "ofxXmlSettings.h"
+#include "Range.h"
 
 class SettingsFile {
 private:
@@ -19,7 +20,7 @@ private:
 
 public:
   SettingsFile(const string& xmlFilename) {f.loadFile(xmlFilename);}
-  glm::vec2 getRange(const string& xmlPath) const;
+  Range getRange(const string& xmlPath) const;
   ofColor getColor(const string& xmlPath) const;
   vector<double> getSet(const string& xmlPath);
   int getValue(const string& tag, int defaultValue, int which = 0) const {return f.getValue(tag, defaultValue, which);}

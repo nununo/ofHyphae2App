@@ -18,9 +18,9 @@ Hypha::Hypha(std::shared_ptr<HyphaParams> _params, const HyphaCoordinates _coord
  We use a cubed random number so that the lows are much more probable than the highs. Then we map it in
  a way that the higher threshold is more probable than the lower threshold.
  */
-double Hypha::calcEnergySpentToMove(glm::vec2 energySpentToMoveInterval) {
+double Hypha::calcEnergySpentToMove(Range energySpentToMoveInterval) {
   auto r = pow(ofRandom(1.0f), 3);
-  return ofMap(r, 0, 1, energySpentToMoveInterval.y, energySpentToMoveInterval.x);
+  return ofMap(r, 0, 1, energySpentToMoveInterval.max, energySpentToMoveInterval.min);
 }
 
 bool Hypha::isAlive() const {
@@ -111,7 +111,7 @@ void Hypha::fork() {
  */
 int Hypha::getNextForkDistance() const {
   auto fertilityRatio = ofRandom(1 - energy.get());
-  auto nextForkDistance = ofMap(0.0f, 0.0f, 1.0f, params->forkDistanceInterval.x, params->forkDistanceInterval.y);
+  auto nextForkDistance = ofMap(0.0f, 0.0f, 1.0f, params->forkDistanceInterval.min, params->forkDistanceInterval.max);
   return nextForkDistance;
 }
 

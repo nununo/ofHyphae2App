@@ -13,7 +13,7 @@
 
 class FieldSettings {
 public:
-  const glm::vec2 zeroThreshold;
+  const Range zeroThreshold;
 
   FieldSettings(const SettingsFile& sf);
 };
