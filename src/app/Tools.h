@@ -20,6 +20,7 @@ public:
   static double randomInSet(vector<double> set);
   static glm::vec2 getRandomVec2();
   static Range toRadians(Range degrees);
+  static bool tamperedCoinToss(double probability);
 };
 
 #endif /* Tools_h */

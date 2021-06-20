@@ -40,3 +40,10 @@ Range Tools::toRadians(Range degrees) {
     .max = glm::radians(degrees.max)
   };
 }
+
+/**
+ Expects a number between 0 (never) and 1 (always) and returns a random boolean  result based on that probabiltiy
+ */
+bool Tools::tamperedCoinToss(double probability) {
+  return ofRandom(1.0f) < probability;
+}
