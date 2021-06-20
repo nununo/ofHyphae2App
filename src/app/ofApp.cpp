@@ -52,7 +52,7 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = FieldBuilderAbundance().create(params->field, getSize());
+  field = FieldBuilderPolyline().create(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
 }
 

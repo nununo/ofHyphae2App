@@ -15,8 +15,8 @@ PolylineFieldGenerator::PolylineFieldGenerator(glm::vec2 size, int numSegments, 
 
 ofPolyline PolylineFieldGenerator::generatePolyline(int numSegments) {
   ofPolyline p;
-  for(auto i=0; i<numSegments; i++) {
-    p.lineTo(ofRandom(map.getWidth()), ofRandom(map.getHeight()));
+  for(auto i=0; i<numSegments+3; i++) {
+    p.curveTo(ofRandom(map.getWidth()), ofRandom(map.getHeight()), 30);
   }
   p.close();
   return p;
