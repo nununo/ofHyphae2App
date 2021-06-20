@@ -29,58 +29,26 @@
       <b>127</b>
       <a>2</a>
     </color>
-    <speed>
-      <min>0.9</min>
-      <max>0.9</max>
-    </speed> <!--pixels/s-->
-    <maxGrowthPercentage>
-      <min>0.2</min>
-      <max>0.2</max>
-    </maxGrowthPercentage>
-    <birthAreaRadius>
-      <min>3</min>
-      <max>3</max>
-    </birthAreaRadius>
-    <birthRays>
-      <min>100</min>
-      <max>100</max>
-    </birthRays>
-    <birthRayDirections>
-      <min>1</min>
-      <max>1</max>
-    </birthRayDirections>
+    <speed><min>0.9</min><max>0.9</max></speed> <!--pixels/s-->
+    <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
+    <birthAreaRadius><min>3</min><max>3</max></birthAreaRadius>
+    <birthRays><min>100</min><max>100</max></birthRays>
+    <birthRayDirections><min>1</min><max>1</max></birthRayDirections>
     <energySpentToMove>
       <min>
-        <min>0.002</min>
-        <max>0.002</max>
+        <min>0.002</min><max>0.002</max>
       </min>
       <max>
-        <min>0.01</min>
-        <max>0.01</max>
+        <min>0.02</min><max>0.02</max>
       </max>
     </energySpentToMove>
-    <foodToEnergyRatio>
-      <min>0.015</min>
-      <max>0.015</max>
-    </foodToEnergyRatio>
-    <maxBendAngleDeg>
-      <min>4</min>
-      <max>4</max>
-    </maxBendAngleDeg>
+    <foodToEnergyRatio><min>0.015</min> <max>0.015</max></foodToEnergyRatio>
+    <maxBendAngleDeg><min>4</min> <max>4</max></maxBendAngleDeg>
     <forkDistance>
-      <min>
-        <min>10</min>
-        <max>10</max>
-      </min>
-      <max>
-        <min>30</min>
-        <max>30</max>
-      </max>
+      <min><min>5</min><max>5</max></min>
+      <max><min>20</min><max>20</max></max>
     </forkDistance>
-    <maxForkAngleDeg>
-      <min>30</min>
-      <max>30</max>
-    </maxBendAngleDeg>
+    <maxForkAngleDeg><min>30</min><max>30</max></maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
   </hypha>
 </rhizopus>
