@@ -18,7 +18,7 @@
 class Hypha {
   
 private:
-  std::shared_ptr<HyphaParams> params;
+  std::shared_ptr<const HyphaParams> params;
   HyphaKynetics kynetics;
   HyphaEnergy energy;
   int nextForkDistance;
@@ -39,7 +39,7 @@ private:
   void die();
 
 public:
-  Hypha(std::shared_ptr<HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
+  Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
   void update(IField &field, const bool allowForks);
   bool isAlive() const;
   glm::vec2 getPosition() const;

@@ -15,7 +15,7 @@
 
 class Hyphae {
 private:
-  shared_ptr<HyphaParams> hyphaParams;
+  shared_ptr<const HyphaParams> hyphaParams;
   unique_ptr<IHyphaCoordinatesGenerator> generator;
 
   HyphaList elements;
@@ -35,7 +35,7 @@ private:
   void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
-  Hyphae(shared_ptr<HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
+  Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
   bool isAlive() const;
 

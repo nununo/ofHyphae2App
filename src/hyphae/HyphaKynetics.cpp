@@ -7,7 +7,7 @@
 
 #include "HyphaKynetics.h"
 
-HyphaKynetics::HyphaKynetics(std::shared_ptr<HyphaParams> _params, const HyphaCoordinates _coordinates)
+HyphaKynetics::HyphaKynetics(shared_ptr<const HyphaParams> _params, const HyphaCoordinates _coordinates)
 : params(_params)
 , coordinates(_coordinates)
 {}

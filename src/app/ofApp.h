@@ -10,7 +10,7 @@
 
 class ofApp : public ofBaseApp{
 private:
-  shared_ptr<Params> params;
+  shared_ptr<const Params> params;
   shared_ptr<IField> field;
   unique_ptr<Hyphae> hyphae;
   unique_ptr<IFieldPainter> fieldPainter;

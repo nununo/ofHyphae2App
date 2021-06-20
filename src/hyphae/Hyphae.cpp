@@ -8,8 +8,8 @@
 #include "Hyphae.h"
 #include "HyphaComparator.h"
 
-Hyphae::Hyphae(std::shared_ptr<HyphaParams> _hyphaParams,
-               std::unique_ptr<IHyphaCoordinatesGenerator> _generator)
+Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
+               unique_ptr<IHyphaCoordinatesGenerator> _generator)
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
 , birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, 80.0f)) // TODO
