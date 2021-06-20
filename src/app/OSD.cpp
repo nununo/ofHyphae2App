@@ -44,8 +44,8 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats) {
 
   drawLine("hypha");
   drawLine(" speed: " + ofToString(hyphaParams->speed));
-  drawLine(" max fork angle: " + ofToString(hyphaParams->maxForkAngle));
-  drawLine(" max bend angle: " + ofToString(hyphaParams->maxBendAngle));
+  drawLine(" max fork angle: " + ofToString(glm::degrees(hyphaParams->maxForkAngle)));
+  drawLine(" max bend angle: " + ofToString(glm::degrees(hyphaParams->maxBendAngle)));
   drawLine(" fork distance interval: " + ofToString(hyphaParams->forkDistanceInterval));
   drawLine(" food2energy ratio: " + ofToString(hyphaParams->foodToEnergyRatio));
   drawLine(" energy spent to move: " + ofToString(hyphaParams->energySpentToMove));
