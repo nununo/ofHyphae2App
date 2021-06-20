@@ -1,10 +1,11 @@
 #include "ofApp.h"
-#include "SectorStartPos.h"
+#include "PerimeterStartPos.h"
 #include "HyphaCoordinatesRadialGenerator.h"
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
 #include "FieldBuilderPolyline.h"
 #include "FieldBuilderAbundance.h"
+#include "FieldBuilderNoise.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -52,8 +53,9 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = FieldBuilderPolyline().create(params->field, getSize());
+  field = FieldBuilderNoise().create(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
+  clearScreen();
 }
 
 glm::vec2 ofApp::getSize() const {
@@ -61,7 +63,7 @@ glm::vec2 ofApp::getSize() const {
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
-  SectorStartPos startPos(field, 50); // TODO
+  PerimeterStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
     make_unique<HyphaCoordinatesRadialGenerator>(field, startPos.get(), hyphaParams->birthAreaRadius, hyphaParams->birthRayDirections, hyphaParams->birthRays));
@@ -79,6 +81,10 @@ unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_pt
   return unique_ptr<OSD>(make_unique<OSD>(canvasSettings, hyphaParams));
 }
 
+void ofApp::clearScreen() {
+  ofClear(ofColor::white);
+}
+
 void ofApp::keyPressed(int key) {
   switch (key) {
   case 'n':
@@ -91,7 +97,7 @@ void ofApp::keyPressed(int key) {
     osd->toggleActive();
     break;
   case 'c':
-    ofClear(ofColor::white);
+    clearScreen();
     break;
   default:
     break;

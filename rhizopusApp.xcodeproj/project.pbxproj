@@ -17,6 +17,7 @@
 		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D348EF1267E1A470090767D /* SectorStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EEF267E1A470090767D /* SectorStartPos.cpp */; };
+		7D348EF8267F72F00090767D /* FieldBuilderAbundance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EF6267F72F00090767D /* FieldBuilderAbundance.cpp */; };
 		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
@@ -25,7 +26,7 @@
 		7DC38103267265420086C74A /* PolylineFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC38101267265420086C74A /* PolylineFieldGenerator.cpp */; };
 		7DC3810D267273780086C74A /* FieldBuilderLines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3810B267273780086C74A /* FieldBuilderLines.cpp */; };
 		7DC38110267274E00086C74A /* FieldBuilderPolyline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3810E267274E00086C74A /* FieldBuilderPolyline.cpp */; };
-		7DC3811526728B690086C74A /* FieldBuilderAbundance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3811326728B690086C74A /* FieldBuilderAbundance.cpp */; };
+		7DC3811526728B690086C74A /* FieldBuilderNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3811326728B690086C74A /* FieldBuilderNoise.cpp */; };
 		7DC3811826728E270086C74A /* AbundanceFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3811626728E270086C74A /* AbundanceFieldGenerator.cpp */; };
 		7DD554CA26473A0100CE41B3 /* AverageFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD554C826473A0100CE41B3 /* AverageFunc.cpp */; };
 		7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0BA263340DE000DED6A /* HyphaSettings.cpp */; };
@@ -104,6 +105,8 @@
 		7D348EEF267E1A470090767D /* SectorStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SectorStartPos.cpp; sourceTree = "<group>"; };
 		7D348EF0267E1A470090767D /* SectorStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectorStartPos.h; sourceTree = "<group>"; };
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
+		7D348EF6267F72F00090767D /* FieldBuilderAbundance.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldBuilderAbundance.cpp; sourceTree = "<group>"; };
+		7D348EF7267F72F00090767D /* FieldBuilderAbundance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldBuilderAbundance.h; sourceTree = "<group>"; };
 		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
 		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
@@ -119,8 +122,8 @@
 		7DC3810E267274E00086C74A /* FieldBuilderPolyline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldBuilderPolyline.cpp; sourceTree = "<group>"; };
 		7DC3810F267274E00086C74A /* FieldBuilderPolyline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldBuilderPolyline.h; sourceTree = "<group>"; };
 		7DC38112267275DD0086C74A /* IFieldBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFieldBuilder.h; sourceTree = "<group>"; };
-		7DC3811326728B690086C74A /* FieldBuilderAbundance.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldBuilderAbundance.cpp; sourceTree = "<group>"; };
-		7DC3811426728B690086C74A /* FieldBuilderAbundance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldBuilderAbundance.h; sourceTree = "<group>"; };
+		7DC3811326728B690086C74A /* FieldBuilderNoise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldBuilderNoise.cpp; sourceTree = "<group>"; };
+		7DC3811426728B690086C74A /* FieldBuilderNoise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldBuilderNoise.h; sourceTree = "<group>"; };
 		7DC3811626728E270086C74A /* AbundanceFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbundanceFieldGenerator.cpp; sourceTree = "<group>"; };
 		7DC3811726728E270086C74A /* AbundanceFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbundanceFieldGenerator.h; sourceTree = "<group>"; };
 		7DD554C7264739AC00CE41B3 /* IMultiFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMultiFunc.h; sourceTree = "<group>"; };
@@ -436,8 +439,10 @@
 				7DC3810B267273780086C74A /* FieldBuilderLines.cpp */,
 				7DC3810F267274E00086C74A /* FieldBuilderPolyline.h */,
 				7DC3810E267274E00086C74A /* FieldBuilderPolyline.cpp */,
-				7DC3811426728B690086C74A /* FieldBuilderAbundance.h */,
-				7DC3811326728B690086C74A /* FieldBuilderAbundance.cpp */,
+				7D348EF7267F72F00090767D /* FieldBuilderAbundance.h */,
+				7D348EF6267F72F00090767D /* FieldBuilderAbundance.cpp */,
+				7DC3811426728B690086C74A /* FieldBuilderNoise.h */,
+				7DC3811326728B690086C74A /* FieldBuilderNoise.cpp */,
 			);
 			path = fields;
 			sourceTree = "<group>";
@@ -1008,7 +1013,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC3811526728B690086C74A /* FieldBuilderAbundance.cpp in Sources */,
+				7DC3811526728B690086C74A /* FieldBuilderNoise.cpp in Sources */,
 				91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */,
 				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
 				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
@@ -1040,6 +1045,7 @@
 				7DA7A85E26693281009E8DCE /* HyphaeStats.cpp in Sources */,
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
+				7D348EF8267F72F00090767D /* FieldBuilderAbundance.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
 				7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */,
 				7DF62766266C1177009D87C3 /* HyphaList.cpp in Sources */,

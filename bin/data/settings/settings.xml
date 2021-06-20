@@ -1,6 +1,6 @@
 <rhizopus>
   <canvas>
-    <framerate>10</framerate>
+    <framerate>20</framerate>
     <antialiasing>0</antialiasing>
     <osdActive>1</osdActive>
     <osdColor>
@@ -26,8 +26,8 @@
     <color>
       <r>0</r>
       <g>0</g>
-      <b>255</b>
-      <a>1</a>
+      <b>127</b>
+      <a>2</a>
     </color>
     <speed>
       <min>0.9</min>
@@ -42,8 +42,8 @@
       <max>3</max>
     </birthAreaRadius>
     <birthRays>
-      <min>1</min>
-      <max>1</max>
+      <min>100</min>
+      <max>100</max>
     </birthRays>
     <birthRayDirections>
       <min>1</min>
@@ -64,8 +64,8 @@
       <max>0.015</max>
     </foodToEnergyRatio>
     <maxBendAngleDeg>
-      <min>5</min>
-      <max>5</max>
+      <min>4</min>
+      <max>4</max>
     </maxBendAngleDeg>
     <forkDistance>
       <min>
@@ -73,13 +73,13 @@
         <max>10</max>
       </min>
       <max>
-        <min>15</min>
-        <max>15</max>
+        <min>30</min>
+        <max>30</max>
       </max>
     </forkDistance>
     <maxForkAngleDeg>
-      <min>0.5</min>
-      <max>0.5</max>
+      <min>30</min>
+      <max>30</max>
     </maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
   </hypha>

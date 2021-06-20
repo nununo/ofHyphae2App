@@ -23,6 +23,7 @@ private:
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams) const;
 
+  void clearScreen();
   glm::vec2 getSize() const;
   void newHyphae();
 
