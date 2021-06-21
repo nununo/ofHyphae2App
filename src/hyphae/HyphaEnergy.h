@@ -8,13 +8,17 @@
 #ifndef HyphaEnergy_h
 #define HyphaEnergy_h
 
+#include "Range.h"
+
 class HyphaEnergy {
 private:
   double amount;
   const double spendMoving;
 
+  double calcEnergySpentToMove(Range energySpentToMoveRange);
+
 public:
-  HyphaEnergy(double initial, double spendMoving);
+  HyphaEnergy(double initial, Range energySpentToMoveRange);
   void move();
   void eat(double meal);
   void fork();

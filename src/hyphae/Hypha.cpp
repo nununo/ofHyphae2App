@@ -7,44 +7,42 @@
 
 #include "Hypha.h"
 
-Hypha::Hypha(std::shared_ptr<const HyphaParams> _params, const HyphaCoordinates _coordinates, const double initialEnergy)
+Hypha::Hypha(std::shared_ptr<const
+             HyphaParams> _params,
+             const HyphaCoordinates _coordinates,
+             const double initialEnergy,
+             const HyphaStatus _status = HyphaStatus::BeforeInside)
 : kynetics{HyphaKynetics(_params, _coordinates)}
 , params{_params}
-, energy{HyphaEnergy(initialEnergy, calcEnergySpentToMove(_params->energySpentToMove))}
+, energy{HyphaEnergy(initialEnergy, _params->energySpentToMove)}
 , nextForkDistance{getNextForkDistance()}
+, status(_status)
 {}
 
-/*
- We use a cubed random number so that the lows are much more probable than the highs. Then we map it in
- a way that the higher threshold is more probable than the lower threshold.
- */
-double Hypha::calcEnergySpentToMove(Range energySpentToMoveInterval) {
-  auto r = pow(ofRandom(1.0f), 3);
-  return ofMap(r, 0, 1, energySpentToMoveInterval.max, energySpentToMoveInterval.min);
-}
-
 bool Hypha::isAlive() const {
-  return !dead;
+  return status != HyphaStatus::Dead;
 }
 
-bool Hypha::isInside() const {
-  return inside;
-}
-
-void Hypha::die() {
-  dead = true;
-}
-
-void Hypha::updateDeadStatus() {
-  if (energy.isEmpty()) {
-    die();
+/*
+ It can start outside and then go inside. Fine. But once it has been inside,
+ if it goes outside... it dies.
+ */
+HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
+  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= 100) {
+    return HyphaStatus::Dead;
   }
-}
-
-void Hypha::updateInsideStatus(IField &field) {
-  if (!field.isInside(kynetics.getPixelPos())) {
-    inside = false;
+  
+  auto inside = field.isInside(kynetics.getPixelPos());
+  
+  if (inside && oldStatus == HyphaStatus::BeforeInside) {
+    return HyphaStatus::Inside;
   }
+  
+  if (!inside && oldStatus == HyphaStatus::Inside) {
+    return HyphaStatus::Dead;
+  }
+  
+  return oldStatus;
 }
 
 double Hypha::getSpeed() const {
@@ -52,16 +50,17 @@ double Hypha::getSpeed() const {
 }
 
 bool Hypha::move(IField &field) {
+  if (!isAlive()) {
+    return false;
+  }
+
   bool moved =false;
-  if (isAlive()) {
-    if (kynetics.update(getSpeed())) {
-      energy.move();
-      updateDeadStatus();
-      updateInsideStatus(field);
-      moved = isAlive() && isInside();
-      if (moved) {
-        throwMovedEvent();
-      }
+  if (kynetics.update(getSpeed())) {
+    energy.move();
+    status = calcStatus(field, status);
+    moved = isAlive();
+    if (moved && status == HyphaStatus::Inside) {
+      throwMovedEvent();
     }
   }
   return moved;
@@ -71,13 +70,13 @@ void Hypha::update(IField &field, const bool allowForks) {
   if (!move(field)) {return;}
   auto food = takeFoodFromField(field);
   energy.eat(food);
-  if (allowForks) {
+  if (allowForks && status != HyphaStatus::Dead) {
     fork();
   }
 }
 
 void Hypha::throwForkEvent() {
-  HyphaForkEventArgs e(kynetics.getForkCoordinates(), energy.get());
+  HyphaForkEventArgs e(kynetics.getForkCoordinates(), energy.get(), status);
   ofNotifyEvent(this->forkEvent, e);
 }
 
@@ -87,14 +86,11 @@ void Hypha::throwMovedEvent() {
 }
 
 double Hypha::takeFoodFromField(IField &field) {
-  return field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio;
+  return status == HyphaStatus::Inside ? field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio : 1.0f;
 }
 
 void Hypha::fork() {
-  auto angle = kynetics.angleWithOriginalDirection();
-  if (angle >= 100) { // TODO
-    die();
-  } else if (isInside() && --nextForkDistance == 0) {
+  if (--nextForkDistance == 0) {
     energy.fork();
     throwForkEvent();
     nextForkDistance = getNextForkDistance();

@@ -15,15 +15,15 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
 , birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, 80.0f)) // TODO
 {}
 
-void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
-  elements.push_back(Hypha(hyphaParams, coordinates, energy));
+void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
+  elements.push_back(Hypha(hyphaParams, coordinates, energy, status));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
   ofAddListener(elements.back().movedEvent, this, &Hyphae::onHyphaMoved);
   birthControl->birth();
 }
 
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
-  add(e.coordinates, e.energy);
+  add(e.coordinates, e.energy, e.status);
 }
 
 void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
@@ -33,7 +33,7 @@ void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
 void Hyphae::addGenerated() {
   auto v = generator->get();
   for(auto p: v) {
-    add(p);
+    add(p, 1, HyphaStatus::BeforeInside);
   }
 }
 

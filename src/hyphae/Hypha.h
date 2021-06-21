@@ -22,24 +22,19 @@ private:
   HyphaKynetics kynetics;
   HyphaEnergy energy;
   int nextForkDistance;
-  bool dead = false;
-  bool inside = true;
+  HyphaStatus status;
 
   double takeFoodFromField(IField &field);
   void throwForkEvent();
   void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
-  void updateDeadStatus();
-  void updateInsideStatus(IField &field);
+  HyphaStatus calcStatus(IField &field, HyphaStatus oldStatus) const;
   double getSpeed() const;
   bool move(IField &fieldx);
-  bool isInside() const;
-  double calcEnergySpentToMove(Range energySpentToMoveInterval);
-  void die();
 
 public:
-  Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
+  Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy, const HyphaStatus status);
   void update(IField &field, const bool allowForks);
   bool isAlive() const;
   glm::vec2 getPosition() const;

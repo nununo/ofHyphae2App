@@ -27,7 +27,7 @@ private:
 
   void addGenerated();
   void updateCachedData();
-  void add(const HyphaCoordinates coordinates, const double energy = 1.0f);
+  void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);
   glm::vec2 getCenterOfMass() const {return cachedCenterOfMass;};
   double getDensity() const {return cachedDensity;}
 

@@ -8,6 +8,8 @@
 #ifndef Range_h
 #define Range_h
 
+#include "ofMain.h"
+
 class Range {
 public:
   double min;

@@ -6,11 +6,21 @@
 //
 
 #include "HyphaEnergy.h"
+#include "ofMain.h"
 
-HyphaEnergy::HyphaEnergy(double initial, double _spendMoving)
-: amount(initial)
-, spendMoving(_spendMoving)
+HyphaEnergy::HyphaEnergy(double initial, Range energySpentToMoveRange)
+: amount{initial}
+, spendMoving{calcEnergySpentToMove(energySpentToMoveRange)}
 {}
+
+/*
+ We use a cubed random number so that the lows are much more probable than the highs. Then we map it in
+ a way that the higher threshold is more probable than the lower threshold.
+ */
+double HyphaEnergy::calcEnergySpentToMove(Range energySpentToMoveInterval) {
+  auto r = pow(ofRandom(1.0f), 3);
+  return ofMap(r, 0, 1, energySpentToMoveInterval.max, energySpentToMoveInterval.min);
+}
 
 void HyphaEnergy::move() {
   amount = amount>spendMoving? amount-spendMoving : 0;

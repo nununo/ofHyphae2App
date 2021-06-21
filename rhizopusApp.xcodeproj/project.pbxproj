@@ -104,6 +104,7 @@
 		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
 		7D21171026481ED900AC1450 /* MaxFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxFunc.h; sourceTree = "<group>"; };
 		7D21171126481EDA00AC1450 /* MaxFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaxFunc.cpp; sourceTree = "<group>"; };
+		7D24879E2681568700FA4A2B /* HyphaStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaStatus.h; sourceTree = "<group>"; };
 		7D348EEF267E1A470090767D /* SectorStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SectorStartPos.cpp; sourceTree = "<group>"; };
 		7D348EF0267E1A470090767D /* SectorStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectorStartPos.h; sourceTree = "<group>"; };
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
@@ -540,8 +541,8 @@
 				7DE3A0DF26334125000DED6A /* HyphaKynetics.h */,
 				7DE3A0E226334125000DED6A /* Hyphae.h */,
 				7DE3A0E026334125000DED6A /* Hyphae.cpp */,
-				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7DE3A0F226334192000DED6A /* HyphaEnergy.h */,
+				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,
 				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
 				7D348EFC268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.h */,
@@ -558,6 +559,7 @@
 				7DF62764266C1177009D87C3 /* HyphaList.cpp */,
 				7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */,
 				7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */,
+				7D24879E2681568700FA4A2B /* HyphaStatus.h */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";
