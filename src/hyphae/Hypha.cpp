@@ -8,10 +8,10 @@
 #include "Hypha.h"
 
 Hypha::Hypha(std::shared_ptr<const HyphaParams> _params, const HyphaCoordinates _coordinates, const double initialEnergy)
-: kynetics(HyphaKynetics(_params, _coordinates))
-, params(_params)
-, energy(HyphaEnergy(initialEnergy, calcEnergySpentToMove(_params->energySpentToMove)))
-, nextForkDistance(getNextForkDistance())
+: kynetics{HyphaKynetics(_params, _coordinates)}
+, params{_params}
+, energy{HyphaEnergy(initialEnergy, calcEnergySpentToMove(_params->energySpentToMove))}
+, nextForkDistance{getNextForkDistance()}
 {}
 
 /*
