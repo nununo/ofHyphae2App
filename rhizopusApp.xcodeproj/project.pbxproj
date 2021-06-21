@@ -18,6 +18,8 @@
 		7D21171226481EDA00AC1450 /* MaxFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D21171126481EDA00AC1450 /* MaxFunc.cpp */; };
 		7D348EF1267E1A470090767D /* SectorStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EEF267E1A470090767D /* SectorStartPos.cpp */; };
 		7D348EF8267F72F00090767D /* FieldBuilderAbundance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EF6267F72F00090767D /* FieldBuilderAbundance.cpp */; };
+		7D348EFB268005DD0090767D /* LeftRightStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */; };
+		7D348EFE268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */; };
 		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D992700264325250070B17A /* MultiFieldGenerator.cpp */; };
@@ -107,6 +109,10 @@
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		7D348EF6267F72F00090767D /* FieldBuilderAbundance.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldBuilderAbundance.cpp; sourceTree = "<group>"; };
 		7D348EF7267F72F00090767D /* FieldBuilderAbundance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldBuilderAbundance.h; sourceTree = "<group>"; };
+		7D348EF9268005DD0090767D /* LeftRightStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftRightStartPos.h; sourceTree = "<group>"; };
+		7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LeftRightStartPos.cpp; sourceTree = "<group>"; };
+		7D348EFC268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesLeftRightGenerator.h; sourceTree = "<group>"; };
+		7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesLeftRightGenerator.cpp; sourceTree = "<group>"; };
 		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
 		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
 		7D992700264325250070B17A /* MultiFieldGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldGenerator.cpp; sourceTree = "<group>"; };
@@ -506,14 +512,16 @@
 				7D21171126481EDA00AC1450 /* MaxFunc.cpp */,
 				7DD554C826473A0100CE41B3 /* AverageFunc.cpp */,
 				7DD554C926473A0100CE41B3 /* AverageFunc.h */,
-				7D05E70B2648692E008F274A /* PerimeterStartPos.h */,
-				7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */,
 				7DC38101267265420086C74A /* PolylineFieldGenerator.cpp */,
 				7DC38102267265420086C74A /* PolylineFieldGenerator.h */,
 				7DC3811626728E270086C74A /* AbundanceFieldGenerator.cpp */,
 				7DC3811726728E270086C74A /* AbundanceFieldGenerator.h */,
 				7D348EF0267E1A470090767D /* SectorStartPos.h */,
 				7D348EEF267E1A470090767D /* SectorStartPos.cpp */,
+				7D05E70B2648692E008F274A /* PerimeterStartPos.h */,
+				7D05E70A2648692E008F274A /* PerimeterStartPos.cpp */,
+				7D348EF9268005DD0090767D /* LeftRightStartPos.h */,
+				7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -536,6 +544,8 @@
 				7DE3A0F226334192000DED6A /* HyphaEnergy.h */,
 				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,
 				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
+				7D348EFC268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.h */,
+				7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */,
 				B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */,
 				CA6778A301673A7F07642741 /* HyphaePainter.h */,
 				7DA7A85D26693281009E8DCE /* HyphaeStats.h */,
@@ -1018,6 +1028,7 @@
 				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
 				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
 				7DC38103267265420086C74A /* PolylineFieldGenerator.cpp in Sources */,
+				7D348EFE268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp in Sources */,
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
 				7D992702264325250070B17A /* MultiFieldGenerator.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
@@ -1047,6 +1058,7 @@
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				7D348EF8267F72F00090767D /* FieldBuilderAbundance.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
+				7D348EFB268005DD0090767D /* LeftRightStartPos.cpp in Sources */,
 				7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */,
 				7DF62766266C1177009D87C3 /* HyphaList.cpp in Sources */,
 				7DE3A0E426334125000DED6A /* Hypha.cpp in Sources */,

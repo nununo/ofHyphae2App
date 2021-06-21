@@ -29,11 +29,7 @@ HyphaCoordinates HyphaCoordinatesRadialGenerator::generateRay() {
   auto pos = getNewPosition();
   auto dir = getNewInwardDirection(pos);
   
-  return {
-    .pos = pos,
-    .originalDir = dir,
-    .dir = dir
-  };
+  return HyphaCoordinates(pos, dir);
 }
 
 vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
