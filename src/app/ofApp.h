@@ -22,6 +22,8 @@ private:
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams) const;
+  shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
+
 
   void clearScreen();
   glm::vec2 getSize() const;

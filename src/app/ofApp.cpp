@@ -3,7 +3,8 @@
 #include "HyphaCoordinatesLeftRightGenerator.h"
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
-#include "FieldBuilderNoise.h"
+#include "NoiseFieldGenerator.h"
+#include "WritableField.h"
 
 void ofApp::setup(){
   Settings settings(SettingsFile("settings/settings.xml"));
@@ -51,7 +52,7 @@ void ofApp::draw(){
 }
 
 void ofApp::newHyphae() {
-  field = FieldBuilderNoise().create(params->field, getSize());
+  field = createField(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
   clearScreen();
 }
@@ -65,6 +66,12 @@ unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shar
   return std::make_unique<Hyphae>(
     hyphaParams,
     make_unique<HyphaCoordinatesLeftRightGenerator>(startPos.get(), hyphaParams->birthRays));
+}
+
+std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
+  auto field = make_shared<WritableField>(size);
+  field->generate(NoiseFieldGenerator());
+  return field;
 }
 
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
