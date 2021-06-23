@@ -28,6 +28,7 @@ private:
   void clearScreen();
   glm::vec2 getSize() const;
   void newHyphae();
+  void drawField();
 
 public:
     void setup();

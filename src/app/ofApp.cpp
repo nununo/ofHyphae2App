@@ -30,25 +30,10 @@ void ofApp::update(){
   }
 }
 
-void ofApp::draw(){
+void ofApp::draw() {
   hyphaePainter->draw(hyphae->getNewPositions());
+  osd->draw(hyphae->getStats());
 
-  ofPushView();
-
-  ofTranslate(ofGetWidth()/2, 0);
-
-  fieldPainter->draw(*field.get());
-  hyphaePainterBlack->draw(hyphae->getNewPositions());
-  
-  ofPushStyle();
-  ofSetColor(ofColor::green);
-  ofNoFill();
-  auto hyphaeStats = hyphae->getStats();
-  ofDrawEllipse(hyphaeStats.centerOfMass, hyphaeStats.density, hyphaeStats.density);
-  ofPopStyle();
-  
-  osd->draw(hyphaeStats);
-  ofPopView();
 }
 
 void ofApp::newHyphae() {
@@ -57,8 +42,26 @@ void ofApp::newHyphae() {
   clearScreen();
 }
 
+/**
+ Draw scaled field and moving particles on top right corner
+ */
+void ofApp::drawField() {
+  ofPushView();
+  ofTranslate(field->getSize().x-field->getSize().x/5, 0);
+  ofScale(0.20f);
+  fieldPainter->draw(*field.get());
+  hyphaePainterBlack->draw(hyphae->getNewPositions());
+  auto hyphaeStats = hyphae->getStats();
+  ofPushStyle();
+  ofSetColor(ofColor::green);
+  ofNoFill();
+  ofDrawEllipse(hyphaeStats.centerOfMass, hyphaeStats.density, hyphaeStats.density);
+  ofPopStyle();
+  ofPopView();
+}
+
 glm::vec2 ofApp::getSize() const {
-  return {ofGetWidth()/2, ofGetHeight()};
+  return {ofGetWidth(), ofGetHeight()};
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
@@ -96,7 +99,7 @@ void ofApp::keyPressed(int key) {
     newHyphae();
     break;
   case 'f':
-    ofToggleFullscreen();
+    drawField();
     break;
   case 'o':
     osd->toggleActive();
