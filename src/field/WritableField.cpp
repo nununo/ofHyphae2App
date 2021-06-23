@@ -10,7 +10,7 @@
 WritableField::WritableField(const glm::vec2 _size)
 : size(_size)
 {
-  map.assign(size.x, vector<double>(size.y, 0));
+  map.assign(size.y, vector<double>(size.x, 0));
 }
 
 double WritableField::getValue(const glm::vec2 pos) const {
