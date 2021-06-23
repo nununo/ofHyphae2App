@@ -24,6 +24,5 @@ glm::vec2 LeftRightStartPos::get() const {
     }
   }
   auto pos = leftSum > rightSum? glm::vec2(-50, field->getSize().y/2) : glm::vec2(field->getSize().x+50, field->getSize().y/2);
-  ofLog() << "startPos: " << pos;
   return pos;
 }

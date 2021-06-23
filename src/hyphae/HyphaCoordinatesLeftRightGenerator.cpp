@@ -16,9 +16,7 @@ vector<HyphaCoordinates> HyphaCoordinatesLeftRightGenerator::get() {
   vector<HyphaCoordinates> v;
   if (total > 0) {
     auto xdir = center.x <= 0? 1 : -1;
-    auto ray = HyphaCoordinates(center, {xdir, 0});
-    ofLog() << "ray: " << ray;
-    v.push_back(ray);
+    v.push_back(HyphaCoordinates(center, {xdir, 0}));
     total--;
   }
   return v;
