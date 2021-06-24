@@ -61,7 +61,6 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats) {
   drawLine(" born: " + ofToString(hyphaeStats.born));
   drawLine(" dead: " + ofToString(hyphaeStats.died));
   drawLine(" fertility %: " + ofToString(hyphaeStats.fertilityRatio * 100.0f));
-  drawLine(" density: " + ofToString(hyphaeStats.density));
 
   drawLine("");
   

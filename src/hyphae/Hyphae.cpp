@@ -12,7 +12,7 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
                unique_ptr<IHyphaCoordinatesGenerator> _generator)
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
-, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, 80.0f)) // TODO
+, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage)) // TODO
 {}
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
@@ -38,8 +38,7 @@ void Hyphae::addGenerated() {
 }
 
 void Hyphae::update(IField &field) {
-  updateCachedData();
-  birthControl->reset(getDensity());
+  birthControl->reset();
   newPositions.clear();
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
@@ -64,23 +63,9 @@ HyphaeStats Hyphae::getStats() {
                      getNewPositions().size(),
                      birthControl->getLatestBirths(),
                      birthControl->getLatestDeaths(),
-                     birthControl->getFertilityRatio(),
-                     getCenterOfMass(),
-                     getDensity());
+                     birthControl->getFertilityRatio());
 }
 
 bool Hyphae::isAlive() const {
   return elements.size() > 0;
-}
-
-void Hyphae::updateCachedData() {
-  /*
-   Sort elements based on their center of mass so that we can then find their density by
-   picking the distance to center of mass of 80% of its elements.
-   */
-  if (--cacheValidity<=0) {
-    cachedCenterOfMass = elements.getCenterOfMass();
-    cachedDensity = elements.size()<100? 0 : elements.getDensity(80); // TODO
-    cacheValidity = 10; // TODO
-  }
 }

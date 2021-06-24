@@ -13,8 +13,7 @@ NoiseFieldGenerator::NoiseFieldGenerator()
 
 double NoiseFieldGenerator::getValue(const glm::vec2 normalizedPos) const {
   glm::vec2 pos = {normalizedPos.x + offset, normalizedPos.y + offset};
-  auto noise = ofNoise(pos); // pos*3
-  noise = pow(noise, 2);
-  noise = ofNormalize(noise, 0.3f, 0.4f);
-  return noise;
+  auto noise1 = ofNoise(pos*1.5f); // pos*3
+  noise1 = pow(noise1, 0.57f);
+  return noise1;
 }

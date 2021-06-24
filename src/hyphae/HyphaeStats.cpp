@@ -12,14 +12,10 @@ HyphaeStats::HyphaeStats(
   const int _moved,
   const int _born,
   const int _died,
-  const double _fertilityRatio,
-  const glm::vec2 _centerOfMass,
-  const double _density)
+  const double _fertilityRatio)
 : alive(_alive)
 , moved(_moved)
 , born(_born)
 , died(_died)
 , fertilityRatio(_fertilityRatio)
-, centerOfMass(_centerOfMass)
-, density(_density)
 {}

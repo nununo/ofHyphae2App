@@ -8,9 +8,8 @@
 #include "HyphaeBirthControl.h"
 #include "ofMain.h"
 
-HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage, const double _maxDensity)
+HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage)
 : maxGrowthRatio(_maxGrowthPercentage/100.0f)
-, maxDensity(_maxDensity)
 , fertilityRatio(1.0f)
 {}
 
@@ -24,8 +23,8 @@ void HyphaeBirthControl::death() {
   latest.death();
 }
 
-void HyphaeBirthControl::reset(const double density) {
-  fertilityRatio = determineFertilityRatio(total.getDiff(), latest.getDiff(), density);
+void HyphaeBirthControl::reset() {
+  fertilityRatio = determineFertilityRatio(total.getDiff());
   latest.reset();
 }
 
@@ -37,15 +36,8 @@ int HyphaeBirthControl::getLatestDeaths() const {
   return latest.getDeaths();
 }
 
-int HyphaeBirthControl::getMaxBirths(const int totalAlive) const {
-  auto maxBirths = totalAlive * maxGrowthRatio;
-  return maxBirths>10? maxBirths : 10; // TODO (max births low threshold)
-}
-
-double HyphaeBirthControl::determineFertilityRatio(const int totalAlive, const int lastUpdateAlive, const double density) const {
-  auto birthAmount = ofMap(lastUpdateAlive, 0, getMaxBirths(totalAlive), 0, 1);
-  auto densityAmount = ofMap(density, 0.0f, maxDensity, 0.0f, 1.0f);
-  return 1 - max(birthAmount, densityAmount);
+double HyphaeBirthControl::determineFertilityRatio(const int totalAlive) const {
+  return totalAlive > 30000? 0.0f : pow(totalAlive, 0.8f) / totalAlive;
 }
 
 double HyphaeBirthControl::getFertilityRatio() const {

@@ -18,7 +18,7 @@ void ofApp::setup(){
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
-  ofBackground(ofColor::white);
+  ofBackground(ofColor::white); //(settings.canvas.backgroundColor);
 
   newHyphae();
 }
@@ -51,12 +51,6 @@ void ofApp::drawField() {
   ofScale(0.20f);
   fieldPainter->draw(*field.get());
   hyphaePainterBlack->draw(hyphae->getNewPositions());
-  auto hyphaeStats = hyphae->getStats();
-  ofPushStyle();
-  ofSetColor(ofColor::green);
-  ofNoFill();
-  ofDrawEllipse(hyphaeStats.centerOfMass, hyphaeStats.density, hyphaeStats.density);
-  ofPopStyle();
   ofPopView();
 }
 

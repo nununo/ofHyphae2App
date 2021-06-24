@@ -46,7 +46,7 @@ HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
 }
 
 double Hypha::getSpeed() const {
-  return params->speed * ofMap(energy.get(), 0, 1, 0.5f, 1.0f); // TODO
+  return params->speed * ofMap(energy.get(), 0, 1, 0.9f, 1.0f); // TODO
 }
 
 bool Hypha::move(IField &field) {

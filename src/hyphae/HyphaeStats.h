@@ -16,17 +16,13 @@ struct HyphaeStats {
   int born;
   int died;
   double fertilityRatio;
-  double density;
-  glm::vec2 centerOfMass;
 
   HyphaeStats(
     const int alive,
     const int moved,
     const int born,
     const int died,
-    const double fertilityRatio,
-    const glm::vec2 centerOfMass,
-    const double density);
+    const double fertilityRatio);
 };
 
 #endif /* HyphaeStats_h */
