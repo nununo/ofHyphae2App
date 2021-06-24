@@ -3,14 +3,14 @@
     <framerate>20</framerate>
     <antialiasing>0</antialiasing>
     <osdActive>1</osdActive>
-    <osdColor> <r>255</r> <g>255</g> <b>255</b> <a>255</a> </osdColor>
-    <backgroundColor> <r>0</r> <g>0</g> <b>0</b> <a>255</a> </backgroundColor>
+    <osdColor> <r>0</r> <g>0</g> <b>0</b> <a>255</a> </osdColor>
+    <backgroundColor> <r>255</r> <g>255</g> <b>255</b> <a>255</a> </backgroundColor>
   </canvas>
   <field>
     <zeroThreshold><min>0.05</min><max>0.05</max></zeroThreshold>
   </field>
   <hypha>
-    <color> <r>0</r> <g>0</g> <b>127</b> <a>2</a> </color>
+    <color> <r>0</r> <g>0</g> <b>i0</b> <a>2</a> </color>
     <speed><min>0.9</min><max>0.9</max></speed> <!--pixels/s-->
     <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
     <birthAreaRadius><min>3</min><max>3</max></birthAreaRadius>
