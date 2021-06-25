@@ -7,10 +7,14 @@
 
 #include "HyphaKynetics.h"
 
+long HyphaKynetics::counter = 0;
+
 HyphaKynetics::HyphaKynetics(shared_ptr<const HyphaParams> _params, const HyphaCoordinates _coordinates)
 : params(_params)
 , coordinates(_coordinates)
-{}
+{
+  updateAngleWithOriginalDirection();
+}
 
 glm::vec2 HyphaKynetics::getPixelPos() const {
   return {glm::floor(coordinates.pos.x), glm::floor(coordinates.pos.y)};
@@ -21,6 +25,9 @@ glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 dir) const {
 }
 
 bool HyphaKynetics::update(double speed) {
+  if (counter++ % 10 == 0) {
+    updateAngleWithOriginalDirection();
+  }
   coordinates.pos += coordinates.dir * speed;
   auto pixelPos = getPixelPos();
   if (pixelPos != lastPixelPos) {
@@ -38,6 +45,10 @@ HyphaCoordinates HyphaKynetics::getForkCoordinates() {
   return forkCoordinates;
 }
 
+void HyphaKynetics::updateAngleWithOriginalDirection() {
+  cachedAngleWithOriginaDirection = glm::degrees(glm::abs(glm::orientedAngle(coordinates.dir, coordinates.originalDir)));
+}
+
 double HyphaKynetics::angleWithOriginalDirection() const {
-  return glm::degrees(glm::abs(glm::orientedAngle(coordinates.dir, coordinates.originalDir)));
+  return cachedAngleWithOriginaDirection;
 }

@@ -28,7 +28,7 @@ bool Hypha::isAlive() const {
  if it goes outside... it dies.
  */
 HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
-  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= 100) {
+  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= 100) { // TODO
     return HyphaStatus::Dead;
   }
   

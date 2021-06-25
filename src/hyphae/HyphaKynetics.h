@@ -16,9 +16,12 @@ private:
   shared_ptr<const HyphaParams> params;
   HyphaCoordinates coordinates;
   glm::vec2 lastPixelPos;
-  bool dead = false;
+  double cachedAngleWithOriginaDirection;
+  
+  static long counter;
 
   glm::vec2 nextDirection(const glm::vec2 _dir) const;
+  void updateAngleWithOriginalDirection();
 
 public:
   HyphaKynetics(shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates);
