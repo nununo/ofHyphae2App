@@ -16,8 +16,8 @@ glm::vec2 HyphaKynetics::getPixelPos() const {
   return {glm::floor(coordinates.pos.x), glm::floor(coordinates.pos.y)};
 }
 
-glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 _dir) const {
-  return glm::rotate(_dir, ofRandom(-params->maxBendAngle, params->maxBendAngle));
+glm::vec2 HyphaKynetics::nextDirection(const glm::vec2 dir) const {
+  return glm::rotate(dir, ofRandom(-params->maxBendAngle, params->maxBendAngle));
 }
 
 bool HyphaKynetics::update(double speed) {
