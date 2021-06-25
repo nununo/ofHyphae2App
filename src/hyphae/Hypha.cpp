@@ -59,30 +59,27 @@ bool Hypha::move(IField &field) {
     energy.move();
     status = calcStatus(field, status);
     moved = isAlive();
-    if (moved && status == HyphaStatus::Inside) {
-      throwMovedEvent();
-    }
   }
   return moved;
 }
 
-void Hypha::update(IField &field, const bool allowForks) {
-  if (!move(field)) {return;}
-  auto food = takeFoodFromField(field);
-  energy.eat(food);
-  if (allowForks && status != HyphaStatus::Dead) {
-    fork();
+bool Hypha::update(IField &field, const bool allowForks) {
+  if (move(field)) {
+    auto food = takeFoodFromField(field);
+    energy.eat(food);
+    if (allowForks && status != HyphaStatus::Dead) {
+      fork();
+    }
+    // If it moved and is still inside, return true (to be added to Hyphae newPositions)
+    return status == HyphaStatus::Inside;
+  } else {
+    return false;
   }
 }
 
 void Hypha::throwForkEvent() {
   HyphaForkEventArgs e(kynetics.getForkCoordinates(), energy.get(), status);
   ofNotifyEvent(this->forkEvent, e);
-}
-
-void Hypha::throwMovedEvent() {
-  HyphaMovedEventArgs e(kynetics.getPixelPos());
-  ofNotifyEvent(this->movedEvent, e);
 }
 
 double Hypha::takeFoodFromField(IField &field) {

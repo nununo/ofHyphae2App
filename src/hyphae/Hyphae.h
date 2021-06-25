@@ -28,7 +28,6 @@ private:
   void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);
 
   void onHyphaFork(HyphaForkEventArgs &e);
-  void onHyphaMoved(HyphaMovedEventArgs &e);
 
 public:
   Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);

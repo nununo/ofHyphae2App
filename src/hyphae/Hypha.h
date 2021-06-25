@@ -13,7 +13,6 @@
 #include "HyphaKynetics.h"
 #include "HyphaEnergy.h"
 #include "HyphaForkEventArgs.h"
-#include "HyphaMovedEventArgs.h"
 
 class Hypha {
   
@@ -26,7 +25,6 @@ private:
 
   double takeFoodFromField(IField &field);
   void throwForkEvent();
-  void throwMovedEvent();
   void fork();
   int getNextForkDistance() const;
   HyphaStatus calcStatus(IField &field, HyphaStatus oldStatus) const;
@@ -35,12 +33,11 @@ private:
 
 public:
   Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy, const HyphaStatus status);
-  void update(IField &field, const bool allowForks);
+  bool update(IField &field, const bool allowForks);
   bool isAlive() const;
   glm::vec2 getPosition() const;
 
   ofEvent<HyphaForkEventArgs> forkEvent;
-  ofEvent<HyphaMovedEventArgs> movedEvent;
 };
 
 #endif /* Hypha_h */

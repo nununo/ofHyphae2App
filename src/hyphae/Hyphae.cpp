@@ -18,16 +18,11 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
   elements.push_back(Hypha(hyphaParams, coordinates, energy, status));
   ofAddListener(elements.back().forkEvent, this, &Hyphae::onHyphaFork);
-  ofAddListener(elements.back().movedEvent, this, &Hyphae::onHyphaMoved);
   birthControl->birth();
 }
 
 void Hyphae::onHyphaFork(HyphaForkEventArgs &e) {
   add(e.coordinates, e.energy, e.status);
-}
-
-void Hyphae::onHyphaMoved(HyphaMovedEventArgs &e) {
-  newPositions.push_back(e.pos);
 }
 
 void Hyphae::addGenerated() {
@@ -43,10 +38,11 @@ void Hyphae::update(IField &field) {
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      itr->update(field, birthControl->allowFork());
+      if (itr->update(field, birthControl->allowFork())) {
+        newPositions.push_back(itr->getPosition());
+      }
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
-      ofRemoveListener(itr->movedEvent, this, &Hyphae::onHyphaMoved);
       itr = elements.erase(itr);
       birthControl->death();
     }
