@@ -13,7 +13,7 @@
 class IHyphaePainter {
 public:
   virtual ~IHyphaePainter() {}
-  virtual void draw(std::vector<glm::vec2>) = 0;
+  virtual void draw(std::vector<glm::vec3>) = 0;
 };
 
 #endif /* IHyphaePainter_h */

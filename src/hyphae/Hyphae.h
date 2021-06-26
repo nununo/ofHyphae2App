@@ -21,7 +21,7 @@ private:
   unique_ptr<IHyphaCoordinatesGenerator> generator;
 
   list<Hypha> elements;
-  vector<glm::vec2> newPositions;
+  vector<glm::vec3> newPositions;
   unique_ptr<HyphaeBirthControl> birthControl;
 
   void addGenerated();
@@ -34,7 +34,7 @@ public:
   void update(IField &field);
   bool isAlive() const;
 
-  vector<glm::vec2> getNewPositions() const;
+  vector<glm::vec3> getNewPositions() const;
   HyphaeStats getStats();
 };
 

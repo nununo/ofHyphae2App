@@ -39,7 +39,8 @@ void Hyphae::update(IField &field) {
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
       if (itr->update(field, birthControl->allowFork())) {
-        newPositions.push_back(itr->getPosition());
+        auto pos2 = itr->getPosition();
+        newPositions.push_back(glm::vec3(pos2.x, pos2.y, 0));
       }
     } else {
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
@@ -49,7 +50,7 @@ void Hyphae::update(IField &field) {
   }
 }
 
-vector<glm::vec2> Hyphae::getNewPositions() const {
+vector<glm::vec3> Hyphae::getNewPositions() const {
   return newPositions;
 }
 

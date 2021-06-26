@@ -12,9 +12,10 @@
 
 class HyphaePainter: public IHyphaePainter {
 private:
-  ofColor color;
+  const ofColor color;
+  ofVboMesh mesh;
 
-  void draw(std::vector<glm::vec2>) override;
+  void draw(std::vector<glm::vec3>) override;
 
 public:
   HyphaePainter(const ofColor color);
