@@ -39,13 +39,6 @@ void WritableField::generate(const IFieldGenerator& generator) {
   }
 }
 
-double WritableField::consume(const glm::vec2 pos, const double amount) {
-  auto value = getValue(pos);
-  auto consumed = (value-amount>0? amount : value);
-  setValue(pos, value-consumed);
-  return consumed;
-}
-
 bool WritableField::isInside(const glm::vec2 pos) const {
   return pos == glm::abs(pos) && pos.x <= size.x-1 && pos.y <= size.y-1;
 }
