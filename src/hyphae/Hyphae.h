@@ -30,7 +30,9 @@ private:
   void onHyphaFork(HyphaForkEventArgs &e);
 
 public:
-  Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
+  Hyphae(shared_ptr<const HyphaParams> hyphaParams,
+         unique_ptr<IHyphaCoordinatesGenerator> generator,
+         shared_ptr<IOccupancy> occupancy);
   void update(IField &field);
   bool isAlive() const;
 

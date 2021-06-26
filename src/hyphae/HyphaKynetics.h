@@ -17,8 +17,7 @@ private:
   HyphaCoordinates coordinates;
   glm::vec2 lastPixelPos;
   double cachedAngleWithOriginaDirection;
-  
-  static long counter;
+  int cacheLifetime = 0;
 
   glm::vec2 nextDirection(const glm::vec2 _dir) const;
   void updateAngleWithOriginalDirection();

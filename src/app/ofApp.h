@@ -7,6 +7,7 @@
 #include "IField.h"
 #include "OSD.h"
 #include "Params.h"
+#include "IOccupancy.h"
 
 class ofApp : public ofBaseApp{
 private:
@@ -17,13 +18,14 @@ private:
   unique_ptr<IHyphaePainter> hyphaePainter;
   unique_ptr<IHyphaePainter> hyphaePainterBlack;
   unique_ptr<OSD> osd;
+  shared_ptr<IOccupancy> occupancy;
   
-  unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params, shared_ptr<IField> field) const;
+  unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params, shared_ptr<IField> field, shared_ptr<IOccupancy> occupancy) const;
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams) const;
   shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
-
+  shared_ptr<IOccupancy> createOccupancy(const glm::vec2 size) const;
 
   void clearScreen();
   glm::vec2 getSize() const;

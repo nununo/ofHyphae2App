@@ -5,13 +5,15 @@
 #include "FieldPainter.h"
 #include "NoiseFieldGenerator.h"
 #include "WritableField.h"
+#include "ScreenOccupancy.h"
 
-void ofApp::setup(){
+void ofApp::setup() {
   Settings settings(SettingsFile("settings/settings.xml"));
   params = std::make_shared<Params>(settings);
 
   fieldPainter = createFieldPainter(getSize());
   osd = createOSD(settings.canvas, params->hypha);
+  occupancy = createOccupancy(getSize());
   hyphaePainter = createHyphaePainter(params->hypha->color);
   hyphaePainterBlack = createHyphaePainter(ofColor::red);
 
@@ -24,6 +26,7 @@ void ofApp::setup(){
 }
 
 void ofApp::update(){
+  occupancy->update();
   hyphae->update(*field.get());
   if (!hyphae->isAlive()) {
     newHyphae();
@@ -33,12 +36,11 @@ void ofApp::update(){
 void ofApp::draw() {
   hyphaePainter->draw(hyphae->getNewPositions());
   osd->draw(hyphae->getStats());
-
 }
 
 void ofApp::newHyphae() {
   field = createField(params->field, getSize());
-  hyphae = createHyphae(params->hypha, field);
+  hyphae = createHyphae(params->hypha, field, occupancy);
   clearScreen();
 }
 
@@ -58,11 +60,12 @@ glm::vec2 ofApp::getSize() const {
   return {ofGetWidth(), ofGetHeight()};
 }
 
-unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
+unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field, shared_ptr<IOccupancy> occupancy) const {
   LeftRightStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesLeftRightGenerator>(startPos.get(), hyphaParams->birthRays));
+    make_unique<HyphaCoordinatesLeftRightGenerator>(startPos.get(), hyphaParams->birthRays),
+    occupancy);
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
@@ -83,6 +86,10 @@ unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_pt
   return unique_ptr<OSD>(make_unique<OSD>(canvasSettings, hyphaParams));
 }
 
+shared_ptr<IOccupancy> ofApp::createOccupancy(const glm::vec2 size) const {
+  return shared_ptr<IOccupancy>(make_shared<ScreenOccupancy>(size, 20));
+}
+
 void ofApp::clearScreen() {
   ofClear(ofColor::white);
 }
@@ -97,6 +104,9 @@ void ofApp::keyPressed(int key) {
     break;
   case 'o':
     osd->toggleActive();
+    break;
+  case 'y':
+    occupancy->draw({500,0}, {640,400});
     break;
   case 'c':
     clearScreen();

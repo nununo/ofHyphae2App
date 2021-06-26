@@ -9,10 +9,11 @@
 #include "HyphaComparator.h"
 
 Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
-               unique_ptr<IHyphaCoordinatesGenerator> _generator)
+               unique_ptr<IHyphaCoordinatesGenerator> _generator,
+               shared_ptr<IOccupancy> occupancy)
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
-, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage)) // TODO
+, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, occupancy))
 {}
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
@@ -38,7 +39,7 @@ void Hyphae::update(IField &field) {
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      if (itr->update(field, birthControl->allowFork())) {
+      if (itr->update(field, birthControl->allowFork(itr->getPosition()))) {
         newPositions.push_back(itr->getPosition());
       }
     } else {
