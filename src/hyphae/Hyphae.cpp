@@ -6,7 +6,6 @@
 //
 
 #include "Hyphae.h"
-#include "HyphaComparator.h"
 
 Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
                unique_ptr<IHyphaCoordinatesGenerator> _generator)

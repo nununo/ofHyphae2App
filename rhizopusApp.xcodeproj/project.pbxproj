@@ -36,7 +36,6 @@
 		7DE3A0FD2634292B000DED6A /* NoiseFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */; };
 		7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FE26342A64000DED6A /* WritableField.cpp */; };
 		7DF62760266BD1E5009D87C3 /* LifeDeathCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6275E266BD1E5009D87C3 /* LifeDeathCounter.cpp */; };
-		7DF62763266C0496009D87C3 /* HyphaComparator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF62761266C0496009D87C3 /* HyphaComparator.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */; };
 		B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04085A84A7637CFDE1C8F7C /* ofxSlider.cpp */; };
@@ -132,8 +131,6 @@
 		7DE3A0FF26342A64000DED6A /* WritableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritableField.h; sourceTree = "<group>"; };
 		7DF6275E266BD1E5009D87C3 /* LifeDeathCounter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LifeDeathCounter.cpp; sourceTree = "<group>"; };
 		7DF6275F266BD1E5009D87C3 /* LifeDeathCounter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeDeathCounter.h; sourceTree = "<group>"; };
-		7DF62761266C0496009D87C3 /* HyphaComparator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaComparator.cpp; sourceTree = "<group>"; };
-		7DF62762266C0496009D87C3 /* HyphaComparator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaComparator.h; sourceTree = "<group>"; };
 		7DF62767266D26F5009D87C3 /* RangeRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RangeRange.h; sourceTree = "<group>"; };
 		7F03568C96D5EECF29B0B3B6 /* ofxGuiUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxGuiUtils.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiUtils.h; sourceTree = SOURCE_ROOT; };
 		80B611B67B70408F9A207615 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxGuiGroup.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
@@ -456,8 +453,6 @@
 				7DA7A85C26693281009E8DCE /* HyphaeStats.cpp */,
 				7DF6275E266BD1E5009D87C3 /* LifeDeathCounter.cpp */,
 				7DF6275F266BD1E5009D87C3 /* LifeDeathCounter.h */,
-				7DF62761266C0496009D87C3 /* HyphaComparator.cpp */,
-				7DF62762266C0496009D87C3 /* HyphaComparator.h */,
 				7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */,
 				7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */,
 				7D24879E2681568700FA4A2B /* HyphaStatus.h */,
@@ -964,7 +959,6 @@
 				7DE3A0EF26334136000DED6A /* HyphaParams.cpp in Sources */,
 				7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */,
 				7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */,
-				7DF62763266C0496009D87C3 /* HyphaComparator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
