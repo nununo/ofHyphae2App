@@ -22,4 +22,5 @@ HyphaSettings::HyphaSettings(const SettingsFile& sf)
 , birthRayDirections(sf.getRange("rhizopus:hypha:birthRayDirections"))
 , birthAreaRadius(sf.getRange("rhizopus:hypha:birthAreaRadius"))
 , fertilityRatio(sf.getRange("rhizopus:hypha:fertilityRatio"))
+, maxElements(sf.getRange("rhizopus:hypha:maxElements"))
 {}

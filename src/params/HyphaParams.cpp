@@ -22,4 +22,5 @@ HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
 , birthAreaRadius(Tools::randomInRange(hyphaSettings.birthAreaRadius))
 , maxGrowthPercentage(Tools::randomInRange(hyphaSettings.maxGrowthPercentage))
 , fertilityRatio(Tools::randomInRange(hyphaSettings.fertilityRatio))
+, maxElements(Tools::randomInRange(hyphaSettings.maxElements))
 {}

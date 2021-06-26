@@ -50,21 +50,20 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats) {
   drawLine(" food2energy ratio: " + ofToString(hyphaParams->foodToEnergyRatio));
   drawLine(" energy spent to move: " + ofToString(hyphaParams->energySpentToMove));
   drawLine(" birth area radius: " + ofToString(hyphaParams->birthAreaRadius));
+  drawLine(" fertilityRatio: " + ofToString(hyphaParams->fertilityRatio));
 
   drawLine("");
 
   drawLine("stats");
   drawLine(" framerate: " + ofToString(ofGetFrameRate(),2));
   drawLine(" hyphae lifetime: " + ofToString(ofGetFrameNum() / canvasSettings.framerate ,2));
-  drawLine(" alive: " + ofToString(hyphaeStats.alive));
+  drawLine(" alive: " + ofToString(hyphaeStats.alive) + " / " + ofToString(hyphaParams->maxElements));
   drawLine(" moved: " + ofToString(hyphaeStats.moved));
   drawLine(" born: " + ofToString(hyphaeStats.born));
   drawLine(" dead: " + ofToString(hyphaeStats.died));
   drawLine(" fertility %: " + ofToString(hyphaeStats.fertilityRatio * 100.0f));
 
   drawLine("");
-  
-  drawLine("antialiasing: " + ofToString(canvasSettings.antialiasing));
 
   ofPopStyle();
 }

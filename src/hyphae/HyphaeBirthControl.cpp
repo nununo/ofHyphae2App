@@ -8,9 +8,10 @@
 #include "HyphaeBirthControl.h"
 #include "ofMain.h"
 
-HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage, const double _fertilityRatio)
+HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage, const double _fertilityRatio, const int _maxElements)
 : maxGrowthRatio(_maxGrowthPercentage/100.0f)
 , fertilityRatio(_fertilityRatio)
+, maxElements(_maxElements)
 , currentFertilityRatio(1.0f)
 {}
 
@@ -38,7 +39,7 @@ int HyphaeBirthControl::getLatestDeaths() const {
 }
 
 double HyphaeBirthControl::determineCurrentFertilityRatio(const int totalAlive) const {
-  return totalAlive > 40000? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive; // TODO
+  return totalAlive > maxElements? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive; // TODO
 }
 
 double HyphaeBirthControl::getCurrentFertilityRatio() const {

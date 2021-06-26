@@ -10,6 +10,7 @@
     <zeroThreshold><min>0.05</min><max>0.05</max></zeroThreshold>
   </field>
   <hypha>
+    <maxElements><min>20000</min><max>40000</max></maxElements>
     <color> <r>255</r> <g>255</g> <b>255</b> <a>4</a> </color>
     <speed> <!--pixels/s-->
       <min> <min>0.9</min><max>0.9</max> </min>

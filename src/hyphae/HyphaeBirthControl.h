@@ -13,6 +13,7 @@
 class HyphaeBirthControl {
   const double maxGrowthRatio;
   const double fertilityRatio;
+  const int maxElements;
   LifeDeathCounter total;
   LifeDeathCounter latest;
   double currentFertilityRatio;
@@ -20,7 +21,7 @@ class HyphaeBirthControl {
   double determineCurrentFertilityRatio(const int totalAlive) const;
 
 public:
-  HyphaeBirthControl(const double maxGrowthPercentage, const double fertilityRatio);
+  HyphaeBirthControl(const double maxGrowthPercentage, const double fertilityRatio, const int maxElements);
   void birth();
   void death();
   void reset();
