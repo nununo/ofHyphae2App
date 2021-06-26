@@ -18,6 +18,7 @@ public:
   const RangeRange energySpentToMove;
   const Range maxBendAngle;
   const Range maxForkAngle;
+  const Range maxAngleWithOriginalDirection;
   const Range foodToEnergyRatio;
   const RangeRange forkDistance;
   const Range birthRayDirections;

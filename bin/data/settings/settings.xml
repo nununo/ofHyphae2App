@@ -28,5 +28,6 @@
     </forkDistance>
     <maxForkAngleDeg><min>30</min><max>30</max></maxBendAngleDeg>
     <pixelOverlap>1</pixelOverlap>
+    <maxAngleWithOriginalDirection><min>90</min><max>100</max></maxAngleWithOriginalDirection>
   </hypha>
 </rhizopus>
