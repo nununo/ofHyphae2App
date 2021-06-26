@@ -13,8 +13,6 @@
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
-		7D348EFB268005DD0090767D /* LeftRightStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */; };
-		7D348EFE268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */; };
 		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A857266930A5009E8DCE /* OSD.cpp */; };
@@ -80,16 +78,11 @@
 		5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxmlerror.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		6FD18784B990612B8CF3F739 /* ofxColorPicker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxColorPicker.cpp; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxColorPicker.cpp; sourceTree = SOURCE_ROOT; };
 		781691D621AC5155856B98DC /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = ../../of_v0.11.2_osx_release/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
-		7D1499132650297E00E3D5A5 /* IStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IStartPos.h; sourceTree = "<group>"; };
 		7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaCoordinatesGenerator.h; sourceTree = "<group>"; };
 		7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesRadialGenerator.cpp; sourceTree = "<group>"; };
 		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
 		7D24879E2681568700FA4A2B /* HyphaStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaStatus.h; sourceTree = "<group>"; };
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
-		7D348EF9268005DD0090767D /* LeftRightStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftRightStartPos.h; sourceTree = "<group>"; };
-		7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LeftRightStartPos.cpp; sourceTree = "<group>"; };
-		7D348EFC268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesLeftRightGenerator.h; sourceTree = "<group>"; };
-		7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesLeftRightGenerator.cpp; sourceTree = "<group>"; };
 		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
 		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
 		7D82401F2685378D0083EA39 /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
@@ -432,7 +425,6 @@
 			children = (
 				7DE3A0D626334112000DED6A /* IField.h */,
 				7DE3A0F726342888000DED6A /* IFieldGenerator.h */,
-				7D1499132650297E00E3D5A5 /* IStartPos.h */,
 				7DDC214226517388005D3C66 /* IFieldPainter.h */,
 				7DE3A0D426334112000DED6A /* FieldPainter.h */,
 				7DE3A0D326334112000DED6A /* FieldPainter.cpp */,
@@ -440,8 +432,6 @@
 				7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */,
 				7DE3A0FF26342A64000DED6A /* WritableField.h */,
 				7DE3A0FE26342A64000DED6A /* WritableField.cpp */,
-				7D348EF9268005DD0090767D /* LeftRightStartPos.h */,
-				7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -463,8 +453,6 @@
 				7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */,
 				7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */,
 				7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */,
-				7D348EFC268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.h */,
-				7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */,
 				B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */,
 				CA6778A301673A7F07642741 /* HyphaePainter.h */,
 				7DA7A85D26693281009E8DCE /* HyphaeStats.h */,
@@ -946,7 +934,6 @@
 				91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */,
 				7DE3A0C6263340DE000DED6A /* SettingsFile.cpp in Sources */,
 				7DE3A0C5263340DE000DED6A /* FieldSettings.cpp in Sources */,
-				7D348EFE268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp in Sources */,
 				7DE3A0F026334136000DED6A /* Params.cpp in Sources */,
 				7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */,
 				7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */,
@@ -967,7 +954,6 @@
 				B1B433FB962C4B55943EB5C0 /* ofxSlider.cpp in Sources */,
 				FDEC792F2B4D39675A7C25AD /* ofxSliderGroup.cpp in Sources */,
 				C2DF5196736CFD422B3B7379 /* ofxToggle.cpp in Sources */,
-				7D348EFB268005DD0090767D /* LeftRightStartPos.cpp in Sources */,
 				7DE3A0C3263340DE000DED6A /* HyphaSettings.cpp in Sources */,
 				7DF62766266C1177009D87C3 /* HyphaList.cpp in Sources */,
 				7DE3A0E426334125000DED6A /* Hypha.cpp in Sources */,

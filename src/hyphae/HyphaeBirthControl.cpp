@@ -37,7 +37,7 @@ int HyphaeBirthControl::getLatestDeaths() const {
 }
 
 double HyphaeBirthControl::determineFertilityRatio(const int totalAlive) const {
-  return totalAlive > 60000? 0.0f : pow(totalAlive, 0.8f) / totalAlive;
+  return totalAlive > 40000? 0.0f : pow(totalAlive, 0.75f) / totalAlive; // TODO
 }
 
 double HyphaeBirthControl::getFertilityRatio() const {

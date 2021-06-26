@@ -35,6 +35,9 @@ void Hyphae::addGenerated() {
 void Hyphae::update(IField &field) {
   birthControl->reset();
   newPositions.clear();
+  if (dead) {
+    return;
+  }
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
@@ -43,10 +46,16 @@ void Hyphae::update(IField &field) {
         newPositions.push_back(glm::vec3(pos2.x, pos2.y, 0));
       }
     } else {
+      if (itr->getPosition().x >= field.getSize().x) {
+        dead = true;
+      }
       ofRemoveListener(itr->forkEvent, this, &Hyphae::onHyphaFork);
       itr = elements.erase(itr);
       birthControl->death();
     }
+  }
+  if (elements.size() == 0) {
+    dead = true;
   }
 }
 
@@ -64,5 +73,5 @@ HyphaeStats Hyphae::getStats() {
 }
 
 bool Hyphae::isAlive() const {
-  return elements.size() > 0;
+  return !dead;
 }

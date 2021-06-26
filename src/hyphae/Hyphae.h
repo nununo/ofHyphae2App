@@ -23,6 +23,7 @@ private:
   list<Hypha> elements;
   vector<glm::vec3> newPositions;
   unique_ptr<HyphaeBirthControl> birthControl;
+  bool dead = false;
 
   void addGenerated();
   void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);

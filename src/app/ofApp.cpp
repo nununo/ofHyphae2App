@@ -1,6 +1,5 @@
 #include "ofApp.h"
-#include "LeftRightStartPos.h"
-#include "HyphaCoordinatesLeftRightGenerator.h"
+#include "HyphaCoordinatesRadialGenerator.h"
 #include "HyphaePainter.h"
 #include "FieldPainter.h"
 #include "NoiseFieldGenerator.h"
@@ -47,7 +46,6 @@ void ofApp::newHyphae() {
  */
 void ofApp::drawField() {
   ofPushView();
-  ofPushStyle();
   ofTranslate(field->getSize().x-field->getSize().x/5, 0);
   ofScale(0.20f);
   fieldPainter->draw(*field.get());
@@ -60,10 +58,9 @@ glm::vec2 ofApp::getSize() const {
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
-  LeftRightStartPos startPos(field, 50); // TODO
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesLeftRightGenerator>(startPos.get(), hyphaParams->birthRays));
+    make_unique<HyphaCoordinatesRadialGenerator>(hyphaParams->birthAreaRadius, 1, hyphaParams->birthRayDirections, hyphaParams->birthRays));
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
@@ -110,7 +107,9 @@ void ofApp::keyPressed(int key) {
 void ofApp::keyReleased(int key){}
 void ofApp::mouseMoved(int x, int y ){}
 void ofApp::mouseDragged(int x, int y, int button){}
-void ofApp::mousePressed(int x, int y, int button){}
+void ofApp::mousePressed(int x, int y, int button){
+  ofLog() << "mouse: " << x << " " << y;
+}
 void ofApp::mouseReleased(int x, int y, int button){}
 void ofApp::mouseEntered(int x, int y){}
 void ofApp::mouseExited(int x, int y){}

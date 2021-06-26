@@ -8,56 +8,45 @@
 #include "HyphaCoordinatesRadialGenerator.h"
 
 HyphaCoordinatesRadialGenerator::HyphaCoordinatesRadialGenerator(
-  shared_ptr<IField> _field, glm::vec2 _center, double _birthAreaRadius, int _numRays, int _total)
-: field(_field)
-, center(_center)
-, birthAreaRadius(_birthAreaRadius)
-, rays(generateRays(_numRays))
-, total(_total)
+  const double _birthAreaRadius, const double _maxAngle, const int _numDirections, const int _total)
+: birthAreaRadius{_birthAreaRadius}
+, maxAngle{_maxAngle}
+, total{_total}
+, directions{generateDirections(_numDirections)}
 {}
 
-vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::generateRays(int numRays) {
+vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::generateDirections(int numDirections) {
   vector<HyphaCoordinates> v;
-  while (numRays > 0) {
-    v.push_back(generateRay());
-    numRays--;
+  while (numDirections > 0) {
+    v.push_back(generateDirection());
+    numDirections--;
   }
   return v;
 }
 
-HyphaCoordinates HyphaCoordinatesRadialGenerator::generateRay() {
-  auto pos = getNewPosition();
-  auto dir = getNewInwardDirection(pos);
-  
-  return HyphaCoordinates(pos, dir);
+HyphaCoordinates HyphaCoordinatesRadialGenerator::generateDirection() const {
+  return HyphaCoordinates(getNewPosition(), getNewDirection());
 }
 
 vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
   vector<HyphaCoordinates> v;
   if (total > 0) {
-    auto ray = rays[ofRandom(rays.size())];
-    v.push_back(ray);
+    auto direction = directions[ofRandom(directions.size())];
+    v.push_back(direction);
     total--;
   }
   return v;
 }
 
-glm::vec2 HyphaCoordinatesRadialGenerator::getNewPosition() {
-  glm::vec2 pos;
-  do {
-    pos = center + getNewOffset();
-  } while (!field->isInside(pos));
-  return pos;
+glm::vec2 HyphaCoordinatesRadialGenerator::getNewPosition() const {
+  return glm::vec2(0,ofGetScreenHeight()/2) + getNewOffset();
 }
 
-glm::vec2 HyphaCoordinatesRadialGenerator::getNewOffset() {
+glm::vec2 HyphaCoordinatesRadialGenerator::getNewOffset() const {
   return glm::rotate(glm::vec2(birthAreaRadius*ofRandom(0,1)),ofRandom(0,360));
 }
 
-glm::vec2 HyphaCoordinatesRadialGenerator::getNewInwardDirection(glm::vec2 pos) {
-  glm::vec2 dir;
-  do {
-    dir = glm::rotate(glm::vec2(1,0), ofRandom(360));
-  } while (!field->isInside(pos+dir));
-  return dir;
+glm::vec2 HyphaCoordinatesRadialGenerator::getNewDirection() const {
+  float angle = ofRandom(maxAngle)-maxAngle/2;
+  return glm::rotate(glm::vec2(1,0), angle);
 }
