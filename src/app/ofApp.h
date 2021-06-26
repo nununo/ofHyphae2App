@@ -15,12 +15,12 @@ private:
   unique_ptr<Hyphae> hyphae;
   unique_ptr<IFieldPainter> fieldPainter;
   unique_ptr<IHyphaePainter> hyphaePainter;
-  unique_ptr<IHyphaePainter> hyphaePainterBlack;
+  unique_ptr<IHyphaePainter> hyphaePainterField;
   unique_ptr<OSD> osd;
   
   unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params, shared_ptr<IField> field) const;
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
-  unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color) const;
+  unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams) const;
   shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
 

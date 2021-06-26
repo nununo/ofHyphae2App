@@ -12,8 +12,8 @@ void ofApp::setup(){
 
   fieldPainter = createFieldPainter(getSize());
   osd = createOSD(settings.canvas, params->hypha);
-  hyphaePainter = createHyphaePainter(params->hypha->color);
-  hyphaePainterBlack = createHyphaePainter(ofColor::red);
+  hyphaePainter = createHyphaePainter(params->hypha->color, OF_BLENDMODE_SUBTRACT);
+  hyphaePainterField = createHyphaePainter(ofColor::red);
 
   ofSetFrameRate(settings.canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -47,10 +47,11 @@ void ofApp::newHyphae() {
  */
 void ofApp::drawField() {
   ofPushView();
+  ofPushStyle();
   ofTranslate(field->getSize().x-field->getSize().x/5, 0);
   ofScale(0.20f);
   fieldPainter->draw(*field.get());
-  hyphaePainterBlack->draw(hyphae->getNewPositions());
+  hyphaePainterField->draw(hyphae->getNewPositions());
   ofPopView();
 }
 
@@ -75,8 +76,8 @@ unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const 
   return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
 }
 
-unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color) const {
-  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color));
+unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const ofBlendMode blendMode) const {
+  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color, blendMode));
 }
 
 unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_ptr<HyphaParams> hyphaParams) const {
