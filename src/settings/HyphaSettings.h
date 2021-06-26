@@ -25,6 +25,7 @@ public:
   const Range birthRays;
   const Range birthAreaRadius;
   const Range maxGrowthPercentage;
+  const Range fertilityRatio;
 
   HyphaSettings(const SettingsFile& sf);
 };

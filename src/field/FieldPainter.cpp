@@ -15,7 +15,7 @@ FieldPainter::FieldPainter(const glm::vec2 size)
 void FieldPainter::draw(const IField &field) {
   for(auto y=0; y<field.getSize().y; y++) {
     for(auto x=0; x<field.getSize().x; x++) {
-      double colorValue = 255 * field.getValue({ x, y });
+      double colorValue = 255 * field.getValue({x, y});
       image.setColor(x, y, ofColor(colorValue));
     }
   }

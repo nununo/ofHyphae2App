@@ -8,9 +8,10 @@
 #include "HyphaeBirthControl.h"
 #include "ofMain.h"
 
-HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage)
+HyphaeBirthControl::HyphaeBirthControl(const double _maxGrowthPercentage, const double _fertilityRatio)
 : maxGrowthRatio(_maxGrowthPercentage/100.0f)
-, fertilityRatio(1.0f)
+, fertilityRatio(_fertilityRatio)
+, currentFertilityRatio(1.0f)
 {}
 
 void HyphaeBirthControl::birth() {
@@ -24,7 +25,7 @@ void HyphaeBirthControl::death() {
 }
 
 void HyphaeBirthControl::reset() {
-  fertilityRatio = determineFertilityRatio(total.getDiff());
+  currentFertilityRatio = determineCurrentFertilityRatio(total.getDiff());
   latest.reset();
 }
 
@@ -36,14 +37,14 @@ int HyphaeBirthControl::getLatestDeaths() const {
   return latest.getDeaths();
 }
 
-double HyphaeBirthControl::determineFertilityRatio(const int totalAlive) const {
-  return totalAlive > 40000? 0.0f : pow(totalAlive, 0.75f) / totalAlive; // TODO
+double HyphaeBirthControl::determineCurrentFertilityRatio(const int totalAlive) const {
+  return totalAlive > 40000? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive; // TODO
 }
 
-double HyphaeBirthControl::getFertilityRatio() const {
-  return fertilityRatio;
+double HyphaeBirthControl::getCurrentFertilityRatio() const {
+  return currentFertilityRatio;
 }
 
 bool HyphaeBirthControl::allowFork() {
-  return ofRandom(1.0f) <= fertilityRatio;
+  return ofRandom(1.0f) <= currentFertilityRatio;
 }

@@ -31,5 +31,6 @@
     </forkDistance>
     <maxForkAngleDeg><min>30</min><max>30</max></maxForkAngleDeg>
     <maxAngleWithInitialDirection><min>90</min><max>100</max></maxAngleWithInitialDirection>
+    <fertilityRatio><min>0.6</min><max>0.8</max></fertilityRatio>
   </hypha>
 </rhizopus>

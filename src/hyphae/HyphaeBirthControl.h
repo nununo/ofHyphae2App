@@ -12,20 +12,21 @@
 
 class HyphaeBirthControl {
   const double maxGrowthRatio;
+  const double fertilityRatio;
   LifeDeathCounter total;
   LifeDeathCounter latest;
-  double fertilityRatio;
+  double currentFertilityRatio;
 
-  double determineFertilityRatio(const int totalAlive) const;
+  double determineCurrentFertilityRatio(const int totalAlive) const;
 
 public:
-  HyphaeBirthControl(const double maxGrowthPercentage);
+  HyphaeBirthControl(const double maxGrowthPercentage, const double fertilityRatio);
   void birth();
   void death();
   void reset();
   int getLatestBirths() const;
   int getLatestDeaths() const;
-  double getFertilityRatio() const;
+  double getCurrentFertilityRatio() const;
   bool allowFork();
 };
 

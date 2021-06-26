@@ -25,6 +25,7 @@ public:
   const int birthRayDirections;
   const double birthAreaRadius;
   const double maxGrowthPercentage;
+  const double fertilityRatio;
 
   HyphaParams(const HyphaSettings& hyphaSettings);
 };

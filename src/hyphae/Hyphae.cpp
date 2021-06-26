@@ -11,7 +11,7 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
                unique_ptr<IHyphaCoordinatesGenerator> _generator)
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
-, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage))
+, birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, _hyphaParams->fertilityRatio))
 {}
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
@@ -68,7 +68,7 @@ HyphaeStats Hyphae::getStats() {
                      getNewPositions().size(),
                      birthControl->getLatestBirths(),
                      birthControl->getLatestDeaths(),
-                     birthControl->getFertilityRatio());
+                     birthControl->getCurrentFertilityRatio());
 }
 
 bool Hyphae::isAlive() const {
