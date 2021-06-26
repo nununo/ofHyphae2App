@@ -13,7 +13,6 @@
 		68880AD8BF3850A7CB7FE2C2 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9FAE611B13AE8EA51A4 /* tinyxmlparser.cpp */; };
 		71BB89DBE2096EE6D2E8080F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 550770BE80BA04ABDBBBEC5D /* ofxPanel.cpp */; };
 		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
-		7D202549268697AA00435ED2 /* ScreenOccupancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D202547268697AA00435ED2 /* ScreenOccupancy.cpp */; };
 		7D348EFB268005DD0090767D /* LeftRightStartPos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFA268005DD0090767D /* LeftRightStartPos.cpp */; };
 		7D348EFE268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D348EFD268009CE0090767D /* HyphaCoordinatesLeftRightGenerator.cpp */; };
 		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
@@ -85,9 +84,6 @@
 		7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaCoordinatesGenerator.h; sourceTree = "<group>"; };
 		7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesRadialGenerator.cpp; sourceTree = "<group>"; };
 		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
-		7D202547268697AA00435ED2 /* ScreenOccupancy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScreenOccupancy.cpp; sourceTree = "<group>"; };
-		7D202548268697AA00435ED2 /* ScreenOccupancy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenOccupancy.h; sourceTree = "<group>"; };
-		7D20254A2686A4C100435ED2 /* IOccupancy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOccupancy.h; sourceTree = "<group>"; };
 		7D24879E2681568700FA4A2B /* HyphaStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaStatus.h; sourceTree = "<group>"; };
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		7D348EF9268005DD0090767D /* LeftRightStartPos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftRightStartPos.h; sourceTree = "<group>"; };
@@ -123,6 +119,7 @@
 		7DE3A0D626334112000DED6A /* IField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IField.h; sourceTree = "<group>"; };
 		7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaForkEventArgs.h; sourceTree = "<group>"; };
 		7DE3A0DC26334125000DED6A /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hypha.cpp; sourceTree = "<group>"; };
+		7DE3A0DD26334125000DED6A /* HyphaMovedEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaMovedEventArgs.h; sourceTree = "<group>"; };
 		7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaKynetics.cpp; sourceTree = "<group>"; };
 		7DE3A0DF26334125000DED6A /* HyphaKynetics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaKynetics.h; sourceTree = "<group>"; };
 		7DE3A0E026334125000DED6A /* Hyphae.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hyphae.cpp; sourceTree = "<group>"; };
@@ -420,7 +417,6 @@
 		7DE3A0C826334100000DED6A /* app */ = {
 			isa = PBXGroup;
 			children = (
-				7D20254A2686A4C100435ED2 /* IOccupancy.h */,
 				7DE3A0CB26334100000DED6A /* ofApp.h */,
 				7DE3A0CA26334100000DED6A /* ofApp.cpp */,
 				7DE3A0CC26334100000DED6A /* Tools.h */,
@@ -428,8 +424,6 @@
 				7DE3A0CE26334100000DED6A /* main.cpp */,
 				7DA7A857266930A5009E8DCE /* OSD.cpp */,
 				7DA7A856266930A5009E8DCE /* OSD.h */,
-				7D202548268697AA00435ED2 /* ScreenOccupancy.h */,
-				7D202547268697AA00435ED2 /* ScreenOccupancy.cpp */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -462,6 +456,7 @@
 				7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */,
 				7DE3A0E126334125000DED6A /* Hypha.h */,
 				7DE3A0DC26334125000DED6A /* Hypha.cpp */,
+				7DE3A0DD26334125000DED6A /* HyphaMovedEventArgs.h */,
 				7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */,
 				7DE3A0DF26334125000DED6A /* HyphaKynetics.h */,
 				7DE3A0E226334125000DED6A /* Hyphae.h */,
@@ -983,7 +978,6 @@
 				7DF62760266BD1E5009D87C3 /* LifeDeathCounter.cpp in Sources */,
 				7DE3A0C7263340DE000DED6A /* Settings.cpp in Sources */,
 				7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */,
-				7D202549268697AA00435ED2 /* ScreenOccupancy.cpp in Sources */,
 				7DE3A0E526334125000DED6A /* HyphaKynetics.cpp in Sources */,
 				7DE3A0EE26334136000DED6A /* FieldParams.cpp in Sources */,
 				87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */,
