@@ -46,7 +46,7 @@ HyphaCoordinates HyphaKynetics::getForkCoordinates() {
 }
 
 void HyphaKynetics::updateAngleWithOriginalDirection() {
-  cachedAngleWithOriginaDirection = glm::degrees(glm::abs(glm::orientedAngle(coordinates.dir, coordinates.originalDir)));
+  cachedAngleWithOriginaDirection = glm::abs(glm::orientedAngle(coordinates.dir, coordinates.originalDir));
 }
 
 double HyphaKynetics::angleWithOriginalDirection() const {

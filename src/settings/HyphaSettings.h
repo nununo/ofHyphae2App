@@ -14,18 +14,17 @@
 class HyphaSettings {
 public:
   const ofColor color;
-  const Range speed;
+  const RangeRange speed;
   const RangeRange energySpentToMove;
   const Range maxBendAngle;
   const Range maxForkAngle;
-  const Range maxAngleWithOriginalDirection;
+  const Range maxAngleWithInitialDirection;
   const Range foodToEnergyRatio;
   const RangeRange forkDistance;
   const Range birthRayDirections;
   const Range birthRays;
   const Range birthAreaRadius;
   const Range maxGrowthPercentage;
-  const double pixelOverlap;
 
   HyphaSettings(const SettingsFile& sf);
 };

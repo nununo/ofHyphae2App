@@ -36,6 +36,10 @@ Range SettingsFile::getRange(const string& xmlPath) const {
   };
 }
 
+RangeRange SettingsFile::getRangeRange(const string& xmlPath) const {
+  return {getRange(xmlPath + ":min"), getRange(xmlPath + ":max")};
+}
+
 vector<double> SettingsFile::getSet(const string& xmlPath) {
   vector<double> list;
   double value;

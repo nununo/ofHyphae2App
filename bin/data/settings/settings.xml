@@ -11,7 +11,10 @@
   </field>
   <hypha>
     <color> <r>255</r> <g>255</g> <b>255</b> <a>4</a> </color>
-    <speed><min>0.9</min><max>0.9</max></speed> <!--pixels/s-->
+    <speed> <!--pixels/s-->
+      <min> <min>0.9</min><max>0.9</max> </min>
+      <max> <min>1.0</min><max>1.0</max> </max>
+    </speed>
     <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
     <birthAreaRadius><min>3</min><max>3</max></birthAreaRadius>
     <birthRays><min>1</min><max>10</max></birthRays>
@@ -26,8 +29,7 @@
       <min><min>5</min><max>5</max></min>
       <max><min>20</min><max>20</max></max>
     </forkDistance>
-    <maxForkAngleDeg><min>30</min><max>30</max></maxBendAngleDeg>
-    <pixelOverlap>1</pixelOverlap>
-    <maxAngleWithOriginalDirection><min>90</min><max>100</max></maxAngleWithOriginalDirection>
+    <maxForkAngleDeg><min>30</min><max>30</max></maxForkAngleDeg>
+    <maxAngleWithInitialDirection><min>90</min><max>100</max></maxAngleWithInitialDirection>
   </hypha>
 </rhizopus>

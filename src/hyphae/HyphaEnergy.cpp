@@ -17,9 +17,9 @@ HyphaEnergy::HyphaEnergy(double initial, Range energySpentToMoveRange)
  We use a cubed random number so that the lows are much more probable than the highs. Then we map it in
  a way that the higher threshold is more probable than the lower threshold.
  */
-double HyphaEnergy::calcEnergySpentToMove(Range energySpentToMoveInterval) {
-  auto r = pow(ofRandom(1.0f), 3);
-  return ofMap(r, 0, 1, energySpentToMoveInterval.max, energySpentToMoveInterval.min);
+double HyphaEnergy::calcEnergySpentToMove(Range energySpentToMoveRange) {
+  auto r = pow(ofRandom(1.0f), 3); // TODO
+  return ofMap(r, 0, 1, energySpentToMoveRange.max, energySpentToMoveRange.min);
 }
 
 void HyphaEnergy::move() {

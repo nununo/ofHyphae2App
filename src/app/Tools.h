@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "Range.h"
+#include "RangeRange.h"
 
 class Tools {
 public:
@@ -17,6 +18,7 @@ public:
   static double angleTo360(double angle);
   static double posToAngle(glm::vec2 v);
   static double randomInRange(Range r);
+  static Range randomInRangeRange(RangeRange rr);
   static double randomInSet(vector<double> set);
   static glm::vec2 getRandomVec2();
   static Range toRadians(Range degrees);

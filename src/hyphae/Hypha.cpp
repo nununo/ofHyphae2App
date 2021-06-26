@@ -28,7 +28,7 @@ bool Hypha::isAlive() const {
  if it goes outside... it dies.
  */
 HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
-  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= params->maxAngleWithOriginalDirection) {
+  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= params->maxAngleWithInitialDirection) {
     return HyphaStatus::Dead;
   }
   
@@ -46,7 +46,7 @@ HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
 }
 
 double Hypha::getSpeed() const {
-  return params->speed * ofMap(energy.get(), 0, 1, 0.9f, 1.0f); // TODO
+  return ofMap(energy.get(), 0, 1, params->speed.min, params->speed.max);
 }
 
 bool Hypha::move(IField &field) {

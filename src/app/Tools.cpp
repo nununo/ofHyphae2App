@@ -30,6 +30,10 @@ double Tools::randomInRange(Range r) {
   return ofRandom(r.min, r.max);
 }
 
+Range Tools::randomInRangeRange(RangeRange rr) {
+  return {ofRandom(rr.min.min, rr.min.max), ofRandom(rr.max.min, rr.max.max)};
+}
+
 glm::vec2 Tools::getRandomVec2() {
   return glm::vec2(ofRandom(99999), ofRandom(99999));
 }
