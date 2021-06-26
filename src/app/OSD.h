@@ -16,18 +16,17 @@ class OSD {
 private:
   const int distance = 15;
   const CanvasSettings canvasSettings;
-  shared_ptr<HyphaParams> hyphaParams;
 
   bool active;
   int currentLine = 0;
 
   void drawBackground();
-  void drawInfo(const HyphaeStats& hyphaeStats);
+  void drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParams);
   void drawLine(const string text);
 
 public:
-  OSD(const CanvasSettings& canvasSettings, shared_ptr<HyphaParams> hyphaParams);
-  void draw(const HyphaeStats& hyphaeStats);
+  OSD(const CanvasSettings &canvasSettings);
+  void draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams);
   void toggleActive() {active=!active;}
 };
 

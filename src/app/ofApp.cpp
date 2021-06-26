@@ -6,15 +6,15 @@
 #include "WritableField.h"
 
 void ofApp::setup(){
-  Settings settings(SettingsFile("settings/settings.xml"));
-  params = std::make_shared<Params>(settings);
+  settings = std::make_unique<Settings>(SettingsFile("settings/settings.xml"));
+  params = createParams(*settings);
 
   fieldPainter = createFieldPainter(getSize());
-  osd = createOSD(settings.canvas, params->hypha);
+  osd = createOSD(settings->canvas);
   hyphaePainter = createHyphaePainter(params->hypha->color, OF_BLENDMODE_SUBTRACT);
   hyphaePainterField = createHyphaePainter(ofColor::red);
 
-  ofSetFrameRate(settings.canvas.framerate);
+  ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
   ofBackground(ofColor::white); //(settings.canvas.backgroundColor);
@@ -25,17 +25,22 @@ void ofApp::setup(){
 void ofApp::update(){
   hyphae->update(*field.get());
   if (!hyphae->isAlive()) {
-    newHyphae();
+    if (++dissolve % 200 == 0) {
+      newHyphae();
+    } else {
+      fadeOut();
+    }
   }
 }
 
 void ofApp::draw() {
   hyphaePainter->draw(hyphae->getNewPositions());
-  osd->draw(hyphae->getStats());
+  osd->draw(hyphae->getStats(), *params->hypha);
 
 }
 
 void ofApp::newHyphae() {
+  params = createParams(*settings);
   field = createField(params->field, getSize());
   hyphae = createHyphae(params->hypha, field);
   clearScreen();
@@ -69,6 +74,10 @@ std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldPar
   return field;
 }
 
+std::shared_ptr<Params> ofApp::createParams(Settings &settings) const {
+  return shared_ptr<Params>(make_shared<Params>(settings));
+}
+
 unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
   return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
 }
@@ -77,8 +86,15 @@ unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const
   return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color, blendMode));
 }
 
-unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings, shared_ptr<HyphaParams> hyphaParams) const {
-  return unique_ptr<OSD>(make_unique<OSD>(canvasSettings, hyphaParams));
+unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings) const {
+  return unique_ptr<OSD>(make_unique<OSD>(canvasSettings));
+}
+
+void ofApp::fadeOut() {
+  ofPushStyle();
+  ofSetColor(ofColor(ofColor::white,1));
+  ofDrawRectangle(0, 0, ofGetScreenWidth(), ofGetScreenHeight());
+  ofPopStyle();
 }
 
 void ofApp::clearScreen() {
@@ -107,9 +123,7 @@ void ofApp::keyPressed(int key) {
 void ofApp::keyReleased(int key){}
 void ofApp::mouseMoved(int x, int y ){}
 void ofApp::mouseDragged(int x, int y, int button){}
-void ofApp::mousePressed(int x, int y, int button){
-  ofLog() << "mouse: " << x << " " << y;
-}
+void ofApp::mousePressed(int x, int y, int button){}
 void ofApp::mouseReleased(int x, int y, int button){}
 void ofApp::mouseEntered(int x, int y){}
 void ofApp::mouseExited(int x, int y){}
