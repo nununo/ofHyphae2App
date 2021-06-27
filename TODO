@@ -1,8 +1,14 @@
 Next
 - Mirror screen instead of changing direction
+- Hide sprout outside screen
+- Save final drawing (optionally)
+
+Maybe
+- Settings: lists instead of ranges
+- Settings: use JSON instead of XML
 
 Pending
-- Use ofVboMesh instead of DrawRectangle
+- Use ofMesh instead of DrawRectangle
 
 Abandoned
 - Measure screen occupancy
