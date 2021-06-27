@@ -23,7 +23,6 @@ public:
   const RangeRange forkDistance;
   const Range birthRayDirections;
   const Range birthRays;
-  const Range birthAreaRadius;
   const Range maxGrowthPercentage;
   const Range fertilityRatio;
   const Range maxElements;

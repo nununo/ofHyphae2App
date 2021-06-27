@@ -20,7 +20,6 @@ HyphaSettings::HyphaSettings(const SettingsFile& sf)
 , maxGrowthPercentage(sf.getRange("rhizopus:hypha:maxGrowthPercentage"))
 , birthRays(sf.getRange("rhizopus:hypha:birthRays"))
 , birthRayDirections(sf.getRange("rhizopus:hypha:birthRayDirections"))
-, birthAreaRadius(sf.getRange("rhizopus:hypha:birthAreaRadius"))
 , fertilityRatio(sf.getRange("rhizopus:hypha:fertilityRatio"))
 , maxElements(sf.getRange("rhizopus:hypha:maxElements"))
 {}

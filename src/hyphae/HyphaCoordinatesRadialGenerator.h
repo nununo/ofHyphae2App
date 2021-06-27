@@ -12,7 +12,6 @@
 #include "IField.h"
 
 class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
-  const double birthAreaRadius;
   const double maxAngle;
   vector<HyphaCoordinates> directions;
   int total;
@@ -21,12 +20,11 @@ class HyphaCoordinatesRadialGenerator: public IHyphaCoordinatesGenerator {
   
   vector<HyphaCoordinates> generateDirections(int numDirections);
   HyphaCoordinates generateDirection() const;
-  glm::vec2 getNewOffset() const;
   glm::vec2 getNewPosition() const;
   glm::vec2 getNewDirection() const;
 
 public:
-  HyphaCoordinatesRadialGenerator(const double birthAreaRadius, const double maxAngle, const int numDirections, const int total);
+  HyphaCoordinatesRadialGenerator(const double maxAngle, const int numDirections, const int total);
 };
 
 #endif /* HyphaCoordinatesRadialGenerator_h */

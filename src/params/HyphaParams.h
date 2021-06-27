@@ -23,7 +23,6 @@ public:
   const Range forkDistanceInterval;
   const int birthRays;
   const int birthRayDirections;
-  const double birthAreaRadius;
   const double maxGrowthPercentage;
   const double fertilityRatio;
   const int maxElements;

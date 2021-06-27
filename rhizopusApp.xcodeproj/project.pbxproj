@@ -35,6 +35,7 @@
 		7DE3A0F326334192000DED6A /* HyphaEnergy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0F126334192000DED6A /* HyphaEnergy.cpp */; };
 		7DE3A0FD2634292B000DED6A /* NoiseFieldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */; };
 		7DE3A10026342A64000DED6A /* WritableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3A0FE26342A64000DED6A /* WritableField.cpp */; };
+		7DED3CFA2688D812001759F8 /* Fader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DED3CF82688D812001759F8 /* Fader.cpp */; };
 		7DF62760266BD1E5009D87C3 /* LifeDeathCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6275E266BD1E5009D87C3 /* LifeDeathCounter.cpp */; };
 		87D43F03EE9F59C6DF0E607D /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A05E59C765763B81FA50E /* tinyxmlerror.cpp */; };
 		91790062D662BA96C5F736F1 /* HyphaePainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9943C2F9E43AFB641374E6B /* HyphaePainter.cpp */; };
@@ -129,6 +130,8 @@
 		7DE3A0FC2634292B000DED6A /* NoiseFieldGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoiseFieldGenerator.h; sourceTree = "<group>"; };
 		7DE3A0FE26342A64000DED6A /* WritableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WritableField.cpp; sourceTree = "<group>"; };
 		7DE3A0FF26342A64000DED6A /* WritableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritableField.h; sourceTree = "<group>"; };
+		7DED3CF82688D812001759F8 /* Fader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fader.cpp; sourceTree = "<group>"; };
+		7DED3CF92688D812001759F8 /* Fader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fader.h; sourceTree = "<group>"; };
 		7DF6275E266BD1E5009D87C3 /* LifeDeathCounter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LifeDeathCounter.cpp; sourceTree = "<group>"; };
 		7DF6275F266BD1E5009D87C3 /* LifeDeathCounter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeDeathCounter.h; sourceTree = "<group>"; };
 		7DF62767266D26F5009D87C3 /* RangeRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RangeRange.h; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				7DE3A0CE26334100000DED6A /* main.cpp */,
 				7DA7A857266930A5009E8DCE /* OSD.cpp */,
 				7DA7A856266930A5009E8DCE /* OSD.h */,
+				7DED3CF82688D812001759F8 /* Fader.cpp */,
+				7DED3CF92688D812001759F8 /* Fader.h */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -949,6 +954,7 @@
 				7DE3A0D026334100000DED6A /* Tools.cpp in Sources */,
 				5416AC939B6BE4C3441FDE06 /* tinyxml.cpp in Sources */,
 				7DF62760266BD1E5009D87C3 /* LifeDeathCounter.cpp in Sources */,
+				7DED3CFA2688D812001759F8 /* Fader.cpp in Sources */,
 				7DE3A0C7263340DE000DED6A /* Settings.cpp in Sources */,
 				7DE3A0C4263340DE000DED6A /* CanvasSettings.cpp in Sources */,
 				7DE3A0E526334125000DED6A /* HyphaKynetics.cpp in Sources */,

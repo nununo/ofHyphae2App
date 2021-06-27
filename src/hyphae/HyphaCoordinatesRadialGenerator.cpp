@@ -8,9 +8,8 @@
 #include "HyphaCoordinatesRadialGenerator.h"
 
 HyphaCoordinatesRadialGenerator::HyphaCoordinatesRadialGenerator(
-  const double _birthAreaRadius, const double _maxAngle, const int _numDirections, const int _total)
-: birthAreaRadius{_birthAreaRadius}
-, maxAngle{_maxAngle}
+  const double _maxAngle, const int _numDirections, const int _total)
+: maxAngle{_maxAngle}
 , total{_total}
 , directions{generateDirections(_numDirections)}
 {}
@@ -39,12 +38,9 @@ vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
 }
 
 glm::vec2 HyphaCoordinatesRadialGenerator::getNewPosition() const {
-  return glm::vec2(0,ofGetScreenHeight()/2) + getNewOffset();
+  return glm::vec2(0,ofGetScreenHeight()/2);
 }
 
-glm::vec2 HyphaCoordinatesRadialGenerator::getNewOffset() const {
-  return glm::rotate(glm::vec2(birthAreaRadius*ofRandom(0,1)),ofRandom(0,360));
-}
 
 glm::vec2 HyphaCoordinatesRadialGenerator::getNewDirection() const {
   float angle = ofRandom(maxAngle)-maxAngle/2;

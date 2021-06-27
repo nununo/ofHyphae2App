@@ -65,7 +65,7 @@ glm::vec2 ofApp::getSize() const {
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(hyphaParams->birthAreaRadius, glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays));
+    make_unique<HyphaCoordinatesRadialGenerator>(glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays));
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {

@@ -9,6 +9,7 @@ Medium
 - Settings: lists instead of ranges
 - Settings: use JSON instead of XML
 - Better fade to white (using 2 FBOs and blend instead of just adding white)
+- Factor out fade-out to Fader class
 
 Pending
 - Use ofMesh instead of DrawRectangle

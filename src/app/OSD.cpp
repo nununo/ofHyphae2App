@@ -49,7 +49,6 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParam
   drawLine(" fork distance interval: " + ofToString(hyphaParams.forkDistanceInterval));
   drawLine(" food2energy ratio: " + ofToString(hyphaParams.foodToEnergyRatio));
   drawLine(" energy spent to move: " + ofToString(hyphaParams.energySpentToMove));
-  drawLine(" birth area radius: " + ofToString(hyphaParams.birthAreaRadius));
   drawLine(" fertilityRatio: " + ofToString(hyphaParams.fertilityRatio));
 
   drawLine("");
