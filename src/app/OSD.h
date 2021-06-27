@@ -16,7 +16,7 @@
 class OSD {
 private:
   const int distance = 15;
-  const CanvasSettings canvasSettings;
+  shared_ptr<const CanvasSettings> canvasSettings;
 
   bool active;
   int currentLine = 0;
@@ -26,7 +26,7 @@ private:
   void drawLine(const string text);
 
 public:
-  OSD(const CanvasSettings &canvasSettings);
+  OSD(shared_ptr<const CanvasSettings> canvasSettings);
   void draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams, const string fadeStatusString);
   void toggleActive() {active=!active;}
 };

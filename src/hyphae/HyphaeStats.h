@@ -11,12 +11,13 @@
 #include "ofMain.h"
 
 struct HyphaeStats {
-  int alive;
-  int moved;
-  int born;
-  int died;
-  double fertilityRatio;
-  int lifetime;
+  const int alive;
+  const int moved;
+  const int born;
+  const int died;
+  const double fertilityRatio;
+  const int lifetime;
+  const bool isAlive;
 
   HyphaeStats(
     const int alive,
@@ -24,7 +25,8 @@ struct HyphaeStats {
     const int born,
     const int died,
     const double fertilityRatio,
-    const int lifetime);
+    const int lifetime,
+    const bool isAlive);
 };
 
 #endif /* HyphaeStats_h */

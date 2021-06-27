@@ -70,7 +70,8 @@ HyphaeStats Hyphae::getStats() {
     birthControl->getLatestBirths(),
     birthControl->getLatestDeaths(),
     birthControl->getCurrentFertilityRatio(),
-    getLifetime());
+    getLifetime(),
+    isAlive());
 }
 
 bool Hyphae::isAlive() const {

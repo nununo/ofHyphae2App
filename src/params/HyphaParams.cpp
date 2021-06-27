@@ -9,8 +9,7 @@
 #include "Tools.h"
 
 HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
-: color(hyphaSettings.color)
-, speed(Tools::randomInRangeRange(hyphaSettings.speed))
+: speed(Tools::randomInRangeRange(hyphaSettings.speed))
 , energySpentToMove(Tools::randomInRangeRange(hyphaSettings.energySpentToMove))
 , maxBendAngle(Tools::randomInRange(hyphaSettings.maxBendAngle))
 , maxForkAngle(Tools::randomInRange(hyphaSettings.maxForkAngle))

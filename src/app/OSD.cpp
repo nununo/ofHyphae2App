@@ -7,10 +7,10 @@
 
 #include "OSD.h"
 
-OSD::OSD(const CanvasSettings& _canvasSettings)
+OSD::OSD(shared_ptr<const CanvasSettings> _canvasSettings)
 :canvasSettings(_canvasSettings)
 {
-  active = canvasSettings.osdActive;
+  active = canvasSettings->osdActive;
 }
 
 
@@ -24,7 +24,7 @@ void OSD::draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams, c
 
 void OSD::drawBackground() {
   ofPushStyle();
-  ofSetColor(canvasSettings.backgroundColor);
+  ofSetColor(canvasSettings->backgroundColor);
   ofDrawRectangle(0, 0, 400, 320);
   ofPopStyle();
 }
@@ -37,7 +37,7 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParam
   currentLine = 0;
 
   ofPushStyle();
-  ofSetColor(canvasSettings.osdColor);
+  ofSetColor(canvasSettings->osdColor);
 
   drawLine("");
 

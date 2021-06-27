@@ -8,7 +8,7 @@
 #include "Settings.h"
 
 Settings::Settings(const SettingsFile& sf)
-: hypha(HyphaSettings(sf))
-, canvas(CanvasSettings(sf))
-, field(FieldSettings(sf))
+: hypha(make_shared<const HyphaSettings>(sf))
+, canvas(make_shared<const CanvasSettings>(sf))
+, field(make_shared<const FieldSettings>(sf))
 {}

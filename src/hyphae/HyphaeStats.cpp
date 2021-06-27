@@ -13,11 +13,13 @@ HyphaeStats::HyphaeStats(
   const int _born,
   const int _died,
   const double _fertilityRatio,
-  const int _lifetime)
+  const int _lifetime,
+  const bool _isAlive)
 : alive(_alive)
 , moved(_moved)
 , born(_born)
 , died(_died)
 , fertilityRatio(_fertilityRatio)
 , lifetime(_lifetime)
+, isAlive{_isAlive}
 {}

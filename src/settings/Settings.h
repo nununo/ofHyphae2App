@@ -14,9 +14,9 @@
 
 class Settings {
 public:
-  const HyphaSettings hypha;
-  const CanvasSettings canvas;
-  const FieldSettings field;
+  const shared_ptr<const HyphaSettings> hypha;
+  const shared_ptr<const CanvasSettings> canvas;
+  const shared_ptr<const FieldSettings> field;
 
   Settings(const SettingsFile& sf);
 };

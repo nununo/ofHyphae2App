@@ -1,22 +1,13 @@
 #include "ofApp.h"
 #include "HyphaCoordinatesRadialGenerator.h"
-#include "HyphaePainter.h"
-#include "FieldPainter.h"
 #include "NoiseFieldGenerator.h"
 #include "WritableField.h"
 
 void ofApp::setup(){
-  settings = std::make_unique<Settings>(SettingsFile("settings/settings.xml"));
-  params = createParams(*settings);
+  settings = make_shared<Settings>(SettingsFile("settings/settings.xml"));
+  canvas = make_unique<Canvas>(settings->canvas, settings->hypha->color);
 
-  fieldPainter = createFieldPainter(getSize());
-  osd = createOSD(settings->canvas);
-  hyphaePainter = createHyphaePainter(params->hypha->color, {-70, 0}, OF_BLENDMODE_SUBTRACT); // TODO
-  hyphaePainterField = createHyphaePainter(ofColor::red, {0,0});
-
-  fadePainter = createFadePainter(settings->canvas);
-
-  ofSetFrameRate(settings->canvas.framerate);
+  ofSetFrameRate(settings->canvas->framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
   ofBackground(ofColor::white); //(settings.canvas.backgroundColor);
@@ -26,42 +17,21 @@ void ofApp::setup(){
 
 void ofApp::update(){
   hyphae->update(*field.get());
-  if (!hyphae->isAlive()) {
-    if (!fadePainter->draw()) {
-      newHyphae();
-    }
+  if (canvas->getFadeEnded()) {
+    newHyphae();
   }
 }
 
 void ofApp::draw() {
-  hyphaePainter->draw(hyphae->getNewPositions());
-  osd->draw(hyphae->getStats(), *params->hypha, fadePainter->getStatusString());
-
+  canvas->draw(hyphae->getStats(), *params->hypha, hyphae->getNewPositions());
 }
 
 void ofApp::newHyphae() {
   params = createParams(*settings);
-  field = createField(params->field, getSize());
+  field = createField(params->field, canvas->getSize());
   hyphae = createHyphae(params->hypha);
-  fadePainter->reset();
-  clearScreen();
-  drawField();
-}
-
-/**
- Draw scaled field and moving particles on top right corner
- */
-void ofApp::drawField() {
-  ofPushView();
-  ofTranslate(field->getSize().x-field->getSize().x/5, 0);
-  ofScale(0.20f);
-  fieldPainter->draw(*field.get());
-  hyphaePainterField->draw(hyphae->getNewPositions());
-  ofPopView();
-}
-
-glm::vec2 ofApp::getSize() const {
-  return {ofGetWidth(), ofGetHeight()};
+  canvas->reset();
+  canvas->drawField(*field);
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
@@ -82,47 +52,19 @@ std::shared_ptr<Params> ofApp::createParams(Settings &settings) const {
   return shared_ptr<Params>(make_shared<Params>(settings));
 }
 
-unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const {
-  return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
-}
-
-unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const glm::vec2 offset, const ofBlendMode blendMode) const {
-  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color, offset, blendMode));
-}
-
-unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings) const {
-  return unique_ptr<OSD>(make_unique<OSD>(canvasSettings));
-}
-
-unique_ptr<FadePainter> ofApp::createFadePainter(const CanvasSettings &canvasSettings) const {
-  return unique_ptr<FadePainter>(make_unique<FadePainter>(3*settings->canvas.framerate, 3*settings->canvas.framerate)); // TODO
-}
-
-void ofApp::fadeOut() {
-  ofPushStyle();
-  ofEnableBlendMode(OF_BLENDMODE_ADD);
-  ofSetColor(ofColor(ofColor::white,1));
-  ofDrawRectangle(0, 0, ofGetScreenWidth(), ofGetScreenHeight());
-  ofPopStyle();
-}
-
-void ofApp::clearScreen() {
-  ofClear(ofColor::white); // TODO
-}
-
 void ofApp::keyPressed(int key) {
   switch (key) {
   case 'n':
     newHyphae();
     break;
   case 'f':
-    drawField();
+    canvas->drawField(*field);
     break;
   case 'o':
-    osd->toggleActive();
+    canvas->toggleOSDActive();
     break;
   case 'c':
-    clearScreen();
+    canvas->clear();
     break;
   default:
     break;

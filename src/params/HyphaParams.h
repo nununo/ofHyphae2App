@@ -13,7 +13,6 @@
 
 class HyphaParams {
 public:
-  const ofColor color;
   const Range speed;
   const Range energySpentToMove;
   const double maxBendAngle;

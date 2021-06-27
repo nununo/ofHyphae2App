@@ -52,6 +52,10 @@ void FadePainter::fade() {
   ofPopStyle();
 }
 
+FadeStatus FadePainter::getStatus() const {
+  return status;
+}
+
 string FadePainter::getStatusString() const {
   string s;
   switch (status) {

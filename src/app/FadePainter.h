@@ -27,6 +27,7 @@ public:
   bool draw();
   void reset();
   string getStatusString() const;
+  FadeStatus getStatus() const;
 };
 
 #endif /* FadePainter_h */
