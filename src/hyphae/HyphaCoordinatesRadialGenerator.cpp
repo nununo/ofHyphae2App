@@ -38,7 +38,7 @@ vector<HyphaCoordinates> HyphaCoordinatesRadialGenerator::get() {
 }
 
 glm::vec2 HyphaCoordinatesRadialGenerator::getNewPosition() const {
-  return glm::vec2(0,ofGetScreenHeight()/2);
+  return glm::vec2(0,ofGetScreenHeight()/2); // TODO
 }
 
 

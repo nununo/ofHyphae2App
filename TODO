@@ -1,5 +1,4 @@
 High
-- Now it can stay over one minute without anything (lack of food)
 - Long fade out only when long lifetime
 - Mirror screen instead of changing direction
 - Save final drawing (optionally)
@@ -15,3 +14,4 @@ Pending
 
 Low
 - Measure screen occupancy
+- Use ofPixels for WritableField

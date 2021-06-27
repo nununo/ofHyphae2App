@@ -42,3 +42,18 @@ void WritableField::generate(const IFieldGenerator& generator) {
 bool WritableField::isInside(const glm::vec2 pos) const {
   return pos == glm::abs(pos) && pos.x <= size.x-1 && pos.y <= size.y-1;
 }
+
+bool WritableField::hasEnoughFoodAtPosition(glm::vec2 pos) const {
+  double food = 0;
+  double pixels = 0;
+  for (auto y=pos.y-100; y<pos.y+100; y++) {
+    for (auto x=-100; x<100; x++) {
+      if (y>0 && x>0) {
+        pixels++;
+        food += getValue({x,y});
+      }
+    }
+  }
+  ofLog() << "food at birth position: " << ofToString(food/pixels);
+  return food/pixels > 0.5;
+}

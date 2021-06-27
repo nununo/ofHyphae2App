@@ -28,5 +28,6 @@ private:
 public:
   WritableField(const glm::vec2 size);
   void generate(const IFieldGenerator& generator);
+  bool hasEnoughFoodAtPosition(const glm::vec2 pos) const override;
 };
 #endif /* WritableField_h */

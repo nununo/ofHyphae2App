@@ -45,6 +45,7 @@ void ofApp::newHyphae() {
   hyphae = createHyphae(params->hypha);
   fadePainter->reset();
   clearScreen();
+  drawField();
 }
 
 /**
@@ -66,12 +67,14 @@ glm::vec2 ofApp::getSize() const {
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays));
+    make_unique<HyphaCoordinatesRadialGenerator>(glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays)); // TODO
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
   auto field = make_shared<WritableField>(size);
-  field->generate(NoiseFieldGenerator(fieldParams));
+  do {
+    field->generate(NoiseFieldGenerator(fieldParams));
+  } while (!field->hasEnoughFoodAtPosition({0,ofGetScreenHeight()/2})); // TODO
   return field;
 }
 
@@ -104,7 +107,7 @@ void ofApp::fadeOut() {
 }
 
 void ofApp::clearScreen() {
-  ofClear(ofColor::white);
+  ofClear(ofColor::white); // TODO
 }
 
 void ofApp::keyPressed(int key) {
