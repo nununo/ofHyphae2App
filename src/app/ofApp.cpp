@@ -66,6 +66,9 @@ void ofApp::keyPressed(int key) {
   case 'c':
     canvas->clear();
     break;
+  case 's':
+    canvas->save();
+    break;
   default:
     break;
   }

@@ -19,7 +19,7 @@ Canvas::Canvas(shared_ptr<const CanvasSettings> _settings, ofColor hyphaColor)
 , fadePainter{make_unique<FadePainter>(3*_settings->framerate, 3*_settings->framerate)}
 {}
 
-void Canvas::saveScreen() {
+void Canvas::save() {
   ofSaveScreen(filenamePrefix + ofToString(savedFileCounter++, 5, '0')+".png");
 }
 

@@ -31,7 +31,7 @@ class Canvas {
 
 public:
   Canvas(shared_ptr<const CanvasSettings> settings, ofColor hyphaColor);
-  void saveScreen();
+  void save();
   void draw(
             const HyphaeStats &hyphaeStats,
             const HyphaParams &hyphaParams,
