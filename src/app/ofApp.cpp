@@ -25,9 +25,9 @@ void ofApp::setup(){
 void ofApp::update(){
   hyphae->update(*field.get());
   if (!hyphae->isAlive()) {
-    if (++dissolve % 200 == 0) {
+    if (++dissolve % 600 == 0) {
       newHyphae();
-    } else {
+    } else if (dissolve > 200){
       fadeOut();
     }
   }
@@ -92,6 +92,7 @@ unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings) const {
 
 void ofApp::fadeOut() {
   ofPushStyle();
+  ofEnableBlendMode(OF_BLENDMODE_ADD);
   ofSetColor(ofColor(ofColor::white,1));
   ofDrawRectangle(0, 0, ofGetScreenWidth(), ofGetScreenHeight());
   ofPopStyle();
