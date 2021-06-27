@@ -13,10 +13,11 @@ Canvas::Canvas(shared_ptr<const CanvasSettings> _settings, ofColor hyphaColor)
 : settings{_settings}
 , filenamePrefix{"images/hyphae2_" + ofGetTimestampString() + "_"}
 , osd{make_unique<OSD>(_settings)}
-, fieldPainter{(unique_ptr<IFieldPainter>)make_unique<FieldPainter>(getSize())}
+, fieldPainter{(unique_ptr<IFieldPainter>)make_unique<FieldPainter>(glm::vec2(ofGetWidth(), ofGetHeight()))}
 , hyphaePainter{createHyphaePainter(hyphaColor, {-70, 0}, OF_BLENDMODE_SUBTRACT)} // TODO
 , hyphaePainterField{createHyphaePainter(ofColor::red, {0,0})}
 , fadePainter{make_unique<FadePainter>(3*_settings->framerate, 3*_settings->framerate)}
+, size{ofGetWidth(), ofGetHeight()}
 {}
 
 void Canvas::save() {
@@ -24,7 +25,13 @@ void Canvas::save() {
 }
 
 void Canvas::reset() {
+  horizontalFlip = calcHorizontalFlip();
   fadePainter->reset();
+  clear();
+}
+
+bool Canvas::calcHorizontalFlip() {
+  return glm::floor(ofRandom(2.0f)) == 1;
 }
 
 void Canvas::draw(
@@ -32,7 +39,7 @@ void Canvas::draw(
   const HyphaParams &hyphaParams,
   const vector<glm::vec3> hyphaPositions) {
   if (hyphaeStats.isAlive) {
-    hyphaePainter->draw(hyphaPositions);
+    drawHyphae(hyphaPositions);
   } else {
     fadePainter->draw();
   }
@@ -44,7 +51,7 @@ void Canvas::toggleOSDActive() {
 }
 
 glm::vec2 Canvas::getSize() const {
-  return {ofGetWidth(), ofGetHeight()};
+  return size;
 }
 
 /**
@@ -52,10 +59,20 @@ glm::vec2 Canvas::getSize() const {
  */
 void Canvas::drawField(const IField &field) {
   ofPushView();
-  ofTranslate(getSize().x - getSize().x/5, 0);
+  ofTranslate(size.x - size.x/5, 0);
   ofScale(0.20f);
   fieldPainter->draw(field);
   //hyphaePainterField->draw(hyphae->getNewPositions());
+  ofPopView();
+}
+
+void Canvas::drawHyphae(const vector<glm::vec3> hyphaPositions) {
+  ofPushView();
+  if (horizontalFlip) {
+    ofRotateYDeg(180);
+    ofTranslate(-size.x, 0);
+  }
+  hyphaePainter->draw(hyphaPositions);
   ofPopView();
 }
 
