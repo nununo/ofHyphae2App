@@ -1,17 +1,16 @@
 High
-- Save final drawing (optionally)
-- Long fade out only when long lifetime
-- Reduce even more fertility ratio when near max population
-- Optimize performance
+- Infrastructure: Save final drawing (optionally)
+- Algorithm: Reduce even more fertility ratio when near max population
+- Performance: newElements vector?
+- Performance: Use ofMesh instead of DrawRectangle (try in old mac)
+- Performance: Use ofPixels for WritableField
+- Asthetics: Hide mouse
 
 Medium
 - Settings: lists instead of ranges
 - Settings: use JSON instead of XML
-- Better fade to white (using 2 FBOs and blend instead of just adding white)
-
-Pending
-- Use ofMesh instead of DrawRectangle
+- Algorithm: Long fade out only when long lifetime
 
 Low
-- Measure screen occupancy
-- Use ofPixels for WritableField
+- Asthetics: Better fade to white (using 2 FBOs and blend instead of just adding white)
+- Algorithm: Measure screen occupancy

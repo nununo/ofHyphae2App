@@ -27,7 +27,7 @@ bool Hypha::isAlive() const {
  It can start outside and then go inside. Fine. But once it has been inside,
  if it goes outside... it dies.
  */
-HyphaStatus Hypha::calcStatus(IField &field, HyphaStatus oldStatus) const {
+HyphaStatus Hypha::calcStatus(const IField &field, HyphaStatus oldStatus) const {
   if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= params->maxAngleWithInitialDirection) {
     return HyphaStatus::Dead;
   }
@@ -49,7 +49,7 @@ double Hypha::getSpeed() const {
   return ofMap(energy.get(), 0, 1, params->speed.min, params->speed.max);
 }
 
-bool Hypha::move(IField &field) {
+bool Hypha::move(const IField &field) {
   if (!isAlive()) {
     return false;
   }
@@ -63,7 +63,7 @@ bool Hypha::move(IField &field) {
   return moved;
 }
 
-bool Hypha::update(IField &field) {
+bool Hypha::update(const IField &field) {
   if (move(field)) {
     auto food = takeFoodFromField(field);
     energy.eat(food);
@@ -74,7 +74,7 @@ bool Hypha::update(IField &field) {
   }
 }
 
-double Hypha::takeFoodFromField(IField &field) {
+double Hypha::takeFoodFromField(const IField &field) {
   return status == HyphaStatus::Inside ? field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio : 1.0f;
 }
 

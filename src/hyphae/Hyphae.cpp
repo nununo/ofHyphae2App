@@ -27,7 +27,7 @@ void Hyphae::addGenerated() {
   }
 }
 
-void Hyphae::update(IField &field) {
+void Hyphae::update(const IField &field) {
   birthControl->newFrame();
   newPositions.clear();
   if (dead) {
@@ -36,16 +36,8 @@ void Hyphae::update(IField &field) {
   addGenerated();
   for(auto itr = elements.begin(); itr != elements.end(); ++itr) {
     if (itr->isAlive()) {
-      if (itr->update(field)) {
-        auto pos2 = itr->getPosition();
-        newPositions.push_back(glm::vec3(pos2.x, pos2.y, 0));
-      }
-      if (birthControl->allowFork()) {
-        auto forkData = itr->fork();
-        if (forkData.energy > 0) {
-          add(forkData.coordinates, forkData.energy, forkData.status);
-        }
-      }
+      hyphaUpdate(field, *itr);
+      hyphaFork(*itr);
     } else {
       if (itr->getPosition().x >= field.getSize().x) {
         dead = true;
@@ -56,6 +48,22 @@ void Hyphae::update(IField &field) {
   }
   if (elements.size() == 0) {
     dead = true;
+  }
+}
+
+void Hyphae::hyphaUpdate(const IField &field, Hypha &hypha) {
+  if (hypha.update(field)) {
+    auto pos2 = hypha.getPosition();
+    newPositions.push_back(glm::vec3(pos2.x, pos2.y, 0));
+  }
+}
+
+void Hyphae::hyphaFork(Hypha &hypha) {
+  if (birthControl->allowFork()) {
+    auto forkData = hypha.fork();
+    if (forkData.energy > 0) {
+      add(forkData.coordinates, forkData.energy, forkData.status);
+    }
   }
 }
 

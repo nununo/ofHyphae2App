@@ -28,10 +28,12 @@ private:
 
   void addGenerated();
   void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);
-
+  void hyphaUpdate(const IField &field, Hypha &hypha);
+  void hyphaFork(Hypha &hypha);
+  
 public:
   Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
-  void update(IField &field);
+  void update(const IField &field);
   bool isAlive() const;
   int getLifetime() const;
   vector<glm::vec3> getNewPositions() const;

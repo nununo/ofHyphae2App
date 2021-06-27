@@ -23,15 +23,15 @@ private:
   int nextForkDistance;
   HyphaStatus status;
 
-  double takeFoodFromField(IField &field);
+  double takeFoodFromField(const IField &field);
   int getNextForkDistance() const;
-  HyphaStatus calcStatus(IField &field, HyphaStatus oldStatus) const;
+  HyphaStatus calcStatus(const IField &field, HyphaStatus oldStatus) const;
   double getSpeed() const;
-  bool move(IField &fieldx);
+  bool move(const IField &fieldx);
 
 public:
   Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy, const HyphaStatus status);
-  bool update(IField &field);
+  bool update(const IField &field);
   bool isAlive() const;
   glm::vec2 getPosition() const;
   HyphaForkData fork();
