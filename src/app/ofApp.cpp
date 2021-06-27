@@ -11,8 +11,8 @@ void ofApp::setup(){
 
   fieldPainter = createFieldPainter(getSize());
   osd = createOSD(settings->canvas);
-  hyphaePainter = createHyphaePainter(params->hypha->color, OF_BLENDMODE_SUBTRACT);
-  hyphaePainterField = createHyphaePainter(ofColor::red);
+  hyphaePainter = createHyphaePainter(params->hypha->color, {-70, 0}, OF_BLENDMODE_SUBTRACT); // TODO
+  hyphaePainterField = createHyphaePainter(ofColor::red, {0,0});
 
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
@@ -25,9 +25,9 @@ void ofApp::setup(){
 void ofApp::update(){
   hyphae->update(*field.get());
   if (!hyphae->isAlive()) {
-    if (++dissolve % 600 == 0) {
+    if (++dissolve % 1000 == 0) {
       newHyphae();
-    } else if (dissolve > 200){
+    } else if (dissolve > 400){
       fadeOut();
     }
   }
@@ -65,7 +65,7 @@ glm::vec2 ofApp::getSize() const {
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
   return std::make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(hyphaParams->birthAreaRadius, 1, hyphaParams->birthRayDirections, hyphaParams->birthRays));
+    make_unique<HyphaCoordinatesRadialGenerator>(hyphaParams->birthAreaRadius, glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays));
 }
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
@@ -82,8 +82,8 @@ unique_ptr<IFieldPainter> ofApp::createFieldPainter(const glm::vec2 size) const 
   return unique_ptr<IFieldPainter>(make_unique<FieldPainter>(size));
 }
 
-unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const ofBlendMode blendMode) const {
-  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color, blendMode));
+unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const glm::vec2 offset, const ofBlendMode blendMode) const {
+  return unique_ptr<IHyphaePainter>(make_unique<HyphaePainter>(color, offset, blendMode));
 }
 
 unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings) const {

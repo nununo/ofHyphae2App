@@ -22,7 +22,7 @@ private:
   
   unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params) const;
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
-  unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
+  unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const glm::vec2 offset, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings) const;
   shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
   shared_ptr<Params> createParams(Settings &settings) const;
