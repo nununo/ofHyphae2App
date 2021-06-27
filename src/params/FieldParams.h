@@ -12,7 +12,8 @@
 
 class FieldParams {
 public:
-  const double zeroThreshold;
+  const double frequency;
+  const double amplification;
   
   FieldParams(const FieldSettings& fieldSettings);
 };

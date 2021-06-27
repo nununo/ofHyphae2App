@@ -8,5 +8,6 @@
 #include "FieldSettings.h"
 
 FieldSettings::FieldSettings(const SettingsFile& sf)
-: zeroThreshold(sf.getRange("rhizopus:field:zeroThreshold"))
+: frequency(sf.getRange("rhizopus:field:frequency"))
+, amplification(sf.getRange("rhizopus:field:amplification"))
 {}

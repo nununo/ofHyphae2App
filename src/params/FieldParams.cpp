@@ -9,5 +9,6 @@
 #include "Tools.h"
 
 FieldParams::FieldParams(const FieldSettings& fieldSettings)
-: zeroThreshold(Tools::randomInRange(fieldSettings.zeroThreshold))
+: frequency(Tools::randomInRange(fieldSettings.frequency))
+, amplification(Tools::randomInRange(fieldSettings.amplification))
 {}

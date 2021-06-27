@@ -7,7 +7,8 @@
     <backgroundColor> <r>255</r> <g>255</g> <b>255</b> <a>255</a> </backgroundColor>
   </canvas>
   <field>
-    <zeroThreshold><min>0.05</min><max>0.05</max></zeroThreshold>
+    <frequency><min>1</min><max>2</max></frequency>
+    <amplification><min>0.5</min><max>1</max></amplification>
   </field>
   <hypha>
     <maxElements><min>20000</min><max>40000</max></maxElements>
@@ -18,15 +19,15 @@
     </speed>
     <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
     <birthAreaRadius><min>3</min><max>5</max></birthAreaRadius>
-    <birthRays><min>1</min><max>10</max></birthRays>
+    <birthRays><min>1</min><max>100</max></birthRays>
     <birthRayDirections><min>1</min><max>5</max></birthRayDirections>
     <energySpentToMove>
       <min> <min>0.002</min><max>0.002</max> </min>
       <max> <min>0.02</min><max>0.02</max> </max>
     </energySpentToMove>
     <foodToEnergyRatio><min>0.015</min> <max>0.015</max></foodToEnergyRatio>
-    <maxBendAngleDeg><min>4</min> <max>4</max></maxBendAngleDeg>
-    <maxForkAngleDeg><min>10</min><max>30</max></maxForkAngleDeg>
+    <maxBendAngleDeg><min>0.5</min> <max>3</max></maxBendAngleDeg>
+    <maxForkAngleDeg><min>5</min><max>30</max></maxForkAngleDeg>
     <maxAngleWithInitialDirection><min>90</min><max>100</max></maxAngleWithInitialDirection>
     <forkDistance>
       <min><min>5</min><max>5</max></min>

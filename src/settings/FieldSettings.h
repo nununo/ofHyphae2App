@@ -13,7 +13,8 @@
 
 class FieldSettings {
 public:
-  const Range zeroThreshold;
+  const Range frequency;
+  const Range amplification;
 
   FieldSettings(const SettingsFile& sf);
 };

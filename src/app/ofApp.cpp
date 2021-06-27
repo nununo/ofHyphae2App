@@ -42,7 +42,7 @@ void ofApp::draw() {
 void ofApp::newHyphae() {
   params = createParams(*settings);
   field = createField(params->field, getSize());
-  hyphae = createHyphae(params->hypha, field);
+  hyphae = createHyphae(params->hypha);
   clearScreen();
 }
 
@@ -62,7 +62,7 @@ glm::vec2 ofApp::getSize() const {
   return {ofGetWidth(), ofGetHeight()};
 }
 
-unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shared_ptr<IField> field) const {
+unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
   return std::make_unique<Hyphae>(
     hyphaParams,
     make_unique<HyphaCoordinatesRadialGenerator>(hyphaParams->birthAreaRadius, 1, hyphaParams->birthRayDirections, hyphaParams->birthRays));
@@ -70,7 +70,7 @@ unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams, shar
 
 std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
   auto field = make_shared<WritableField>(size);
-  field->generate(NoiseFieldGenerator());
+  field->generate(NoiseFieldGenerator(fieldParams));
   return field;
 }
 

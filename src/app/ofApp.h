@@ -20,7 +20,7 @@ private:
   unique_ptr<OSD> osd;
   int dissolve = 0;
   
-  unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params, shared_ptr<IField> field) const;
+  unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params) const;
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings) const;

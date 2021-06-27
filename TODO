@@ -1,4 +1,8 @@
+Next
 - Mirror screen instead of changing direction
+
+Pending
 - Use ofVboMesh instead of DrawRectangle
-- Fertility ratio (0.4-0.8?)
+
+Abandoned
 - Measure screen occupancy
