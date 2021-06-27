@@ -112,7 +112,7 @@
 		7DE3A0D326334112000DED6A /* FieldPainter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPainter.cpp; sourceTree = "<group>"; };
 		7DE3A0D426334112000DED6A /* FieldPainter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldPainter.h; sourceTree = "<group>"; };
 		7DE3A0D626334112000DED6A /* IField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IField.h; sourceTree = "<group>"; };
-		7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaForkEventArgs.h; sourceTree = "<group>"; };
+		7DE3A0DB26334124000DED6A /* HyphaForkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaForkData.h; sourceTree = "<group>"; };
 		7DE3A0DC26334125000DED6A /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hypha.cpp; sourceTree = "<group>"; };
 		7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaKynetics.cpp; sourceTree = "<group>"; };
 		7DE3A0DF26334125000DED6A /* HyphaKynetics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyphaKynetics.h; sourceTree = "<group>"; };
@@ -446,7 +446,7 @@
 				7DE3A0E326334125000DED6A /* HyphaCoordinates.h */,
 				7DDC214126516E14005D3C66 /* IHyphaePainter.h */,
 				7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */,
-				7DE3A0DB26334124000DED6A /* HyphaForkEventArgs.h */,
+				7DE3A0DB26334124000DED6A /* HyphaForkData.h */,
 				7DE3A0E126334125000DED6A /* Hypha.h */,
 				7DE3A0DC26334125000DED6A /* Hypha.cpp */,
 				7DE3A0DE26334125000DED6A /* HyphaKynetics.cpp */,

@@ -2,6 +2,7 @@ High
 - Save final drawing (optionally)
 - Long fade out only when long lifetime
 - Reduce even more fertility ratio when near max population
+- Optimize performance
 
 Medium
 - Settings: lists instead of ranges

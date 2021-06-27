@@ -29,14 +29,11 @@ private:
   void addGenerated();
   void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);
 
-  void onHyphaFork(HyphaForkEventArgs &e);
-
 public:
   Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
   bool isAlive() const;
   int getLifetime() const;
-
   vector<glm::vec3> getNewPositions() const;
   HyphaeStats getStats();
 };
