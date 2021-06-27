@@ -54,6 +54,5 @@ bool WritableField::hasEnoughFoodAtPosition(glm::vec2 pos) const {
       }
     }
   }
-  ofLog() << "food at birth position: " << ofToString(food/pixels);
-  return food/pixels > 0.5;
+  return food/pixels > 0.5; // TODO
 }

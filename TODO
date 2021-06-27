@@ -1,8 +1,8 @@
 High
-- Long fade out only when long lifetime
-- Mirror screen instead of changing direction
 - Save final drawing (optionally)
-- Reduce fertility ratio when near max population
+- Mirror screen instead of changing direction
+- Long fade out only when long lifetime
+- Reduce even more fertility ratio when near max population
 
 Medium
 - Settings: lists instead of ranges

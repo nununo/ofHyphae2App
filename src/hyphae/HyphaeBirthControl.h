@@ -18,13 +18,13 @@ class HyphaeBirthControl {
   LifeDeathCounter latest;
   double currentFertilityRatio;
 
-  double determineCurrentFertilityRatio(const int totalAlive) const;
+  double calcCurrentFertilityRatio(const int totalAlive) const;
 
 public:
   HyphaeBirthControl(const double maxGrowthPercentage, const double fertilityRatio, const int maxElements);
   void birth();
   void death();
-  void reset();
+  void newFrame();
   int getLatestBirths() const;
   int getLatestDeaths() const;
   double getCurrentFertilityRatio() const;

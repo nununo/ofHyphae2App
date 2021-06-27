@@ -33,7 +33,7 @@ void Hyphae::addGenerated() {
 }
 
 void Hyphae::update(IField &field) {
-  birthControl->reset();
+  birthControl->newFrame();
   newPositions.clear();
   if (dead) {
     return;

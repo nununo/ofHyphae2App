@@ -25,8 +25,8 @@ void HyphaeBirthControl::death() {
   latest.death();
 }
 
-void HyphaeBirthControl::reset() {
-  currentFertilityRatio = determineCurrentFertilityRatio(total.getDiff());
+void HyphaeBirthControl::newFrame() {
+  currentFertilityRatio = calcCurrentFertilityRatio(total.getDiff());
   latest.reset();
 }
 
@@ -38,8 +38,8 @@ int HyphaeBirthControl::getLatestDeaths() const {
   return latest.getDeaths();
 }
 
-double HyphaeBirthControl::determineCurrentFertilityRatio(const int totalAlive) const {
-  return totalAlive > maxElements? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive; // TODO
+double HyphaeBirthControl::calcCurrentFertilityRatio(const int totalAlive) const {
+  return totalAlive > maxElements? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive;
 }
 
 double HyphaeBirthControl::getCurrentFertilityRatio() const {
