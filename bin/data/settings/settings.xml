@@ -19,7 +19,7 @@
     </speed>
     <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
     <birthRays><min>1</min><max>100</max></birthRays>
-    <birthRayDirections><min>1</min><max>5</max></birthRayDirections>
+    <birthRayDirections><min>1</min><max>10</max></birthRayDirections>
     <energySpentToMove>
       <min> <min>0.002</min><max>0.002</max> </min>
       <max> <min>0.02</min><max>0.02</max> </max>

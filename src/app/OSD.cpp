@@ -14,12 +14,12 @@ OSD::OSD(const CanvasSettings& _canvasSettings)
 }
 
 
-void OSD::draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams) {
+void OSD::draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams, const string fadeStatusString) {
   if (!active) {
     return;
   }
   drawBackground();
-  drawInfo(hyphaeStats, hyphaParams);
+  drawInfo(hyphaeStats, hyphaParams, fadeStatusString);
 }
 
 void OSD::drawBackground() {
@@ -33,7 +33,7 @@ void OSD::drawLine(const string text) {
   ofDrawBitmapString(text, 10,distance*(1+currentLine++));
 }
  
-void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParams) {
+void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParams, const string fadeStatusString) {
   currentLine = 0;
 
   ofPushStyle();
@@ -60,6 +60,7 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParam
    " (+" + ofToString(hyphaeStats.born) + " -" + ofToString(hyphaeStats.died) + ")");
   drawLine(" moved: " + ofToString(hyphaeStats.moved));
   drawLine(" fertility %: " + ofToString(hyphaeStats.fertilityRatio * 100.0f));
+  drawLine(" fade status: " + fadeStatusString);
 
   ofPopStyle();
 }

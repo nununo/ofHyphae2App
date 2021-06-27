@@ -7,6 +7,7 @@
 #include "IField.h"
 #include "OSD.h"
 #include "Params.h"
+#include "FadePainter.h"
 
 class ofApp : public ofBaseApp{
 private:
@@ -17,6 +18,7 @@ private:
   unique_ptr<IFieldPainter> fieldPainter;
   unique_ptr<IHyphaePainter> hyphaePainter;
   unique_ptr<IHyphaePainter> hyphaePainterField;
+  unique_ptr<FadePainter> fadePainter;
   unique_ptr<OSD> osd;
   int dissolve = 0;
   
@@ -24,6 +26,7 @@ private:
   unique_ptr<IFieldPainter> createFieldPainter(glm::vec2 size) const;
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const glm::vec2 offset, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
   unique_ptr<OSD> createOSD(const CanvasSettings& canvasSettings) const;
+  unique_ptr<FadePainter> createFadePainter(const CanvasSettings& canvasSettings) const;
   shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
   shared_ptr<Params> createParams(Settings &settings) const;
 

@@ -14,6 +14,8 @@ void ofApp::setup(){
   hyphaePainter = createHyphaePainter(params->hypha->color, {-70, 0}, OF_BLENDMODE_SUBTRACT); // TODO
   hyphaePainterField = createHyphaePainter(ofColor::red, {0,0});
 
+  fadePainter = createFadePainter(settings->canvas);
+
   ofSetFrameRate(settings->canvas.framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
@@ -25,17 +27,15 @@ void ofApp::setup(){
 void ofApp::update(){
   hyphae->update(*field.get());
   if (!hyphae->isAlive()) {
-    if (++dissolve % 1000 == 0) {
+    if (!fadePainter->draw()) {
       newHyphae();
-    } else if (dissolve > 400){
-      fadeOut();
     }
   }
 }
 
 void ofApp::draw() {
   hyphaePainter->draw(hyphae->getNewPositions());
-  osd->draw(hyphae->getStats(), *params->hypha);
+  osd->draw(hyphae->getStats(), *params->hypha, fadePainter->getStatusString());
 
 }
 
@@ -43,6 +43,7 @@ void ofApp::newHyphae() {
   params = createParams(*settings);
   field = createField(params->field, getSize());
   hyphae = createHyphae(params->hypha);
+  fadePainter->reset();
   clearScreen();
 }
 
@@ -88,6 +89,10 @@ unique_ptr<IHyphaePainter> ofApp::createHyphaePainter(const ofColor color, const
 
 unique_ptr<OSD> ofApp::createOSD(const CanvasSettings &canvasSettings) const {
   return unique_ptr<OSD>(make_unique<OSD>(canvasSettings));
+}
+
+unique_ptr<FadePainter> ofApp::createFadePainter(const CanvasSettings &canvasSettings) const {
+  return unique_ptr<FadePainter>(make_unique<FadePainter>(3*settings->canvas.framerate, 3*settings->canvas.framerate)); // TODO
 }
 
 void ofApp::fadeOut() {

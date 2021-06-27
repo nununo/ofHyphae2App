@@ -11,6 +11,7 @@
 #include "CanvasSettings.h"
 #include "HyphaeStats.h"
 #include "HyphaParams.h"
+#include "FadePainter.h"
 
 class OSD {
 private:
@@ -21,12 +22,12 @@ private:
   int currentLine = 0;
 
   void drawBackground();
-  void drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParams);
+  void drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParams, const string fadeStatusString);
   void drawLine(const string text);
 
 public:
   OSD(const CanvasSettings &canvasSettings);
-  void draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams);
+  void draw(const HyphaeStats &hyphaeStats, const HyphaParams &hyphaParams, const string fadeStatusString);
   void toggleActive() {active=!active;}
 };
 
