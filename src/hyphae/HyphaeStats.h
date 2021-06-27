@@ -16,13 +16,15 @@ struct HyphaeStats {
   int born;
   int died;
   double fertilityRatio;
+  int lifetime;
 
   HyphaeStats(
     const int alive,
     const int moved,
     const int born,
     const int died,
-    const double fertilityRatio);
+    const double fertilityRatio,
+    const int lifetime);
 };
 
 #endif /* HyphaeStats_h */

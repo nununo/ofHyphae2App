@@ -12,6 +12,7 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
 : hyphaParams(_hyphaParams)
 , generator(std::move(_generator))
 , birthControl(make_unique<HyphaeBirthControl>(_hyphaParams->maxGrowthPercentage, _hyphaParams->fertilityRatio, _hyphaParams->maxElements))
+, firstFrameNum(ofGetFrameNum())
 {}
 
 void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
@@ -64,13 +65,18 @@ vector<glm::vec3> Hyphae::getNewPositions() const {
 
 HyphaeStats Hyphae::getStats() {
   return HyphaeStats(
-                     elements.size(),
-                     getNewPositions().size(),
-                     birthControl->getLatestBirths(),
-                     birthControl->getLatestDeaths(),
-                     birthControl->getCurrentFertilityRatio());
+    elements.size(),
+    getNewPositions().size(),
+    birthControl->getLatestBirths(),
+    birthControl->getLatestDeaths(),
+    birthControl->getCurrentFertilityRatio(),
+    getLifetime());
 }
 
 bool Hyphae::isAlive() const {
   return !dead;
+}
+
+int Hyphae::getLifetime() const {
+  return (ofGetFrameNum() - firstFrameNum) / ofGetFrameRate();
 }

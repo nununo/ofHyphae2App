@@ -1,11 +1,11 @@
-Next
+High
+- Long fade out only when long lifetime
 - Mirror screen instead of changing direction
 - Save final drawing (optionally)
 - Reduce fertility ratio when near max population
 - Now it can stay over one minute without anything (lack of food)
-- Long fade out only when long lifetime
 
-Maybe
+Medium
 - Settings: lists instead of ranges
 - Settings: use JSON instead of XML
 - Better fade to white (using 2 FBOs and blend instead of just adding white)
@@ -13,5 +13,5 @@ Maybe
 Pending
 - Use ofMesh instead of DrawRectangle
 
-Abandoned
+Low
 - Measure screen occupancy

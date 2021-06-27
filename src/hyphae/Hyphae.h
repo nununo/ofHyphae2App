@@ -19,6 +19,7 @@ class Hyphae {
 private:
   shared_ptr<const HyphaParams> hyphaParams;
   unique_ptr<IHyphaCoordinatesGenerator> generator;
+  const int firstFrameNum;
 
   list<Hypha> elements;
   vector<glm::vec3> newPositions;
@@ -34,6 +35,7 @@ public:
   Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);
   void update(IField &field);
   bool isAlive() const;
+  int getLifetime() const;
 
   vector<glm::vec3> getNewPositions() const;
   HyphaeStats getStats();

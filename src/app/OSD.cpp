@@ -43,6 +43,7 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParam
 
   drawLine("hypha");
   drawLine(" speed: " + ofToString(hyphaParams.speed));
+  drawLine(" birth rays: " + ofToString(hyphaParams.birthRays) + " @ " + ofToString(hyphaParams.birthRayDirections));
   drawLine(" max fork angle: " + ofToString(glm::degrees(hyphaParams.maxForkAngle)));
   drawLine(" max bend angle: " + ofToString(glm::degrees(hyphaParams.maxBendAngle)));
   drawLine(" fork distance interval: " + ofToString(hyphaParams.forkDistanceInterval));
@@ -55,7 +56,7 @@ void OSD::drawInfo(const HyphaeStats& hyphaeStats, const HyphaParams &hyphaParam
 
   drawLine("stats");
   drawLine(" framerate: " + ofToString(ofGetFrameRate(),2));
-  drawLine(" hyphae lifetime: " + ofToString(ofGetFrameNum() / canvasSettings.framerate ,2));
+  drawLine(" hyphae lifetime: " + ofToString(hyphaeStats.lifetime ,2));
   drawLine(" alive: " + ofToString(hyphaeStats.alive) + " / " + ofToString(hyphaParams.maxElements) +
    " (+" + ofToString(hyphaeStats.born) + " -" + ofToString(hyphaeStats.died) + ")");
   drawLine(" moved: " + ofToString(hyphaeStats.moved));
