@@ -12,5 +12,5 @@ CanvasSettings::CanvasSettings(const SettingsFile& sf)
 , osdColor(sf.getColor("rhizopus:canvas:osdColor"))
 , osdActive((bool)sf.getValue("rhizopus:canvas:osdActive", false))
 , backgroundColor(sf.getColor("rhizopus:canvas:backgroundColor"))
-, antialiasing((bool)sf.getValue("rhizopus:canvas:antialiasing", true))
+, saveImages((bool)sf.getValue("rhizopus:canvas:saveImages", true))
 {}

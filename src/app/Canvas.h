@@ -27,7 +27,8 @@ class Canvas {
   unique_ptr<IHyphaePainter> hyphaePainterField;
   unique_ptr<FadePainter> fadePainter;
   
-  int savedFileCounter = 0;
+  bool savedToFile;
+  int savedFileCounter = 1;
   bool horizontalFlip;
 
   unique_ptr<IHyphaePainter> createHyphaePainter(const ofColor color, const glm::vec2 offset, const ofBlendMode blendMode = OF_BLENDMODE_ALPHA) const;
@@ -36,7 +37,7 @@ class Canvas {
 
 public:
   Canvas(shared_ptr<const CanvasSettings> settings, ofColor hyphaColor);
-  void save();
+  void saveToFile();
   void draw(
             const HyphaeStats &hyphaeStats,
             const HyphaParams &hyphaParams,

@@ -16,7 +16,7 @@ struct CanvasSettings {
   const bool osdActive;
   const ofColor osdColor;
   const ofColor backgroundColor;
-  const bool antialiasing;
+  const bool saveImages;
 
   CanvasSettings(const SettingsFile& sf);
 };

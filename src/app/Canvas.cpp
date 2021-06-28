@@ -18,21 +18,9 @@ Canvas::Canvas(shared_ptr<const CanvasSettings> _settings, ofColor hyphaColor)
 , hyphaePainterField{createHyphaePainter(ofColor::red, {0,0})}
 , fadePainter{make_unique<FadePainter>(3*_settings->framerate, 3*_settings->framerate)}
 , size{ofGetWidth(), ofGetHeight()}
+, savedToFile{!_settings->saveImages}
 {}
 
-void Canvas::save() {
-  ofSaveScreen(filenamePrefix + ofToString(savedFileCounter++, 5, '0')+".png");
-}
-
-void Canvas::reset() {
-  horizontalFlip = calcHorizontalFlip();
-  fadePainter->reset();
-  clear();
-}
-
-bool Canvas::calcHorizontalFlip() {
-  return glm::floor(ofRandom(2.0f)) == 1;
-}
 
 void Canvas::draw(
   const HyphaeStats &hyphaeStats,
@@ -40,10 +28,30 @@ void Canvas::draw(
   const vector<glm::vec3> hyphaPositions) {
   if (hyphaeStats.isAlive) {
     drawHyphae(hyphaPositions);
+    osd->draw(hyphaeStats, hyphaParams, fadePainter->getStatusString());
   } else {
+    if (!savedToFile) {
+      // Save final canvas to file
+      saveToFile();
+      savedToFile = true;
+    }
     fadePainter->draw();
   }
-  osd->draw(hyphaeStats, hyphaParams, fadePainter->getStatusString());
+}
+
+void Canvas::saveToFile() {
+  ofSaveScreen(filenamePrefix + ofToString(++savedFileCounter, 5, '0')+".png");
+}
+
+void Canvas::reset() {
+  horizontalFlip = calcHorizontalFlip();
+  fadePainter->reset();
+  clear();
+  savedToFile = !settings->saveImages;
+}
+
+bool Canvas::calcHorizontalFlip() {
+  return glm::floor(ofRandom(2.0f)) == 1;
 }
 
 void Canvas::toggleOSDActive() {

@@ -31,7 +31,6 @@ void ofApp::newHyphae() {
   field = createField(params->field, canvas->getSize());
   hyphae = createHyphae(params->hypha);
   canvas->reset();
-  canvas->drawField(*field);
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
@@ -67,7 +66,7 @@ void ofApp::keyPressed(int key) {
     canvas->clear();
     break;
   case 's':
-    canvas->save();
+    canvas->saveToFile();
     break;
   default:
     break;

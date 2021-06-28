@@ -1,8 +1,8 @@
 <rhizopus>
   <canvas>
     <framerate>30</framerate>
-    <antialiasing>0</antialiasing>
     <osdActive>1</osdActive>
+    <saveImages>1</saveImages>
     <osdColor> <r>0</r> <g>0</g> <b>0</b> <a>255</a> </osdColor>
     <backgroundColor> <r>255</r> <g>255</g> <b>255</b> <a>255</a> </backgroundColor>
   </canvas>

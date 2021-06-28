@@ -1,9 +1,8 @@
 High
-- Infrastructure: Save final drawing (optionally)
+- Die only after a configured amount of hypha fall out of screen
 - Performance: newElements vector?
 - Performance: Use ofPixels for WritableField
 - Asthetics: Hide mouse
-- Die only after a configured amount of hypha fall out of screen
 
 Medium
 - Settings: lists instead of ranges
