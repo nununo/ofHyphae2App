@@ -4,7 +4,6 @@ High
 
 Medium
 - Settings: lists instead of ranges
-- Settings: use JSON instead of XML
 
 Low
 - Asthetics: Better fade to white (using 2 FBOs and blend instead of just adding white)
@@ -13,3 +12,4 @@ Abandoned:
 - Algorithm: Long fade out only when long lifetime (no longer needed because now only Fields with enough food are chosen)
 - Algorithm: Measure screen occupancy (no longer needed because blobs are no longer being constantly generated)
 - Performance: Use ofPixels for WritableField (I don't think this would increase performance much)
+- Settings: use JSON instead of XML (too late for this)
