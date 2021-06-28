@@ -26,6 +26,7 @@ public:
   const Range maxGrowthPercentage;
   const Range fertilityRatio;
   const Range maxElements;
+  const int finishLinesBeforeHyphaeDeath;
 
   HyphaSettings(const SettingsFile& sf);
 };

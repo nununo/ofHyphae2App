@@ -10,7 +10,7 @@ void ofApp::setup(){
   ofSetFrameRate(settings->canvas->framerate);
   ofSetBackgroundAuto(false);
   ofDisableAntiAliasing();
-  ofBackground(ofColor::white); //(settings.canvas.backgroundColor);
+  ofBackground(settings->canvas->backgroundColor);
 
   newHyphae();
 }

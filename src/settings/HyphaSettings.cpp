@@ -22,4 +22,5 @@ HyphaSettings::HyphaSettings(const SettingsFile& sf)
 , birthRayDirections(sf.getRange("rhizopus:hypha:birthRayDirections"))
 , fertilityRatio(sf.getRange("rhizopus:hypha:fertilityRatio"))
 , maxElements(sf.getRange("rhizopus:hypha:maxElements"))
+, finishLinesBeforeHyphaeDeath(sf.getValue("rhizopus:hypha:finishLinesBeforeHyphaeDeath", 1))
 {}

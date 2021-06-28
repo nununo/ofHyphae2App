@@ -21,4 +21,5 @@ HyphaParams::HyphaParams(const HyphaSettings& hyphaSettings)
 , maxGrowthPercentage(Tools::randomInRange(hyphaSettings.maxGrowthPercentage))
 , fertilityRatio(Tools::randomInRange(hyphaSettings.fertilityRatio))
 , maxElements(Tools::randomInRange(hyphaSettings.maxElements))
+, finishLinesBeforeHyphaeDeath(hyphaSettings.finishLinesBeforeHyphaeDeath)
 {}

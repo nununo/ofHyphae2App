@@ -1,14 +1,16 @@
 High
-- Die only after a configured amount of hypha fall out of screen
-- Performance: newElements vector?
 - Performance: Use ofPixels for WritableField
+- Performance: newElements vector?
 - Asthetics: Hide mouse
 
 Medium
+- Simplify HyphaStatus: remove BeforeInside, AfterInside. No longer needed, right?
 - Settings: lists instead of ranges
 - Settings: use JSON instead of XML
-- Algorithm: Long fade out only when long lifetime
 
 Low
 - Asthetics: Better fade to white (using 2 FBOs and blend instead of just adding white)
-- Algorithm: Measure screen occupancy
+
+Abandoned:
+- Algorithm: Long fade out only when long lifetime (no longer needed because now only Fields with enough food are chosen)
+- Algorithm: Measure screen occupancy (no longer needed because blobs are no longer being constantly generated)

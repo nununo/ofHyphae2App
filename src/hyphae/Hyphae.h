@@ -25,11 +25,13 @@ private:
   vector<glm::vec3> newPositions;
   unique_ptr<HyphaeBirthControl> birthControl;
   bool dead = false;
+  int finishLines = 0;
 
   void addGenerated();
   void add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status);
   void hyphaUpdate(const IField &field, Hypha &hypha);
   void hyphaFork(Hypha &hypha);
+  void hyphaFinishLine(const Hypha &hypha, const IField &field);
   
 public:
   Hyphae(shared_ptr<const HyphaParams> hyphaParams, unique_ptr<IHyphaCoordinatesGenerator> generator);

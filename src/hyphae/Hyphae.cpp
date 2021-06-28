@@ -39,9 +39,7 @@ void Hyphae::update(const IField &field) {
       hyphaUpdate(field, *itr);
       hyphaFork(*itr);
     } else {
-      if (itr->getPosition().x >= field.getSize().x) {
-        dead = true;
-      }
+      hyphaFinishLine(*itr, field);
       itr = elements.erase(itr);
       birthControl->death();
     }
@@ -63,6 +61,14 @@ void Hyphae::hyphaFork(Hypha &hypha) {
     auto forkData = hypha.fork();
     if (forkData.energy > 0) {
       add(forkData.coordinates, forkData.energy, forkData.status);
+    }
+  }
+}
+
+void Hyphae::hyphaFinishLine(const Hypha &hypha, const IField &field) {
+  if (hypha.getPosition().x >= field.getSize().x) {
+    if (++finishLines > hyphaParams->finishLinesBeforeHyphaeDeath) {
+      dead = true;
     }
   }
 }
