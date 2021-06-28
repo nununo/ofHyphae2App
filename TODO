@@ -1,10 +1,9 @@
 High
 - Infrastructure: Save final drawing (optionally)
-- Algorithm: Reduce even more fertility ratio when near max population
 - Performance: newElements vector?
 - Performance: Use ofPixels for WritableField
 - Asthetics: Hide mouse
-- Die only after N hypha fell out of screen
+- Die only after a configured amount of hypha fall out of screen
 
 Medium
 - Settings: lists instead of ranges

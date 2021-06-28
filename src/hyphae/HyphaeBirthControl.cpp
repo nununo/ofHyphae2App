@@ -38,8 +38,16 @@ int HyphaeBirthControl::getLatestDeaths() const {
   return latest.getDeaths();
 }
 
-double HyphaeBirthControl::calcCurrentFertilityRatio(const int totalAlive) const {
-  return totalAlive > maxElements? 0.0f : pow(totalAlive, fertilityRatio) / totalAlive;
+/**
+ AsciiMath current fertility ratio formula: (alive^(fertilityRatio))/(alive) * (maxElements-alive)/maxElements
+ In which:
+  - alive: num of current particles
+  - max: maximum num of particles in this Hyphae
+  - fertilityRatio: a parameter (usually <1) obtained from a range in the settings file
+ */
+double HyphaeBirthControl::calcCurrentFertilityRatio(const int alive) const {
+  double f = (pow(alive, fertilityRatio)/(double)alive) * ((maxElements - alive) / (double)maxElements);
+  return f>0? f : 0;
 }
 
 double HyphaeBirthControl::getCurrentFertilityRatio() const {

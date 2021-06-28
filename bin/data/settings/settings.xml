@@ -14,7 +14,7 @@
     <maxElements><min>10000</min><max>20000</max></maxElements>
     <color> <r>255</r> <g>255</g> <b>255</b> <a>4</a> </color>
     <speed> <!--pixels/s-->
-      <min> <min>0.9</min><max>0.9</max> </min>
+      <min> <min>0.6</min><max>0.6</max> </min>
       <max> <min>1.0</min><max>1.0</max> </max>
     </speed>
     <maxGrowthPercentage><min>0.2</min><max>0.2</max></maxGrowthPercentage>
@@ -32,6 +32,6 @@
       <min><min>5</min><max>5</max></min>
       <max><min>20</min><max>20</max></max>
     </forkDistance>
-    <fertilityRatio><min>0.6</min><max>0.75</max></fertilityRatio>
+    <fertilityRatio><min>0.6</min><max>0.8</max></fertilityRatio>
   </hypha>
 </rhizopus>
