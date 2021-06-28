@@ -1,6 +1,5 @@
 High
 - Performance: newElements vector?
-- Asthetics: Hide mouse
 
 Medium
 - Simplify HyphaStatus: remove BeforeInside, AfterInside. No longer needed, right?

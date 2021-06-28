@@ -13,6 +13,7 @@ void ofApp::setup(){
   ofBackground(settings->canvas->backgroundColor);
 
   newHyphae();
+  ofHideCursor();
 }
 
 void ofApp::update(){
