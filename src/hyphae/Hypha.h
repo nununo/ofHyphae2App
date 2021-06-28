@@ -21,16 +21,16 @@ private:
   HyphaKynetics kynetics;
   HyphaEnergy energy;
   int nextForkDistance;
-  HyphaStatus status;
+  bool dead = false;
 
   double takeFoodFromField(const IField &field);
   int getNextForkDistance() const;
-  HyphaStatus calcStatus(const IField &field, HyphaStatus oldStatus) const;
+  bool calcDead(const IField &field) const;
   double getSpeed() const;
   bool move(const IField &fieldx);
 
 public:
-  Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy, const HyphaStatus status);
+  Hypha(std::shared_ptr<const HyphaParams> params, const HyphaCoordinates coordinates, const double initialEnergy);
   bool update(const IField &field);
   bool isAlive() const;
   glm::vec2 getPosition() const;

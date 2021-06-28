@@ -1,8 +1,8 @@
 High
 - Performance: newElements vector?
+- Algorithm: increase Field horizontal size instead of adding the extra complexity of the tolerance
 
 Medium
-- Simplify HyphaStatus: remove BeforeInside, AfterInside. No longer needed, right?
 - Settings: lists instead of ranges
 - Settings: use JSON instead of XML
 

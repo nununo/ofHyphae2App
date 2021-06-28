@@ -9,7 +9,6 @@
 #define HyphaForkData_h
 
 #include "ofMain.h"
-#include "HyphaStatus.h"
 #include "Hypha.h"
 
 class HyphaForkData {
@@ -17,12 +16,10 @@ class HyphaForkData {
 public:
   const HyphaCoordinates coordinates;
   const double energy;
-  const HyphaStatus status;
   
-  HyphaForkData(const HyphaCoordinates _coordinates, double _energy, HyphaStatus _status)
+  HyphaForkData(const HyphaCoordinates _coordinates, double _energy)
   : coordinates(_coordinates)
   , energy(_energy)
-  , status(_status)
   {}
 };
 

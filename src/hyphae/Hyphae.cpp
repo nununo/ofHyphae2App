@@ -15,15 +15,15 @@ Hyphae::Hyphae(shared_ptr<const HyphaParams> _hyphaParams,
 , firstFrameNum(ofGetFrameNum())
 {}
 
-void Hyphae::add(const HyphaCoordinates coordinates, const double energy, const HyphaStatus status) {
-  elements.push_back(Hypha(hyphaParams, coordinates, energy, status));
+void Hyphae::add(const HyphaCoordinates coordinates, const double energy) {
+  elements.push_back(Hypha(hyphaParams, coordinates, energy));
   birthControl->birth();
 }
 
 void Hyphae::addGenerated() {
   auto v = generator->get();
   for(auto p: v) {
-    add(p, 1, HyphaStatus::BeforeInside);
+    add(p, 1);
   }
 }
 
@@ -60,7 +60,7 @@ void Hyphae::hyphaFork(Hypha &hypha) {
   if (birthControl->allowFork()) {
     auto forkData = hypha.fork();
     if (forkData.energy > 0) {
-      add(forkData.coordinates, forkData.energy, forkData.status);
+      add(forkData.coordinates, forkData.energy);
     }
   }
 }

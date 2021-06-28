@@ -84,7 +84,6 @@
 		7D14991426502F0D00E3D5A5 /* IHyphaCoordinatesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHyphaCoordinatesGenerator.h; sourceTree = "<group>"; };
 		7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaCoordinatesRadialGenerator.cpp; sourceTree = "<group>"; };
 		7D149916265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaCoordinatesRadialGenerator.h; sourceTree = "<group>"; };
-		7D24879E2681568700FA4A2B /* HyphaStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaStatus.h; sourceTree = "<group>"; };
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
 		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
@@ -470,7 +469,6 @@
 				7DF6275F266BD1E5009D87C3 /* LifeDeathCounter.h */,
 				7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */,
 				7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */,
-				7D24879E2681568700FA4A2B /* HyphaStatus.h */,
 			);
 			path = hyphae;
 			sourceTree = "<group>";

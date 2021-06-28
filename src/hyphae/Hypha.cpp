@@ -10,39 +10,21 @@
 Hypha::Hypha(std::shared_ptr<const
              HyphaParams> _params,
              const HyphaCoordinates _coordinates,
-             const double initialEnergy,
-             const HyphaStatus _status = HyphaStatus::BeforeInside)
+             const double initialEnergy)
 : kynetics{HyphaKynetics(_params, _coordinates)}
 , params{_params}
 , energy{HyphaEnergy(initialEnergy, _params->energySpentToMove)}
 , nextForkDistance{getNextForkDistance()}
-, status(_status)
 {}
 
 bool Hypha::isAlive() const {
-  return status != HyphaStatus::Dead;
+  return !dead;
 }
 
-/*
- It can start outside and then go inside. Fine. But once it has been inside,
- if it goes outside... it dies.
- */
-HyphaStatus Hypha::calcStatus(const IField &field, HyphaStatus oldStatus) const {
-  if (energy.isEmpty() || kynetics.angleWithOriginalDirection() >= params->maxAngleWithInitialDirection) {
-    return HyphaStatus::Dead;
-  }
-  
-  auto inside = field.isInside(kynetics.getPixelPos());
-  
-  if (inside && oldStatus == HyphaStatus::BeforeInside) {
-    return HyphaStatus::Inside;
-  }
-  
-  if (!inside && oldStatus == HyphaStatus::Inside) {
-    return HyphaStatus::Dead;
-  }
-  
-  return oldStatus;
+bool Hypha::calcDead(const IField &field) const {
+  return (energy.isEmpty() ||
+          kynetics.angleWithOriginalDirection() >= params->maxAngleWithInitialDirection ||
+          !field.isInside(kynetics.getPixelPos()));
 }
 
 double Hypha::getSpeed() const {
@@ -53,11 +35,10 @@ bool Hypha::move(const IField &field) {
   if (!isAlive()) {
     return false;
   }
-
   bool moved =false;
   if (kynetics.update(getSpeed())) {
     energy.move();
-    status = calcStatus(field, status);
+    dead = calcDead(field);
     moved = isAlive();
   }
   return moved;
@@ -67,26 +48,25 @@ bool Hypha::update(const IField &field) {
   if (move(field)) {
     auto food = takeFoodFromField(field);
     energy.eat(food);
-    // If it moved and is still inside, return true (to be added to Hyphae newPositions)
-    return status == HyphaStatus::Inside;
+    return true;
   } else {
     return false;
   }
 }
 
 double Hypha::takeFoodFromField(const IField &field) {
-  return status == HyphaStatus::Inside ? field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio : 1.0f;
+  return field.getValue(kynetics.getPixelPos()) * params->foodToEnergyRatio;
 }
 
 HyphaForkData Hypha::fork() {
-  if (status != HyphaStatus::Dead) {
+  if (isAlive()) {
     if (--nextForkDistance == 0) {
       energy.fork();
       nextForkDistance = getNextForkDistance();
-      return HyphaForkData(kynetics.getForkCoordinates(), energy.get(), status);
+      return HyphaForkData(kynetics.getForkCoordinates(), energy.get());
     }
   }
-  return HyphaForkData({{0,0},{0,0}}, 0, status);
+  return HyphaForkData({{0,0},{0,0}}, 0);
 }
 
 /**
