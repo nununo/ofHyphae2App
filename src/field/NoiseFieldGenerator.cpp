@@ -9,7 +9,7 @@
 
 NoiseFieldGenerator::NoiseFieldGenerator(shared_ptr<const FieldParams> _params)
 : params{_params}
-,offset(ofRandom(1000.0f))
+, offset{ofRandom(10000.0f)}
 {}
 
 double NoiseFieldGenerator::getValue(const glm::vec2 normalizedPos) const {

@@ -14,7 +14,9 @@
 class NoiseFieldGenerator: public IFieldGenerator {
   shared_ptr<const FieldParams> params;
   const double offset;
+  
   double getValue(const glm::vec2 normalizedPos) const override;
+
 public:
   NoiseFieldGenerator(shared_ptr<const FieldParams> params);
 };

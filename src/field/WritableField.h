@@ -8,26 +8,17 @@
 #ifndef WritableField_h
 #define WritableField_h
 
+#include "ReadableField.h"
 #include "IFieldGenerator.h"
-#include "IField.h"
-#include "IFieldPainter.h"
 
-class WritableField: public IField {
+class WritableField: public ReadableField {
+  using ReadableField::ReadableField;
 private:
-  const glm::vec2 size;
-  vector< vector<double> > map;
-
-  // IField
-  glm::vec2 getSize() const override;
-  double getValue(const glm::vec2 pos) const override;
-  bool isInside(const glm::vec2 pos) const override;
-
   glm::vec2 normalize(const glm::vec2 pos) const;
-  void setValue( glm::vec2 pos, double newValue);
 
 public:
-  WritableField(const glm::vec2 size);
   void generate(const IFieldGenerator& generator);
   bool hasEnoughFoodAtPosition(const glm::vec2 pos) const override;
 };
+
 #endif /* WritableField_h */

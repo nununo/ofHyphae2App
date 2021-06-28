@@ -15,6 +15,7 @@
 		7D0E82AB268909F100C899BC /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E82A9268909F100C899BC /* Canvas.cpp */; };
 		7D149917265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D149915265030A600E3D5A5 /* HyphaCoordinatesRadialGenerator.cpp */; };
 		7D44387D2676652900F7F2A6 /* HyphaeBirthControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */; };
+		7D510C5B268A609700FAB4C0 /* ReadableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D510C59268A609700FAB4C0 /* ReadableField.cpp */; };
 		7D82E83A5CC06717D1C8665D /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE083C233FACD8E143EBE23 /* ofxXmlSettings.cpp */; };
 		7DA7A858266930A5009E8DCE /* OSD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A857266930A5009E8DCE /* OSD.cpp */; };
 		7DA7A85E26693281009E8DCE /* HyphaeStats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7A85C26693281009E8DCE /* HyphaeStats.cpp */; };
@@ -87,6 +88,8 @@
 		7D348EF2267EB57C0090767D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		7D44387B2676652900F7F2A6 /* HyphaeBirthControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HyphaeBirthControl.cpp; sourceTree = "<group>"; };
 		7D44387C2676652900F7F2A6 /* HyphaeBirthControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyphaeBirthControl.h; sourceTree = "<group>"; };
+		7D510C59268A609700FAB4C0 /* ReadableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReadableField.cpp; sourceTree = "<group>"; };
+		7D510C5A268A609700FAB4C0 /* ReadableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadableField.h; sourceTree = "<group>"; };
 		7D82401F2685378D0083EA39 /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		7DA7A856266930A5009E8DCE /* OSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSD.h; sourceTree = "<group>"; };
 		7DA7A857266930A5009E8DCE /* OSD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OSD.cpp; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				7DE3A0FB2634292B000DED6A /* NoiseFieldGenerator.cpp */,
 				7DE3A0FF26342A64000DED6A /* WritableField.h */,
 				7DE3A0FE26342A64000DED6A /* WritableField.cpp */,
+				7D510C59268A609700FAB4C0 /* ReadableField.cpp */,
+				7D510C5A268A609700FAB4C0 /* ReadableField.h */,
 			);
 			path = field;
 			sourceTree = "<group>";
@@ -942,6 +947,7 @@
 				BA037300EFC2E0968196E86B /* ofxBaseGui.cpp in Sources */,
 				3E018EE052C86B48FBCA3F5C /* ofxButton.cpp in Sources */,
 				7DE3A0D126334100000DED6A /* main.cpp in Sources */,
+				7D510C5B268A609700FAB4C0 /* ReadableField.cpp in Sources */,
 				CDCD1B12AD45DF8A68B312C5 /* ofxColorPicker.cpp in Sources */,
 				7DE3A0E626334125000DED6A /* Hyphae.cpp in Sources */,
 				49803452B0C005D925C51C3F /* ofxGuiGroup.cpp in Sources */,

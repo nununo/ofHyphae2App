@@ -16,8 +16,7 @@ private:
   int dissolve = 0;
   
   unique_ptr<Hyphae> createHyphae(shared_ptr<HyphaParams> params) const;
-  shared_ptr<IField> createField(shared_ptr<FieldParams> params, const glm::vec2 size) const;
-  shared_ptr<Params> createParams(Settings &settings) const;
+  unique_ptr<IField> createField() const;
 
   void newHyphae();
 

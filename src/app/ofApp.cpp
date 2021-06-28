@@ -27,28 +27,27 @@ void ofApp::draw() {
 }
 
 void ofApp::newHyphae() {
-  params = createParams(*settings);
-  field = createField(params->field, canvas->getSize());
+  params = make_shared<Params>(*settings);
+  field = createField();
   hyphae = createHyphae(params->hypha);
   canvas->reset();
 }
 
 unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) const {
-  return std::make_unique<Hyphae>(
+  return make_unique<Hyphae>(
     hyphaParams,
-    make_unique<HyphaCoordinatesRadialGenerator>(glm::radians(80.0f), hyphaParams->birthRayDirections, hyphaParams->birthRays)); // TODO
+    make_unique<HyphaCoordinatesRadialGenerator>(
+      glm::radians(80.0f),                         // TODO
+      hyphaParams->birthRayDirections,
+      hyphaParams->birthRays));
 }
 
-std::shared_ptr<IField> ofApp::createField(std::shared_ptr<FieldParams> fieldParams, const glm::vec2 size) const {
-  auto field = make_shared<WritableField>(size);
+unique_ptr<IField> ofApp::createField() const {
+  auto writableField = make_unique<WritableField>(canvas->getSize());
   do {
-    field->generate(NoiseFieldGenerator(fieldParams));
-  } while (!field->hasEnoughFoodAtPosition({0,ofGetScreenHeight()/2})); // TODO
-  return field;
-}
-
-std::shared_ptr<Params> ofApp::createParams(Settings &settings) const {
-  return shared_ptr<Params>(make_shared<Params>(settings));
+    writableField->generate(NoiseFieldGenerator(params->field));
+  } while (!writableField->hasEnoughFoodAtPosition({0,ofGetScreenHeight()/2})); // TODO
+  return writableField;
 }
 
 void ofApp::keyPressed(int key) {

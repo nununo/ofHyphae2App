@@ -1,5 +1,4 @@
 High
-- Performance: Use ofPixels for WritableField
 - Performance: newElements vector?
 - Asthetics: Hide mouse
 
@@ -14,3 +13,4 @@ Low
 Abandoned:
 - Algorithm: Long fade out only when long lifetime (no longer needed because now only Fields with enough food are chosen)
 - Algorithm: Measure screen occupancy (no longer needed because blobs are no longer being constantly generated)
+- Performance: Use ofPixels for WritableField (I don't think this would increase performance much)
