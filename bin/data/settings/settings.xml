@@ -5,6 +5,7 @@
     <osdActive>0</osdActive>
     <osdColor> <r>0</r> <g>0</g> <b>0</b> <a>255</a> </osdColor>
     <backgroundColor> <r>255</r> <g>255</g> <b>255</b> <a>255</a> </backgroundColor>
+    <horizontalOffset>-70</horizontalOffset>
   </canvas>
   <field>
     <frequency><min>1</min><max>2</max></frequency>

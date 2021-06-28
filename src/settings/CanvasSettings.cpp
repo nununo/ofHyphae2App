@@ -13,4 +13,5 @@ CanvasSettings::CanvasSettings(const SettingsFile& sf)
 , osdActive((bool)sf.getValue("rhizopus:canvas:osdActive", false))
 , backgroundColor(sf.getColor("rhizopus:canvas:backgroundColor"))
 , saveImages((bool)sf.getValue("rhizopus:canvas:saveImages", true))
+, horizontalOffset(sf.getValue("rhizopus:canvas:horizontalOffset", 0))
 {}

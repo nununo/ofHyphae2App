@@ -44,7 +44,10 @@ unique_ptr<Hyphae> ofApp::createHyphae(shared_ptr<HyphaParams> hyphaParams) cons
 }
 
 unique_ptr<IField> ofApp::createField() const {
-  auto writableField = make_unique<WritableField>(canvas->getSize());
+  // The Hyphae is drawn with an offset to the left defined in settings->canvas->horizontalOffset. In order
+  // for the drawing to complete the whole screen, we need to add an extra tolerance on the right to compensate
+  // for that offset.
+  auto writableField = make_unique<WritableField>(canvas->getSize(), -settings->canvas->horizontalOffset);
   do {
     writableField->generate(NoiseFieldGenerator(params->field));
   } while (!writableField->hasEnoughFoodAtPosition({0,ofGetScreenHeight()/2})); // TODO

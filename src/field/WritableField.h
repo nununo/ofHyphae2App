@@ -12,11 +12,11 @@
 #include "IFieldGenerator.h"
 
 class WritableField: public ReadableField {
-  using ReadableField::ReadableField;
 private:
   glm::vec2 normalize(const glm::vec2 pos) const;
 
 public:
+  WritableField(const glm::vec2 size, const int rightTolerance);
   void generate(const IFieldGenerator& generator);
   bool hasEnoughFoodAtPosition(const glm::vec2 pos) const override;
 };

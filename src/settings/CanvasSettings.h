@@ -17,6 +17,7 @@ struct CanvasSettings {
   const ofColor osdColor;
   const ofColor backgroundColor;
   const bool saveImages;
+  const int horizontalOffset;
 
   CanvasSettings(const SettingsFile& sf);
 };

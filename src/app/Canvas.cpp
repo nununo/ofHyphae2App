@@ -14,7 +14,7 @@ Canvas::Canvas(shared_ptr<const CanvasSettings> _settings, ofColor hyphaColor)
 , filenamePrefix{"images/hyphae2_" + ofGetTimestampString() + "_"}
 , osd{make_unique<OSD>(_settings)}
 , fieldPainter{(unique_ptr<IFieldPainter>)make_unique<FieldPainter>(glm::vec2(ofGetWidth(), ofGetHeight()))}
-, hyphaePainter{createHyphaePainter(hyphaColor, {-70, 0}, OF_BLENDMODE_SUBTRACT)} // TODO
+, hyphaePainter{createHyphaePainter(hyphaColor, {_settings->horizontalOffset, 0}, OF_BLENDMODE_SUBTRACT)}
 , hyphaePainterField{createHyphaePainter(ofColor::red, {0,0})}
 , fadePainter{make_unique<FadePainter>(3*_settings->framerate, 3*_settings->framerate)}
 , size{ofGetWidth(), ofGetHeight()}

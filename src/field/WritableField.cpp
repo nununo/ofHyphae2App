@@ -7,6 +7,12 @@
 
 #include "WritableField.h"
 
+WritableField::WritableField(const glm::vec2 size, const int rightTolerance)
+: ReadableField(size)
+{
+  setRightTolerance(rightTolerance);
+}
+
 glm::vec2 WritableField::normalize(const glm::vec2 pos) const {
   auto normx = ofNormalize(pos.x, 0, getSize().x);
   auto normy = ofNormalize(pos.y, 0, getSize().y);

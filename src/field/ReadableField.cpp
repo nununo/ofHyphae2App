@@ -22,9 +22,13 @@ glm::vec2 ReadableField::getSize() const {
 }
 
 bool ReadableField::isInside(const glm::vec2 pos) const {
-  return pos == glm::abs(pos) && pos.x <= size.x-1 && pos.y <= size.y-1;
+  return pos == glm::abs(pos) && pos.x <= size.x+rightTolerance-1 && pos.y <= size.y-1;
 }
 
 void ReadableField::setValue(glm::vec2 pos, double newValue) {
   map[(int)pos.y][(int)pos.x] = ofClamp(newValue, 0.0f, 1.0f);
+}
+
+void ReadableField::setRightTolerance(const int _rightTolerance) {
+  rightTolerance = _rightTolerance;
 }
