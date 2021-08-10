@@ -1,6 +1,7 @@
 High
 - Performance: newElements vector pass by value ok?
 - Algorithm: increase Field horizontal size instead of adding the extra complexity of the tolerance
+- Slower fade out
 
 Medium
 - Settings: lists instead of ranges
