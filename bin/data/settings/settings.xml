@@ -33,7 +33,7 @@
       <min><min>5</min><max>5</max></min>
       <max><min>20</min><max>20</max></max>
     </forkDistance>
-    <fertilityRatio><min>0.6</min><max>0.8</max></fertilityRatio>
+    <fertilityRatio><min>0.65</min><max>0.85</max></fertilityRatio>
     <finishLinesBeforeHyphaeDeath>500</finishLinesBeforeHyphaeDeath>
   </hypha>
 </rhizopus>
